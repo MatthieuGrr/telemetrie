@@ -5,19 +5,41 @@ hide:
   - toc
 ---
 
-# Télémétrie 🛰️
+## Samedi 7 novembre 2026
 
-**Le flux quotidien de Rosetta** : chaque matin, une sélection d'actus en robotique, électronique embarquée et tech, résumées en quelques phrases avec un lien vers la source.
 
-## Dernière veille : samedi 7 novembre 2026
 
-- [STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur](2026/11/2026-11-07.md#stm32h7p4-h7p5-des-cortex-m7-a-520-mhz-faits-pour-le-controle-moteur)
-- [Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31](2026/11/2026-11-07.md#waveshare-esp32-s31-zero-une-premiere-carte-avec-le-nouvel-esp32-s31)
-- [OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d'exemples](2026/11/2026-11-07.md#oopsierecover-apprendre-a-un-robot-a-rattraper-ses-erreurs-avec-tres-peu-dexemples)
-- [Tuto : programmer en bare-metal sur PC avec UEFI](2026/11/2026-11-07.md#tuto-programmer-en-bare-metal-sur-pc-avec-uefi)
-- [💡 Concept du jour : le CORDIC](2026/11/2026-11-07.md#concept-du-jour-le-cordic)
+### STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur
 
-[Lire la veille du samedi 7 novembre 2026 →](2026/11/2026-11-07.md){ .md-button .md-button--primary }
+ST sort deux MCU pensés pour la commande de moteurs, l'électronique de puissance et l'IA embarquée : un **HSP** (coprocesseur matériel qui accélère les maths et le traitement du signal), des accélérateurs CORDIC et FMAC, 3 timers moteur avancés, jusqu'à 24 sorties PWM haute résolution, 4 ADC 12 bits et 3 bus CAN FD. Le H7P5 ajoute un NPU de 85 GOPS (une puce dédiée aux réseaux de neurones).
+
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/06/520-mhz-stm32h7p4-stm32h7p5-arm-cortex-m7-mcus-feature-hardware-signal-processor-hsp-optional-neural-art-npu/)
+{ .source-link }
+
+### Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31
+
+Une carte minuscule au format « Zero », avec un double cœur RISC-V à 320 MHz (FPU et SIMD), du Wi-Fi 6, du BLE 5.3 et de l'802.15.4 (Thread/Zigbee). Elle a jusqu'à 32 Mo de PSRAM dans la puce et un connecteur 40 broches pour un écran LCD, une carte SD et l'USB 2.0. La prise en charge de la puce dans ESP-IDF reste à vérifier.
+
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/07/waveshare-esp32-s31-zero-a-tiny-esp32-s31-board-with-up-to-32mb-psram-32mb-spi-flash/)
+{ .source-link }
+
+### OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d'exemples
+
+Les modèles VLA (vision, langage, action) échouent souvent une fois déployés, et les corriger demande d'habitude des dizaines voire des centaines de démonstrations. Ici, le système déduit **pourquoi** une correction a été faite et transforme cette raison en « coût » spatial : une zone à éviter, un geste à privilégier. Avec une poignée de démos, la correction marche aussi sur de nouveaux objets et de nouvelles scènes (6 tâches testées, UT Austin).
+
+[Source : arxiv.org](https://arxiv.org/abs/2611.08462)
+{ .source-link }
+
+### Tuto : programmer en bare-metal sur PC avec UEFI
+
+Une série en 5 parties, très bien notée sur Hacker News. Elle montre comment compiler un programme qui démarre directement depuis le firmware UEFI, sans système d'exploitation : outils, édition de liens, partition EFI, clé USB bootable, lecture de fichiers.
+
+[Source : kevinboone.me](https://kevinboone.me/efitest_index.html)
+{ .source-link }
+
+### 💡 Concept du jour : le CORDIC
+
+C'est un algorithme qui calcule sinus, cosinus, arctangente et racines **uniquement avec des additions et des décalages de bits**, sans multiplication : on fait tourner un vecteur par petits angles fixes jusqu'à atteindre l'angle voulu. Câblé en matériel (comme sur ces STM32), il donne un sin/cos en quelques cycles, ce qui est utile en FOC à chaque période PWM pour les transformées de Park et Clarke. C'est ce qui permet de faire tourner une boucle de courant à 20-40 kHz sans saturer le CPU.
 
 ## Veilles précédentes
 
@@ -30,3 +52,8 @@ hide:
 - [Samedi 31 octobre 2026](2026/10/2026-10-31.md) — 6 actus
 
 [Toutes les veilles dans les archives →](archives.md)
+
+
+---
+
+<small>Le flux quotidien de Rosetta : une sélection d'actus en robotique, électronique embarquée et tech, avec un lien vers chaque source.</small>

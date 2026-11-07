@@ -323,26 +323,28 @@ def count_label(n):
 
 
 def write_index(pages):
-    lines = ["---", "title: Accueil", "hide:", "  - navigation", "  - toc", "---", "",
-             "# Télémétrie 🛰️", "",
-             "**Le flux quotidien de Rosetta** : chaque matin, une sélection d'actus en "
-             "robotique, électronique embarquée et tech, résumées en quelques phrases "
-             "avec un lien vers la source.", ""]
+    lines = ["---", "title: Accueil", "hide:", "  - navigation", "  - toc", "---", ""]
     if not pages:
         lines.append("*Aucune veille publiée pour l'instant.*\n")
     else:
         last = pages[0]
-        lines += [f"## Dernière veille : {fr_date(last['date'])}", ""]
-        for t, a in zip(last["titres"], anchors(last["titres"])):
-            lines.append(f"- [{t}]({last['path']}#{a})")
-        lines += ["", f"[Lire la veille du {fr_date(last['date'])} →]({last['path']})"
-                  "{ .md-button .md-button--primary }", ""]
+        body = (DOCS / last["path"]).read_text(encoding="utf-8")
+        body = re.sub(r"^---\n.*?\n---\n", "", body, count=1, flags=re.S)
+        body = re.sub(r"^# .*\n", "", body, count=1, flags=re.M)
+        # Coupe la navigation précédente/suivante éventuelle de la page du jour
+        body = body.split("<!-- BEGIN NAV-VEILLES -->")[0].rstrip()
+        # Titres d'actu en ### : les étoiles favoris restent sur la page datée
+        body = re.sub(r"^## ", "### ", body, flags=re.M)
+        lines += [f"## {date_label(last['date'])}", "", body, ""]
         if len(pages) > 1:
             lines += ["## Veilles précédentes", ""]
             for p in pages[1:8]:
                 lines.append(f"- [{date_label(p['date'])}]({p['path']}) — "
                              f"{count_label(len(p['titres']))}")
             lines += ["", "[Toutes les veilles dans les archives →](archives.md)", ""]
+    lines += ["", "---", "",
+              "<small>Le flux quotidien de Rosetta : une sélection d'actus en robotique, "
+              "électronique embarquée et tech, avec un lien vers chaque source.</small>", ""]
     (DOCS / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
 
