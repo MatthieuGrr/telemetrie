@@ -77,3 +77,22 @@
 .md-typeset .source-link {
   font-size: 0.9em;
 }
+
+/* Liens précédente / suivante en bas des veilles */
+.md-typeset .veille-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8em;
+  margin-top: 2.5em;
+  padding-top: 1em;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .veille-nav p {
+  margin: 0;
+}
+
+.md-typeset .veille-nav .veille-next {
+  margin-left: auto;
+}

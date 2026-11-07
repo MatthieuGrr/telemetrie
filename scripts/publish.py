@@ -5,17 +5,18 @@ Usage :
     python3 scripts/publish.py AAAA-MM-JJ < veille.txt          # écrit, commit, push
     python3 scripts/publish.py AAAA-MM-JJ --dry-run < veille.txt # affiche seulement
     python3 scripts/publish.py AAAA-MM-JJ --delete               # retire une page
-    python3 scripts/publish.py --rebuild                         # régénère index/nav
+    python3 scripts/publish.py --rebuild                         # régénère accueil/archives/liens
 
 Le texte (format WhatsApp ou Markdown) est lu sur stdin. Le script retire les
 parties personnelles (« pour toi », tutoiement, mentions privées), convertit en
 Markdown, déduit des tags, écrit docs/AAAA/MM/AAAA-MM-JJ.md, régénère l'accueil,
-les archives et la navigation, puis fait git add/commit/push. Relancer le même
+les archives, la navigation à plat et les liens précédente/suivante des veilles, puis fait git add/commit/push. Relancer le même
 jour remplace la page (idempotent). Aucune dépendance hors bibliothèque standard.
 """
 
 import argparse
 import datetime as dt
+import os
 import re
 import subprocess
 import sys
@@ -313,64 +314,108 @@ def anchors(titles):
     return out
 
 
+def date_label(d):
+    return fr_date(d).capitalize()
+
+
+def count_label(n):
+    return f"{n} actu{'s' if n > 1 else ''}"
+
+
 def write_index(pages):
     lines = ["---", "title: Accueil", "hide:", "  - navigation", "  - toc", "---", "",
              "# Télémétrie 🛰️", "",
              "**Le flux quotidien de Rosetta** : chaque matin, une sélection d'actus en "
              "robotique, électronique embarquée et tech, résumées en quelques phrases "
-             "avec un lien vers la source.", "",
-             "[Archives](archives.md){ .md-button } [Tags](tags.md){ .md-button } "
-             "[⭐ Favoris](favoris.md){ .md-button }", "",
-             "## Dernières veilles", ""]
-    for p in pages[:7]:
-        lines.append(f"### [{fr_date(p['date']).capitalize()}]({p['path']})")
-        lines.append("")
-        for t, a in zip(p["titres"], anchors(p["titres"])):
-            lines.append(f"- [{t}]({p['path']}#{a})")
-        lines.append("")
+             "avec un lien vers la source.", ""]
     if not pages:
         lines.append("*Aucune veille publiée pour l'instant.*\n")
+    else:
+        last = pages[0]
+        lines += [f"## Dernière veille : {fr_date(last['date'])}", ""]
+        for t, a in zip(last["titres"], anchors(last["titres"])):
+            lines.append(f"- [{t}]({last['path']}#{a})")
+        lines += ["", f"[Lire la veille du {fr_date(last['date'])} →]({last['path']})"
+                  "{ .md-button .md-button--primary }", ""]
+        if len(pages) > 1:
+            lines += ["## Veilles précédentes", ""]
+            for p in pages[1:8]:
+                lines.append(f"- [{date_label(p['date'])}]({p['path']}) — "
+                             f"{count_label(len(p['titres']))}")
+            lines += ["", "[Toutes les veilles dans les archives →](archives.md)", ""]
     (DOCS / "index.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def write_archives(pages):
-    lines = ["---", "title: Archives", "---", "", "# Archives", "",
+    lines = ["---", "title: Archives", "hide:", "  - navigation", "---", "",
+             "# Archives", "",
              f"{len(pages)} veilles publiées, de la plus récente à la plus ancienne.", ""]
     month = None
     for p in pages:
         key = (p["date"].year, p["date"].month)
         if key != month:
+            if month is not None:
+                lines.append("")
             month = key
             lines += [f"## {MOIS[key[1] - 1].capitalize()} {key[0]}", ""]
-        n = len(p["titres"])
-        lines.append(f"- [{fr_date(p['date']).capitalize()}]({p['path']}) — "
-                     f"{n} actu{'s' if n > 1 else ''}")
+        lines.append(f"- [{date_label(p['date'])}]({p['path']}) — "
+                     f"{count_label(len(p['titres']))}")
     lines.append("")
     (DOCS / "archives.md").write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_nav(pages):
-    nav = ["nav:", "  - Accueil: index.md", "  - Archives:", "      - archives.md"]
-    month = None
-    for p in pages:
-        key = (p["date"].year, p["date"].month)
-        if key != month:
-            month = key
-            nav.append(f"      - {MOIS[key[1] - 1].capitalize()} {key[0]}:")
-        d = p["date"]
-        nav.append(f'          - "{JOURS[d.weekday()].capitalize()} {d.day}{"er" if d.day == 1 else ""}": {p["path"]}')
-    nav += ["  - Tags: tags.md", "  - Favoris: favoris.md"]
+NAV = """nav:
+  - Accueil: index.md
+  - Archives: archives.md
+  - Tags: tags.md
+  - Favoris: favoris.md"""
+
+
+def write_nav():
+    """Navigation à plat : les pages de jour n'y figurent pas (accès via accueil/archives)."""
     yml = MKDOCS_YML.read_text(encoding="utf-8")
     new = re.sub(r"# BEGIN NAV\n.*?# END NAV",
-                 "# BEGIN NAV\n" + "\n".join(nav) + "\n# END NAV", yml, flags=re.DOTALL)
-    MKDOCS_YML.write_text(new, encoding="utf-8")
+                 lambda m: "# BEGIN NAV\n" + NAV + "\n# END NAV", yml, flags=re.DOTALL)
+    if new != yml:
+        MKDOCS_YML.write_text(new, encoding="utf-8")
+
+
+DAYNAV_RE = re.compile(r"\n*<!-- BEGIN NAV-VEILLES -->.*?<!-- END NAV-VEILLES -->\n*",
+                       re.DOTALL)
+
+
+def write_day_links(pages):
+    """Ajoute en bas de chaque veille les liens vers la précédente et la suivante."""
+    for i, p in enumerate(pages):  # pages : de la plus récente à la plus ancienne
+        here = DOCS / p["path"]
+        base = here.parent
+
+        def link(q, fmt):
+            rel = os.path.relpath(DOCS / q["path"], base).replace(os.sep, "/")
+            return f"[{fmt.format(fr_date(q['date']))}]({rel})"
+
+        prev = pages[i + 1] if i + 1 < len(pages) else None
+        nxt = pages[i - 1] if i > 0 else None
+        parts = []
+        if prev:
+            parts.append(link(prev, "← Veille précédente : {}") + "{ .veille-prev }")
+        if nxt:
+            parts.append(link(nxt, "Veille suivante : {} →") + "{ .veille-next }")
+        text = here.read_text(encoding="utf-8")
+        body = DAYNAV_RE.sub("\n", text).rstrip("\n") + "\n"
+        if parts:
+            body += ("\n<!-- BEGIN NAV-VEILLES -->\n<div class=\"veille-nav\" markdown>\n\n"
+                     + "\n\n".join(parts) + "\n\n</div>\n<!-- END NAV-VEILLES -->\n")
+        if body != text:
+            here.write_text(body, encoding="utf-8")
 
 
 def rebuild():
     pages = read_pages()
     write_index(pages)
     write_archives(pages)
-    write_nav(pages)
+    write_nav()
+    write_day_links(pages)
     return pages
 
 
@@ -408,12 +453,12 @@ def main():
     ap.add_argument("--no-git", action="store_true", help="écrit les fichiers sans git")
     ap.add_argument("--delete", action="store_true", help="supprime la page de cette date")
     ap.add_argument("--rebuild", action="store_true",
-                    help="régénère seulement accueil, archives et navigation")
+                    help="régénère seulement accueil, archives, navigation et liens entre veilles")
     a = ap.parse_args()
 
     if a.rebuild and not a.date:
         rebuild()
-        print("Index, archives et navigation régénérés.")
+        print("Accueil, archives, navigation et liens entre veilles régénérés.")
         if not a.no_git and not a.dry_run:
             commit_and_push("Régénère les index", push=not a.no_push)
         return

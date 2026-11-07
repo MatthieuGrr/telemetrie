@@ -9,7 +9,11 @@ et les liens vers les sources.
 ## Organisation
 
 - `docs/AAAA/MM/AAAA-MM-JJ.md` : une page par veille (front-matter `date` + `tags`).
-- `docs/index.md`, `docs/archives.md` et la `nav` de `mkdocs.yml` sont **générés** par le script.
+- `docs/index.md` (dernière veille + 7 précédentes), `docs/archives.md` (toutes les veilles,
+  groupées par mois), la `nav` à plat de `mkdocs.yml` (Accueil, Archives, Tags, Favoris) et les
+  liens « veille précédente / suivante » en bas de chaque page (entre `<!-- BEGIN NAV-VEILLES -->`
+  et `<!-- END NAV-VEILLES -->`) sont **générés** par le script. Les pages de jour ne sont pas
+  dans le menu (`not_in_nav`).
 - `docs/favoris.md` : favoris locaux (⭐ sur chaque actu, stockés dans le navigateur)
   et section « Favoris épinglés » éditée à la main.
 - `docs/assets/favoris.js` : bouton étoile, compatible navigation instantanée de Material.
@@ -20,7 +24,7 @@ et les liens vers les sources.
 python3 scripts/publish.py 2026-11-07 < veille.txt            # écrit, commit, push
 python3 scripts/publish.py 2026-11-07 --dry-run < veille.txt  # aperçu, rien n'est écrit
 python3 scripts/publish.py 2026-11-07 --delete                # retire une page
-python3 scripts/publish.py --rebuild                          # régénère accueil/archives/nav
+python3 scripts/publish.py --rebuild                          # régénère accueil/archives/nav/liens
 ```
 
 Le texte peut être au format WhatsApp (`*gras*`, `_italique_`, URL nues) ou Markdown.

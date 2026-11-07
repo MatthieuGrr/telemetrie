@@ -32,9 +32,7 @@ theme:
     - navigation.instant.progress
     - navigation.tracking
     - navigation.tabs
-    - navigation.indexes
     - navigation.top
-    - navigation.footer
     - search.suggest
     - search.highlight
     - toc.follow
@@ -60,27 +58,16 @@ extra_css:
 extra_javascript:
   - assets/favoris.js
 
+# Les pages de jour ne figurent pas dans la nav : on y accède par l'accueil,
+# les archives, les tags et les liens précédente/suivante en bas de chaque veille.
+not_in_nav: |
+  /20*/**
+
 # La navigation ci-dessous est régénérée par scripts/publish.py : ne pas l'éditer à la main.
 # BEGIN NAV
 nav:
   - Accueil: index.md
-  - Archives:
-      - archives.md
-      - Novembre 2026:
-          - "Samedi 7": 2026/11/2026-11-07.md
-          - "Vendredi 6": 2026/11/2026-11-06.md
-          - "Jeudi 5": 2026/11/2026-11-05.md
-          - "Mercredi 4": 2026/11/2026-11-04.md
-          - "Mardi 3": 2026/11/2026-11-03.md
-          - "Lundi 2": 2026/11/2026-11-02.md
-          - "Dimanche 1er": 2026/11/2026-11-01.md
-      - Octobre 2026:
-          - "Samedi 31": 2026/10/2026-10-31.md
-          - "Vendredi 30": 2026/10/2026-10-30.md
-          - "Jeudi 29": 2026/10/2026-10-29.md
-          - "Mercredi 28": 2026/10/2026-10-28.md
-          - "Mardi 27": 2026/10/2026-10-27.md
-          - "Lundi 26": 2026/10/2026-10-26.md
+  - Archives: archives.md
   - Tags: tags.md
   - Favoris: favoris.md
 # END NAV

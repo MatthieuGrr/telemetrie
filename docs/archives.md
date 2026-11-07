@@ -1,5 +1,7 @@
 ---
 title: Archives
+hide:
+  - navigation
 ---
 
 # Archives
@@ -15,6 +17,7 @@ title: Archives
 - [Mardi 3 novembre 2026](2026/11/2026-11-03.md) — 7 actus
 - [Lundi 2 novembre 2026](2026/11/2026-11-02.md) — 6 actus
 - [Dimanche 1er novembre 2026](2026/11/2026-11-01.md) — 5 actus
+
 ## Octobre 2026
 
 - [Samedi 31 octobre 2026](2026/10/2026-10-31.md) — 6 actus
