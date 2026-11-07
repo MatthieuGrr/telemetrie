@@ -1,0 +1,86 @@
+site_name: Télémétrie 🛰️
+site_description: Le flux quotidien de Rosetta — veille robotique, embarqué et tech
+site_url: https://matthieugrr.github.io/telemetrie/
+repo_url: https://github.com/MatthieuGrr/telemetrie
+repo_name: MatthieuGrr/telemetrie
+copyright: Veille générée par Rosetta · liens vers les sources originales
+
+theme:
+  name: material
+  language: fr
+  icon:
+    logo: material/satellite-variant
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - content.tooltips
+
+plugins:
+  - search:
+      lang: fr
+  - tags
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/telemetrie.css
+extra_javascript:
+  - assets/favoris.js
+
+# La navigation ci-dessous est régénérée par scripts/publish.py : ne pas l'éditer à la main.
+# BEGIN NAV
+nav:
+  - Accueil: index.md
+  - Archives:
+      - archives.md
+      - Novembre 2026:
+          - "Samedi 7": 2026/11/2026-11-07.md
+          - "Vendredi 6": 2026/11/2026-11-06.md
+          - "Jeudi 5": 2026/11/2026-11-05.md
+          - "Mercredi 4": 2026/11/2026-11-04.md
+          - "Mardi 3": 2026/11/2026-11-03.md
+          - "Lundi 2": 2026/11/2026-11-02.md
+          - "Dimanche 1er": 2026/11/2026-11-01.md
+      - Octobre 2026:
+          - "Samedi 31": 2026/10/2026-10-31.md
+          - "Vendredi 30": 2026/10/2026-10-30.md
+          - "Jeudi 29": 2026/10/2026-10-29.md
+          - "Mercredi 28": 2026/10/2026-10-28.md
+          - "Mardi 27": 2026/10/2026-10-27.md
+          - "Lundi 26": 2026/10/2026-10-26.md
+  - Tags: tags.md
+  - Favoris: favoris.md
+# END NAV

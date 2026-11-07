@@ -1,0 +1,462 @@
+#!/usr/bin/env python3
+"""Publie une veille quotidienne sur Télémétrie.
+
+Usage :
+    python3 scripts/publish.py AAAA-MM-JJ < veille.txt          # écrit, commit, push
+    python3 scripts/publish.py AAAA-MM-JJ --dry-run < veille.txt # affiche seulement
+    python3 scripts/publish.py AAAA-MM-JJ --delete               # retire une page
+    python3 scripts/publish.py --rebuild                         # régénère index/nav
+
+Le texte (format WhatsApp ou Markdown) est lu sur stdin. Le script retire les
+parties personnelles (« pour toi », tutoiement, mentions privées), convertit en
+Markdown, déduit des tags, écrit docs/AAAA/MM/AAAA-MM-JJ.md, régénère l'accueil,
+les archives et la navigation, puis fait git add/commit/push. Relancer le même
+jour remplace la page (idempotent). Aucune dépendance hors bibliothèque standard.
+"""
+
+import argparse
+import datetime as dt
+import re
+import subprocess
+import sys
+import unicodedata
+from pathlib import Path
+
+REPO = Path(__file__).resolve().parent.parent
+DOCS = REPO / "docs"
+MKDOCS_YML = REPO / "mkdocs.yml"
+
+JOURS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août",
+        "septembre", "octobre", "novembre", "décembre"]
+
+# Paragraphes d'avis personnel à supprimer entièrement.
+OPINION_RE = re.compile(
+    r"^(pour toi|pour vous|ce que (j'en|tu en|j’en|tu en) retiens|à retenir|a retenir|"
+    r"pourquoi (ça|ca) compte|à creuser|a creuser|ce qu'il faut retenir|mon avis|"
+    r"en pratique)\b",
+    re.IGNORECASE,
+)
+# Phrases à retirer : tutoiement, première personne de l'assistant, mentions privées.
+PERSONAL_RE = re.compile(
+    r"\b(tu|toi|ton|ta|tes|te|tien|tiens|vous|votre|vos|je|moi|mon|ma|mes)\b|\b[tjm]['’]",
+    re.IGNORECASE,
+)
+PRIVATE_RE = re.compile(
+    r"\bPHARE\b|\bMatthieu\b|\bRosetta\b|\bMARS\b|\bLUNE\b|"
+    r"\+\d{2}[\s.]?\d([\s.]?\d{2}){4}|\b0[1-9]([\s.]?\d{2}){4}\b"
+)
+# Lignes de fin de message sans contenu.
+CHATTER_RE = re.compile(
+    r"^(rien de (neuf|nouveau)|bon(ne)? (samedi|dimanche|lundi|mardi|mercredi|jeudi|"
+    r"vendredi|week-end|journée|lecture)|papiers? .* lus? au niveau)",
+    re.IGNORECASE,
+)
+URL_RE = re.compile(r"https?://[^\s<>()\[\]]+[^\s<>()\[\].,;:!?…'\"»]")
+
+TAG_RULES = {
+    "robotique": r"robot|ros ?2|nav2|slam|drone|quadrirotor|humano[iï]de|manipulation|"
+                 r"\bbras\b|pince|\bvla\b|\bamr\b|\bagv\b|exosquelette|locomotion|lidar|"
+                 r"odom[eé]trie|cin[eé]matique|planificat",
+    "embarqué": r"esp32|stm32|rp2350|\bpico\b|\bmcu\b|microcontr[oô]leur|firmware|freertos|"
+                r"cortex-?m|risc-?v|esp-idf|bare-metal|\bnrf\d|nordic|espressif|"
+                r"embarqu[eé]",
+    "IA": r"\bllm\b|\bia\b|intelligence artificielle|\bgpt|claude|mistral|qwen|gemma|"
+          r"r[eé]seaux? de neurones|\bvla\b|\bnpu\b|openai|anthropic|deepmind|"
+          r"apprentissage|world model|mod[eè]le de monde",
+    "spatial": r"satellite|fus[eé]e|orbit|\bnasa\b|\besa\b|spacex|ariane|\bcnes\b|"
+               r"lanceur|astronaut|t[eé]lescope|spatiale",
+    "logiciel": r"linux|noyau|kernel|postgres|logiciel|compilat|\bsdk\b|extension|"
+                r"\bjax\b|python|uefi|simulateur",
+    "matériel": r"\bpcb\b|carte|module|capteur|moteur|bldc|ethernet|wi-?fi|bluetooth|"
+                r"\bpuce|\bram\b|psram|oscillo|soc\b",
+    "open source": r"open[ -]source|code ouvert|apache 2|github\.com|oshwa|"
+                   r"poids (ouverts|publi)|open-weight|mat[eé]riel ouvert|"
+                   r"publie les poids",
+    "sécurité": r"faille|\bcve-|\bexploits?\b|backdoor|porte d[eé]rob[eé]e|zero-day|"
+                r"vuln[eé]rab|s[eé]curit[eé]",
+    "recherche": r"arxiv\.org",
+}
+
+
+# --------------------------------------------------------------------------- utils
+
+def fr_date(d, weekday=True):
+    s = f"{d.day}{'er' if d.day == 1 else ''} {MOIS[d.month - 1]} {d.year}"
+    return f"{JOURS[d.weekday()]} {s}" if weekday else s
+
+
+def strip_accents(s):
+    return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
+
+
+def slugify(value, separator="-"):
+    """Même algorithme que markdown.extensions.toc.slugify (ancres MkDocs)."""
+    value = re.sub(r"[*_`]", "", value)
+    value = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", value)
+    value = strip_accents(value)
+    value = re.sub(r"[^\w\s-]", "", value).strip().lower()
+    return re.sub(r"[{}\s]+".format(separator), separator, value)
+
+
+def decoration_strip(s):
+    """Retire puces, emojis et marques de mise en forme en tête de ligne."""
+    return re.sub(r"^[\s*_👉•\-–—>💡🔹▶️➡️]+", "", s)
+
+
+def is_bare_url(line):
+    return bool(re.fullmatch(r"<?(https?://\S+?)>?", line.strip()))
+
+
+def convert_inline(text):
+    """*gras* WhatsApp -> **gras**, _italique_ -> *italique*, en protégeant code et URL."""
+    protected = []
+
+    def keep(m, fmt="{}"):
+        protected.append(fmt.format(m.group(0)))
+        return f"\x00{len(protected) - 1}\x00"
+
+    text = re.sub(r"`[^`]+`", keep, text)
+    text = re.sub(r"\[[^\]]*\]\([^)]*\)", keep, text)
+    text = re.sub(r"<https?://[^>]+>", keep, text)
+    text = re.sub(r"\*\*[^*]+\*\*", keep, text)  # déjà en Markdown
+    text = URL_RE.sub(lambda m: keep(m, "<{}>"), text)
+    text = re.sub(r"(?<![\w*])\*(?=\S)([^*\n]+?)(?<=\S)\*(?![\w*])", r"**\1**", text)
+    text = re.sub(r"(?<![\w_])_(?=\S)([^_\n]+?)(?<=\S)_(?![\w_])", r"*\1*", text)
+    return re.sub(r"\x00(\d+)\x00", lambda m: protected[int(m.group(1))], text)
+
+
+def clean_sentences(text):
+    """Supprime les phrases personnelles ou privées d'un paragraphe."""
+    parts = re.split(r"(?<=[.!?…])\s+(?=[A-ZÀ-ÖØ-Þ«\"(*_0-9])", text.strip())
+    kept = [p for p in parts
+            if p and not PERSONAL_RE.search(re.sub(r"«[^»]*»|\"[^\"]*\"|`[^`]*`", "", p))
+            and not PRIVATE_RE.search(p)
+            and not CHATTER_RE.match(decoration_strip(p))]
+    return " ".join(kept).strip()
+
+
+# ------------------------------------------------------------------------- parsing
+
+HEADER_RE = re.compile(r"^(?P<pre>[^\w*]*)\*(?P<bold>[^*]+)\*(?P<rest>.*)$")
+
+
+def parse_header(line):
+    """Renvoie (titre, reste) si la ligne est un titre d'actu, sinon None."""
+    s = line.strip()
+    if s.startswith("## "):
+        return s[3:].strip(), ""
+    m = HEADER_RE.match(s)
+    if not m or len(m.group("pre")) > 4:
+        return None
+    bold, rest = m.group("bold").strip(), m.group("rest").strip()
+    if OPINION_RE.match(decoration_strip(bold)):
+        return None
+    if bold.endswith(":") and len(rest) > 40:
+        return (m.group("pre") + bold.rstrip(" :")).strip(), rest
+    if len(rest) > 60:
+        return None
+    return (m.group("pre") + bold + (" " + rest if rest else "")).strip(), ""
+
+
+def parse(text):
+    """Découpe le texte en actus : liste de dicts {titre, paras, liens}."""
+    lines = text.replace("\r\n", "\n").split("\n")
+    # Front-matter Markdown éventuel
+    if lines and lines[0].strip() == "---":
+        try:
+            end = lines.index("---", 1)
+            lines = lines[end + 1:]
+        except ValueError:
+            pass
+    # Préambule avant le titre « Veille du … »
+    for i, line in enumerate(lines):
+        if re.search(r"veille du", line, re.IGNORECASE) and (
+                line.lstrip().startswith(("#", "*", "🛰")) or "🛰" in line):
+            lines = lines[i + 1:]
+            break
+
+    items, cur = [], None
+    for raw in lines:
+        line = raw.rstrip()
+        if line.lstrip().startswith("# "):
+            continue
+        header = parse_header(line)
+        if header:
+            title, rest = header
+            title = re.sub(r"^(\W*?)\d+[.)]\s*", r"\1", title).strip()
+            cur = {"titre": title, "paras": [], "liens": []}
+            items.append(cur)
+            if rest:
+                cur["paras"].append(rest)
+            continue
+        if cur is None or not line.strip():
+            if cur is not None and cur["paras"] and cur["paras"][-1] != "":
+                cur["paras"].append("")
+            continue
+        s = line.strip()
+        if is_bare_url(s):
+            cur["liens"].append(s.strip("<>"))
+            continue
+        md_link = re.fullmatch(r"(?:[^\[]*)\[([^\]]+)\]\((https?://[^)]+)\)(\{[^}]*\})?", s)
+        if md_link and len(s) < len(md_link.group(2)) + 60 and re.match(
+                r"^[^\w]*(source|lien|sources)\b|^\[", s, re.IGNORECASE):
+            cur["liens"].append(md_link.group(2))
+            continue
+        cur["paras"].append(s)
+    return items
+
+
+def bullet_or_para(s):
+    m = re.match(r"^[•\-–]\s+(.*)", s)
+    return ("- ", m.group(1)) if m else ("", s)
+
+
+def render_item(item):
+    title = convert_inline(item["titre"]).replace("**", "")
+    if PRIVATE_RE.search(title):
+        return None
+    blocks, para = [], []
+
+    def flush():
+        if para:
+            blocks.append(" ".join(para))
+            para.clear()
+
+    for p in item["paras"] + [""]:
+        if not p:
+            flush()
+            continue
+        if OPINION_RE.match(decoration_strip(p)) or CHATTER_RE.match(decoration_strip(p)):
+            flush()
+            continue
+        prefix, body = bullet_or_para(p)
+        body = clean_sentences(body)
+        if not body:
+            continue
+        body = convert_inline(body)
+        if prefix:
+            flush()
+            blocks.append(prefix + body)
+        else:
+            para.append(body)
+    # Les puces consécutives forment une liste
+    out, prev_bullet = [], False
+    for b in blocks:
+        bullet = b.startswith("- ")
+        if out and not (bullet and prev_bullet):
+            out.append("")
+        out.append(b)
+        prev_bullet = bullet
+    links = [u for u in dict.fromkeys(item["liens"]) if not PRIVATE_RE.search(u)]
+    if not out and not links:
+        return None
+    if links:
+        refs = []
+        for i, u in enumerate(links):
+            host = re.sub(r"^www\.", "", u.split("/")[2])
+            label = "Source" if i == 0 else f"Source {i + 1}"
+            refs.append(f"[{label} : {host}]({u})")
+        out += ["", " · ".join(refs), "{ .source-link }"]
+    return "\n".join([f"## {title}", ""] + out)
+
+
+def deduce_tags(text):
+    low = text.lower()
+    # Un tag est retenu s'il revient au moins deux fois (une seule pour arXiv).
+    tags = [t for t, rx in TAG_RULES.items()
+            if len(re.findall(rx, low)) >= (1 if t == "recherche" else 2)]
+    return tags or ["tech"]
+
+
+def build_page(date, text):
+    items = parse(text)
+    rendered = [r for r in (render_item(i) for i in items) if r]
+    if not rendered:
+        raise SystemExit("Aucune actu exploitable trouvée dans le texte fourni.")
+    body = "\n\n".join(rendered)
+    tags = deduce_tags(body)
+    title = f"Veille du {fr_date(date)}"
+    fm = ["---", f"date: {date.isoformat()}", f'title: "{title}"',
+          f'description: "{len(rendered)} actus robotique, embarqué et tech du {fr_date(date, False)}"',
+          "tags:"] + [f"  - {t}" for t in tags] + ["---", ""]
+    return "\n".join(fm + [f"# {title}", "", body, ""]), len(rendered), tags
+
+
+# --------------------------------------------------------------- index & navigation
+
+def read_pages():
+    pages = []
+    for p in sorted(DOCS.glob("[0-9][0-9][0-9][0-9]/[0-9][0-9]/*.md"), reverse=True):
+        m = re.fullmatch(r"(\d{4}-\d{2}-\d{2})\.md", p.name)
+        if not m:
+            continue
+        d = dt.date.fromisoformat(m.group(1))
+        text = p.read_text(encoding="utf-8")
+        heads = re.findall(r"^## (.+)$", text, re.MULTILINE)
+        tags = re.findall(r"^  - (.+)$", text.split("\n---", 1)[0], re.MULTILINE)
+        pages.append({"date": d, "path": p.relative_to(DOCS).as_posix(),
+                      "titres": heads, "tags": tags})
+    return pages
+
+
+def anchors(titles):
+    seen, out = {}, []
+    for t in titles:
+        s = slugify(t)
+        if s in seen:
+            seen[s] += 1
+            s = f"{s}_{seen[s]}"
+        else:
+            seen[s] = 0
+        out.append(s)
+    return out
+
+
+def write_index(pages):
+    lines = ["---", "title: Accueil", "hide:", "  - navigation", "  - toc", "---", "",
+             "# Télémétrie 🛰️", "",
+             "**Le flux quotidien de Rosetta** : chaque matin, une sélection d'actus en "
+             "robotique, électronique embarquée et tech, résumées en quelques phrases "
+             "avec un lien vers la source.", "",
+             "[Archives](archives.md){ .md-button } [Tags](tags.md){ .md-button } "
+             "[⭐ Favoris](favoris.md){ .md-button }", "",
+             "## Dernières veilles", ""]
+    for p in pages[:7]:
+        lines.append(f"### [{fr_date(p['date']).capitalize()}]({p['path']})")
+        lines.append("")
+        for t, a in zip(p["titres"], anchors(p["titres"])):
+            lines.append(f"- [{t}]({p['path']}#{a})")
+        lines.append("")
+    if not pages:
+        lines.append("*Aucune veille publiée pour l'instant.*\n")
+    (DOCS / "index.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_archives(pages):
+    lines = ["---", "title: Archives", "---", "", "# Archives", "",
+             f"{len(pages)} veilles publiées, de la plus récente à la plus ancienne.", ""]
+    month = None
+    for p in pages:
+        key = (p["date"].year, p["date"].month)
+        if key != month:
+            month = key
+            lines += [f"## {MOIS[key[1] - 1].capitalize()} {key[0]}", ""]
+        n = len(p["titres"])
+        lines.append(f"- [{fr_date(p['date']).capitalize()}]({p['path']}) — "
+                     f"{n} actu{'s' if n > 1 else ''}")
+    lines.append("")
+    (DOCS / "archives.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_nav(pages):
+    nav = ["nav:", "  - Accueil: index.md", "  - Archives:", "      - archives.md"]
+    month = None
+    for p in pages:
+        key = (p["date"].year, p["date"].month)
+        if key != month:
+            month = key
+            nav.append(f"      - {MOIS[key[1] - 1].capitalize()} {key[0]}:")
+        d = p["date"]
+        nav.append(f'          - "{JOURS[d.weekday()].capitalize()} {d.day}{"er" if d.day == 1 else ""}": {p["path"]}')
+    nav += ["  - Tags: tags.md", "  - Favoris: favoris.md"]
+    yml = MKDOCS_YML.read_text(encoding="utf-8")
+    new = re.sub(r"# BEGIN NAV\n.*?# END NAV",
+                 "# BEGIN NAV\n" + "\n".join(nav) + "\n# END NAV", yml, flags=re.DOTALL)
+    MKDOCS_YML.write_text(new, encoding="utf-8")
+
+
+def rebuild():
+    pages = read_pages()
+    write_index(pages)
+    write_archives(pages)
+    write_nav(pages)
+    return pages
+
+
+# ------------------------------------------------------------------------------ git
+
+def git(*args, check=True):
+    return subprocess.run(["git", "-C", str(REPO), *args], check=check,
+                          capture_output=True, text=True)
+
+
+def commit_and_push(message, push=True):
+    if git("remote", check=False).stdout.strip() and push:
+        git("pull", "--rebase", "--autostash", "-q", check=False)
+    git("add", "-A", "docs", "mkdocs.yml")
+    if not git("diff", "--cached", "--quiet", check=False).returncode:
+        print("Rien de nouveau à publier (page identique).")
+        return
+    git("commit", "-q", "-m", message)
+    print(f"Commit : {message}")
+    if push:
+        r = git("push", "-q", "origin", "HEAD:main", check=False)
+        if r.returncode:
+            raise SystemExit(f"Échec du push :\n{r.stderr}")
+        print("Poussé sur origin/main.")
+
+
+# ----------------------------------------------------------------------------- main
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    ap.add_argument("date", nargs="?", help="date de la veille, AAAA-MM-JJ")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="affiche la page générée sans rien écrire ni committer")
+    ap.add_argument("--no-push", action="store_true", help="commit local sans push")
+    ap.add_argument("--no-git", action="store_true", help="écrit les fichiers sans git")
+    ap.add_argument("--delete", action="store_true", help="supprime la page de cette date")
+    ap.add_argument("--rebuild", action="store_true",
+                    help="régénère seulement accueil, archives et navigation")
+    a = ap.parse_args()
+
+    if a.rebuild and not a.date:
+        rebuild()
+        print("Index, archives et navigation régénérés.")
+        if not a.no_git and not a.dry_run:
+            commit_and_push("Régénère les index", push=not a.no_push)
+        return
+    if not a.date:
+        ap.error("date requise (AAAA-MM-JJ)")
+    try:
+        date = dt.date.fromisoformat(a.date)
+    except ValueError:
+        ap.error(f"date invalide : {a.date}")
+    target = DOCS / f"{date:%Y}" / f"{date:%m}" / f"{date.isoformat()}.md"
+
+    if a.delete:
+        if a.dry_run:
+            print(f"[dry-run] supprimerait {target.relative_to(REPO)}")
+            return
+        if target.exists():
+            target.unlink()
+            for d in (target.parent, target.parent.parent):
+                if d.is_dir() and not any(d.iterdir()):
+                    d.rmdir()
+        rebuild()
+        if not a.no_git:
+            commit_and_push(f"Retire la veille du {date.isoformat()}", push=not a.no_push)
+        return
+
+    text = sys.stdin.read()
+    if not text.strip():
+        raise SystemExit("Texte de veille vide sur stdin.")
+    page, n, tags = build_page(date, text)
+    if a.dry_run:
+        print(page)
+        print(f"[dry-run] {target.relative_to(REPO)} : {n} actus, tags {', '.join(tags)}",
+              file=sys.stderr)
+        return
+    target.parent.mkdir(parents=True, exist_ok=True)
+    existed = target.exists()
+    target.write_text(page, encoding="utf-8")
+    rebuild()
+    print(f"{'Remplacée' if existed else 'Écrite'} : {target.relative_to(REPO)} "
+          f"({n} actus ; tags : {', '.join(tags)})")
+    if not a.no_git:
+        commit_and_push(f"Veille du {date.isoformat()}", push=not a.no_push)
+
+
+if __name__ == "__main__":
+    main()
