@@ -9,11 +9,11 @@ hide:
 
 
 
-### STM32H7P4/H7P5 : du Cortex-M7 taillé pour le contrôle moteur
+### Latent RL Prior : recycler la simulation pour apprendre avec peu de démos
 
-ST sort deux MCU Cortex-M7 à 520 MHz pensés pour la puissance numérique, le contrôle moteur et l'edge AI. Nouveauté : un « Hardware Signal Processor » (HSP) qui accélère les calculs de traitement du signal, en plus des classiques CORDIC et FMAC ; le H7P5 ajoute un NPU Neural-ART de 85 GOPS. Côté périphériques : 2 timers haute résolution (jusqu'à 24 PWM), 3 timers moteur avancés, 4 ADC 12 bits, 3 CAN FD.
+Idée en deux temps. D'abord, on entraîne en simulation, par apprentissage par renforcement avec accès à l'état exact, un « décodeur d'actions » qui sait déjà bien manipuler. Ensuite, on le gèle et on n'apprend plus que la petite interface qui relie les images de la caméra à ce décodeur. Sur trois tâches simulées, la méthode bat le fine-tuning complet de π0.5 et de GR00T quand les données sont rares, avec jusqu'à 10× moins de démonstrations.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/06/520-mhz-stm32h7p4-stm32h7p5-arm-cortex-m7-mcus-feature-hardware-signal-processor-hsp-optional-neural-art-npu/)
+[Source : arxiv.org](https://arxiv.org/abs/2611.08458)
 { .source-link }
 
 ### Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché
