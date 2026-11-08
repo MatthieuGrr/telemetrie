@@ -5,51 +5,58 @@ hide:
   - toc
 ---
 
-## Samedi 7 novembre 2026
+## Dimanche 8 novembre 2026
 
 
 
-### STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur
+### STM32H7P4/H7P5 : du Cortex-M7 taillé pour le contrôle moteur
 
-ST sort deux MCU pensés pour la commande de moteurs, l'électronique de puissance et l'IA embarquée : un **HSP** (coprocesseur matériel qui accélère les maths et le traitement du signal), des accélérateurs CORDIC et FMAC, 3 timers moteur avancés, jusqu'à 24 sorties PWM haute résolution, 4 ADC 12 bits et 3 bus CAN FD. Le H7P5 ajoute un NPU de 85 GOPS (une puce dédiée aux réseaux de neurones).
+ST sort deux MCU Cortex-M7 à 520 MHz pensés pour la puissance numérique, le contrôle moteur et l'edge AI. Nouveauté : un « Hardware Signal Processor » (HSP) qui accélère les calculs de traitement du signal, en plus des classiques CORDIC et FMAC ; le H7P5 ajoute un NPU Neural-ART de 85 GOPS. Côté périphériques : 2 timers haute résolution (jusqu'à 24 PWM), 3 timers moteur avancés, 4 ADC 12 bits, 3 CAN FD.
 
 [Source : cnx-software.com](https://www.cnx-software.com/2026/11/06/520-mhz-stm32h7p4-stm32h7p5-arm-cortex-m7-mcus-feature-hardware-signal-processor-hsp-optional-neural-art-npu/)
 { .source-link }
 
-### Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31
+### Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché
 
-Une carte minuscule au format « Zero », avec un double cœur RISC-V à 320 MHz (FPU et SIMD), du Wi-Fi 6, du BLE 5.3 et de l'802.15.4 (Thread/Zigbee). Elle a jusqu'à 32 Mo de PSRAM dans la puce et un connecteur 40 broches pour un écran LCD, une carte SD et l'USB 2.0. La prise en charge de la puce dans ESP-IDF reste à vérifier.
+En 2026, des attaquants ont pris la main sur des superviseurs de réfrigération exposés sur Internet (mots de passe par défaut, firmware jamais mis à jour) pour forcer des cycles de dégivrage. Coldframe imite un Danfoss AK-SM 800A ou un Dixell XWEB jusqu'aux en-têtes HTTP, à la version de TLS et au certificat, de façon à tromper les scanners. Il enregistre ensuite les identifiants testés et les CVE exploitées. Le tout tient dans un seul fichier Python, sans dépendance : une bonne leçon concrète de sécurité OT.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/07/waveshare-esp32-s31-zero-a-tiny-esp32-s31-board-with-up-to-32mb-psram-32mb-spi-flash/)
+[Source : github.com](https://github.com/hedgerow-dev/coldframe)
 { .source-link }
 
-### OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d'exemples
+### Un « homelab » à 10 $ sur une clé 4G OpenStick
 
-Les modèles VLA (vision, langage, action) échouent souvent une fois déployés, et les corriger demande d'habitude des dizaines voire des centaines de démonstrations. Ici, le système déduit **pourquoi** une correction a été faite et transforme cette raison en « coût » spatial : une zone à éviter, un geste à privilégier. Avec une poignée de démos, la correction marche aussi sur de nouveaux objets et de nouvelles scènes (6 tâches testées, UT Austin).
+Une clé modem 4G (4× Cortex-A53, 512 Mo de RAM, 4 Go d'eMMC, Wi-Fi, GPS) reflashée sous Debian devient un mini-serveur silencieux. L'auteur y fait tourner AdGuard Home, des conteneurs Podman et un agent IA, et indique la RAM consommée par chaque service. Utile pour voir ce qui tient vraiment dans 450 Mo.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.08462)
+[Source : blog.bosscher.ch](https://blog.bosscher.ch/posts/openstick/)
 { .source-link }
 
-### Tuto : programmer en bare-metal sur PC avec UEFI
+### T3R : alléger un modèle VLA sans le réentraîner
 
-Une série en 5 parties, très bien notée sur Hacker News. Elle montre comment compiler un programme qui démarre directement depuis le firmware UEFI, sans système d'exploitation : outils, édition de liens, partition EFI, clé USB bootable, lecture de fichiers.
+Les modèles VLA (vision-langage-action) traitent des centaines de « tokens » visuels à chaque décision, ce qui coûte cher. T3R retire d'abord les zones d'image inutiles grâce à une segmentation, puis oriente l'attention vers les régions utiles à l'action. Sur LIBERO, 85 % des tokens de la caméra de scène sont supprimés sans perte de réussite, et le gain atteint +7 points quand les objets sont déplacés. La méthode ne demande aucun réentraînement.
 
-[Source : kevinboone.me](https://kevinboone.me/efitest_index.html)
+[Source : arxiv.org](https://arxiv.org/abs/2611.08413)
+{ .source-link }
+
+### Social Humanoid : un humanoïde qui réagit aux mouvements d'un partenaire
+
+Ce travail (CoRL 2026, Berkeley) commande un Unitree G1 (29 degrés de liberté) en deux niveaux. En haut, un modèle génère le mouvement du robot en fonction de celui de l'humain, et l'anticipe même quand l'humain est masqué. En bas, un contrôleur corps entier exécute ce mouvement. Le papier apporte aussi un benchmark de 260 h d'interactions humain-humanoïde.
+
+[Source : von31.github.io](https://von31.github.io/social-humanoid/)
 { .source-link }
 
 ### 💡 Concept du jour : le CORDIC
 
-C'est un algorithme qui calcule sinus, cosinus, arctangente et racines **uniquement avec des additions et des décalages de bits**, sans multiplication : on fait tourner un vecteur par petits angles fixes jusqu'à atteindre l'angle voulu. Câblé en matériel (comme sur ces STM32), il donne un sin/cos en quelques cycles, ce qui est utile en FOC à chaque période PWM pour les transformées de Park et Clarke. C'est ce qui permet de faire tourner une boucle de courant à 20-40 kHz sans saturer le CPU.
+CORDIC est un algorithme qui calcule sinus, cosinus, arctangente ou racine carrée uniquement par additions et décalages de bits, en enchaînant de petites rotations d'angle fixe. Câblé en matériel dans un MCU, il donne sin/cos en quelques cycles. C'est exactement ce dont a besoin une commande vectorielle (FOC) de moteur brushless pour ses transformées de Park, à chaque période PWM, sans charger le CPU.
 
 ## Veilles précédentes
 
+- [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 - [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
 - [Mercredi 4 novembre 2026](2026/11/2026-11-04.md) — 6 actus
 - [Mardi 3 novembre 2026](2026/11/2026-11-03.md) — 7 actus
 - [Lundi 2 novembre 2026](2026/11/2026-11-02.md) — 6 actus
 - [Dimanche 1er novembre 2026](2026/11/2026-11-01.md) — 5 actus
-- [Samedi 31 octobre 2026](2026/10/2026-10-31.md) — 6 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 

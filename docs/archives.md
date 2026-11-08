@@ -6,10 +6,11 @@ hide:
 
 # Archives
 
-13 veilles publiées, de la plus récente à la plus ancienne.
+14 veilles publiées, de la plus récente à la plus ancienne.
 
 ## Novembre 2026
 
+- [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 - [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
