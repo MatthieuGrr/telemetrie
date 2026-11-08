@@ -44,9 +44,9 @@ Ce travail (CoRL 2026, Berkeley) commande un Unitree G1 (29 degrés de liberté)
 [Source : von31.github.io](https://von31.github.io/social-humanoid/)
 { .source-link }
 
-### 💡 Concept du jour : le CORDIC
+### 💡 Concept du jour : la quantification
 
-CORDIC est un algorithme qui calcule sinus, cosinus, arctangente ou racine carrée uniquement par additions et décalages de bits, en enchaînant de petites rotations d'angle fixe. Câblé en matériel dans un MCU, il donne sin/cos en quelques cycles. C'est exactement ce dont a besoin une commande vectorielle (FOC) de moteur brushless pour ses transformées de Park, à chaque période PWM, sans charger le CPU.
+Quantifier un réseau de neurones, c'est stocker ses poids (et parfois ses calculs) sur moins de bits : 8 ou 4 bits entiers au lieu de 16 ou 32 bits flottants. Le modèle devient 2 à 8 fois plus léger et beaucoup plus rapide sur un NPU ou un microcontrôleur, au prix d'une petite perte de précision, que l'on limite en calibrant les plages de valeurs sur quelques exemples. C'est l'une des techniques qui permettent de faire tourner un modèle de robot sur une carte embarquée plutôt que sur un serveur.
 
 ## Veilles précédentes
 
