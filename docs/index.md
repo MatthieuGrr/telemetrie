@@ -5,58 +5,65 @@ hide:
   - toc
 ---
 
-## Dimanche 8 novembre 2026
+## Lundi 9 novembre 2026
 
 
 
-### Latent RL Prior : recycler la simulation pour apprendre avec peu de démos
+### Caméras ZED : l'image reste sur le GPU de bout en bout (ROS 2 Lyrical)
 
-Idée en deux temps. D'abord, on entraîne en simulation, par apprentissage par renforcement avec accès à l'état exact, un « décodeur d'actions » qui sait déjà bien manipuler. Ensuite, on le gèle et on n'apprend plus que la petite interface qui relie les images de la caméra à ce décodeur. Sur trois tâches simulées, la méthode bat le fine-tuning complet de π0.5 et de GR00T quand les données sont rares, avec jusqu'à 10× moins de démonstrations.
+Le wrapper ZED ROS 2 v5.6 exploite le nouveau champ rosidl::Buffer de ROS 2 Lyrical, avec un backend CUDA apporté par NVIDIA et l'OSRA. Images, cartes de profondeur et nuages de points sont publiés directement depuis la mémoire GPU : un abonné accéléré évite l'aller-retour GPU → CPU → sérialisation → GPU. Les messages restent standards (sensor_msgs/Image, PointCloud2), et RViz2, ros2 bag ou un nœud Python reçoivent automatiquement une copie CPU classique. Ça fonctionne avec Fast DDS et rmw_zenoh (v0.10.5 ou plus).
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.08458)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/zed-ros-2-wrapper-5-6-cuda-zero-copy-with-rosidl-buffer-for-ros-2-lyrical-and-isaac-ros-5/59608)
 { .source-link }
 
-### Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché
+### Apple : un modèle IA généraliste pilote le bras sans démonstrations
 
-En 2026, des attaquants ont pris la main sur des superviseurs de réfrigération exposés sur Internet (mots de passe par défaut, firmware jamais mis à jour) pour forcer des cycles de dégivrage. Coldframe imite un Danfoss AK-SM 800A ou un Dixell XWEB jusqu'aux en-têtes HTTP, à la version de TLS et au certificat, de façon à tromper les scanners. Il enregistre ensuite les identifiants testés et les CVE exploitées. Le tout tient dans un seul fichier Python, sans dépendance : une bonne leçon concrète de sécurité OT.
+Une équipe d'Apple (dont Vladlen Koltun) présente AMP1, un « harnais » où un modèle généraliste commande directement le manipulateur et adapte ses actions au fil de la tâche, sans aucune compétence de préhension pré-codée. Résultat annoncé : 85,6 % de réussite sans entraînement spécifique sur RoboLab-120, contre 49 % pour les meilleures politiques VLA, et 104 essais réussis sur 108 sur de vrais robots. L'agent invente ses propres stratégies (chercher un objet caché, se servir d'un objet comme outil, calibrer ses caméras). Vidéos et code sont publiés.
 
-[Source : github.com](https://github.com/hedgerow-dev/coldframe)
+[Source : arxiv.org](https://arxiv.org/abs/2611.09892) · [Source 2 : apple-aiml-research.github.io](https://apple-aiml-research.github.io/ml-amp/)
 { .source-link }
 
-### Un « homelab » à 10 $ sur une clé 4G OpenStick
+### MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source
 
-Une clé modem 4G (4× Cortex-A53, 512 Mo de RAM, 4 Go d'eMMC, Wi-Fi, GPS) reflashée sous Debian devient un mini-serveur silencieux. L'auteur y fait tourner AdGuard Home, des conteneurs Podman et un agent IA, et indique la RAM consommée par chaque service. Utile pour voir ce qui tient vraiment dans 450 Mo.
+NYU et l'Université de Toronto publient MABEL : une base swerve à trois roues, un élévateur, un torse inclinable, une tête stéréo, deux bras 7 DDL dérivés d'OpenArm et deux mains 17 DDL dérivées d'ORCA Hand, téléopéré avec un Apple Vision Pro. Matériel sous CERN-OHL-S, logiciel sous Apache-2.0 (firmware, ROS 2, simulation). Les pièces de la version de base coûtent environ 8 000 $, ce qui reste rare pour un bimanuel mobile complet.
 
-[Source : blog.bosscher.ch](https://blog.bosscher.ch/posts/openstick/)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/mabel-an-open-source-56-dof-bimanual-mobile-robot-from-nyu-and-the-university-of-toronto/59597)
 { .source-link }
 
-### T3R : alléger un modèle VLA sans le réentraîner
+### Compiler ROS 2 avec Bazel : la ROS Central Registry avance
 
-Les modèles VLA (vision-langage-action) traitent des centaines de « tokens » visuels à chaque décision, ce qui coûte cher. T3R retire d'abord les zones d'image inutiles grâce à une segmentation, puis oriente l'attention vers les régions utiles à l'action. Sur LIBERO, 85 % des tokens de la caméra de scène sont supprimés sans perte de réussite, et le gain atteint +7 points quand les objets sont déplacés. La méthode ne demande aucun réentraînement.
+Nouvelle version de la RCR (lyrical.2026-10-05) : un build Bazel communautaire de ROS 2, avec des chaînes d'outils C++, Python et Rust « hermétiques » (le même code donne le même binaire partout). Une grande partie de rosdistro compile déjà, y compris MoveIt, Nav2, rviz2 et Gazebo, sur Linux x86/arm64 et macOS arm64, avec un cache distant fourni par Intrinsic. C'est encore une preuve de concept qui vient compléter colcon et pixi sans les remplacer, et un groupe de travail est en cours de constitution.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.08413)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/build-ros-2-lyrical-with-bazel-new-ros-central-registry-release-and-a-call-for-a-working-group/59532)
 { .source-link }
 
-### Social Humanoid : un humanoïde qui réagit aux mouvements d'un partenaire
+### Trouver où un robot à tendons touche un obstacle, sans capteur
 
-Ce travail (CoRL 2026, Berkeley) commande un Unitree G1 (29 degrés de liberté) en deux niveaux. En haut, un modèle génère le mouvement du robot en fonction de celui de l'humain, et l'anticipe même quand l'humain est masqué. En bas, un contrôleur corps entier exécute ce mouvement. Le papier apporte aussi un benchmark de 260 h d'interactions humain-humanoïde.
+Sur un robot continuum actionné par des câbles, un contact sur le corps est invisible depuis les moteurs. L'auteur démontre que c'est structurel : sans autre information, aucun estimateur ne peut localiser le contact. En revanche, si la géométrie de l'obstacle est connue, un estimateur à horizon glissant (un petit QP résolu à chaque pas) localise le contact à 0,9 mm près, contre 65 mm pour un EKF bien réglé.
 
-[Source : von31.github.io](https://von31.github.io/social-humanoid/)
+[Source : arxiv.org](https://arxiv.org/abs/2611.09877)
 { .source-link }
 
-### 💡 Concept du jour : la quantification
+### En bref
 
-Quantifier un réseau de neurones, c'est stocker ses poids (et parfois ses calculs) sur moins de bits : 8 ou 4 bits entiers au lieu de 16 ou 32 bits flottants. Le modèle devient 2 à 8 fois plus léger et beaucoup plus rapide sur un NPU ou un microcontrôleur, au prix d'une petite perte de précision, que l'on limite en calibrant les plages de valeurs sur quelques exemples. C'est l'une des techniques qui permettent de faire tourner un modèle de robot sur une carte embarquée plutôt que sur un serveur.
+- Gazebo Harmonic et Fortress ne seront plus supportés sur macOS à partir du 10/01/2027 (fin de Qt5 et CVE dans freeimage chez Homebrew). Ubuntu n'est pas concerné.
+
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/early-end-of-support-of-gazebo-harmonic-fortress-on-macos/59605)
+{ .source-link }
+
+### 💡 Concept du jour : le « zero-copy »
+
+Normalement, envoyer une image d'un programme à un autre revient à la copier, souvent plusieurs fois : sérialisation, tampon réseau, désérialisation. Avec le zero-copy, l'émetteur et le récepteur partagent la même zone mémoire, et on ne transmet qu'une référence vers les données. Pour une caméra de profondeur à 30 images/s, ça représente des centaines de Mo/s de copies en moins, donc moins de latence et un CPU moins chargé. C'est ce que fait la ZED (item 1), en gardant les données dans la mémoire du GPU.
 
 ## Veilles précédentes
 
+- [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 - [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
 - [Mercredi 4 novembre 2026](2026/11/2026-11-04.md) — 6 actus
 - [Mardi 3 novembre 2026](2026/11/2026-11-03.md) — 7 actus
 - [Lundi 2 novembre 2026](2026/11/2026-11-02.md) — 6 actus
-- [Dimanche 1er novembre 2026](2026/11/2026-11-01.md) — 5 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
