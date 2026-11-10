@@ -5,65 +5,65 @@ hide:
   - toc
 ---
 
-## Lundi 9 novembre 2026
+## Mardi 10 novembre 2026
 
 
 
-### Caméras ZED : l'image reste sur le GPU de bout en bout (ROS 2 Lyrical)
+### StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages
 
-Le wrapper ZED ROS 2 v5.6 exploite le nouveau champ rosidl::Buffer de ROS 2 Lyrical, avec un backend CUDA apporté par NVIDIA et l'OSRA. Images, cartes de profondeur et nuages de points sont publiés directement depuis la mémoire GPU : un abonné accéléré évite l'aller-retour GPU → CPU → sérialisation → GPU. Les messages restent standards (sensor_msgs/Image, PointCloud2), et RViz2, ros2 bag ou un nœud Python reçoivent automatiquement une copie CPU classique. Ça fonctionne avec Fast DDS et rmw_zenoh (v0.10.5 ou plus).
+Le laboratoire Intelligent Robotics Lab (Univ. Rey Juan Carlos) publie un SLAM 3D open source qui garde une sous-carte par étage. Il détecte et classe les passages d'un étage à l'autre (escalier, rampe, ascenseur). Dans un ascenseur, la caméra ne voit que la cabine : le déplacement vertical est donc mesuré à l'IMU. Un « filtre d'étage » interdit toute fermeture de boucle entre deux étages, ce qui évite de fusionner des étages identiques. Il accepte une caméra RGB-D et/ou un LiDAR 3D, et en option un baromètre et l'odométrie des roues. Une commande `strataslam doctor` vérifie les topics, les fréquences et les TF avant de cartographier. Il tourne sous ROS 2 Jazzy, licence Apache-2.0.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/zed-ros-2-wrapper-5-6-cuda-zero-copy-with-rosidl-buffer-for-ros-2-lyrical-and-isaac-ros-5/59608)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/strataslam-open-source-multi-floor-slam-for-ros-2-stairs-elevators-ramps-identical-floors/59649)
 { .source-link }
 
-### Apple : un modèle IA généraliste pilote le bras sans démonstrations
+### Snaps/Ubuntu Core pour une flotte de robots : retours de terrain
 
-Une équipe d'Apple (dont Vladlen Koltun) présente AMP1, un « harnais » où un modèle généraliste commande directement le manipulateur et adapte ses actions au fil de la tâche, sans aucune compétence de préhension pré-codée. Résultat annoncé : 85,6 % de réussite sans entraînement spécifique sur RoboLab-120, contre 49 % pour les meilleures politiques VLA, et 104 essais réussis sur 108 sur de vrais robots. L'agent invente ses propres stratégies (chercher un objet caché, se servir d'un objet comme outil, calibrer ses caméras). Vidéos et code sont publiés.
+Un fil ROS Discourse demande pourquoi les Snaps restent si rares en production malgré leurs atouts : mises à jour atomiques avec retour arrière automatique, deltas, outillage ROS 2. Un intervenant a déployé un « brand store » privé. Son CI publiait d'abord sur le canal edge, puis beta (machines internes), candidate (partenaires choisis) et enfin stable (flotte en production). Selon lui, le magasin privé est le principal coût, avec une licence par appareil. Un autre intervenant, de Transitive, a renoncé aux Snaps au profit de conteneurs maison créés avec `unshare`, sans sudo, où tout le matériel est accessible par défaut.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.09892) · [Source 2 : apple-aiml-research.github.io](https://apple-aiml-research.github.io/ml-amp/)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/what-happened-to-robot-as-a-snap/59592)
 { .source-link }
 
-### MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source
+### STM32G5 : le successeur du G4 pour la commande de moteurs
 
-NYU et l'Université de Toronto publient MABEL : une base swerve à trois roues, un élévateur, un torse inclinable, une tête stéréo, deux bras 7 DDL dérivés d'OpenArm et deux mains 17 DDL dérivées d'ORCA Hand, téléopéré avec un Apple Vision Pro. Matériel sous CERN-OHL-S, logiciel sous Apache-2.0 (firmware, ROS 2, simulation). Les pièces de la version de base coûtent environ 8 000 $, ce qui reste rare pour un bimanuel mobile complet.
+ST lance un Cortex-M33 à 280 MHz, soit environ deux fois les performances du STM32G4. Il intègre un timer haute résolution (HRTIM) de 111 ps avec jusqu'à 12 sorties PWM, des ADC 12 bits à 5 Msps, des interfaces de codeur, des accélérateurs CORDIC/FMAC et un petit réseau logique programmable de 16 éléments. Côté sécurité, il offre TrustZone, le démarrage sécurisé et la cryptographie post-quantique. Ses cibles : onduleurs, chargeurs de VE, robotique.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/mabel-an-open-source-56-dof-bimanual-mobile-robot-from-nyu-and-the-university-of-toronto/59597)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/10/280-mhz-stmicro-stm32g5-cortex-m33-mixed-signal-mcu-targets-digital-power-and-motor-control-applications/)
 { .source-link }
 
-### Compiler ROS 2 avec Bazel : la ROS Central Registry avance
+### XIAO STM32C5 : deux CAN FD sur une carte format timbre
 
-Nouvelle version de la RCR (lyrical.2026-10-05) : un build Bazel communautaire de ROS 2, avec des chaînes d'outils C++, Python et Rust « hermétiques » (le même code donne le même binaire partout). Une grande partie de rosdistro compile déjà, y compris MoveIt, Nav2, rviz2 et Gazebo, sur Linux x86/arm64 et macOS arm64, avec un cache distant fourni par Intrinsic. C'est encore une preuve de concept qui vient compléter colcon et pixi sans les remplacer, et un groupe de travail est en cours de constitution.
+Seeed sort une carte XIAO à STM32C5 avec deux contrôleurs CAN FD et une IMU 6 axes à chauffage programmable. Chauffer l'IMU à température constante limite la dérive thermique des gyroscopes. C'est un format pratique pour un nœud capteur sur un bus CAN de robot.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/build-ros-2-lyrical-with-bazel-new-ros-central-registry-release-and-a-call-for-a-working-group/59532)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/09/seeed-studio-xiao-stm32c5-development-board-features-dual-can-fd-and-a-6-axis-imu-with-programmable-heating/)
 { .source-link }
 
-### Trouver où un robot à tendons touche un obstacle, sans capteur
+### ArmedAgent : quand un agent de code pilote un bras
 
-Sur un robot continuum actionné par des câbles, un contact sur le corps est invisible depuis les moteurs. L'auteur démontre que c'est structurel : sans autre information, aucun estimateur ne peut localiser le contact. En revanche, si la géométrie de l'obstacle est connue, un estimateur à horizon glissant (un petit QP résolu à chaque pas) localise le contact à 0,9 mm près, contre 65 mm pour un EKF bien réglé.
+Les modèles de pointe peuvent désormais piloter un bras robotique en écrivant du code, sans démonstrations. Ce banc d'essai (36 tâches, simulation validée sur un vrai bras) mesure deux risques. Le premier est l'usage malveillant. Le second est l'injection de prompt indirecte : une consigne cachée dans une page web ou un e-mail lu par l'agent se traduit en mouvement physique. Les auteurs relèvent des risques importants sur les systèmes actuels.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.09877)
+[Source : arxiv.org](https://arxiv.org/abs/2611.11438)
 { .source-link }
 
-### En bref
+### FLAVOR : explorer loin sans saturer la mémoire
 
-- Gazebo Harmonic et Fortress ne seront plus supportés sur macOS à partir du 10/01/2027 (fin de Qt5 et CVE dans freeimage chez Homebrew). Ubuntu n'est pas concerné.
+Ce travail concerne l'exploration 3D par drone. Le système ne garde une carte dense que localement, autour du robot. Le reste est conservé sous une forme compacte : les frontières non explorées deviennent des « tâches en attente » rattachées à des points d'odométrie, reliés par un graphe topologique. Résultat : une empreinte mémoire réduite de 62 à 93 % sur le terrain (forêt, chantier) par rapport à un ikd-tree.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/early-end-of-support-of-gazebo-harmonic-fortress-on-macos/59605)
+[Source : arxiv.org](https://arxiv.org/abs/2611.11489)
 { .source-link }
 
-### 💡 Concept du jour : le « zero-copy »
+### 💡 Concept du jour : la fermeture de boucle
 
-Normalement, envoyer une image d'un programme à un autre revient à la copier, souvent plusieurs fois : sérialisation, tampon réseau, désérialisation. Avec le zero-copy, l'émetteur et le récepteur partagent la même zone mémoire, et on ne transmet qu'une référence vers les données. Pour une caméra de profondeur à 30 images/s, ça représente des centaines de Mo/s de copies en moins, donc moins de latence et un CPU moins chargé. C'est ce que fait la ZED (item 1), en gardant les données dans la mémoire du GPU.
+Un SLAM accumule de petites erreurs en avançant. Quand le robot reconnaît un lieu déjà vu, il « ferme la boucle » : il ajoute une contrainte entre la pose actuelle et l'ancienne, puis corrige toute la trajectoire d'un coup. C'est puissant mais risqué. Une fausse reconnaissance (deux couloirs identiques, deux étages semblables) tord toute la carte. D'où les garde-fous, comme le filtre d'étage de StrataSLAM.
 
 ## Veilles précédentes
 
+- [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
 - [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 - [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
 - [Mercredi 4 novembre 2026](2026/11/2026-11-04.md) — 6 actus
 - [Mardi 3 novembre 2026](2026/11/2026-11-03.md) — 7 actus
-- [Lundi 2 novembre 2026](2026/11/2026-11-02.md) — 6 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
