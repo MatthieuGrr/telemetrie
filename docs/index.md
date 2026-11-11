@@ -5,65 +5,60 @@ hide:
   - toc
 ---
 
-## Mardi 10 novembre 2026
+## Mercredi 11 novembre 2026
 
 
 
-### StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages
+### Mémoire de robot ou simple horloge ?
 
-Le laboratoire Intelligent Robotics Lab (Univ. Rey Juan Carlos) publie un SLAM 3D open source qui garde une sous-carte par étage. Il détecte et classe les passages d'un étage à l'autre (escalier, rampe, ascenseur). Dans un ascenseur, la caméra ne voit que la cabine : le déplacement vertical est donc mesuré à l'IMU. Un « filtre d'étage » interdit toute fermeture de boucle entre deux étages, ce qui évite de fusionner des étages identiques. Il accepte une caméra RGB-D et/ou un LiDAR 3D, et en option un baromètre et l'odométrie des roues. Une commande `strataslam doctor` vérifie les topics, les fréquences et les TF avant de cartographier. Il tourne sous ROS 2 Jazzy, licence Apache-2.0.
+Des chercheurs montrent que certains modèles VLA (vision-langage-action) « à mémoire » remplissent celle-ci en échantillonnant les images au fil du temps. Résultat : si le robot marque une pause ou agite le poignet, la politique compte ce temps comme du travail fait et s'arrête trop tôt (succès de 47 à 16 sur 50 pour une tâche de comptage). Ré-entraîner avec des pauses n'y change rien ; indexer la mémoire par événements plutôt que par pas de temps récupère au moins la moitié des pertes, sans ré-entraînement.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/strataslam-open-source-multi-floor-slam-for-ros-2-stairs-elevators-ramps-identical-floors/59649)
+[Source : arxiv.org](https://arxiv.org/abs/2611.14488)
 { .source-link }
 
-### Snaps/Ubuntu Core pour une flotte de robots : retours de terrain
+### BEHAVIOR Challenge 2026 : un VLA pour 100 tâches, plus un agent qui code
 
-Un fil ROS Discourse demande pourquoi les Snaps restent si rares en production malgré leurs atouts : mises à jour atomiques avec retour arrière automatique, deltas, outillage ROS 2. Un intervenant a déployé un « brand store » privé. Son CI publiait d'abord sur le canal edge, puis beta (machines internes), candidate (partenaires choisis) et enfin stable (flotte en production). Selon lui, le magasin privé est le principal coût, avec une licence par appareil. Un autre intervenant, de Transitive, a renoncé aux Snaps au profit de conteneurs maison créés avec `unshare`, sans sudo, où tout le matériel est accessible par défaut.
+Retour d'expérience détaillé d'une équipe indépendante (9e) sur 100 tâches ménagères longues dans le simulateur OmniGibson : un seul modèle VLA (dérivé de π0.5) entraîné plus longtemps, 211 M d'images de démonstration. Sur 14 tâches, un agent de code pilotant le robot via des outils d'observation et de mouvement fait bien mieux que la politique apprise (0,64 contre 0,11). Code et poids sont publiés.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/what-happened-to-robot-as-a-snap/59592)
+[Source : arxiv.org](https://arxiv.org/abs/2611.14432)
 { .source-link }
 
-### STM32G5 : le successeur du G4 pour la commande de moteurs
+### MCAP (format des rosbag2) : écritures jusqu'à 8× plus rapides
 
-ST lance un Cortex-M33 à 280 MHz, soit environ deux fois les performances du STM32G4. Il intègre un timer haute résolution (HRTIM) de 111 ps avec jusqu'à 12 sorties PWM, des ADC 12 bits à 5 Msps, des interfaces de codeur, des accélérateurs CORDIC/FMAC et un petit réseau logique programmable de 16 éléments. Côté sécurité, il offre TrustZone, le démarrage sécurisé et la cryptographie post-quantique. Ses cibles : onduleurs, chargeurs de VE, robotique.
+Foxglove a d'abord construit un banc de mesure commun aux 5 bibliothèques (C++, Rust, Go, Python, TS), avec des données identiques et des sommes de contrôle, avant d'optimiser. Gains : LZ4 en mode rapide par défaut (6-8× en C++ pour des fichiers 15-30 % plus gros), CRC calculés par lots avec SIMD, contexte zstd réutilisé. rosbag2 sur Rolling en profite déjà.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/10/280-mhz-stmicro-stm32g5-cortex-m33-mixed-signal-mcu-targets-digital-power-and-motor-control-applications/)
+[Source : foxglove.dev](https://foxglove.dev/blog/measuring-and-improving-mcap-performance)
 { .source-link }
 
-### XIAO STM32C5 : deux CAN FD sur une carte format timbre
+### LiveKit Portal : un graphe ROS 2 joignable à distance sans exposer DDS
 
-Seeed sort une carte XIAO à STM32C5 avec deux contrôleurs CAN FD et une IMU 6 axes à chauffage programmable. Chauffer l'IMU à température constante limite la dérive thermique des gyroscopes. C'est un format pratique pour un nœud capteur sur un bus CAN de robot.
+Un nœud ROS 2 autonome qui transporte des topics, services et flux vidéo sur WebRTC via LiveKit. DDS reste confiné au réseau local du robot ; un fichier YAML liste ce qui sort. Entre deux graphes ROS, les messages restent en CDR natif ; vers un navigateur ou un service cloud, ils passent en JSON avec schéma. Usages visés : téléopération, inférence déportée, supervision de flotte.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/09/seeed-studio-xiao-stm32c5-development-board-features-dual-can-fd-and-a-6-axis-imu-with-programmable-heating/)
+[Source : livekit.com](https://livekit.com/blog/introducing-livekit-ros-portal)
 { .source-link }
 
-### ArmedAgent : quand un agent de code pilote un bras
+### Renesas RZ/T2N : Linux + temps réel + EtherCAT sur une puce
 
-Les modèles de pointe peuvent désormais piloter un bras robotique en écrivant du code, sans démonstrations. Ce banc d'essai (36 tâches, simulation validée sur un vrai bras) mesure deux risques. Le premier est l'usage malveillant. Le second est l'injection de prompt indirecte : une consigne cachée dans une page web ou un e-mail lu par l'agent se traduit en mouvement physique. Les auteurs relèvent des risques importants sur les systèmes actuels.
+MPU industriel avec 2 Cortex-A55 (Linux) et 2 Cortex-R52 à 800 MHz (commande temps réel), commande de moteurs jusqu'à 4 axes, 8 interfaces codeur (EnDat, BiSS-C…), accélérateurs sinus/cosinus/arctangente et switch Gigabit TSN avec EtherCAT et PROFINET. Il vise les bras robotisés et les variateurs multi-axes en remplaçant plusieurs processeurs par un seul.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.11438)
+**En bref** : l'OSRF (Gazebo, ROS) impose désormais de déclarer l'usage d'IA générative dans les pull requests et précise les motifs de rejet du code généré bâclé.
+
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/11/renesas-rz-t2n-cortex-a55-r52-industrial-mpu-supports-four-axis-motor-control-tsn-ethernet-ethercat/) · [Source 2 : discourse.openrobotics.org](https://discourse.openrobotics.org/t/osrf-adopts-an-updated-policy-on-use-of-genai-llm-tools-in-contributions/59685)
 { .source-link }
 
-### FLAVOR : explorer loin sans saturer la mémoire
+### 💡 Concept du jour : le TSN (Time-Sensitive Networking)
 
-Ce travail concerne l'exploration 3D par drone. Le système ne garde une carte dense que localement, autour du robot. Le reste est conservé sous une forme compacte : les frontières non explorées deviennent des « tâches en attente » rattachées à des points d'odométrie, reliés par un graphe topologique. Résultat : une empreinte mémoire réduite de 62 à 93 % sur le terrain (forêt, chantier) par rapport à un ikd-tree.
-
-[Source : arxiv.org](https://arxiv.org/abs/2611.11489)
-{ .source-link }
-
-### 💡 Concept du jour : la fermeture de boucle
-
-Un SLAM accumule de petites erreurs en avançant. Quand le robot reconnaît un lieu déjà vu, il « ferme la boucle » : il ajoute une contrainte entre la pose actuelle et l'ancienne, puis corrige toute la trajectoire d'un coup. C'est puissant mais risqué. Une fausse reconnaissance (deux couloirs identiques, deux étages semblables) tord toute la carte. D'où les garde-fous, comme le filtre d'étage de StrataSLAM.
+Ethernet classique fait du « au mieux » : une trame urgente peut attendre derrière un gros transfert. Le TSN est un ensemble de normes IEEE 802.1 qui ajoute à Ethernet une horloge commune (PTP, IEEE 1588), des créneaux de temps réservés pour le trafic critique (802.1Qbv) et la préemption de trames (une grosse trame est coupée pour laisser passer une petite). On obtient une latence bornée et garantie, ce qui permet de faire passer sur le même câble la commande d'axes et les données ordinaires, comme sur le RZ/T2N ci-dessus.
 
 ## Veilles précédentes
 
+- [Mardi 10 novembre 2026](2026/11/2026-11-10.md) — 7 actus
 - [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
 - [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 - [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
 - [Mercredi 4 novembre 2026](2026/11/2026-11-04.md) — 6 actus
-- [Mardi 3 novembre 2026](2026/11/2026-11-03.md) — 7 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
