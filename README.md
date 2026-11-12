@@ -4,7 +4,7 @@
 (robotique, électronique embarquée, tech), une page par jour avec des résumés courts
 et les liens vers les sources.
 
-**Site :** https://matthieugrr.github.io/telemetrie/
+**Site :** https://telemetrie.georger.ovh/
 
 ## Organisation
 
