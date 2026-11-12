@@ -5,60 +5,58 @@ hide:
   - toc
 ---
 
-## Mercredi 11 novembre 2026
+## Jeudi 12 novembre 2026
 
 
 
-### Mémoire de robot ou simple horloge ?
+### LabWired : tester son firmware sans carte, en CI
 
-Des chercheurs montrent que certains modèles VLA (vision-langage-action) « à mémoire » remplissent celle-ci en échantillonnant les images au fil du temps. Résultat : si le robot marque une pause ou agite le poignet, la politique compte ce temps comme du travail fait et s'arrête trop tôt (succès de 47 à 16 sur 50 pour une tâche de comptage). Ré-entraîner avec des pauses n'y change rien ; indexer la mémoire par événements plutôt que par pas de temps récupère au moins la moitié des pertes, sans ré-entraînement.
+LabWired est un simulateur open source (MIT, en Rust) qui exécute le binaire compilé sur un modèle de carte complète : cœur Cortex-M0+/M3/M4/M7/M33, RISC-V ou Xtensa (ESP32), mais aussi périphériques et composants externes (capteurs, écrans). On peut vérifier les trames I2C/SPI, la sortie UART ou les registres, et lancer des tests Unity via PlatformIO sans sonde ni carte (3 tests en 1,2 s dans l'exemple). Point honnête : un « registre de fidélité » documente où le modèle simplifie le vrai matériel (STM32L476, RP2040, nRF52840, ESP32…). Le cœur est libre, l'interface web et le service hébergé sont payants.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.14488)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/10/labwired-allows-engineers-to-test-compiled-firmware-on-simulated-mcu-boards-cpu-and-peripherals/) · [Source 2 : github.com](https://github.com/w1ne/labwired-core)
 { .source-link }
 
-### BEHAVIOR Challenge 2026 : un VLA pour 100 tâches, plus un agent qui code
+### WeAct Logic Analyzer V2 : 16 voies à 200 MHz pour ~10 $
 
-Retour d'expérience détaillé d'une équipe indépendante (9e) sur 100 tâches ménagères longues dans le simulateur OmniGibson : un seul modèle VLA (dérivé de π0.5) entraîné plus longtemps, 211 M d'images de démonstration. Sur 14 tâches, un agent de code pilotant le robot via des outils d'observation et de mouvement fait bien mieux que la politique apprise (0,64 contre 0,11). Code et poids sont publiés.
+Petite carte basée sur le WCH CH32H417 (RISC-V jusqu'à 400 MHz) avec un port USB 3.0 : 16 voies échantillonnées jusqu'à 200 MHz en USB 3.0 (20 MHz en USB 2.0), entrées 1,0-3,3 V, compatible avec un fork de sigrok/PulseView et ses 132 décodeurs (UART, I2C, SPI, CAN…). Un appui de 2 s sur le bouton bascule vers un second firmware : 3 ports série + sonde SWD CMSIS-DAP v2. Un troisième emplacement accueille son propre firmware.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.14432)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/12/weact-logic-analyzer-v2-a-10-usb-3-0-logic-analyzer-board-compatible-with-sigrok-pulseview/)
 { .source-link }
 
-### MCAP (format des rosbag2) : écritures jusqu'à 8× plus rapides
+### Détecter un robot qui « tourne en rond » dans sa recherche d'information
 
-Foxglove a d'abord construit un banc de mesure commun aux 5 bibliothèques (C++, Rust, Go, Python, TS), avec des données identiques et des sommes de contrôle, avant d'optimiser. Gains : LZ4 en mode rapide par défaut (6-8× en C++ pour des fichiers 15-30 % plus gros), CRC calculés par lots avec SIMD, contexte zstd réutilisé. rosbag2 sur Rolling en profite déjà.
+Un papier propose un moniteur qui ne juge pas le mouvement du robot mais le **processus de collecte d'information** : à partir des observations, il émet en continu deux signaux, la progression vers les exigences encore non résolues et une « friction » quand de nouvelles observations n'apportent presque rien. Testé sans réglage sur huit domaines (exploration de grille, manipulation, dialogue de recherche et sauvetage…), le canal de friction distingue la stagnation de l'exploration utile avant la fin de la tâche. L'idée rejoint la supervision de flotte : un système peut être « vivant » sans avancer.
 
-[Source : foxglove.dev](https://foxglove.dev/blog/measuring-and-improving-mcap-performance)
+[Source : arxiv.org](https://arxiv.org/abs/2611.14111)
 { .source-link }
 
-### LiveKit Portal : un graphe ROS 2 joignable à distance sans exposer DDS
+### spot_basic : une API Python simple pour Spot sous ROS 2
 
-Un nœud ROS 2 autonome qui transporte des topics, services et flux vidéo sur WebRTC via LiveKit. DDS reste confiné au réseau local du robot ; un fichier YAML liste ce qui sort. Entre deux graphes ROS, les messages restent en CDR natif ; vers un navigateur ou un service cloud, ils passent en JSON avec schéma. Usages visés : téléopération, inférence déportée, supervision de flotte.
+Le RAI Institute publie spot_basic, une couche au-dessus de son driver spot_ros2 qui cache la plomberie des topics, services et actions. Locomotion, bras, pince, transformées et caméras passent par une API cohérente, synchrone ou asynchrone, avec un « leash » qui encadre la prise de contrôle du robot. Un bon exemple de conception d'API haut niveau au-dessus d'un driver ROS 2 bavard.
 
-[Source : livekit.com](https://livekit.com/blog/introducing-livekit-ros-portal)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/introducing-spot-basic-a-simpler-interface-for-spot-in-ros-2/59696) · [Source 2 : github.com](https://github.com/rai-opensource/spot_basic)
 { .source-link }
 
-### Renesas RZ/T2N : Linux + temps réel + EtherCAT sur une puce
+### Retour d'expérience : la fausse alerte incendie qui a failli noyer un datacenter
 
-MPU industriel avec 2 Cortex-A55 (Linux) et 2 Cortex-R52 à 800 MHz (commande temps réel), commande de moteurs jusqu'à 4 axes, 8 interfaces codeur (EnDat, BiSS-C…), accélérateurs sinus/cosinus/arctangente et switch Gigabit TSN avec EtherCAT et PROFINET. Il vise les bras robotisés et les variateurs multi-axes en remplaçant plusieurs processeurs par un seul.
+Un ancien de l'équipe systèmes de Jane Street raconte : de la poussière de travaux déclenche le détecteur de fumée, qui met les sprinklers sous pression **et** coupe la climatisation par sécurité. La température monte vers le seuil de déclenchement des têtes ; il faut débrancher toute la salle à la main (arrêt à 143 °F, soit environ 62 °C). La leçon d'observabilité : aucun serveur n'alertait seul, mais la hausse simultanée sur tout le parc trahissait une panne de refroidissement. Ils ont donc ajouté une alerte sur la température **moyenne** de la flotte, plus fiable que la télémétrie des équipements du bâtiment.
 
-**En bref** : l'OSRF (Gazebo, ROS) impose désormais de déclarer l'usage d'IA générative dans les pull requests et précise les motifs de rejet du code généré bâclé.
-
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/11/renesas-rz-t2n-cortex-a55-r52-industrial-mpu-supports-four-axis-motor-control-tsn-ethernet-ethercat/) · [Source 2 : discourse.openrobotics.org](https://discourse.openrobotics.org/t/osrf-adopts-an-updated-policy-on-use-of-genai-llm-tools-in-contributions/59685)
+[Source : michael.bacarella.com](https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/)
 { .source-link }
 
-### 💡 Concept du jour : le TSN (Time-Sensitive Networking)
+### 💡 Concept du jour : le test SIL (Software-in-the-Loop)
 
-Ethernet classique fait du « au mieux » : une trame urgente peut attendre derrière un gros transfert. Le TSN est un ensemble de normes IEEE 802.1 qui ajoute à Ethernet une horloge commune (PTP, IEEE 1588), des créneaux de temps réservés pour le trafic critique (802.1Qbv) et la préemption de trames (une grosse trame est coupée pour laisser passer une petite). On obtient une latence bornée et garantie, ce qui permet de faire passer sur le même câble la commande d'axes et les données ordinaires, comme sur le RZ/T2N ci-dessus.
+Tester un logiciel embarqué « dans la boucle » consiste à le faire tourner face à un environnement qui lui répond. En **HIL** (Hardware-in-the-Loop), le vrai microcontrôleur est branché à un banc qui simule capteurs et actionneurs : très réaliste, mais coûteux et lent. En **SIL**, le firmware s'exécute sur un modèle logiciel de la puce et de son environnement, comme avec LabWired : moins fidèle, mais gratuit à dupliquer et assez rapide pour chaque commit en CI. On combine en général les deux : beaucoup de SIL pour attraper vite les régressions, un peu de HIL pour valider ce que le modèle simplifie.
 
 ## Veilles précédentes
 
+- [Mercredi 11 novembre 2026](2026/11/2026-11-11.md) — 6 actus
 - [Mardi 10 novembre 2026](2026/11/2026-11-10.md) — 7 actus
 - [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
 - [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 - [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
-- [Mercredi 4 novembre 2026](2026/11/2026-11-04.md) — 6 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
