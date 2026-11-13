@@ -5,58 +5,58 @@ hide:
   - toc
 ---
 
-## Jeudi 12 novembre 2026
+## Vendredi 13 novembre 2026
 
 
 
-### LabWired : tester son firmware sans carte, en CI
+### ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds
 
-LabWired est un simulateur open source (MIT, en Rust) qui exécute le binaire compilé sur un modèle de carte complète : cœur Cortex-M0+/M3/M4/M7/M33, RISC-V ou Xtensa (ESP32), mais aussi périphériques et composants externes (capteurs, écrans). On peut vérifier les trames I2C/SPI, la sortie UART ou les registres, et lancer des tests Unity via PlatformIO sans sonde ni carte (3 tests en 1,2 s dans l'exemple). Point honnête : un « registre de fidélité » documente où le modèle simplifie le vrai matériel (STM32L476, RP2040, nRF52840, ESP32…). Le cœur est libre, l'interface web et le service hébergé sont payants.
+Un mainteneur de ROS 2 publie ros2ebpf : des sondes eBPF accrochées aux fonctions de `librmw_implementation.so` (`rmw_publish`, `rmw_take_with_info`…) comptent chaque publication et chaque réception dans le noyau. Un petit démon exporte ces compteurs vers Prometheus : débits par topic, indicateurs de pertes, histogrammes d'intervalles entre publications. Pas de recompilation, pas de redémarrage, pas de `LD_PRELOAD`, et ça marche sur les paquets Debian de Humble à Rolling, quel que soit le RMW, même dans des conteneurs. Le démon se lance à la demande, car chaque appel sondé coûte un peu.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/10/labwired-allows-engineers-to-test-compiled-firmware-on-simulated-mcu-boards-cpu-and-peripherals/) · [Source 2 : github.com](https://github.com/w1ne/labwired-core)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/ros2ebpf-topic-service-rates-and-drop-indicators-for-every-ros-2-process-on-a-host-via-ebpf-no-rebuild-or-restart/59744) · [Source 2 : github.com](https://github.com/fujitatomoya/ros2ebpf)
 { .source-link }
 
-### WeAct Logic Analyzer V2 : 16 voies à 200 MHz pour ~10 $
+### PLEM : des servovariateurs EtherCAT sous ros2_control sur Jetson
 
-Petite carte basée sur le WCH CH32H417 (RISC-V jusqu'à 400 MHz) avec un port USB 3.0 : 16 voies échantillonnées jusqu'à 200 MHz en USB 3.0 (20 MHz en USB 2.0), entrées 1,0-3,3 V, compatible avec un fork de sigrok/PulseView et ses 132 décodeurs (UART, I2C, SPI, CAN…). Un appui de 2 s sur le bouton bascule vers un second firmware : 3 ports série + sonde SWD CMSIS-DAP v2. Un troisième emplacement accueille son propre firmware.
+WIM publie en Apache-2.0 la couche variateurs de PLEM : un fichier YAML par bus, vérifié par `plem drive check` avant tout mouvement, puis une boucle temps réel à 1 kHz (PREEMPT_RT, maître IgH) sous ros2_control. Elle gère jusqu'à 8 axes CiA 402 en position, vitesse ou couple. Leur retour d'expérience est le plus instructif : l'option par défaut de la Jetson qui verrouille l'horloge PTP sur le TSC (nvpps) faisait dériver la synchronisation EtherCAT jusqu'à 328 µs toutes les 110 s. Une fois l'option désactivée, la dérive tombe à 3,5 µs.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/12/weact-logic-analyzer-v2-a-10-usb-3-0-logic-analyzer-board-compatible-with-sigrok-pulseview/)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/plem-drive-layer-v0-11-0-ethercat-cia-402-drives-under-ros2-control-on-jetson-agx-orin-jazzy/59740) · [Source 2 : wimcorp.co.kr](https://www.wimcorp.co.kr/tech/en/posts/embedded/jetson-nvpps-ethercat-dc-drift/)
 { .source-link }
 
-### Détecter un robot qui « tourne en rond » dans sa recherche d'information
+### RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5
 
-Un papier propose un moniteur qui ne juge pas le mouvement du robot mais le **processus de collecte d'information** : à partir des observations, il émet en continu deux signaux, la progression vers les exigences encore non résolues et une « friction » quand de nouvelles observations n'apportent presque rien. Testé sans réglage sur huit domaines (exploration de grille, manipulation, dialogue de recherche et sauvetage…), le canal de friction distingue la stagnation de l'exploration utile avant la fin de la tâche. L'idée rejoint la supervision de flotte : un système peut être « vivant » sans avancer.
+Un banc d'essai mesure le temps par image, la mémoire, le CPU et la température des deux SLAM RGB-D sur Pi 5. Avec un traitement à chaque image, RTAB-Map met 150 à 462 ms par image, contre 26 à 62 ms pour ORB-SLAM3. Le coût vient du graphe de poses, qui grossit sans limite par défaut. Côté méthode, l'erreur de trajectoire varie jusqu'à 27 % entre deux exécutions identiques : une seule exécution ne suffit pas à départager deux SLAM. Et une exécution qui perd le suivi affiche une erreur plus faible sur les poses qui lui restent.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.14111)
+[Source : arxiv.org](https://arxiv.org/abs/2611.16472)
 { .source-link }
 
-### spot_basic : une API Python simple pour Spot sous ROS 2
+### Reins : des LLM généralistes pilotent un robot à deux bras
 
-Le RAI Institute publie spot_basic, une couche au-dessus de son driver spot_ros2 qui cache la plomberie des topics, services et actions. Locomotion, bras, pince, transformées et caméras passent par une API cohérente, synchrone ou asynchrone, avec un « leash » qui encadre la prise de contrôle du robot. Un bon exemple de conception d'API haut niveau au-dessus d'un driver ROS 2 bavard.
+Ce harnais donne à un modèle du commerce des outils de perception 3D et des actions atomiques qui signalent contact et prise. Chaque action porte une condition à vérifier, et l'enchaînement s'arrête à la première qui échoue. Une seconde instance du modèle surveille les caméras en continu et décrit ce qui a changé pendant que la première réfléchit. Sans code propre à la tâche, le taux de réussite atteint 88 % sur cinq tâches réelles de longue durée. Sans le harnais, le même modèle échoue à chaque partie de bonneteau.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/introducing-spot-basic-a-simpler-interface-for-spot-in-ros-2/59696) · [Source 2 : github.com](https://github.com/rai-opensource/spot_basic)
+[Source : arxiv.org](https://arxiv.org/abs/2611.16632)
 { .source-link }
 
-### Retour d'expérience : la fausse alerte incendie qui a failli noyer un datacenter
+### BlinkMimic : un contrôleur de suivi de mouvement pour humanoïde entraîné en 3,4 minutes
 
-Un ancien de l'équipe systèmes de Jane Street raconte : de la poussière de travaux déclenche le détecteur de fumée, qui met les sprinklers sous pression **et** coupe la climatisation par sécurité. La température monte vers le seuil de déclenchement des têtes ; il faut débrancher toute la salle à la main (arrêt à 143 °F, soit environ 62 °C). La leçon d'observabilité : aucun serveur n'alertait seul, mais la hausse simultanée sur tout le parc trahissait une panne de refroidissement. Ils ont donc ajouté une alerte sur la température **moyenne** de la flotte, plus fiable que la télémétrie des équipements du bâtiment.
+Sur un Unitree G1 simulé, une seule politique apprend à reproduire les 40 séquences de mouvement LAFAN1 en 3,4 minutes sur une RTX 4090, contre plusieurs heures habituellement. L'article décompose le temps d'entraînement en trois termes : coût d'une itération, itérations pour apprendre les mouvements, itérations pour éliminer les derniers échecs. Une ablation montre quel terme chaque astuce réduit, par exemple la capture de toute l'itération en graphe GPU. Le code est publié.
 
-[Source : michael.bacarella.com](https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/)
+[Source : arxiv.org](https://arxiv.org/abs/2611.16422)
 { .source-link }
 
-### 💡 Concept du jour : le test SIL (Software-in-the-Loop)
+### 💡 Concept du jour : l'uprobe eBPF
 
-Tester un logiciel embarqué « dans la boucle » consiste à le faire tourner face à un environnement qui lui répond. En **HIL** (Hardware-in-the-Loop), le vrai microcontrôleur est branché à un banc qui simule capteurs et actionneurs : très réaliste, mais coûteux et lent. En **SIL**, le firmware s'exécute sur un modèle logiciel de la puce et de son environnement, comme avec LabWired : moins fidèle, mais gratuit à dupliquer et assez rapide pour chaque commit en CI. On combine en général les deux : beaucoup de SIL pour attraper vite les régressions, un peu de HIL pour valider ce que le modèle simplifie.
+eBPF permet de charger de petits programmes vérifiés dans le noyau Linux. Une uprobe en est un usage : elle accroche un de ces programmes à l'entrée d'une fonction d'une bibliothèque en espace utilisateur. À chaque appel de cette fonction, dans n'importe quel processus qui charge la bibliothèque, le noyau exécute le programme. Celui-ci incrémente par exemple un compteur dans une table partagée (une « map »). On instrumente ainsi un binaire déjà compilé sans le modifier, ce que fait ros2ebpf. Chaque appel coûte un aller-retour vers le noyau, donc on active l'uprobe pour diagnostiquer, pas en permanence.
 
 ## Veilles précédentes
 
+- [Jeudi 12 novembre 2026](2026/11/2026-11-12.md) — 6 actus
 - [Mercredi 11 novembre 2026](2026/11/2026-11-11.md) — 6 actus
 - [Mardi 10 novembre 2026](2026/11/2026-11-10.md) — 7 actus
 - [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
 - [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 - [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
-- [Jeudi 5 novembre 2026](2026/11/2026-11-05.md) — 7 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
