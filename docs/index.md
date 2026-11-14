@@ -5,58 +5,58 @@ hide:
   - toc
 ---
 
-## Vendredi 13 novembre 2026
+## Samedi 14 novembre 2026
 
 
 
-### ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds
+### RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel
 
-Un mainteneur de ROS 2 publie ros2ebpf : des sondes eBPF accrochées aux fonctions de `librmw_implementation.so` (`rmw_publish`, `rmw_take_with_info`…) comptent chaque publication et chaque réception dans le noyau. Un petit démon exporte ces compteurs vers Prometheus : débits par topic, indicateurs de pertes, histogrammes d'intervalles entre publications. Pas de recompilation, pas de redémarrage, pas de `LD_PRELOAD`, et ça marche sur les paquets Debian de Humble à Rolling, quel que soit le RMW, même dans des conteneurs. Le démon se lance à la demande, car chaque appel sondé coûte un peu.
+Une équipe présente un module d'odométrie visuelle-inertielle monoculaire de 40 × 20 mm, 0,6 W en pointe (3,3–5 V), pensé pour les micro-drones de moins de 250 g. Le point intéressant est le connecteur SH1.0 6 broches : sortie EXPOSURE_OUT, entrée TRIGGER_IN (1,8 V) et UART vers PX4/ArduPilot. Caméra et IMU sont horodatées sur la même horloge au lieu de passer par l'USB. Sur EuRoC, l'erreur relative va de 0,26 % à 0,67 % selon la séquence. L'estimateur embarqué est un EKF avec des points d'intérêt de type ORB. L'auteur demande à la communauté si elle préfère recevoir l'odométrie toute faite ou les données brutes.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/ros2ebpf-topic-service-rates-and-drop-indicators-for-every-ros-2-process-on-a-host-via-ebpf-no-rebuild-or-restart/59744) · [Source 2 : github.com](https://github.com/fujitatomoya/ros2ebpf)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/building-a-15-5g-monocular-vio-module-robobaton-neo-hardware-sync-0-6w-power-and-euroc-benchmarks/59731)
 { .source-link }
 
-### PLEM : des servovariateurs EtherCAT sous ros2_control sur Jetson
+### FlexiTac : la peau tactile open source à 2,5 $ la pièce
 
-WIM publie en Apache-2.0 la couche variateurs de PLEM : un fichier YAML par bus, vérifié par `plem drive check` avant tout mouvement, puis une boucle temps réel à 1 kHz (PREEMPT_RT, maître IgH) sous ros2_control. Elle gère jusqu'à 8 axes CiA 402 en position, vitesse ou couple. Leur retour d'expérience est le plus instructif : l'option par défaut de la Jetson qui verrouille l'horloge PTP sur le TSC (nvpps) faisait dériver la synchronisation EtherCAT jusqu'à 328 µs toutes les 110 s. Une fois l'option désactivée, la dérive tombe à 3,5 µs.
+Présenté à CoRL 2026 par Columbia, FlexiTac est un capteur tactile matriciel souple. La V2 est sur circuit flexible : grille de 2 mm, 32 × 12 taxels, environ 3 minutes de fabrication. La lecture se fait avec une simple Arduino Nano et une carte d'interface. Le projet fournit aussi une simulation tactile dans Isaac Sim.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/plem-drive-layer-v0-11-0-ethercat-cia-402-drives-under-ros2-control-on-jetson-agx-orin-jazzy/59740) · [Source 2 : wimcorp.co.kr](https://www.wimcorp.co.kr/tech/en/posts/embedded/jetson-nvpps-ethercat-dc-drift/)
+[Source : flexitac.github.io](https://flexitac.github.io/)
 { .source-link }
 
-### RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5
+### Berkeley : des agents IA qui programment des cellules robotisées
 
-Un banc d'essai mesure le temps par image, la mémoire, le CPU et la température des deux SLAM RGB-D sur Pi 5. Avec un traitement à chaque image, RTAB-Map met 150 à 462 ms par image, contre 26 à 62 ms pour ORB-SLAM3. Le coût vient du graphe de poses, qui grossit sans limite par défaut. Côté méthode, l'erreur de trajectoire varie jusqu'à 27 % entre deux exécutions identiques : une seule exécution ne suffit pas à départager deux SLAM. Et une exécution qui perd le suivi affiche une erreur plus faible sur les poses qui lui restent.
+UC Berkeley et NVIDIA publient Graph-as-Policy (GaP). Le cadre découpe une tâche en briques (perception, planification de saisie, trajectoire sans collision) que des agents LLM génèrent, assemblent puis testent en simulation. Le résultat reste du code lisible et vérifiable par un ingénieur, pas un réseau opaque. Ils publient aussi VABAR, un banc d'essai de six tâches industrielles (engrenages, insertion et routage de câbles…) construit sur Isaac Lab et Newton.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.16472)
+[Source : therobotreport.com](https://www.therobotreport.com/can-ai-agents-program-industrial-robots-without-training-data-berkeley-says-yes/) · [Source 2 : graph-robots.github.io](https://graph-robots.github.io/gap/)
 { .source-link }
 
-### Reins : des LLM généralistes pilotent un robot à deux bras
+### InneR : rendre l'apprentissage par imitation moins fragile
 
-Ce harnais donne à un modèle du commerce des outils de perception 3D et des actions atomiques qui signalent contact et prise. Chaque action porte une condition à vérifier, et l'enchaînement s'arrête à la première qui échoue. Une seconde instance du modèle surveille les caméras en continu et décrit ce qui a changé pendant que la première réfléchit. Sans code propre à la tâche, le taux de réussite atteint 88 % sur cinq tâches réelles de longue durée. Sans le harnais, le même modèle échoue à chaque partie de bonneteau.
+Ce papier propose de régulariser une politique apprise pour qu'elle réagisse de la même façon à une perturbation, quel que soit l'état voisin où elle survient. Exemple : si déplacer un objet sans rapport ne change rien à un endroit, cela ne doit rien changer juste à côté non plus. La méthode s'ajoute à un pipeline existant sans données supplémentaires. Sur un vrai bras, elle fait passer une diffusion policy de 18 % à 57 % de réussite moyenne.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.16632)
+[Source : arxiv.org](https://arxiv.org/abs/2611.17159)
 { .source-link }
 
-### BlinkMimic : un contrôleur de suivi de mouvement pour humanoïde entraîné en 3,4 minutes
+### KiCad 10 dans le navigateur
 
-Sur un Unitree G1 simulé, une seule politique apprend à reproduire les 40 séquences de mouvement LAFAN1 en 3,4 minutes sur une RTX 4090, contre plusieurs heures habituellement. L'article décompose le temps d'entraînement en trois termes : coût d'une itération, itérations pour apprendre les mouvements, itérations pour éliminer les derniers échecs. Une ablation montre quel terme chaque astuce réduit, par exemple la capture de toute l'itération en graphe GPU. Le code est publié.
+Le projet ZiroEDA, sans lien avec l'équipe KiCad, traduit KiCad 10.0.6 en TypeScript, fichier par fichier. Éditeur de schéma, éditeur de PCB, routeur interactif et ERC/DRC tournent dans un onglet et lisent les projets KiCad normaux, y compris depuis GitHub. Un autre projet porte KiCad sur Android.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.16422)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/10/kicad-10-now-unofficially-runs-in-a-web-browser-or-android/)
 { .source-link }
 
-### 💡 Concept du jour : l'uprobe eBPF
+### 💡 Concept du jour : la synchronisation matérielle capteurs
 
-eBPF permet de charger de petits programmes vérifiés dans le noyau Linux. Une uprobe en est un usage : elle accroche un de ces programmes à l'entrée d'une fonction d'une bibliothèque en espace utilisateur. À chaque appel de cette fonction, dans n'importe quel processus qui charge la bibliothèque, le noyau exécute le programme. Celui-ci incrémente par exemple un compteur dans une table partagée (une « map »). On instrumente ainsi un binaire déjà compilé sans le modifier, ce que fait ros2ebpf. Chaque appel coûte un aller-retour vers le noyau, donc on active l'uprobe pour diagnostiquer, pas en permanence.
+Pour fusionner une image et une mesure d'IMU, il faut savoir exactement à quel instant chacune a été prise. Un horodatage logiciel (à l'arrivée sur l'USB, par exemple) ajoute une latence variable de quelques millisecondes. C'est assez pour fausser un estimateur VIO lors d'un mouvement rapide. La solution matérielle consiste à faire générer un signal par la caméra au début de l'exposition (ou à la déclencher de l'extérieur) et à capturer ce front sur la même horloge que l'IMU. Les deux flux partagent alors une base de temps commune, à la microseconde près.
 
 ## Veilles précédentes
 
+- [Vendredi 13 novembre 2026](2026/11/2026-11-13.md) — 6 actus
 - [Jeudi 12 novembre 2026](2026/11/2026-11-12.md) — 6 actus
 - [Mercredi 11 novembre 2026](2026/11/2026-11-11.md) — 6 actus
 - [Mardi 10 novembre 2026](2026/11/2026-11-10.md) — 7 actus
 - [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
 - [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 - [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
-- [Vendredi 6 novembre 2026](2026/11/2026-11-06.md) — 7 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
