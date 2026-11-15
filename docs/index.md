@@ -5,58 +5,65 @@ hide:
   - toc
 ---
 
-## Samedi 14 novembre 2026
+## Dimanche 15 novembre 2026
 
 
 
-### RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel
+### - FORGE : un humanoïde qui « sent » les forces sans capteur au poignet
 
-Une équipe présente un module d'odométrie visuelle-inertielle monoculaire de 40 × 20 mm, 0,6 W en pointe (3,3–5 V), pensé pour les micro-drones de moins de 250 g. Le point intéressant est le connecteur SH1.0 6 broches : sortie EXPOSURE_OUT, entrée TRIGGER_IN (1,8 V) et UART vers PX4/ArduPilot. Caméra et IMU sont horodatées sur la même horloge au lieu de passer par l'USB. Sur EuRoC, l'erreur relative va de 0,26 % à 0,67 % selon la séquence. L'estimateur embarqué est un EKF avec des points d'intérêt de type ORB. L'auteur demande à la communauté si elle préfère recevoir l'odométrie toute faite ou les données brutes.
+Ce papier propose un contrôleur pour humanoïde qui combine locomotion et manipulation (s'accroupir, soulever une caisse, la serrer). Il n'utilise aucun capteur force/couple au poignet : il estime l'effort appliqué par la main à partir de la proprioception (positions des articulations, couples des asservissements PD du bras), grâce à un observateur de moment corrigé par un petit réseau appris en simulation. Cette estimation sert ensuite à ajuster la cible du poignet pour appliquer la force voulue.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/building-a-15-5g-monocular-vio-module-robobaton-neo-hardware-sync-0-6w-power-and-euroc-benchmarks/59731)
+[Source : arxiv.org](https://arxiv.org/abs/2611.17142)
 { .source-link }
 
-### FlexiTac : la peau tactile open source à 2,5 $ la pièce
+### - Serve Robotics ouvre sa flotte de livraison à une API publique
 
-Présenté à CoRL 2026 par Columbia, FlexiTac est un capteur tactile matriciel souple. La V2 est sur circuit flexible : grille de 2 mm, 32 × 12 taxels, environ 3 minutes de fabrication. La lecture se fait avec une simple Arduino Nano et une carte d'interface. Le projet fournit aussi une simulation tactile dans Isaac Sim.
+Serve, qui exploite plus de 2 000 robots de trottoir aux États-Unis et en Australie, lance un portail développeur : une application, ou même un agent IA, peut demander un enlèvement et une livraison, puis suivre le robot jusqu'au bout. Serve garde le dispatch, le routage, la navigation et la supervision à distance, et un bac à sable permet de tester sans robot réel. C'est un exemple concret de flotte exposée « comme un service cloud » plutôt que vendue comme matériel.
 
-[Source : flexitac.github.io](https://flexitac.github.io/)
+[Source : therobotreport.com](https://www.therobotreport.com/serve-robotics-opens-robot-delivery-network-for-others-to-build-on/)
 { .source-link }
 
-### Berkeley : des agents IA qui programment des cellules robotisées
+### - POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty
 
-UC Berkeley et NVIDIA publient Graph-as-Policy (GaP). Le cadre découpe une tâche en briques (perception, planification de saisie, trajectoire sans collision) que des agents LLM génèrent, assemblent puis testent en simulation. Le résultat reste du code lisible et vérifiable par un ingénieur, pas un réseau opaque. Ils publient aussi VABAR, un banc d'essai de six tâches industrielles (engrenages, insertion et routage de câbles…) construit sur Isaac Lab et Newton.
+Le projet DAVE (simulation de robots sous-marins, sonar multifaisceaux physique) continue sous le nom POSIM 1.0.0, porté par un labo de l'université maritime de Corée. Une surcouche, WWW-POSIM, permet de lancer des simulations depuis un navigateur ou une appli Windows/macOS/Linux, et de générer des mondes à partir de vraies données de bathymétrie et de côtes.
 
-[Source : therobotreport.com](https://www.therobotreport.com/can-ai-agents-program-industrial-robots-without-training-data-berkeley-says-yes/) · [Source 2 : graph-robots.github.io](https://graph-robots.github.io/gap/)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/introducing-posim-project-dave-ported-to-ros-2-lyrical-gazebo-jetty-and-www-posim-web-and-desktop-application-for-windows-linux-and-macos/59759)
 { .source-link }
 
-### InneR : rendre l'apprentissage par imitation moins fragile
+### - Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS
 
-Ce papier propose de régulariser une politique apprise pour qu'elle réagisse de la même façon à une perturbation, quel que soit l'état voisin où elle survient. Exemple : si déplacer un objet sans rapport ne change rien à un endroit, cela ne doit rien changer juste à côté non plus. La méthode s'ajoute à un pipeline existant sans données supplémentaires. Sur un vrai bras, elle fait passer une diffusion policy de 18 % à 57 % de réussite moyenne.
+Deux projets veulent transformer un microcontrôleur en petit ordinateur de bureau, d'abord sur la carte Olimex ESP32-P4-PC (HDMI, Ethernet, USB). Sylphide OS propose une interface inspirée du Macintosh et tourne aussi sur RP2350 (Pico 2 avec VGA) et ESP32 classique, et BMDS (« Bare Metal, Do Stuff ») vise le bare-metal. C'est une bonne illustration de ce qu'on peut faire avec la PSRAM et les périphériques vidéo des MCU récents.
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.17159)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/14/desktop-operating-systems-for-esp32-p4-based-pcs-meet-sylphide-os-and-bare-metal-do-stuff-bmds/)
 { .source-link }
 
-### KiCad 10 dans le navigateur
+### - Tektronix descend en gamme : oscilloscopes 1 Series dès 450 $
 
-Le projet ZiroEDA, sans lien avec l'équipe KiCad, traduit KiCad 10.0.6 en TypeScript, fichier par fichier. Éditeur de schéma, éditeur de PCB, routeur interactif et ERC/DRC tournent dans un onglet et lisent les projets KiCad normaux, y compris depuis GitHub. Un autre projet porte KiCad sur Android.
+Tektronix lance des oscilloscopes à phosphore numérique de 50 à 200 MHz, en 12 bits, jusqu'à 1,25 Géch/s, avec 10 Mpoints par voie, un écran tactile de 7 pouces et le décodage I2C, SPI et UART intégré. Les modèles S ajoutent un générateur de fonctions de 25 MHz et le tracé de Bode. Une option permet de piloter l'appareil par un assistant IA.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/10/kicad-10-now-unofficially-runs-in-a-web-browser-or-android/)
+[Source : cnx-software.com](https://www.cnx-software.com/2026/11/13/tektronix-1-series-low-cost-dpo-oscilloscopes-support-ai-assisted-control-start-at-just-450/)
 { .source-link }
 
-### 💡 Concept du jour : la synchronisation matérielle capteurs
+### - Applications « vibe-codées » : des données sensibles accessibles sans connexion
 
-Pour fusionner une image et une mesure d'IMU, il faut savoir exactement à quel instant chacune a été prise. Un horodatage logiciel (à l'arrivée sur l'USB, par exemple) ajoute une latence variable de quelques millisecondes. C'est assez pour fausser un estimateur VIO lors d'un mouvement rapide. La solution matérielle consiste à faire générer un signal par la caméra au début de l'exposition (ou à la déclencher de l'extérieur) et à capturer ce front sur la même horloge que l'IMU. Les deux flux partagent alors une base de temps commune, à la microseconde près.
+Des chercheurs ont analysé 159 041 projets construits avec Lovable, un outil qui génère des applis web à partir de texte. Parmi ceux qui utilisent la base Supabase, beaucoup exposaient des données sans authentification : 80 000 profils et 200 000 messages d'un forum, des numéros de passeport, des contrats. La cause est classique (règles d'accès à la base mal configurées), mais comme les applis générées se ressemblent toutes, la même faille se retrouve à grande échelle.
+
+[Source : crissyfield.de](https://www.crissyfield.de/research/lovable-en/)
+{ .source-link }
+
+### 💡 Concept du jour : l'observateur de moment
+
+Pour estimer une force extérieure sur un bras, on pourrait dériver deux fois la position pour obtenir l'accélération, mais le résultat est très bruité. L'observateur de moment compare plutôt le moment généralisé du bras (masse × vitesse, articulation par articulation) avec ce que les couples moteurs, la gravité et la dynamique connue auraient dû produire. L'écart, filtré, converge vers le couple dû au contact extérieur. Il suffit des encodeurs et des couples moteurs, sans accéléromètre ni capteur d'effort : c'est la base de la détection de collision sur beaucoup de cobots, et c'est ce qu'utilise FORGE ci-dessus.
 
 ## Veilles précédentes
 
+- [Samedi 14 novembre 2026](2026/11/2026-11-14.md) — 6 actus
 - [Vendredi 13 novembre 2026](2026/11/2026-11-13.md) — 6 actus
 - [Jeudi 12 novembre 2026](2026/11/2026-11-12.md) — 6 actus
 - [Mercredi 11 novembre 2026](2026/11/2026-11-11.md) — 6 actus
 - [Mardi 10 novembre 2026](2026/11/2026-11-10.md) — 7 actus
 - [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
 - [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
-- [Samedi 7 novembre 2026](2026/11/2026-11-07.md) — 5 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
