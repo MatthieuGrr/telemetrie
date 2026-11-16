@@ -5,65 +5,65 @@ hide:
   - toc
 ---
 
-## Dimanche 15 novembre 2026
+## Lundi 16 novembre 2026
 
 
 
-### - FORGE : un humanoïde qui « sent » les forces sans capteur au poignet
+### Un modèle de raisonnement entraîné en simulation pilote de vrais bras
 
-Ce papier propose un contrôleur pour humanoïde qui combine locomotion et manipulation (s'accroupir, soulever une caisse, la serrer). Il n'utilise aucun capteur force/couple au poignet : il estime l'effort appliqué par la main à partir de la proprioception (positions des articulations, couples des asservissements PD du bras), grâce à un observateur de moment corrigé par un petit réseau appris en simulation. Cette estimation sert ensuite à ajuster la cible du poignet pour appliquer la force voulue.
+Une équipe du MIT (Song Han) entraîne par apprentissage par renforcement, uniquement en simulation et sans démonstrations, un modèle open-weight de 27 milliards de paramètres. Il observe la scène, raisonne puis donne la pose suivante de l'effecteur, comme un agent qui utilise un ordinateur. Sur LIBERO, le taux de réussite passe de 1,6 % à 74,4 %, et le modèle réussit 60 % des essais sur un vrai robot à deux bras. Face à une tâche nouvelle, il tient bien mieux qu'un modèle VLA affiné sur démonstrations (57 % contre moins de 1 %).
 
-[Source : arxiv.org](https://arxiv.org/abs/2611.17142)
+[Source : arxiv.org](https://arxiv.org/abs/2611.18562)
 { .source-link }
 
-### - Serve Robotics ouvre sa flotte de livraison à une API publique
+### Une chargeuse de 5 tonnes en équilibre sur deux roues
 
-Serve, qui exploite plus de 2 000 robots de trottoir aux États-Unis et en Australie, lance un portail développeur : une application, ou même un agent IA, peut demander un enlèvement et une livraison, puis suivre le robot jusqu'au bout. Serve garde le dispatch, le routage, la navigation et la supervision à distance, et un bac à sable permet de tester sans robot réel. C'est un exemple concret de flotte exposée « comme un service cloud » plutôt que vendue comme matériel.
+Des politiques entraînées par RL en simulation puis transférées sur une John Deere 332G font basculer l'engin sur deux roues, roulent ainsi sur terrain accidenté, tournent sur place et reposent la machine. C'est une démonstration du sim-to-real sur un système hydraulique lent, non linéaire et dangereux à tester en réel.
 
-[Source : therobotreport.com](https://www.therobotreport.com/serve-robotics-opens-robot-delivery-network-for-others-to-build-on/)
+[Source : arxiv.org](https://arxiv.org/abs/2611.18365)
 { .source-link }
 
-### - POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty
+### Le NPU d'une carte embarquée détourné pour le GNSS
 
-Le projet DAVE (simulation de robots sous-marins, sonar multifaisceaux physique) continue sous le nom POSIM 1.0.0, porté par un labo de l'université maritime de Corée. Une surcouche, WWW-POSIM, permet de lancer des simulations depuis un navigateur ou une appli Windows/macOS/Linux, et de générer des mondes à partir de vraies données de bathymétrie et de côtes.
+Plutôt que pour de l'IA, les auteurs utilisent le NPU pour accélérer l'acquisition GNSS (recherche de code par FFT), qui sature le CPU des petites cartes. La transformée de Fourier est réécrite en produits matriciels et en convolutions 1×1, ce que les NPU calculent très bien. Le code est intégré au récepteur logiciel open source Pocket SDR : l'acquisition est 3 à 3,8 fois plus rapide sur Raspberry Pi 5 avec un AX8850, et le calcul a aussi été porté sur un RK3588.
 
-[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/introducing-posim-project-dave-ported-to-ros-2-lyrical-gazebo-jetty-and-www-posim-web-and-desktop-application-for-windows-linux-and-macos/59759)
+[Source : arxiv.org](https://arxiv.org/abs/2611.18186)
 { .source-link }
 
-### - Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS
+### nav2_dynamic_footprint : une empreinte Nav2 qui suit le bras
 
-Deux projets veulent transformer un microcontrôleur en petit ordinateur de bureau, d'abord sur la carte Olimex ESP32-P4-PC (HDMI, Ethernet, USB). Sylphide OS propose une interface inspirée du Macintosh et tourne aussi sur RP2350 (Pico 2 avec VGA) et ESP32 classique, et BMDS (« Bare Metal, Do Stuff ») vise le bare-metal. C'est une bonne illustration de ce qu'on peut faire avec la PSRAM et les périphériques vidéo des MCU récents.
+Ce nouveau paquet calcule l'empreinte 2D d'un manipulateur mobile à partir des collisions de l'URDF et des TF courantes, puis la publie sur un seul topic utilisé par les costmaps locale et globale. Il est testé sur Humble, Jazzy, Lyrical et Rolling.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/14/desktop-operating-systems-for-esp32-p4-based-pcs-meet-sylphide-os-and-bare-metal-do-stuff-bmds/)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/dynamic-footprint-for-nav2/59805)
 { .source-link }
 
-### - Tektronix descend en gamme : oscilloscopes 1 Series dès 450 $
+### MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement
 
-Tektronix lance des oscilloscopes à phosphore numérique de 50 à 200 MHz, en 12 bits, jusqu'à 1,25 Géch/s, avec 10 Mpoints par voie, un écran tactile de 7 pouces et le décodage I2C, SPI et UART intégré. Les modèles S ajoutent un générateur de fonctions de 25 MHz et le tracé de Bode. Une option permet de piloter l'appareil par un assistant IA.
+OptiTrack, Vicon, Qualisys et Gazebo partagent désormais les mêmes messages, avec indicateur de validité du suivi et convention de repères unique. La version ajoute une CLI avec `doctor`, une interface terminal, et des outils de vérité terrain : arbre TF parallèle, calcul ATE/RPE en ligne, export TUM pour evo.
 
-[Source : cnx-software.com](https://www.cnx-software.com/2026/11/13/tektronix-1-series-low-cost-dpo-oscilloscopes-support-ai-assisted-control-start-at-just-450/)
+[Source : discourse.openrobotics.org](https://discourse.openrobotics.org/t/mocap4ros2-2-0-0-released-one-interface-for-optitrack-vicon-qualisys-and-gazebo-new-tools-and-website/59801)
 { .source-link }
 
-### - Applications « vibe-codées » : des données sensibles accessibles sans connexion
+### Une panne d'Outlook, 15 personnes intoxiquées au chlore
 
-Des chercheurs ont analysé 159 041 projets construits avec Lovable, un outil qui génère des applis web à partir de texte. Parmi ceux qui utilisent la base Supabase, beaucoup exposaient des données sans authentification : 80 000 profils et 200 000 messages d'un forum, des numéros de passeport, des contrats. La cause est classique (règles d'accès à la base mal configurées), mais comme les applis générées se ressemblent toutes, la même faille se retrouve à grande échelle.
+Dans un hôtel allemand, la pompe doseuse d'une piscine est tombée en panne et a injecté trop de chlore. Le système de surveillance a bien donné l'alerte… par email, pendant la panne Microsoft 365, donc personne ne l'a reçue. Cela rappelle de ne pas faire passer une alarme de sécurité par un seul canal externe, et de ne pas l'envoyer sans exiger qu'on en accuse réception.
 
-[Source : crissyfield.de](https://www.crissyfield.de/research/lovable-en/)
+[Source : www1.wdr.de](https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html)
 { .source-link }
 
-### 💡 Concept du jour : l'observateur de moment
+### 💡 Concept du jour : l'« homme mort » (dead man's switch)
 
-Pour estimer une force extérieure sur un bras, on pourrait dériver deux fois la position pour obtenir l'accélération, mais le résultat est très bruité. L'observateur de moment compare plutôt le moment généralisé du bras (masse × vitesse, articulation par articulation) avec ce que les couples moteurs, la gravité et la dynamique connue auraient dû produire. L'écart, filtré, converge vers le couple dû au contact extérieur. Il suffit des encodeurs et des couples moteurs, sans accéléromètre ni capteur d'effort : c'est la base de la détection de collision sur beaucoup de cobots, et c'est ce qu'utilise FORGE ci-dessus.
+Au lieu d'envoyer un message seulement en cas de problème, l'équipement envoie régulièrement un signal « tout va bien », et c'est son **absence** qui déclenche l'alarme ou la mise en sécurité. Une panne du capteur, du réseau ou de la messagerie devient alors visible au lieu de passer inaperçue. Le chien de garde d'un microcontrôleur ou le heartbeat d'un robot reposent sur ce principe.
 
 ## Veilles précédentes
 
+- [Dimanche 15 novembre 2026](2026/11/2026-11-15.md) — 7 actus
 - [Samedi 14 novembre 2026](2026/11/2026-11-14.md) — 6 actus
 - [Vendredi 13 novembre 2026](2026/11/2026-11-13.md) — 6 actus
 - [Jeudi 12 novembre 2026](2026/11/2026-11-12.md) — 6 actus
 - [Mercredi 11 novembre 2026](2026/11/2026-11-11.md) — 6 actus
 - [Mardi 10 novembre 2026](2026/11/2026-11-10.md) — 7 actus
 - [Lundi 9 novembre 2026](2026/11/2026-11-09.md) — 7 actus
-- [Dimanche 8 novembre 2026](2026/11/2026-11-08.md) — 6 actus
 
 [Toutes les veilles dans les archives →](archives.md)
 
