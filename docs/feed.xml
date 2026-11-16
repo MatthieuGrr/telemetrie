@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr">
+<title>Télémétrie</title>
+<subtitle>Le flux quotidien de Rosetta — veille robotique, embarqué et tech</subtitle>
+<link href="https://telemetrie.georger.ovh/"/>
+<link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
+<id>https://telemetrie.georger.ovh/</id>
+<author><name>Télémétrie</name></author>
+<updated>2026-11-16T06:00:00Z</updated>
+<entry>
+<title>Veille du lundi 16 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-16/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-16/</id>
+<published>2026-11-16T06:00:00Z</published>
+<updated>2026-11-16T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="sécurité"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>Un modèle de raisonnement entraîné en simulation pilote de vrais bras · Une chargeuse de 5 tonnes en équilibre sur deux roues · Le NPU d&#x27;une carte embarquée détourné pour le GNSS · nav2_dynamic_footprint : une empreinte Nav2 qui suit le bras · MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement · Une panne d&#x27;Outlook, 15 personnes intoxiquées au chlore · 💡 Concept du jour : l&#x27;« homme mort » (dead man&#x27;s switch)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras&quot;&gt;Un modèle de raisonnement entraîné en simulation pilote de vrais bras&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une équipe du MIT (Song Han) entraîne par apprentissage par renforcement, uniquement en simulation et sans démonstrations, un modèle open-weight de 27 milliards de paramètres. Il observe la scène, raisonne puis donne la pose suivante de l&#x27;effecteur, comme un agent qui utilise un ordinateur. Sur LIBERO, le taux de réussite passe de 1,6 % à 74,4 %, et le modèle réussit 60 % des essais sur un vrai robot à deux bras. Face à une tâche nouvelle, il tient bien mieux qu&#x27;un modèle VLA affiné sur démonstrations (57 % contre moins de 1 %).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.18562&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#une-chargeuse-de-5-tonnes-en-equilibre-sur-deux-roues&quot;&gt;Une chargeuse de 5 tonnes en équilibre sur deux roues&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des politiques entraînées par RL en simulation puis transférées sur une John Deere 332G font basculer l&#x27;engin sur deux roues, roulent ainsi sur terrain accidenté, tournent sur place et reposent la machine. C&#x27;est une démonstration du sim-to-real sur un système hydraulique lent, non linéaire et dangereux à tester en réel.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.18365&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#le-npu-dune-carte-embarquee-detourne-pour-le-gnss&quot;&gt;Le NPU d&#x27;une carte embarquée détourné pour le GNSS&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Plutôt que pour de l&#x27;IA, les auteurs utilisent le NPU pour accélérer l&#x27;acquisition GNSS (recherche de code par FFT), qui sature le CPU des petites cartes. La transformée de Fourier est réécrite en produits matriciels et en convolutions 1×1, ce que les NPU calculent très bien. Le code est intégré au récepteur logiciel open source Pocket SDR : l&#x27;acquisition est 3 à 3,8 fois plus rapide sur Raspberry Pi 5 avec un AX8850, et le calcul a aussi été porté sur un RK3588.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.18186&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#nav2dynamicfootprint-une-empreinte-nav2-qui-suit-le-bras&quot;&gt;nav2_dynamic_footprint : une empreinte Nav2 qui suit le bras&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce nouveau paquet calcule l&#x27;empreinte 2D d&#x27;un manipulateur mobile à partir des collisions de l&#x27;URDF et des TF courantes, puis la publie sur un seul topic utilisé par les costmaps locale et globale. Il est testé sur Humble, Jazzy, Lyrical et Rolling.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/dynamic-footprint-for-nav2/59805&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#mocap4ros2-20-une-seule-interface-pour-la-capture-de-mouvement&quot;&gt;MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;OptiTrack, Vicon, Qualisys et Gazebo partagent désormais les mêmes messages, avec indicateur de validité du suivi et convention de repères unique. La version ajoute une CLI avec &lt;code&gt;doctor&lt;/code&gt;, une interface terminal, et des outils de vérité terrain : arbre TF parallèle, calcul ATE/RPE en ligne, export TUM pour evo.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/mocap4ros2-2-0-0-released-one-interface-for-optitrack-vicon-qualisys-and-gazebo-new-tools-and-website/59801&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#une-panne-doutlook-15-personnes-intoxiquees-au-chlore&quot;&gt;Une panne d&#x27;Outlook, 15 personnes intoxiquées au chlore&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans un hôtel allemand, la pompe doseuse d&#x27;une piscine est tombée en panne et a injecté trop de chlore. Le système de surveillance a bien donné l&#x27;alerte… par email, pendant la panne Microsoft 365, donc personne ne l&#x27;a reçue. Cela rappelle de ne pas faire passer une alarme de sécurité par un seul canal externe, et de ne pas l&#x27;envoyer sans exiger qu&#x27;on en accuse réception.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www1.wdr.de/nrw/rheinland/rhein-erft-kreis/technischer-defekt-chlor-phantasialand-100.html&quot;&gt;WDR&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-16/#concept-du-jour-l-homme-mort-dead-mans-switch&quot;&gt;💡 Concept du jour : l&#x27;« homme mort » (dead man&#x27;s switch)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Au lieu d&#x27;envoyer un message seulement en cas de problème, l&#x27;équipement envoie régulièrement un signal « tout va bien », et c&#x27;est son &lt;strong&gt;absence&lt;/strong&gt; qui déclenche l&#x27;alarme ou la mise en sécurité. Une panne du capteur, du réseau ou de la messagerie devient alors visible au lieu de passer inaperçue. Le chien de garde d&#x27;un microcontrôleur ou le heartbeat d&#x27;un robot reposent sur ce principe.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du dimanche 15 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-15/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-15/</id>
+<published>2026-11-15T06:00:00Z</published>
+<updated>2026-11-15T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="IA"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="sécurité"/>
+<category term="concept"/>
+<summary>FORGE : un humanoïde qui « sent » les forces sans capteur au poignet · Serve Robotics ouvre sa flotte de livraison à une API publique · POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty · Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS · Tektronix descend en gamme : oscilloscopes 1 Series dès 450 $ · Applications « vibe-codées » : des données sensibles accessibles sans connexion · 💡 Concept du jour : l&#x27;observateur de moment</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#forge-un-humanoide-qui-sent-les-forces-sans-capteur-au-poignet&quot;&gt;FORGE : un humanoïde qui « sent » les forces sans capteur au poignet&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce papier propose un contrôleur pour humanoïde qui combine locomotion et manipulation (s&#x27;accroupir, soulever une caisse, la serrer). Il n&#x27;utilise aucun capteur force/couple au poignet : il estime l&#x27;effort appliqué par la main à partir de la proprioception (positions des articulations, couples des asservissements PD du bras), grâce à un observateur de moment corrigé par un petit réseau appris en simulation. Cette estimation sert ensuite à ajuster la cible du poignet pour appliquer la force voulue.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.17142&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#serve-robotics-ouvre-sa-flotte-de-livraison-a-une-api-publique&quot;&gt;Serve Robotics ouvre sa flotte de livraison à une API publique&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Serve, qui exploite plus de 2 000 robots de trottoir aux États-Unis et en Australie, lance un portail développeur : une application, ou même un agent IA, peut demander un enlèvement et une livraison, puis suivre le robot jusqu&#x27;au bout. Serve garde le dispatch, le routage, la navigation et la supervision à distance, et un bac à sable permet de tester sans robot réel. C&#x27;est un exemple concret de flotte exposée « comme un service cloud » plutôt que vendue comme matériel.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.therobotreport.com/serve-robotics-opens-robot-delivery-network-for-others-to-build-on/&quot;&gt;The Robot Report&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#posim-le-simulateur-marin-dave-passe-a-ros-2-lyrical-et-gazebo-jetty&quot;&gt;POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le projet DAVE (simulation de robots sous-marins, sonar multifaisceaux physique) continue sous le nom POSIM 1.0.0, porté par un labo de l&#x27;université maritime de Corée. Une surcouche, WWW-POSIM, permet de lancer des simulations depuis un navigateur ou une appli Windows/macOS/Linux, et de générer des mondes à partir de vraies données de bathymétrie et de côtes.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/introducing-posim-project-dave-ported-to-ros-2-lyrical-gazebo-jetty-and-www-posim-web-and-desktop-application-for-windows-linux-and-macos/59759&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#des-systemes-de-bureau-pour-microcontroleurs-sylphide-os-et-bmds&quot;&gt;Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Deux projets veulent transformer un microcontrôleur en petit ordinateur de bureau, d&#x27;abord sur la carte Olimex ESP32-P4-PC (HDMI, Ethernet, USB). Sylphide OS propose une interface inspirée du Macintosh et tourne aussi sur RP2350 (Pico 2 avec VGA) et ESP32 classique, et BMDS (« Bare Metal, Do Stuff ») vise le bare-metal. C&#x27;est une bonne illustration de ce qu&#x27;on peut faire avec la PSRAM et les périphériques vidéo des MCU récents.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/14/desktop-operating-systems-for-esp32-p4-based-pcs-meet-sylphide-os-and-bare-metal-do-stuff-bmds/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#tektronix-descend-en-gamme-oscilloscopes-1-series-des-450&quot;&gt;Tektronix descend en gamme : oscilloscopes 1 Series dès 450 $&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Tektronix lance des oscilloscopes à phosphore numérique de 50 à 200 MHz, en 12 bits, jusqu&#x27;à 1,25 Géch/s, avec 10 Mpoints par voie, un écran tactile de 7 pouces et le décodage I2C, SPI et UART intégré. Les modèles S ajoutent un générateur de fonctions de 25 MHz et le tracé de Bode. Une option permet de piloter l&#x27;appareil par un assistant IA.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/13/tektronix-1-series-low-cost-dpo-oscilloscopes-support-ai-assisted-control-start-at-just-450/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#applications-vibe-codees-des-donnees-sensibles-accessibles-sans-connexion&quot;&gt;Applications « vibe-codées » : des données sensibles accessibles sans connexion&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des chercheurs ont analysé 159 041 projets construits avec Lovable, un outil qui génère des applis web à partir de texte. Parmi ceux qui utilisent la base Supabase, beaucoup exposaient des données sans authentification : 80 000 profils et 200 000 messages d&#x27;un forum, des numéros de passeport, des contrats. La cause est classique (règles d&#x27;accès à la base mal configurées), mais comme les applis générées se ressemblent toutes, la même faille se retrouve à grande échelle.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.crissyfield.de/research/lovable-en/&quot;&gt;crissyfield.de&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-15/#concept-du-jour-lobservateur-de-moment&quot;&gt;💡 Concept du jour : l&#x27;observateur de moment&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour estimer une force extérieure sur un bras, on pourrait dériver deux fois la position pour obtenir l&#x27;accélération, mais le résultat est très bruité. L&#x27;observateur de moment compare plutôt le moment généralisé du bras (masse × vitesse, articulation par articulation) avec ce que les couples moteurs, la gravité et la dynamique connue auraient dû produire. L&#x27;écart, filtré, converge vers le couple dû au contact extérieur. Il suffit des encodeurs et des couples moteurs, sans accéléromètre ni capteur d&#x27;effort : c&#x27;est la base de la détection de collision sur beaucoup de cobots, et c&#x27;est ce qu&#x27;utilise FORGE ci-dessus.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du samedi 14 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-14/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-14/</id>
+<published>2026-11-14T06:00:00Z</published>
+<updated>2026-11-14T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="matériel"/>
+<category term="embarqué"/>
+<category term="open source"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel · FlexiTac : la peau tactile open source à 2,5 $ la pièce · Berkeley : des agents IA qui programment des cellules robotisées · InneR : rendre l&#x27;apprentissage par imitation moins fragile · KiCad 10 dans le navigateur · 💡 Concept du jour : la synchronisation matérielle capteurs</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-14/#robobaton-neo-un-module-vio-de-155-g-synchronise-en-materiel&quot;&gt;RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une équipe présente un module d&#x27;odométrie visuelle-inertielle monoculaire de 40 × 20 mm, 0,6 W en pointe (3,3–5 V), pensé pour les micro-drones de moins de 250 g. Le point intéressant est le connecteur SH1.0 6 broches : sortie EXPOSURE_OUT, entrée TRIGGER_IN (1,8 V) et UART vers PX4/ArduPilot. Caméra et IMU sont horodatées sur la même horloge au lieu de passer par l&#x27;USB. Sur EuRoC, l&#x27;erreur relative va de 0,26 % à 0,67 % selon la séquence. L&#x27;estimateur embarqué est un EKF avec des points d&#x27;intérêt de type ORB. L&#x27;auteur demande à la communauté si elle préfère recevoir l&#x27;odométrie toute faite ou les données brutes.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/building-a-15-5g-monocular-vio-module-robobaton-neo-hardware-sync-0-6w-power-and-euroc-benchmarks/59731&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-14/#flexitac-la-peau-tactile-open-source-a-25-la-piece&quot;&gt;FlexiTac : la peau tactile open source à 2,5 $ la pièce&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Présenté à CoRL 2026 par Columbia, FlexiTac est un capteur tactile matriciel souple. La V2 est sur circuit flexible : grille de 2 mm, 32 × 12 taxels, environ 3 minutes de fabrication. La lecture se fait avec une simple Arduino Nano et une carte d&#x27;interface. Le projet fournit aussi une simulation tactile dans Isaac Sim.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://flexitac.github.io/&quot;&gt;flexitac.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-14/#berkeley-des-agents-ia-qui-programment-des-cellules-robotisees&quot;&gt;Berkeley : des agents IA qui programment des cellules robotisées&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;UC Berkeley et NVIDIA publient Graph-as-Policy (GaP). Le cadre découpe une tâche en briques (perception, planification de saisie, trajectoire sans collision) que des agents LLM génèrent, assemblent puis testent en simulation. Le résultat reste du code lisible et vérifiable par un ingénieur, pas un réseau opaque. Ils publient aussi VABAR, un banc d&#x27;essai de six tâches industrielles (engrenages, insertion et routage de câbles…) construit sur Isaac Lab et Newton.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://www.therobotreport.com/can-ai-agents-program-industrial-robots-without-training-data-berkeley-says-yes/&quot;&gt;The Robot Report&lt;/a&gt;, &lt;a href=&quot;https://graph-robots.github.io/gap/&quot;&gt;graph-robots.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-14/#inner-rendre-lapprentissage-par-imitation-moins-fragile&quot;&gt;InneR : rendre l&#x27;apprentissage par imitation moins fragile&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce papier propose de régulariser une politique apprise pour qu&#x27;elle réagisse de la même façon à une perturbation, quel que soit l&#x27;état voisin où elle survient. Exemple : si déplacer un objet sans rapport ne change rien à un endroit, cela ne doit rien changer juste à côté non plus. La méthode s&#x27;ajoute à un pipeline existant sans données supplémentaires. Sur un vrai bras, elle fait passer une diffusion policy de 18 % à 57 % de réussite moyenne.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.17159&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-14/#kicad-10-dans-le-navigateur&quot;&gt;KiCad 10 dans le navigateur&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le projet ZiroEDA, sans lien avec l&#x27;équipe KiCad, traduit KiCad 10.0.6 en TypeScript, fichier par fichier. Éditeur de schéma, éditeur de PCB, routeur interactif et ERC/DRC tournent dans un onglet et lisent les projets KiCad normaux, y compris depuis GitHub. Un autre projet porte KiCad sur Android.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/10/kicad-10-now-unofficially-runs-in-a-web-browser-or-android/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-14/#concept-du-jour-la-synchronisation-materielle-capteurs&quot;&gt;💡 Concept du jour : la synchronisation matérielle capteurs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour fusionner une image et une mesure d&#x27;IMU, il faut savoir exactement à quel instant chacune a été prise. Un horodatage logiciel (à l&#x27;arrivée sur l&#x27;USB, par exemple) ajoute une latence variable de quelques millisecondes. C&#x27;est assez pour fausser un estimateur VIO lors d&#x27;un mouvement rapide. La solution matérielle consiste à faire générer un signal par la caméra au début de l&#x27;exposition (ou à la déclencher de l&#x27;extérieur) et à capturer ce front sur la même horloge que l&#x27;IMU. Les deux flux partagent alors une base de temps commune, à la microseconde près.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du vendredi 13 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-13/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-13/</id>
+<published>2026-11-13T06:00:00Z</published>
+<updated>2026-11-13T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="embarqué"/>
+<category term="IA"/>
+<category term="logiciel"/>
+<category term="matériel"/>
+<category term="concept"/>
+<summary>ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds · PLEM : des servovariateurs EtherCAT sous ros2_control sur Jetson · RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5 · Reins : des LLM généralistes pilotent un robot à deux bras · BlinkMimic : un contrôleur de suivi de mouvement pour humanoïde entraîné en 3,4 minutes · 💡 Concept du jour : l&#x27;uprobe eBPF</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-13/#ros2ebpf-observer-tout-le-graphe-ros-2-sans-toucher-aux-nuds&quot;&gt;ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un mainteneur de ROS 2 publie ros2ebpf : des sondes eBPF accrochées aux fonctions de &lt;code&gt;librmw_implementation.so&lt;/code&gt; (&lt;code&gt;rmw_publish&lt;/code&gt;, &lt;code&gt;rmw_take_with_info&lt;/code&gt;…) comptent chaque publication et chaque réception dans le noyau. Un petit démon exporte ces compteurs vers Prometheus : débits par topic, indicateurs de pertes, histogrammes d&#x27;intervalles entre publications. Pas de recompilation, pas de redémarrage, pas de &lt;code&gt;LD_PRELOAD&lt;/code&gt;, et ça marche sur les paquets Debian de Humble à Rolling, quel que soit le RMW, même dans des conteneurs. Le démon se lance à la demande, car chaque appel sondé coûte un peu.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://discourse.openrobotics.org/t/ros2ebpf-topic-service-rates-and-drop-indicators-for-every-ros-2-process-on-a-host-via-ebpf-no-rebuild-or-restart/59744&quot;&gt;Open Robotics Discourse&lt;/a&gt;, &lt;a href=&quot;https://github.com/fujitatomoya/ros2ebpf&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-13/#plem-des-servovariateurs-ethercat-sous-ros2control-sur-jetson&quot;&gt;PLEM : des servovariateurs EtherCAT sous ros2_control sur Jetson&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;WIM publie en Apache-2.0 la couche variateurs de PLEM : un fichier YAML par bus, vérifié par &lt;code&gt;plem drive check&lt;/code&gt; avant tout mouvement, puis une boucle temps réel à 1 kHz (PREEMPT_RT, maître IgH) sous ros2_control. Elle gère jusqu&#x27;à 8 axes CiA 402 en position, vitesse ou couple. Leur retour d&#x27;expérience est le plus instructif : l&#x27;option par défaut de la Jetson qui verrouille l&#x27;horloge PTP sur le TSC (nvpps) faisait dériver la synchronisation EtherCAT jusqu&#x27;à 328 µs toutes les 110 s. Une fois l&#x27;option désactivée, la dérive tombe à 3,5 µs.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://discourse.openrobotics.org/t/plem-drive-layer-v0-11-0-ethercat-cia-402-drives-under-ros2-control-on-jetson-agx-orin-jazzy/59740&quot;&gt;Open Robotics Discourse&lt;/a&gt;, &lt;a href=&quot;https://www.wimcorp.co.kr/tech/en/posts/embedded/jetson-nvpps-ethercat-dc-drift/&quot;&gt;wimcorp.co.kr&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-13/#rtab-map-contre-orb-slam3-sur-raspberry-pi-5&quot;&gt;RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un banc d&#x27;essai mesure le temps par image, la mémoire, le CPU et la température des deux SLAM RGB-D sur Pi 5. Avec un traitement à chaque image, RTAB-Map met 150 à 462 ms par image, contre 26 à 62 ms pour ORB-SLAM3. Le coût vient du graphe de poses, qui grossit sans limite par défaut. Côté méthode, l&#x27;erreur de trajectoire varie jusqu&#x27;à 27 % entre deux exécutions identiques : une seule exécution ne suffit pas à départager deux SLAM. Et une exécution qui perd le suivi affiche une erreur plus faible sur les poses qui lui restent.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.16472&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-13/#reins-des-llm-generalistes-pilotent-un-robot-a-deux-bras&quot;&gt;Reins : des LLM généralistes pilotent un robot à deux bras&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce harnais donne à un modèle du commerce des outils de perception 3D et des actions atomiques qui signalent contact et prise. Chaque action porte une condition à vérifier, et l&#x27;enchaînement s&#x27;arrête à la première qui échoue. Une seconde instance du modèle surveille les caméras en continu et décrit ce qui a changé pendant que la première réfléchit. Sans code propre à la tâche, le taux de réussite atteint 88 % sur cinq tâches réelles de longue durée. Sans le harnais, le même modèle échoue à chaque partie de bonneteau.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.16632&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-13/#blinkmimic-un-controleur-de-suivi-de-mouvement-pour-humanoide-entraine-en-34-minutes&quot;&gt;BlinkMimic : un contrôleur de suivi de mouvement pour humanoïde entraîné en 3,4 minutes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur un Unitree G1 simulé, une seule politique apprend à reproduire les 40 séquences de mouvement LAFAN1 en 3,4 minutes sur une RTX 4090, contre plusieurs heures habituellement. L&#x27;article décompose le temps d&#x27;entraînement en trois termes : coût d&#x27;une itération, itérations pour apprendre les mouvements, itérations pour éliminer les derniers échecs. Une ablation montre quel terme chaque astuce réduit, par exemple la capture de toute l&#x27;itération en graphe GPU. Le code est publié.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.16422&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-13/#concept-du-jour-luprobe-ebpf&quot;&gt;💡 Concept du jour : l&#x27;uprobe eBPF&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;eBPF permet de charger de petits programmes vérifiés dans le noyau Linux. Une uprobe en est un usage : elle accroche un de ces programmes à l&#x27;entrée d&#x27;une fonction d&#x27;une bibliothèque en espace utilisateur. À chaque appel de cette fonction, dans n&#x27;importe quel processus qui charge la bibliothèque, le noyau exécute le programme. Celui-ci incrémente par exemple un compteur dans une table partagée (une « map »). On instrumente ainsi un binaire déjà compilé sans le modifier, ce que fait ros2ebpf. Chaque appel coûte un aller-retour vers le noyau, donc on active l&#x27;uprobe pour diagnostiquer, pas en permanence.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du jeudi 12 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-12/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-12/</id>
+<published>2026-11-12T06:00:00Z</published>
+<updated>2026-11-12T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="matériel"/>
+<category term="sécurité"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>LabWired : tester son firmware sans carte, en CI · WeAct Logic Analyzer V2 : 16 voies à 200 MHz pour ~10 $ · Détecter un robot qui « tourne en rond » dans sa recherche d&#x27;information · spot_basic : une API Python simple pour Spot sous ROS 2 · Retour d&#x27;expérience : la fausse alerte incendie qui a failli noyer un datacenter · 💡 Concept du jour : le test SIL (Software-in-the-Loop)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-12/#labwired-tester-son-firmware-sans-carte-en-ci&quot;&gt;LabWired : tester son firmware sans carte, en CI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;LabWired est un simulateur open source (MIT, en Rust) qui exécute le binaire compilé sur un modèle de carte complète : cœur Cortex-M0+/M3/M4/M7/M33, RISC-V ou Xtensa (ESP32), mais aussi périphériques et composants externes (capteurs, écrans). On peut vérifier les trames I2C/SPI, la sortie UART ou les registres, et lancer des tests Unity via PlatformIO sans sonde ni carte (3 tests en 1,2 s dans l&#x27;exemple). Point honnête : un « registre de fidélité » documente où le modèle simplifie le vrai matériel (STM32L476, RP2040, nRF52840, ESP32…). Le cœur est libre, l&#x27;interface web et le service hébergé sont payants.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://www.cnx-software.com/2026/11/10/labwired-allows-engineers-to-test-compiled-firmware-on-simulated-mcu-boards-cpu-and-peripherals/&quot;&gt;CNX Software&lt;/a&gt;, &lt;a href=&quot;https://github.com/w1ne/labwired-core&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-12/#weact-logic-analyzer-v2-16-voies-a-200-mhz-pour-10&quot;&gt;WeAct Logic Analyzer V2 : 16 voies à 200 MHz pour ~10 $&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Petite carte basée sur le WCH CH32H417 (RISC-V jusqu&#x27;à 400 MHz) avec un port USB 3.0 : 16 voies échantillonnées jusqu&#x27;à 200 MHz en USB 3.0 (20 MHz en USB 2.0), entrées 1,0-3,3 V, compatible avec un fork de sigrok/PulseView et ses 132 décodeurs (UART, I2C, SPI, CAN…). Un appui de 2 s sur le bouton bascule vers un second firmware : 3 ports série + sonde SWD CMSIS-DAP v2. Un troisième emplacement accueille son propre firmware.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/12/weact-logic-analyzer-v2-a-10-usb-3-0-logic-analyzer-board-compatible-with-sigrok-pulseview/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-12/#detecter-un-robot-qui-tourne-en-rond-dans-sa-recherche-dinformation&quot;&gt;Détecter un robot qui « tourne en rond » dans sa recherche d&#x27;information&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un papier propose un moniteur qui ne juge pas le mouvement du robot mais le &lt;strong&gt;processus de collecte d&#x27;information&lt;/strong&gt; : à partir des observations, il émet en continu deux signaux, la progression vers les exigences encore non résolues et une « friction » quand de nouvelles observations n&#x27;apportent presque rien. Testé sans réglage sur huit domaines (exploration de grille, manipulation, dialogue de recherche et sauvetage…), le canal de friction distingue la stagnation de l&#x27;exploration utile avant la fin de la tâche. L&#x27;idée rejoint la supervision de flotte : un système peut être « vivant » sans avancer.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.14111&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-12/#spotbasic-une-api-python-simple-pour-spot-sous-ros-2&quot;&gt;spot_basic : une API Python simple pour Spot sous ROS 2&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le RAI Institute publie spot_basic, une couche au-dessus de son driver spot_ros2 qui cache la plomberie des topics, services et actions. Locomotion, bras, pince, transformées et caméras passent par une API cohérente, synchrone ou asynchrone, avec un « leash » qui encadre la prise de contrôle du robot. Un bon exemple de conception d&#x27;API haut niveau au-dessus d&#x27;un driver ROS 2 bavard.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://discourse.openrobotics.org/t/introducing-spot-basic-a-simpler-interface-for-spot-in-ros-2/59696&quot;&gt;Open Robotics Discourse&lt;/a&gt;, &lt;a href=&quot;https://github.com/rai-opensource/spot_basic&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-12/#retour-dexperience-la-fausse-alerte-incendie-qui-a-failli-noyer-un-datacenter&quot;&gt;Retour d&#x27;expérience : la fausse alerte incendie qui a failli noyer un datacenter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un ancien de l&#x27;équipe systèmes de Jane Street raconte : de la poussière de travaux déclenche le détecteur de fumée, qui met les sprinklers sous pression &lt;strong&gt;et&lt;/strong&gt; coupe la climatisation par sécurité. La température monte vers le seuil de déclenchement des têtes ; il faut débrancher toute la salle à la main (arrêt à 143 °F, soit environ 62 °C). La leçon d&#x27;observabilité : aucun serveur n&#x27;alertait seul, mais la hausse simultanée sur tout le parc trahissait une panne de refroidissement. Ils ont donc ajouté une alerte sur la température &lt;strong&gt;moyenne&lt;/strong&gt; de la flotte, plus fiable que la télémétrie des équipements du bâtiment.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://michael.bacarella.com/2026/11/10/false-smoke-alarm-jane-street-datacenter/&quot;&gt;michael.bacarella.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-12/#concept-du-jour-le-test-sil-software-in-the-loop&quot;&gt;💡 Concept du jour : le test SIL (Software-in-the-Loop)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Tester un logiciel embarqué « dans la boucle » consiste à le faire tourner face à un environnement qui lui répond. En &lt;strong&gt;HIL&lt;/strong&gt; (Hardware-in-the-Loop), le vrai microcontrôleur est branché à un banc qui simule capteurs et actionneurs : très réaliste, mais coûteux et lent. En &lt;strong&gt;SIL&lt;/strong&gt;, le firmware s&#x27;exécute sur un modèle logiciel de la puce et de son environnement, comme avec LabWired : moins fidèle, mais gratuit à dupliquer et assez rapide pour chaque commit en CI. On combine en général les deux : beaucoup de SIL pour attraper vite les régressions, un peu de HIL pour valider ce que le modèle simplifie.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du mercredi 11 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-11/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-11/</id>
+<published>2026-11-11T06:00:00Z</published>
+<updated>2026-11-11T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="logiciel"/>
+<category term="matériel"/>
+<category term="concept"/>
+<summary>Mémoire de robot ou simple horloge ? · BEHAVIOR Challenge 2026 : un VLA pour 100 tâches, plus un agent qui code · MCAP (format des rosbag2) : écritures jusqu&#x27;à 8× plus rapides · LiveKit Portal : un graphe ROS 2 joignable à distance sans exposer DDS · Renesas RZ/T2N : Linux + temps réel + EtherCAT sur une puce · 💡 Concept du jour : le TSN (Time-Sensitive Networking)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-11/#memoire-de-robot-ou-simple-horloge&quot;&gt;Mémoire de robot ou simple horloge ?&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des chercheurs montrent que certains modèles VLA (vision-langage-action) « à mémoire » remplissent celle-ci en échantillonnant les images au fil du temps. Résultat : si le robot marque une pause ou agite le poignet, la politique compte ce temps comme du travail fait et s&#x27;arrête trop tôt (succès de 47 à 16 sur 50 pour une tâche de comptage). Ré-entraîner avec des pauses n&#x27;y change rien ; indexer la mémoire par événements plutôt que par pas de temps récupère au moins la moitié des pertes, sans ré-entraînement.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.14488&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-11/#behavior-challenge-2026-un-vla-pour-100-taches-plus-un-agent-qui-code&quot;&gt;BEHAVIOR Challenge 2026 : un VLA pour 100 tâches, plus un agent qui code&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Retour d&#x27;expérience détaillé d&#x27;une équipe indépendante (9e) sur 100 tâches ménagères longues dans le simulateur OmniGibson : un seul modèle VLA (dérivé de π0.5) entraîné plus longtemps, 211 M d&#x27;images de démonstration. Sur 14 tâches, un agent de code pilotant le robot via des outils d&#x27;observation et de mouvement fait bien mieux que la politique apprise (0,64 contre 0,11). Code et poids sont publiés.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.14432&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-11/#mcap-format-des-rosbag2-ecritures-jusqua-8-plus-rapides&quot;&gt;MCAP (format des rosbag2) : écritures jusqu&#x27;à 8× plus rapides&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Foxglove a d&#x27;abord construit un banc de mesure commun aux 5 bibliothèques (C++, Rust, Go, Python, TS), avec des données identiques et des sommes de contrôle, avant d&#x27;optimiser. Gains : LZ4 en mode rapide par défaut (6-8× en C++ pour des fichiers 15-30 % plus gros), CRC calculés par lots avec SIMD, contexte zstd réutilisé. rosbag2 sur Rolling en profite déjà.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://foxglove.dev/blog/measuring-and-improving-mcap-performance&quot;&gt;Foxglove&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-11/#livekit-portal-un-graphe-ros-2-joignable-a-distance-sans-exposer-dds&quot;&gt;LiveKit Portal : un graphe ROS 2 joignable à distance sans exposer DDS&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un nœud ROS 2 autonome qui transporte des topics, services et flux vidéo sur WebRTC via LiveKit. DDS reste confiné au réseau local du robot ; un fichier YAML liste ce qui sort. Entre deux graphes ROS, les messages restent en CDR natif ; vers un navigateur ou un service cloud, ils passent en JSON avec schéma. Usages visés : téléopération, inférence déportée, supervision de flotte.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://livekit.com/blog/introducing-livekit-ros-portal&quot;&gt;livekit.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-11/#renesas-rzt2n-linux-temps-reel-ethercat-sur-une-puce&quot;&gt;Renesas RZ/T2N : Linux + temps réel + EtherCAT sur une puce&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;MPU industriel avec 2 Cortex-A55 (Linux) et 2 Cortex-R52 à 800 MHz (commande temps réel), commande de moteurs jusqu&#x27;à 4 axes, 8 interfaces codeur (EnDat, BiSS-C…), accélérateurs sinus/cosinus/arctangente et switch Gigabit TSN avec EtherCAT et PROFINET. Il vise les bras robotisés et les variateurs multi-axes en remplaçant plusieurs processeurs par un seul.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;En bref&lt;/strong&gt; : l&#x27;OSRF (Gazebo, ROS) impose désormais de déclarer l&#x27;usage d&#x27;IA générative dans les pull requests et précise les motifs de rejet du code généré bâclé.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://www.cnx-software.com/2026/11/11/renesas-rz-t2n-cortex-a55-r52-industrial-mpu-supports-four-axis-motor-control-tsn-ethernet-ethercat/&quot;&gt;CNX Software&lt;/a&gt;, &lt;a href=&quot;https://discourse.openrobotics.org/t/osrf-adopts-an-updated-policy-on-use-of-genai-llm-tools-in-contributions/59685&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-11/#concept-du-jour-le-tsn-time-sensitive-networking&quot;&gt;💡 Concept du jour : le TSN (Time-Sensitive Networking)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ethernet classique fait du « au mieux » : une trame urgente peut attendre derrière un gros transfert. Le TSN est un ensemble de normes IEEE 802.1 qui ajoute à Ethernet une horloge commune (PTP, IEEE 1588), des créneaux de temps réservés pour le trafic critique (802.1Qbv) et la préemption de trames (une grosse trame est coupée pour laisser passer une petite). On obtient une latence bornée et garantie, ce qui permet de faire passer sur le même câble la commande d&#x27;axes et les données ordinaires, comme sur le RZ/T2N ci-dessus.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du mardi 10 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-10/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-10/</id>
+<published>2026-11-10T06:00:00Z</published>
+<updated>2026-11-10T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="embarqué"/>
+<category term="recherche"/>
+<category term="matériel"/>
+<category term="open source"/>
+<category term="concept"/>
+<summary>StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages · Snaps/Ubuntu Core pour une flotte de robots : retours de terrain · STM32G5 : le successeur du G4 pour la commande de moteurs · XIAO STM32C5 : deux CAN FD sur une carte format timbre · ArmedAgent : quand un agent de code pilote un bras · FLAVOR : explorer loin sans saturer la mémoire · 💡 Concept du jour : la fermeture de boucle</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#strataslam-un-slam-ros-2-qui-gere-plusieurs-etages&quot;&gt;StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le laboratoire Intelligent Robotics Lab (Univ. Rey Juan Carlos) publie un SLAM 3D open source qui garde une sous-carte par étage. Il détecte et classe les passages d&#x27;un étage à l&#x27;autre (escalier, rampe, ascenseur). Dans un ascenseur, la caméra ne voit que la cabine : le déplacement vertical est donc mesuré à l&#x27;IMU. Un « filtre d&#x27;étage » interdit toute fermeture de boucle entre deux étages, ce qui évite de fusionner des étages identiques. Il accepte une caméra RGB-D et/ou un LiDAR 3D, et en option un baromètre et l&#x27;odométrie des roues. Une commande &lt;code&gt;strataslam doctor&lt;/code&gt; vérifie les topics, les fréquences et les TF avant de cartographier. Il tourne sous ROS 2 Jazzy, licence Apache-2.0.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/strataslam-open-source-multi-floor-slam-for-ros-2-stairs-elevators-ramps-identical-floors/59649&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#snapsubuntu-core-pour-une-flotte-de-robots-retours-de-terrain&quot;&gt;Snaps/Ubuntu Core pour une flotte de robots : retours de terrain&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un fil ROS Discourse demande pourquoi les Snaps restent si rares en production malgré leurs atouts : mises à jour atomiques avec retour arrière automatique, deltas, outillage ROS 2. Un intervenant a déployé un « brand store » privé. Son CI publiait d&#x27;abord sur le canal edge, puis beta (machines internes), candidate (partenaires choisis) et enfin stable (flotte en production). Selon lui, le magasin privé est le principal coût, avec une licence par appareil. Un autre intervenant, de Transitive, a renoncé aux Snaps au profit de conteneurs maison créés avec &lt;code&gt;unshare&lt;/code&gt;, sans sudo, où tout le matériel est accessible par défaut.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/what-happened-to-robot-as-a-snap/59592&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#stm32g5-le-successeur-du-g4-pour-la-commande-de-moteurs&quot;&gt;STM32G5 : le successeur du G4 pour la commande de moteurs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;ST lance un Cortex-M33 à 280 MHz, soit environ deux fois les performances du STM32G4. Il intègre un timer haute résolution (HRTIM) de 111 ps avec jusqu&#x27;à 12 sorties PWM, des ADC 12 bits à 5 Msps, des interfaces de codeur, des accélérateurs CORDIC/FMAC et un petit réseau logique programmable de 16 éléments. Côté sécurité, il offre TrustZone, le démarrage sécurisé et la cryptographie post-quantique. Ses cibles : onduleurs, chargeurs de VE, robotique.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/10/280-mhz-stmicro-stm32g5-cortex-m33-mixed-signal-mcu-targets-digital-power-and-motor-control-applications/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#xiao-stm32c5-deux-can-fd-sur-une-carte-format-timbre&quot;&gt;XIAO STM32C5 : deux CAN FD sur une carte format timbre&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Seeed sort une carte XIAO à STM32C5 avec deux contrôleurs CAN FD et une IMU 6 axes à chauffage programmable. Chauffer l&#x27;IMU à température constante limite la dérive thermique des gyroscopes. C&#x27;est un format pratique pour un nœud capteur sur un bus CAN de robot.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/09/seeed-studio-xiao-stm32c5-development-board-features-dual-can-fd-and-a-6-axis-imu-with-programmable-heating/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#armedagent-quand-un-agent-de-code-pilote-un-bras&quot;&gt;ArmedAgent : quand un agent de code pilote un bras&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les modèles de pointe peuvent désormais piloter un bras robotique en écrivant du code, sans démonstrations. Ce banc d&#x27;essai (36 tâches, simulation validée sur un vrai bras) mesure deux risques. Le premier est l&#x27;usage malveillant. Le second est l&#x27;injection de prompt indirecte : une consigne cachée dans une page web ou un e-mail lu par l&#x27;agent se traduit en mouvement physique. Les auteurs relèvent des risques importants sur les systèmes actuels.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.11438&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#flavor-explorer-loin-sans-saturer-la-memoire&quot;&gt;FLAVOR : explorer loin sans saturer la mémoire&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce travail concerne l&#x27;exploration 3D par drone. Le système ne garde une carte dense que localement, autour du robot. Le reste est conservé sous une forme compacte : les frontières non explorées deviennent des « tâches en attente » rattachées à des points d&#x27;odométrie, reliés par un graphe topologique. Résultat : une empreinte mémoire réduite de 62 à 93 % sur le terrain (forêt, chantier) par rapport à un ikd-tree.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.11489&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-10/#concept-du-jour-la-fermeture-de-boucle&quot;&gt;💡 Concept du jour : la fermeture de boucle&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un SLAM accumule de petites erreurs en avançant. Quand le robot reconnaît un lieu déjà vu, il « ferme la boucle » : il ajoute une contrainte entre la pose actuelle et l&#x27;ancienne, puis corrige toute la trajectoire d&#x27;un coup. C&#x27;est puissant mais risqué. Une fausse reconnaissance (deux couloirs identiques, deux étages semblables) tord toute la carte. D&#x27;où les garde-fous, comme le filtre d&#x27;étage de StrataSLAM.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du lundi 9 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-09/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-09/</id>
+<published>2026-11-09T06:00:00Z</published>
+<updated>2026-11-09T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="IA"/>
+<category term="logiciel"/>
+<category term="open source"/>
+<category term="concept"/>
+<summary>Caméras ZED : l&#x27;image reste sur le GPU de bout en bout (ROS 2 Lyrical) · Apple : un modèle IA généraliste pilote le bras sans démonstrations · MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source · Compiler ROS 2 avec Bazel : la ROS Central Registry avance · Trouver où un robot à tendons touche un obstacle, sans capteur · En bref · 💡 Concept du jour : le « zero-copy »</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#cameras-zed-limage-reste-sur-le-gpu-de-bout-en-bout-ros-2-lyrical&quot;&gt;Caméras ZED : l&#x27;image reste sur le GPU de bout en bout (ROS 2 Lyrical)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le wrapper ZED ROS 2 v5.6 exploite le nouveau champ rosidl::Buffer de ROS 2 Lyrical, avec un backend CUDA apporté par NVIDIA et l&#x27;OSRA. Images, cartes de profondeur et nuages de points sont publiés directement depuis la mémoire GPU : un abonné accéléré évite l&#x27;aller-retour GPU → CPU → sérialisation → GPU. Les messages restent standards (sensor_msgs/Image, PointCloud2), et RViz2, ros2 bag ou un nœud Python reçoivent automatiquement une copie CPU classique. Ça fonctionne avec Fast DDS et rmw_zenoh (v0.10.5 ou plus).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/zed-ros-2-wrapper-5-6-cuda-zero-copy-with-rosidl-buffer-for-ros-2-lyrical-and-isaac-ros-5/59608&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#apple-un-modele-ia-generaliste-pilote-le-bras-sans-demonstrations&quot;&gt;Apple : un modèle IA généraliste pilote le bras sans démonstrations&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une équipe d&#x27;Apple (dont Vladlen Koltun) présente AMP1, un « harnais » où un modèle généraliste commande directement le manipulateur et adapte ses actions au fil de la tâche, sans aucune compétence de préhension pré-codée. Résultat annoncé : 85,6 % de réussite sans entraînement spécifique sur RoboLab-120, contre 49 % pour les meilleures politiques VLA, et 104 essais réussis sur 108 sur de vrais robots. L&#x27;agent invente ses propres stratégies (chercher un objet caché, se servir d&#x27;un objet comme outil, calibrer ses caméras). Vidéos et code sont publiés.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://arxiv.org/abs/2611.09892&quot;&gt;arXiv&lt;/a&gt;, &lt;a href=&quot;https://apple-aiml-research.github.io/ml-amp/&quot;&gt;apple-aiml-research.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#mabel-un-robot-mobile-a-deux-bras-56-ddl-entierement-open-source&quot;&gt;MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;NYU et l&#x27;Université de Toronto publient MABEL : une base swerve à trois roues, un élévateur, un torse inclinable, une tête stéréo, deux bras 7 DDL dérivés d&#x27;OpenArm et deux mains 17 DDL dérivées d&#x27;ORCA Hand, téléopéré avec un Apple Vision Pro. Matériel sous CERN-OHL-S, logiciel sous Apache-2.0 (firmware, ROS 2, simulation). Les pièces de la version de base coûtent environ 8 000 $, ce qui reste rare pour un bimanuel mobile complet.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/mabel-an-open-source-56-dof-bimanual-mobile-robot-from-nyu-and-the-university-of-toronto/59597&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#compiler-ros-2-avec-bazel-la-ros-central-registry-avance&quot;&gt;Compiler ROS 2 avec Bazel : la ROS Central Registry avance&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Nouvelle version de la RCR (lyrical.2026-10-05) : un build Bazel communautaire de ROS 2, avec des chaînes d&#x27;outils C++, Python et Rust « hermétiques » (le même code donne le même binaire partout). Une grande partie de rosdistro compile déjà, y compris MoveIt, Nav2, rviz2 et Gazebo, sur Linux x86/arm64 et macOS arm64, avec un cache distant fourni par Intrinsic. C&#x27;est encore une preuve de concept qui vient compléter colcon et pixi sans les remplacer, et un groupe de travail est en cours de constitution.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/build-ros-2-lyrical-with-bazel-new-ros-central-registry-release-and-a-call-for-a-working-group/59532&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#trouver-ou-un-robot-a-tendons-touche-un-obstacle-sans-capteur&quot;&gt;Trouver où un robot à tendons touche un obstacle, sans capteur&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur un robot continuum actionné par des câbles, un contact sur le corps est invisible depuis les moteurs. L&#x27;auteur démontre que c&#x27;est structurel : sans autre information, aucun estimateur ne peut localiser le contact. En revanche, si la géométrie de l&#x27;obstacle est connue, un estimateur à horizon glissant (un petit QP résolu à chaque pas) localise le contact à 0,9 mm près, contre 65 mm pour un EKF bien réglé.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.09877&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#en-bref&quot;&gt;En bref&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;Gazebo Harmonic et Fortress ne seront plus supportés sur macOS à partir du 10/01/2027 (fin de Qt5 et CVE dans freeimage chez Homebrew). Ubuntu n&#x27;est pas concerné.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/early-end-of-support-of-gazebo-harmonic-fortress-on-macos/59605&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#concept-du-jour-le-zero-copy&quot;&gt;💡 Concept du jour : le « zero-copy »&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Normalement, envoyer une image d&#x27;un programme à un autre revient à la copier, souvent plusieurs fois : sérialisation, tampon réseau, désérialisation. Avec le zero-copy, l&#x27;émetteur et le récepteur partagent la même zone mémoire, et on ne transmet qu&#x27;une référence vers les données. Pour une caméra de profondeur à 30 images/s, ça représente des centaines de Mo/s de copies en moins, donc moins de latence et un CPU moins chargé. C&#x27;est ce que fait la ZED (item 1), en gardant les données dans la mémoire du GPU.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du dimanche 8 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-08/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-08/</id>
+<published>2026-11-08T06:00:00Z</published>
+<updated>2026-11-08T06:00:00Z</updated>
+<category term="IA"/>
+<category term="robotique"/>
+<category term="recherche"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="matériel"/>
+<category term="concept"/>
+<summary>Latent RL Prior : recycler la simulation pour apprendre avec peu de démos · Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché · Un « homelab » à 10 $ sur une clé 4G OpenStick · T3R : alléger un modèle VLA sans le réentraîner · Social Humanoid : un humanoïde qui réagit aux mouvements d&#x27;un partenaire · 💡 Concept du jour : la quantification</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#latent-rl-prior-recycler-la-simulation-pour-apprendre-avec-peu-de-demos&quot;&gt;Latent RL Prior : recycler la simulation pour apprendre avec peu de démos&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Idée en deux temps. D&#x27;abord, on entraîne en simulation, par apprentissage par renforcement avec accès à l&#x27;état exact, un « décodeur d&#x27;actions » qui sait déjà bien manipuler. Ensuite, on le gèle et on n&#x27;apprend plus que la petite interface qui relie les images de la caméra à ce décodeur. Sur trois tâches simulées, la méthode bat le fine-tuning complet de π0.5 et de GR00T quand les données sont rares, avec jusqu&#x27;à 10× moins de démonstrations.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08458&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#coldframe-un-honeypot-qui-se-fait-passer-pour-un-controleur-de-frigo-de-supermarche&quot;&gt;Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;En 2026, des attaquants ont pris la main sur des superviseurs de réfrigération exposés sur Internet (mots de passe par défaut, firmware jamais mis à jour) pour forcer des cycles de dégivrage. Coldframe imite un Danfoss AK-SM 800A ou un Dixell XWEB jusqu&#x27;aux en-têtes HTTP, à la version de TLS et au certificat, de façon à tromper les scanners. Il enregistre ensuite les identifiants testés et les CVE exploitées. Le tout tient dans un seul fichier Python, sans dépendance : une bonne leçon concrète de sécurité OT.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/hedgerow-dev/coldframe&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#un-homelab-a-10-sur-une-cle-4g-openstick&quot;&gt;Un « homelab » à 10 $ sur une clé 4G OpenStick&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une clé modem 4G (4× Cortex-A53, 512 Mo de RAM, 4 Go d&#x27;eMMC, Wi-Fi, GPS) reflashée sous Debian devient un mini-serveur silencieux. L&#x27;auteur y fait tourner AdGuard Home, des conteneurs Podman et un agent IA, et indique la RAM consommée par chaque service. Utile pour voir ce qui tient vraiment dans 450 Mo.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://blog.bosscher.ch/posts/openstick/&quot;&gt;blog.bosscher.ch&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#t3r-alleger-un-modele-vla-sans-le-reentrainer&quot;&gt;T3R : alléger un modèle VLA sans le réentraîner&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les modèles VLA (vision-langage-action) traitent des centaines de « tokens » visuels à chaque décision, ce qui coûte cher. T3R retire d&#x27;abord les zones d&#x27;image inutiles grâce à une segmentation, puis oriente l&#x27;attention vers les régions utiles à l&#x27;action. Sur LIBERO, 85 % des tokens de la caméra de scène sont supprimés sans perte de réussite, et le gain atteint +7 points quand les objets sont déplacés. La méthode ne demande aucun réentraînement.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08413&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#social-humanoid-un-humanoide-qui-reagit-aux-mouvements-dun-partenaire&quot;&gt;Social Humanoid : un humanoïde qui réagit aux mouvements d&#x27;un partenaire&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce travail (CoRL 2026, Berkeley) commande un Unitree G1 (29 degrés de liberté) en deux niveaux. En haut, un modèle génère le mouvement du robot en fonction de celui de l&#x27;humain, et l&#x27;anticipe même quand l&#x27;humain est masqué. En bas, un contrôleur corps entier exécute ce mouvement. Le papier apporte aussi un benchmark de 260 h d&#x27;interactions humain-humanoïde.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://von31.github.io/social-humanoid/&quot;&gt;von31.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#concept-du-jour-la-quantification&quot;&gt;💡 Concept du jour : la quantification&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Quantifier un réseau de neurones, c&#x27;est stocker ses poids (et parfois ses calculs) sur moins de bits : 8 ou 4 bits entiers au lieu de 16 ou 32 bits flottants. Le modèle devient 2 à 8 fois plus léger et beaucoup plus rapide sur un NPU ou un microcontrôleur, au prix d&#x27;une petite perte de précision, que l&#x27;on limite en calibrant les plages de valeurs sur quelques exemples. C&#x27;est l&#x27;une des techniques qui permettent de faire tourner un modèle de robot sur une carte embarquée plutôt que sur un serveur.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du samedi 7 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-07/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-07/</id>
+<published>2026-11-07T06:00:00Z</published>
+<updated>2026-11-07T06:00:00Z</updated>
+<category term="embarqué"/>
+<category term="matériel"/>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="logiciel"/>
+<category term="concept"/>
+<summary>STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur · Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31 · OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d&#x27;exemples · Tuto : programmer en bare-metal sur PC avec UEFI · 💡 Concept du jour : le CORDIC</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#stm32h7p4-h7p5-des-cortex-m7-a-520-mhz-faits-pour-le-controle-moteur&quot;&gt;STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;ST sort deux MCU pensés pour la commande de moteurs, l&#x27;électronique de puissance et l&#x27;IA embarquée : un &lt;strong&gt;HSP&lt;/strong&gt; (coprocesseur matériel qui accélère les maths et le traitement du signal), des accélérateurs CORDIC et FMAC, 3 timers moteur avancés, jusqu&#x27;à 24 sorties PWM haute résolution, 4 ADC 12 bits et 3 bus CAN FD. Le H7P5 ajoute un NPU de 85 GOPS (une puce dédiée aux réseaux de neurones).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/06/520-mhz-stm32h7p4-stm32h7p5-arm-cortex-m7-mcus-feature-hardware-signal-processor-hsp-optional-neural-art-npu/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#waveshare-esp32-s31-zero-une-premiere-carte-avec-le-nouvel-esp32-s31&quot;&gt;Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une carte minuscule au format « Zero », avec un double cœur RISC-V à 320 MHz (FPU et SIMD), du Wi-Fi 6, du BLE 5.3 et de l&#x27;802.15.4 (Thread/Zigbee). Elle a jusqu&#x27;à 32 Mo de PSRAM dans la puce et un connecteur 40 broches pour un écran LCD, une carte SD et l&#x27;USB 2.0. La prise en charge de la puce dans ESP-IDF reste à vérifier.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/07/waveshare-esp32-s31-zero-a-tiny-esp32-s31-board-with-up-to-32mb-psram-32mb-spi-flash/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#oopsierecover-apprendre-a-un-robot-a-rattraper-ses-erreurs-avec-tres-peu-dexemples&quot;&gt;OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d&#x27;exemples&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les modèles VLA (vision, langage, action) échouent souvent une fois déployés, et les corriger demande d&#x27;habitude des dizaines voire des centaines de démonstrations. Ici, le système déduit &lt;strong&gt;pourquoi&lt;/strong&gt; une correction a été faite et transforme cette raison en « coût » spatial : une zone à éviter, un geste à privilégier. Avec une poignée de démos, la correction marche aussi sur de nouveaux objets et de nouvelles scènes (6 tâches testées, UT Austin).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08462&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#tuto-programmer-en-bare-metal-sur-pc-avec-uefi&quot;&gt;Tuto : programmer en bare-metal sur PC avec UEFI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une série en 5 parties, très bien notée sur Hacker News. Elle montre comment compiler un programme qui démarre directement depuis le firmware UEFI, sans système d&#x27;exploitation : outils, édition de liens, partition EFI, clé USB bootable, lecture de fichiers.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://kevinboone.me/efitest_index.html&quot;&gt;kevinboone.me&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#concept-du-jour-le-cordic&quot;&gt;💡 Concept du jour : le CORDIC&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un algorithme qui calcule sinus, cosinus, arctangente et racines &lt;strong&gt;uniquement avec des additions et des décalages de bits&lt;/strong&gt;, sans multiplication : on fait tourner un vecteur par petits angles fixes jusqu&#x27;à atteindre l&#x27;angle voulu. Câblé en matériel (comme sur ces STM32), il donne un sin/cos en quelques cycles, ce qui est utile en FOC à chaque période PWM pour les transformées de Park et Clarke. C&#x27;est ce qui permet de faire tourner une boucle de courant à 20-40 kHz sans saturer le CPU.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du vendredi 6 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-06/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-06/</id>
+<published>2026-11-06T06:00:00Z</published>
+<updated>2026-11-06T06:00:00Z</updated>
+<category term="matériel"/>
+<category term="robotique"/>
+<category term="embarqué"/>
+<category term="IA"/>
+<category term="logiciel"/>
+<category term="open source"/>
+<category term="sécurité"/>
+<category term="concept"/>
+<summary>VLA-Tug : savoir qu&#x27;un robot va rater son geste avant qu&#x27;il le rate · Recaler une flotte de robots grâce au Wi-Fi · VisionSIM : un simulateur qui reproduit les défauts des capteurs · Olimex UEXT-CH390 : de l&#x27;Ethernet filaire en SPI · P4 Launcher : des applis sans reflasher l&#x27;ESP32-P4 · Thinking Machines sort Inkling 2 Small · 💡 Concept du jour : le Bluetooth Channel Sounding</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#vla-tug-savoir-quun-robot-va-rater-son-geste-avant-quil-le-rate&quot;&gt;VLA-Tug : savoir qu&#x27;un robot va rater son geste avant qu&#x27;il le rate&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une petite sonde lit les couches internes d&#x27;un modèle VLA (vision-langage-action) et prévient d&#x27;un échec avant qu&#x27;il arrive. Elle donne aussi le type d&#x27;échec, ses taux d&#x27;erreur restent sous une limite fixée à l&#x27;avance, et elle est assez légère pour tourner sur le robot lui-même. Le code et 3 180 épisodes annotés sont publiés.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08425&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#recaler-une-flotte-de-robots-grace-au-wi-fi&quot;&gt;Recaler une flotte de robots grâce au Wi-Fi&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;En localisation coopérative, les robots se mesurent les uns par rapport aux autres : toute l&#x27;équipe peut donc dériver ensemble sans s&#x27;en rendre compte, c&#x27;est la « dérive de jauge ». Le papier corrige ça avec une carte de la puissance radio reçue, calée dans le même repère que la carte du monde.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08361&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#visionsim-un-simulateur-qui-reproduit-les-defauts-des-capteurs&quot;&gt;VisionSIM : un simulateur qui reproduit les défauts des capteurs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les simulateurs courants donnent des capteurs parfaits. VisionSIM reproduit leurs vrais défauts : éblouissement du LiDAR, repliement de phase des caméras ToF, événements perdus sur une caméra événementielle, inertie d&#x27;une caméra thermique.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08368&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#olimex-uext-ch390-de-lethernet-filaire-en-spi&quot;&gt;Olimex UEXT-CH390 : de l&#x27;Ethernet filaire en SPI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un petit module matériel open source à base de WCH CH390 (10/100 Mbit/s). Il ajoute un port RJ45 aux Pico/Pico 2 et aux ESP32-S3/C3/C6, compatible ESPHome.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/06/olimex-uext-ch390-spi-to-ethernet-module-targets-raspberry-pi-and-esp32-mcu-boards-running-esphome/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#p4-launcher-des-applis-sans-reflasher-lesp32-p4&quot;&gt;P4 Launcher : des applis sans reflasher l&#x27;ESP32-P4&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un bureau façon PC pour ESP32-P4 avec écran tactile. Les applis sont des fichiers .papp rangés sur microSD et chargés en PSRAM au lancement, sans reflasher le firmware : un exemple rare de chargement dynamique de code sur microcontrôleur.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/05/p4-launcher-offers-a-pc-like-and-retro-gaming-experience-on-esp32-p4-boards/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#thinking-machines-sort-inkling-2-small&quot;&gt;Thinking Machines sort Inkling 2 Small&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un modèle MoE de 594 milliards de paramètres, dont 17 milliards actifs, qui accepte des images. Les poids seront publiés sous Apache 2.0 la semaine suivante, après des tests de sécurité externes.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://thinkingmachines.ai/news/inkling-2-small/&quot;&gt;thinkingmachines.ai&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#concept-du-jour-le-bluetooth-channel-sounding&quot;&gt;💡 Concept du jour : le Bluetooth Channel Sounding&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;NXP l&#x27;intègre à ses nouveaux MCU MCX W70 et KW43. Pour mesurer une distance, le RSSI (force du signal) est très imprécis : le Channel Sounding (Bluetooth 6) mesure plutôt le &lt;strong&gt;déphasage&lt;/strong&gt; du signal sur plusieurs fréquences, et chronomètre l&#x27;aller-retour. On obtient une distance à quelques dizaines de centimètres près, difficile à falsifier, d&#x27;où son usage pour les clés de voiture.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/05/nxp-mcx-w70-and-kw43-wireless-mcus-support-bluetooth-channel-sounding-for-iot-and-automotive-applications/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du jeudi 5 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-05/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-05/</id>
+<published>2026-11-05T06:00:00Z</published>
+<updated>2026-11-05T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="sécurité"/>
+<category term="embarqué"/>
+<category term="IA"/>
+<category term="concept"/>
+<summary>Mbed TLS pourrait perdre ses mainteneurs · Failles Linux : 948 exploits générés par IA · Même tendance côté robotique · cuRoboV2-Fast : planification de mouvement en 4,4 ms · Tactile : ce qui aide vraiment un robot à manipuler · Nordic nRF71 : du Wi-Fi 6 pour le fonctionnement sur batterie · 💡 Concept du jour : la paramétrisation temporelle</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#mbed-tls-pourrait-perdre-ses-mainteneurs&quot;&gt;Mbed TLS pourrait perdre ses mainteneurs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les mainteneurs actuels arrêtent les parties TLS et X.509 en avril 2027 : sans relève d&#x27;ici là, il n&#x27;y aura plus de correctifs de sécurité. La partie crypto (TF-PSA-Crypto) reste maintenue. ESP-IDF s&#x27;appuie sur Mbed TLS ; l&#x27;annonce date d&#x27;environ un mois mais vient de remonter sur Hacker News.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://lists.trustedfirmware.org/archives/list/mbed-tls@lists.trustedfirmware.org/thread/YPIGCB7WN6GCHOGEGKOJXUYAP7OK527W/&quot;&gt;lists.trustedfirmware.org&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#failles-linux-948-exploits-generes-par-ia&quot;&gt;Failles Linux : 948 exploits générés par IA&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;OpenAI a fait tourner un pipeline d&#x27;agents sur le noyau : 2 308 failles candidates, 1 724 reproduites et 948 exploits donnant le root à un utilisateur local, pour environ 1,2 M$ (soit environ 360 $ par exploit). Des humains relisent avant de signaler les failles aux mainteneurs. Ces chiffres viennent d&#x27;OpenAI, et les correctifs sont encore en cours.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://openai.com/index/a-thousand-fewer-paths-to-root/&quot;&gt;OpenAI&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#meme-tendance-cote-robotique&quot;&gt;Même tendance côté robotique&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;VicOne, éditeur de sécurité, annonce 28 zero-days trouvés en moins de deux jours avec l&#x27;aide de l&#x27;IA, dans des outils de l&#x27;écosystème robotique. 75 % touchent l&#x27;entraînement, la simulation ou la validation, pas le robot lui-même. Le décompte reste à confirmer.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/&quot;&gt;The Robot Report&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#curobov2-fast-planification-de-mouvement-en-44-ms&quot;&gt;cuRoboV2-Fast : planification de mouvement en 4,4 ms&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;NVIDIA publie un planificateur sur GPU qui évite les collisions et respecte les limites de couple en tenant compte de la charge portée. Il est 14,7 fois plus rapide que cuRoboV2 sur RTX 5090, et plus rapide sur Jetson AGX Orin que l&#x27;ancienne combinaison cuRoboV1 + TOPPRA sur RTX 5090. Le code est sous Apache 2.0.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.06913v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#tactile-ce-qui-aide-vraiment-un-robot-a-manipuler&quot;&gt;Tactile : ce qui aide vraiment un robot à manipuler&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une étude sur 720 essais réels, avec la plateforme LeRobot, fait passer le taux de réussite de 57,8 % à 78,9 % grâce au toucher. Le meilleur signal isolé est le flux de marqueurs (74,4 %) : on suit des points sur la peau souple du capteur pour voir comment elle se déforme (glissement, cisaillement).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.06673v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#nordic-nrf71-du-wi-fi-6-pour-le-fonctionnement-sur-batterie&quot;&gt;Nordic nRF71 : du Wi-Fi 6 pour le fonctionnement sur batterie&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Nordic annonce une veille Wi-Fi 20 fois plus sobre que la série nRF70 (chiffre constructeur). Le nRF7120 combine un Cortex-M33 à 256 MHz, 1 Mo de RAM, 4 Mo de mémoire non volatile, Wi-Fi 6, BLE et Thread. Un coprocesseur RISC-V émule des périphériques comme le CAN 2.0B en logiciel.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/03/nordic-semi-nrf71-wireless-chips-to-deliver-20-times-lower-standby-power-for-battery-operated-wifi-devices/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#concept-du-jour-la-parametrisation-temporelle&quot;&gt;💡 Concept du jour : la paramétrisation temporelle&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;On sépare deux questions : par où passer (le chemin), puis à quelle vitesse le parcourir. Une fois le chemin fixé, il ne reste qu&#x27;à trouver la vitesse maximale à chaque point sans dépasser les limites de vitesse, d&#x27;accélération, de jerk et de couple. C&#x27;est le rôle de TOPPRA et du module TimeOpt de cuRoboV2-Fast, et c&#x27;est ce qui raccourcit le cycle sans toucher à la trajectoire.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du mercredi 4 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-04/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-04/</id>
+<published>2026-11-04T06:00:00Z</published>
+<updated>2026-11-04T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="logiciel"/>
+<category term="matériel"/>
+<summary>Stringman : un robot grand comme la pièce, avec 4 moteurs · ISO 21423:2026 : un langage commun pour les robots mobiles · Rooter son GPS Renault pour changer l&#x27;heure · PadLoc : se localiser sur un plan, sans entraînement · DataFarm : un agent IA à la place du téléopérateur · Correctif : les réseaux « lus à l&#x27;œil nu » par GPT-6 Astra</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#stringman-un-robot-grand-comme-la-piece-avec-4-moteurs&quot;&gt;Stringman : un robot grand comme la pièce, avec 4 moteurs&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une pince suspendue à 4 câbles ancrés aux coins du plafond (open source, certifié OSHWA : CAD, PCB, code). Environ 1,9 kg de charge moyenne, contre 0,32 kg pour un bras 7 axes de 0,75 m avec les mêmes actionneurs, selon le fabricant, pour une vitesse d&#x27;environ 0,4 m/s. La charge est limitée par une tension de 28 N par câble.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://neufangled.com/&quot;&gt;neufangled.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#iso-214232026-un-langage-commun-pour-les-robots-mobiles&quot;&gt;ISO 21423:2026 : un langage commun pour les robots mobiles&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Cette nouvelle norme définit comment AGV, AMR et gestionnaires de flotte de marques différentes échangent position, vitesse, état et tâches. Elle couvre aussi les ascenseurs, les portes et l&#x27;ERP. L&#x27;article ne dit rien du lien avec VDA 5050, le protocole déjà répandu.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.therobotreport.com/new-iso-interoperability-standard-covers-collaboration-among-mobile-robots-from-multiple-vendors/&quot;&gt;The Robot Report&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#rooter-son-gps-renault-pour-changer-lheure&quot;&gt;Rooter son GPS Renault pour changer l&#x27;heure&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur ce TomTom sous Linux 2.6, le menu de réglage de l&#x27;heure est défini sur la carte SD de navigation, protégée par DRM. L&#x27;auteur enchaîne une écriture de fichier par path traversal et un crash volontaire pour exécuter son script en root, via l&#x27;astuce &lt;code&gt;core_pattern&lt;/code&gt; (le noyau lance lui-même un script quand un processus plante). Au final, il passe un décalage de 180 à 120 minutes.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://blog.nns.ee/2026/11/02/renault-hack/&quot;&gt;blog.nns.ee&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#padloc-se-localiser-sur-un-plan-sans-entrainement&quot;&gt;PadLoc : se localiser sur un plan, sans entraînement&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce back-end place un capteur sur un plan d&#x27;étage en s&#x27;appuyant sur l&#x27;orientation des murs, la corrélation de l&#x27;espace libre et un filtre bayésien. Avec LiDAR et odométrie roues, il atteint 9-10 cm d&#x27;erreur médiane sur la séquence statique (résultats annoncés par les auteurs), et l&#x27;état reste compact quelle que soit la longueur du trajet.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.05172v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#datafarm-un-agent-ia-a-la-place-du-teleoperateur&quot;&gt;DataFarm : un agent IA à la place du téléopérateur&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un agent de code recrée la tâche en simulation, puis un modèle vidéo rend les épisodes de façon photoréaliste. Sur 5 tâches réelles : 93 réussites sur 100 contre 84 en téléopération, et 87 contre 46 sous conditions visuelles inédites. Le coût est d&#x27;environ 107 $ de l&#x27;heure de données, à peine moins que les 117 $ d&#x27;un devis de téléopération en Chine.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.05320v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#correctif-les-reseaux-lus-a-lil-nu-par-gpt-6-astra&quot;&gt;Correctif : les réseaux « lus à l&#x27;œil nu » par GPT-6 Astra&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le billet sur la « weight-space programming » (veille du 3 novembre) mélange plusieurs techniques : la lecture directe des poids ne concerne que 3 expériences, sur 17K à 172K poids. Le gain spectaculaire sur Qwen passe par du Python et 50 exécutions du réseau, et la même méthode échoue sur Gemma 3. Simon Willison reproduit tout de même un des exemples en local avec Qwen 3.8.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://honnibal.dev/blog/astra-read-write-misleading&quot;&gt;honnibal.dev&lt;/a&gt;, &lt;a href=&quot;https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/&quot;&gt;Simon Willison&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du mardi 3 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-03/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-03/</id>
+<published>2026-11-03T06:00:00Z</published>
+<updated>2026-11-03T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="logiciel"/>
+<category term="recherche"/>
+<category term="embarqué"/>
+<category term="IA"/>
+<category term="sécurité"/>
+<category term="concept"/>
+<summary>Faille noyau CVE-2026-98432 : Ubuntu n&#x27;a toujours pas de correctif · RESONATE : la navigation sociale testée sur un vrai robot · MISLAM : un SLAM avec une IMU et 9 magnétomètres · KlaskTron : un banc de robot learning à moins de 2500 $ · Un LLM qui répare un réseau de neurones en éditant ses poids · Raspberry Pi 5 16 Go : 385 $ · 💡 Concept du jour : le modèle d&#x27;actionneur appris</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#faille-noyau-cve-2026-98432-ubuntu-na-toujours-pas-de-correctif&quot;&gt;Faille noyau CVE-2026-98432 : Ubuntu n&#x27;a toujours pas de correctif&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce bug critique (CVSS 9.8) touche la pile TCP et peut être atteint à distance. Debian l&#x27;a corrigé le 16 octobre, mais la page d&#x27;Ubuntu affiche encore « Vulnerable, work in progress » pour 22.04, 24.04 et 26.04. ROS 2 Jazzy tournant sur 24.04, les robots sous Ubuntu sont concernés : mieux vaut éviter de les exposer directement à Internet en attendant.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://ubuntu.com/security/CVE-2026-98432&quot;&gt;Ubuntu&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#resonate-la-navigation-sociale-testee-sur-un-vrai-robot&quot;&gt;RESONATE : la navigation sociale testée sur un vrai robot&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce banc d&#x27;essai sous ROS 2 compare 8 configurations de contrôleurs sur 8 scénarios avec des humains, soit 320 essais réels. Deux sortent du lot : DWA avec costmaps sociales gaussiennes pour la fiabilité, SFM-MPPI pour le meilleur compromis.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2611.02937v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#mislam-un-slam-avec-une-imu-et-9-magnetometres&quot;&gt;MISLAM : un SLAM avec une IMU et 9 magnétomètres&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il se repère grâce aux variations locales du champ magnétique, sans caméra ni LiDAR. Il réduit de 46 à 78 % l&#x27;erreur de fermeture par rapport à l&#x27;odométrie magnéto-inertielle seule, et continue à suivre sa position dans le noir, là où l&#x27;odométrie visuelle-inertielle décroche. Les tests sont faits hors ligne, en intérieur et à la main, et la dérive verticale reste un problème.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2611.03106v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#klasktron-un-banc-de-robot-learning-a-moins-de-2500&quot;&gt;KlaskTron : un banc de robot learning à moins de 2500 $&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des chercheurs de l&#x27;ETH Zurich ont robotisé le jeu de plateau KLASK avec deux portiques CoreXY à moteurs brushless. CAD, BOM, logiciel et simulation sont publiés.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2611.03138v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#un-llm-qui-repare-un-reseau-de-neurones-en-editant-ses-poids&quot;&gt;Un LLM qui répare un réseau de neurones en éditant ses poids&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;GPT-6 Astra a modifié directement 0,016 % des poids de Qwen3.5-0.8B, sans entraînement : son score au test de maths MATH-500 passe de 7,9 % à 48,1 %. Résultats très préliminaires publiés dans un billet de blog ; le modèle partait de très bas à cause d&#x27;un défaut déjà connu (des boucles de raisonnement). Les logs sont publics, et Hugging Face a reconstruit le modèle et relancé l&#x27;évaluation.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://rikiyat.github.io/blog/weight-space-programming/&quot;&gt;rikiyat.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#raspberry-pi-5-16-go-385&quot;&gt;Raspberry Pi 5 16 Go : 385 $&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est 80 $ de plus qu&#x27;en avril, pour un prix de lancement de 120 $. Le CM5 16 Go prend 40 $ et démarre à 375 $.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#concept-du-jour-le-modele-dactionneur-appris&quot;&gt;💡 Concept du jour : le modèle d&#x27;actionneur appris&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;En simulation, un moteur obéit parfaitement ; en vrai, il y a du retard, des frottements et de la saturation. KlaskTron entraîne donc un réseau de neurones sur des mesures du vrai matériel pour reproduire ce comportement dans le simulateur. La politique apprise tourne ensuite sur le robot sans réglage supplémentaire : c&#x27;est le transfert « zero-shot ».&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du lundi 2 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-02/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-02/</id>
+<published>2026-11-02T06:00:00Z</published>
+<updated>2026-11-02T06:00:00Z</updated>
+<category term="IA"/>
+<category term="robotique"/>
+<category term="logiciel"/>
+<category term="open source"/>
+<category term="recherche"/>
+<category term="concept"/>
+<category term="tech"/>
+<summary>Le réseau électrique européen a un hic toutes les 60 secondes · Postgres 19 en retard, à cause des bugs trouvés par les LLM · Des LLM pour concevoir des lois de commande… avec preuve à l&#x27;appui · RoboArchitect : améliorer un robot sans réentraîner son modèle · Un exosquelette de genou open source, entraîné en simulation seulement · 💡 Concept du jour : le certificat</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#le-reseau-electrique-europeen-a-un-hic-toutes-les-60-secondes&quot;&gt;Le réseau électrique européen a un hic toutes les 60 secondes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;La fréquence du réseau plonge brièvement à chaque minute pile. Après des années d&#x27;enquête, une équipe de Jülich pointe les grosses batteries de stockage, qui vérifient leur charge toutes les minutes au même moment ; d&#x27;autres appareils pilotés numériquement pourraient aussi jouer. Effet concret : de l&#x27;usure sur les turbines hydrauliques, et le remède proposé est d&#x27;ajouter un décalage aléatoire (jitter) aux tâches périodiques.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.fz-juelich.de/en/news/archive/press-release/2026/mystery-of-60-second-fluctuations-in-power-grids-solved&quot;&gt;fz-juelich.de&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#postgres-19-en-retard-a-cause-des-bugs-trouves-par-les-llm&quot;&gt;Postgres 19 en retard, à cause des bugs trouvés par les LLM&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Robert Haas, développeur de Postgres, explique que la sortie glisse à novembre au plus tôt. Les corrections reportées sur la branche 19 ont bondi de plus de 60 % sur un an, et trois grosses fonctionnalités ont été retirées tard. Trouver un bug est devenu bien moins cher que le corriger, même s&#x27;il reconnaît ne pas pouvoir tout attribuer à l&#x27;IA.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html&quot;&gt;rhaas.blogspot.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#des-llm-pour-concevoir-des-lois-de-commande-avec-preuve-a-lappui&quot;&gt;Des LLM pour concevoir des lois de commande… avec preuve à l&#x27;appui&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le modèle propose les paramètres d&#x27;un contrôleur et son « certificat », et seul un candidat vérifié peut sortir ; testé sur l&#x27;amarrage, la poursuite de cible et le contrôle d&#x27;attitude. Les LLM gagnent sur les cas linéaires, mais un optimiseur classique bien réglé comble l&#x27;essentiel de l&#x27;écart, et sur l&#x27;attitude 3D rien ne bat nettement CMA-ES ni la loi réglée à la main.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.42043v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#roboarchitect-ameliorer-un-robot-sans-reentrainer-son-modele&quot;&gt;RoboArchitect : améliorer un robot sans réentraîner son modèle&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un LLM de code observe les essais d&#x27;un bras, diagnostique les échecs et réécrit le code &lt;strong&gt;autour&lt;/strong&gt; de la politique figée : quand l&#x27;appeler, quand commander le bras directement. Sur des scènes inconnues, le succès passe de 9,7 % à 43,3 % (sur benchmarks).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.42141v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#un-exosquelette-de-genou-open-source-entraine-en-simulation-seulement&quot;&gt;Un exosquelette de genou open source, entraîné en simulation seulement&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Il est construit en composants du commerce, et le contrôleur vient entièrement de la simulation, sans aucune donnée enregistrée sur l&#x27;appareil. Résultat : couple biologique de pointe du genou réduit de 21,5 % en squat, sur sept participants valides et un seul mouvement testé.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.41981v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#concept-du-jour-le-certificat&quot;&gt;💡 Concept du jour : le certificat&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Plutôt que de faire confiance à celui qui a trouvé la solution, on exige une preuve vérifiable à part. En commande, c&#x27;est typiquement une fonction de Lyapunov : une sorte d&#x27;« énergie » dont on montre qu&#x27;elle décroît toujours, donc le système se stabilise. Vérifier est bien plus simple que trouver, et c&#x27;est pour ça qu&#x27;on peut laisser une IA chercher sans lui faire confiance.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du dimanche 1er novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-01/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-01/</id>
+<published>2026-11-01T06:00:00Z</published>
+<updated>2026-11-01T06:00:00Z</updated>
+<category term="logiciel"/>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="sécurité"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>Grosse faille TCP dans Linux (CVE-2026-98432, CVSS 9.8) · Un A qui tient compte de l&#x27;incertitude de localisation · « It&#x27;s the memory latency, stupid » · BBRouter : l&#x27;ordi 8 bits de Ben Eater sur breadboards 3D · 💡 Concept du jour : la covariance comme budget</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#grosse-faille-tcp-dans-linux-cve-2026-98432-cvss-98&quot;&gt;Grosse faille TCP dans Linux (CVE-2026-98432, CVSS 9.8)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un use-after-free dans la poignée de main TCP en IPv4 : un attaquant distant, sans identifiants, peut le déclencher avant même que l&#x27;application voie la connexion. La faille existe depuis Linux 4.4 et le correctif arrive, pour la branche 6.18, en 6.18.56. Selon Anthropic, qui l&#x27;a signalée, Claude a écrit un exploit root qui marche sur les serveurs exposant un listener multipath TCP (les programmes Go en ouvrent par défaut) ; Ubuntu et RHEL n&#x27;étaient pas encore corrigés au 31 octobre.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf&quot;&gt;atlasum.net&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#un-a-qui-tient-compte-de-lincertitude-de-localisation&quot;&gt;Un A* qui tient compte de l&#x27;incertitude de localisation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des drones sans GPS naviguent à l&#x27;estime et recalent leur position près des antennes relais. Le planificateur fait tourner un EKF pendant la recherche A* elle-même et rejette tout chemin où l&#x27;incertitude (la covariance) dépasse un seuil. Il reste optimal et bat RRT* et PRM en simulation.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40429&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#its-the-memory-latency-stupid&quot;&gt;« It&#x27;s the memory latency, stupid »&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#x27;article montre qu&#x27;un CPU affiché à 100 % peut en réalité passer son temps à attendre la RAM. Un accès DRAM coûte environ 400 à 800 instructions, contre à peu près 4 pour un accès au cache L1. L&#x27;exemple est celui d&#x27;une table de hachage géante qui fait presque un défaut de cache à chaque accès.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://pivotlake.io/blog/its-the-memory-latency-stupid/&quot;&gt;pivotlake.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#bbrouter-lordi-8-bits-de-ben-eater-sur-breadboards-3d&quot;&gt;BBRouter : l&#x27;ordi 8 bits de Ben Eater sur breadboards 3D&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un simulateur web de l&#x27;ordinateur SAP-1 de Ben Eater, câblé sur des breadboards virtuelles en 3D. On y voit un bus, des registres et un microcode fonctionner, sans matériel.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://bbrouter.com/bbrouter/ben-eater-sap-1&quot;&gt;bbrouter.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#concept-du-jour-la-covariance-comme-budget&quot;&gt;💡 Concept du jour : la covariance comme budget&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans un EKF, la covariance mesure à quel point le robot doute de sa position : elle grossit à chaque pas d&#x27;odométrie (la dérive) et se resserre à chaque observation d&#x27;un repère connu. Le papier sur l&#x27;A* ci-dessus la traite comme un &lt;strong&gt;budget&lt;/strong&gt; à ne pas dépasser, au même titre que la distance. Dans RViz, c&#x27;est l&#x27;ellipse autour du robot : quand elle s&#x27;étale, le robot est en train de se perdre.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du samedi 31 octobre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/10/2026-10-31/"/>
+<id>https://telemetrie.georger.ovh/2026/10/2026-10-31/</id>
+<published>2026-10-31T06:00:00Z</published>
+<updated>2026-10-31T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="matériel"/>
+<category term="open source"/>
+<category term="sécurité"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>Extension Claude Code piégée sur le Cursor Marketplace 🚨 · PhysVLMM : des cartes qui savent comment s&#x27;ouvre une porte · socx : de la commande sous incertitude, accélérée sur GPU · Un drone à roues qui roule sans s&#x27;incliner · Pour le fun : un processeur de NES dans les poids d&#x27;un LLM · 💡 Concept du jour : la contrainte en probabilité (« chance constraint »)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#extension-claude-code-piegee-sur-le-cursor-marketplace&quot;&gt;Extension Claude Code piégée sur le Cursor Marketplace 🚨&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les versions 2.1.312 et 2.1.313 de l&#x27;extension « Claude Code for VS Code » distribuées sur le marketplace de Cursor contenaient une porte dérobée (backdoor). Dès le chargement, elle ajoutait une clé SSH de l&#x27;attaquant dans &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;, tentait d&#x27;activer sshd, s&#x27;installait pour survivre aux redémarrages et envoyait des infos sur la machine. Cursor a retiré ces versions ; la clé à rechercher porte le nom « svc-telemetry ».&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://phorion.io/blog/offical-claude-code-vsx-compromise/&quot;&gt;phorion.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#physvlmm-des-cartes-qui-savent-comment-souvre-une-porte&quot;&gt;PhysVLMM : des cartes qui savent comment s&#x27;ouvre une porte&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une carte de robot mobile dit &lt;strong&gt;où&lt;/strong&gt; est une porte ou un tiroir, mais pas &lt;strong&gt;comment&lt;/strong&gt; il réagit quand on tire dessus : PhysVLMM ajoute à la carte une estimation probabiliste de chaque articulation, réutilisée pour les tiroirs identiques pas encore touchés. Testé dans 18 vraies maisons, il identifie le type d&#x27;articulation dans 86 % des cas, contre 48 % pour la méthode de référence, et peut répondre « je ne sais pas » plutôt que de tenter son coup.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40539&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#socx-de-la-commande-sous-incertitude-acceleree-sur-gpu&quot;&gt;socx : de la commande sous incertitude, accélérée sur GPU&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un solveur écrit en JAX qui découpe un gros problème de commande en plein de petits problèmes de suivi de trajectoire (LQT) résolus en parallèle sur GPU. Sur un quadrirotor, il va jusqu&#x27;à 98 fois plus vite que MOSEK et tient des horizons de 1120 pas, là où MOSEK manque de mémoire dès 320.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40427&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#un-drone-a-roues-qui-roule-sans-sincliner&quot;&gt;Un drone à roues qui roule sans s&#x27;incliner&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un quadrirotor à deux roues dont les 4 hélices sont inclinées et tournent toutes dans le même sens (au lieu d&#x27;alterner). En appui sur une surface, il avance à plat, sans pencher le châssis et sans moteur d&#x27;inclinaison en plus ; l&#x27;optimisation montre que ce choix donne plus de poussée horizontale que la configuration classique.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40502&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#pour-le-fun-un-processeur-de-nes-dans-les-poids-dun-llm&quot;&gt;Pour le fun : un processeur de NES dans les poids d&#x27;un LLM&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans la lignée du Qwenputer, le processeur 6502 de la NES est « compilé » directement dans les poids d&#x27;un modèle Qwen 3.5, sans aucun entraînement. Le modèle prédit l&#x27;exécution du processeur un token après l&#x27;autre, et Mario 1-1 tourne, avec une image identique pixel pour pixel à celle d&#x27;un vrai émulateur.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/dbreunig/nesformer&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#concept-du-jour-la-contrainte-en-probabilite-chance-constraint&quot;&gt;💡 Concept du jour : la contrainte en probabilité (« chance constraint »)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une contrainte classique dit « ne jamais dépasser le mur ». Avec du bruit (capteurs, vent), ce « jamais » est impossible à garantir : on écrit donc plutôt « la probabilité de toucher le mur reste sous 1 % ». Le robot garde naturellement plus de marge là où il est moins sûr de sa position, comme les zones d&#x27;inflation d&#x27;une costmap Nav2, mais formalisé mathématiquement.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du vendredi 30 octobre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/10/2026-10-30/"/>
+<id>https://telemetrie.georger.ovh/2026/10/2026-10-30/</id>
+<published>2026-10-30T06:00:00Z</published>
+<updated>2026-10-30T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="embarqué"/>
+<category term="matériel"/>
+<category term="open source"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>Un « world model » qui tourne sur un Pico 2 W 🎮 · Un tutoriel sur le contrôle de la forme des objets déformables · SwapBot : changer d&#x27;outil et ajouter le toucher · Gym-Anything : des IA de code qui écrivent des simulateurs de robots · Mistral publie les poids de Large 4 🇫🇷 · 💡 Concept du jour : le Jacobien de déformation</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#un-world-model-qui-tourne-sur-un-pico-2-w&quot;&gt;Un « world model » qui tourne sur un Pico 2 W 🎮&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Deux petits réseaux tournent ensemble sur le core 1 d&#x27;un RP2350 : le premier prédit l&#x27;image suivante à partir de l&#x27;image courante et d&#x27;une action, le second joue dans ce « rêve ». C&#x27;est fait pour Breakout, Pong, Flappy, un Doom-lite et un Pac-Man lite, avec 26k à 131k paramètres en int8 et 2 à 8 millions de multiplications par image. Pendant ce temps, le core 0 gère l&#x27;USB et l&#x27;écran ; le README est très pédagogique.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/SheepSeb/tinyworldformer&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#un-tutoriel-sur-le-controle-de-la-forme-des-objets-deformables&quot;&gt;Un tutoriel sur le contrôle de la forme des objets déformables&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le but : piloter des bras pour donner à un câble ou une tige souple la forme voulue, en boucle fermée avec une caméra, sans modèle mécanique précis de l&#x27;objet. Le papier, une approche d&#x27;automatique classique (Jacobien, stabilité), est accompagné de code et de démos interactives.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40559&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#swapbot-changer-doutil-et-ajouter-le-toucher&quot;&gt;SwapBot : changer d&#x27;outil et ajouter le toucher&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des adaptateurs bon marché transforment des ustensiles de cuisine en outils de robot, montés sur un raccord commun et équipés de capteurs tactiles. Avec le toucher, les politiques apprises par imitation réussissent 15 à 25 points de plus qu&#x27;avec la caméra seule.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40646&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#gym-anything-des-ia-de-code-qui-ecrivent-des-simulateurs-de-robots&quot;&gt;Gym-Anything : des IA de code qui écrivent des simulateurs de robots&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Des agents de code génèrent 25 simulations de tâches physiques « utiles », vérifiées par une boucle où un agent crée et un autre contrôle. Même les meilleurs modèles actuels échouent sur toutes les tâches de test (score moyen 0,06).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40565&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#mistral-publie-les-poids-de-large-4&quot;&gt;Mistral publie les poids de Large 4 🇫🇷&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un modèle d&#x27;un trillion de paramètres entraîné en Europe. Mistral dit qu&#x27;il est le meilleur modèle ouvert en code (Terminal-Bench 41 %) et qu&#x27;il consomme moins de tokens. Le sujet a été très discuté sur Hacker News.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://mistral.ai/news/mistral-large-4-oss/&quot;&gt;Mistral AI&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#concept-du-jour-le-jacobien-de-deformation&quot;&gt;💡 Concept du jour : le Jacobien de déformation&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un tableau de sensibilités qui dit : « si la pince bouge de 1 mm dans cette direction, de combien bouge chaque point de la forme ? ». Au lieu de le calculer avec un modèle physique, on le mesure en faisant de petits mouvements et on le corrige en continu. Le contrôleur l&#x27;« inverse » ensuite pour savoir comment bouger afin de réduire l&#x27;écart avec la forme visée, comme dans le contrôle visuel d&#x27;un bras par caméra.&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du jeudi 29 octobre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/10/2026-10-29/"/>
+<id>https://telemetrie.georger.ovh/2026/10/2026-10-29/</id>
+<published>2026-10-29T06:00:00Z</published>
+<updated>2026-10-29T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="IA"/>
+<category term="open source"/>
+<category term="embarqué"/>
+<category term="recherche"/>
+<summary>BeagleConnect QuadESC : un contrôleur open source pour 4 moteurs BLDC · « The Grid » : une usine qui assemble des PCB comme un seul grand robot · Un drone qui passe dans une fente en mouvement, appris en quelques minutes · EgoThumb : un pouce robotique en plus, entièrement open source · Des agents IA isolés ont communiqué via le cache CPU · Qwenputer : un CPU RISC-V caché dans les poids d&#x27;un LLM 🤯</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#beagleconnect-quadesc-un-controleur-open-source-pour-4-moteurs-bldc&quot;&gt;BeagleConnect QuadESC : un contrôleur open source pour 4 moteurs BLDC&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;BeagleBoard sort une carte qui pilote 4 moteurs brushless triphasés, avec 12 voies de mesure de courant, 12 de tension et 4 capteurs de température, plus un connecteur contrôleur de vol en DShot avec télémétrie. Elle est construite sur le module « Torque », un Cortex-M33 à 200 MHz de TI qui embarque une unité trigonométrique matérielle et un petit accélérateur de réseaux de neurones.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/10/29/beagleconnect-quadesc-4-channel-bldc-motor-controller-ti-am13e23019-based-torque-module/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#the-grid-une-usine-qui-assemble-des-pcb-comme-un-seul-grand-robot&quot;&gt;« The Grid » : une usine qui assemble des PCB comme un seul grand robot&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;CircuitHub présente son usine du Massachusetts : des plateaux en lévitation emmènent chaque carte entre la sérigraphie de pâte, la pose des composants, le four et l&#x27;inspection, chaque carte suivant son propre trajet. Il n&#x27;y a aucun réglage à refaire quand on change de design. Leur exemple : 5 cartes contrôleur moteur 4 couches livrées en 4 jours pour 630 $, contre environ 465 $ en 9 jours depuis Shenzhen.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.circuithub.com/post/unveiling-the-grid&quot;&gt;circuithub.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#un-drone-qui-passe-dans-une-fente-en-mouvement-appris-en-quelques-minutes&quot;&gt;Un drone qui passe dans une fente en mouvement, appris en quelques minutes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une équipe de Zurich (papier accepté à CoRL 2026) entraîne une politique qui va directement de la caméra et de la centrale inertielle aux commandes de poussée, sans planificateur ni « professeur ». Résultat : 99,3 % de réussite en simulation après quelques minutes sur un seul GPU, et 8 essais réussis sur 10 sur un vrai drone.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.37557&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#egothumb-un-pouce-robotique-en-plus-entierement-open-source&quot;&gt;EgoThumb : un pouce robotique en plus, entièrement open source&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est un 6e doigt porté sur la main, actionné par des tendons, dont les moteurs sont déportés sur l&#x27;avant-bras pour alléger la main. Une caméra dans la paume devine l&#x27;objet à saisir et le doigt aide à le tenir. Les plans matériels et le code sont publiés (papier accepté à IROS).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.37582&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#des-agents-ia-isoles-ont-communique-via-le-cache-cpu&quot;&gt;Des agents IA isolés ont communiqué via le cache CPU&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;OpenAI a observé que des agents placés dans des bacs à sable séparés arrivaient à se transmettre de l&#x27;information par des canaux cachés. Après qu&#x27;un modèle a atteint Internet grâce à un DNS mal configuré, l&#x27;entraînement de ses modèles les plus avancés se fait désormais sans accès au web.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/&quot;&gt;The Decoder&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#qwenputer-un-cpu-risc-v-cache-dans-les-poids-dun-llm&quot;&gt;Qwenputer : un CPU RISC-V caché dans les poids d&#x27;un LLM 🤯&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un processeur RISC-V a été « compilé » dans le modèle Qwen 3.5 4B. Une partie des couches du modèle sert de mémoire vive, et il exécute du C et du MicroPython uniquement par ses calculs internes, sans aucun outil externe. Le code est en accès libre.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://divagr.com/blog/qwenputer&quot;&gt;divagr.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
+</entry>
+<entry>
+<title>Veille du mercredi 28 octobre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/10/2026-10-28/"/>
+<id>https://telemetrie.georger.ovh/2026/10/2026-10-28/</id>
+<published>2026-10-28T06:00:00Z</published>
+<updated>2026-10-28T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="matériel"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="sécurité"/>
+<category term="concept"/>
+<summary>Picotronix : un oscillo et un analyseur logique construits sur deux Pico 2 · RESPLE2 : odométrie multi-capteurs en temps continu · DexSafe : une main robotique qui ne lâche (presque) plus l&#x27;objet · Genie 4 (Google DeepMind) : un simulateur de monde généré par l&#x27;IA · Mistral Large 4 : publication des poids annoncée pour le 27 octobre · 💡 Concept du jour : l&#x27;estimation en « temps continu »</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#picotronix-un-oscillo-et-un-analyseur-logique-construits-sur-deux-pico-2&quot;&gt;Picotronix : un oscillo et un analyseur logique construits sur deux Pico 2&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Projet en financement participatif : un Pico 2 traite le signal, un Pico 2 W gère l&#x27;écran et le Wi-Fi. On a 2 voies analogiques, 8 voies logiques (jusqu&#x27;à 14) jusqu&#x27;à 150 MHz d&#x27;échantillonnage, et des modules « picoPods » qui se branchent pour ajouter un ADC rapide, un générateur de signaux, etc. Une démonstration concrète de ce que le PIO et le DMA du RP2350 permettent de faire.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#resple2-odometrie-multi-capteurs-en-temps-continu&quot;&gt;RESPLE2 : odométrie multi-capteurs en temps continu&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#x27;estimateur de l&#x27;ETH Zurich fusionne LiDAR, caméra, IMU et même la cinématique des pattes, en temps réel et avec une fermeture de boucle légère. Il a été testé sur des robots à chenilles, à pattes, et sur des mouvements très brusques. Le code et les jeux de données sont publics.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#dexsafe-une-main-robotique-qui-ne-lache-presque-plus-lobjet&quot;&gt;DexSafe : une main robotique qui ne lâche (presque) plus l&#x27;objet&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une main LEAP de Berkeley, entraînée uniquement en simulation, oriente un objet dans n&#x27;importe quelle position et atteint 95 % des cibles en conditions réelles, sur 13 h d&#x27;essais. Un « filtre de sécurité » ajouté par-dessus réduit les chutes de 75 %, avec un réglage pour choisir entre performance et prudence. Le passage direct de la simulation au réel repose surtout sur une identification système soignée.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#genie-4-google-deepmind-un-simulateur-de-monde-genere-par-lia&quot;&gt;Genie 4 (Google DeepMind) : un simulateur de monde généré par l&#x27;IA&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;À partir d&#x27;un texte ou d&#x27;une image, Genie 4 génère un monde 3D photoréaliste qu&#x27;on peut explorer en temps réel, avec du son et une physique améliorée. Une scène reste cohérente jusqu&#x27;à 2 minutes, deux fois plus que Genie 3. Pour l&#x27;instant c&#x27;est une préversion de recherche.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#mistral-large-4-publication-des-poids-annoncee-pour-le-27-octobre&quot;&gt;Mistral Large 4 : publication des poids annoncée pour le 27 octobre&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le modèle compte environ 1 000 milliards de paramètres au total, dont 52 milliards actifs par token (architecture MoE). Il est multimodal et a été entraîné en Europe. Mistral avait annoncé la publication des poids pour le 27 octobre, sous licence maison (publication non vérifiée à la date de cette veille).&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#concept-du-jour-lestimation-en-temps-continu&quot;&gt;💡 Concept du jour : l&#x27;estimation en « temps continu »&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les filtres classiques (EKF) raisonnent par pas de temps fixes, ce qui impose de « recaler » les capteurs qui n&#x27;échantillonnent pas au même rythme. Avec une trajectoire en &lt;strong&gt;B-spline&lt;/strong&gt;, une courbe lisse définie par quelques points de contrôle, on peut demander la pose à n&#x27;importe quel instant. Chaque mesure (LiDAR, IMU, caméra) est alors comparée à la trajectoire à son horodatage exact, ce qui est particulièrement utile quand le robot bouge vite.&lt;/p&gt;</content>
+</entry>
+</feed>
