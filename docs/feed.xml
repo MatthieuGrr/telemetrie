@@ -6,7 +6,39 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-16T06:00:00Z</updated>
+<updated>2026-11-17T06:00:00Z</updated>
+<entry>
+<title>Veille du mardi 17 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-17/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-17/</id>
+<published>2026-11-17T06:00:00Z</published>
+<updated>2026-11-17T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>Verre et plastique transparent : la caméra de profondeur ment sans prévenir · ROS 2 Kilted : fin de vie le 30 novembre · Fauteuil roulant téléopéré : une architecture de sûreté bien documentée · N&#x27;allumer le deuxième capteur que quand le premier doute · Rockchip RK3668 : cœurs revus, échantillons au T1 2027 · Une SBC industrielle Qualcomm avec quatre CAN-FD isolés · 💡 Concept du jour : le Priority-Flood</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#verre-et-plastique-transparent-la-camera-de-profondeur-ment-sans-prevenir&quot;&gt;Verre et plastique transparent : la caméra de profondeur ment sans prévenir&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur du verre, une caméra RGB-D renvoie une profondeur fausse mais « confiante », sans aucun signal d&#x27;erreur : sur le jeu de données TransCG, 68,6 % des pixels de verre d&#x27;une Intel L515 sont faux de plus de 5 %, et presque toujours trop loin, donc l&#x27;obstacle apparaît comme de l&#x27;espace libre. limit_case_ros2 est un nœud composable (Jazzy, Humble, Apache-2.0) qui repère ces « cuvettes » suspectes dans l&#x27;image de profondeur et publie une profondeur filtrée plus un masque, en 7,4 ms par image en 1280x720. Point rare : l&#x27;auteur publie aussi ses échecs, dont une démo Nav2 négative et une méthode v0.2 qui a raté son test pré-enregistré.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/limit-case-ros2-flag-silent-depth-failures-on-transparent-objects-jazzy-humble/59851&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#ros-2-kilted-fin-de-vie-le-30-novembre&quot;&gt;ROS 2 Kilted : fin de vie le 30 novembre&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Kilted Kaiju (distribution non-LTS de mai 2025) arrive en fin de support le 30/11. La synchronisation du 18/11 (595 paquets en attente) est l&#x27;avant-dernière : il ne restera qu&#x27;une seule synchro avant l&#x27;arrêt. Quiconque est encore sur Kilted doit prévoir la migration vers Jazzy (LTS) ou Lyrical.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/preparing-for-penultimate-kilted-sync-2026-11-18/59865&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee&quot;&gt;Fauteuil roulant téléopéré : une architecture de sûreté bien documentée&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le papier AVD décrit un fauteuil électrique téléopérable bâti uniquement avec du matériel du commerce, et surtout sa logique de sûreté : hiérarchie d&#x27;autorité fixe (arrêt d&#x27;urgence et joystick de l&#x27;occupant priment sur la commande distante), capteurs embarqués n&#x27;ayant que le droit d&#x27;arrêter, calcul séparé entre fonctions principales et fonctions de sûreté, passage en état sûr sur perte de heartbeat. Le LiDAR a été testé sur 2 025 scans sous brouillard d&#x27;eau, poussière et occultation : il garde au pire 76,6 % de ses points utiles vers l&#x27;avant.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.20720&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute&quot;&gt;N&#x27;allumer le deuxième capteur que quand le premier doute&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#x27;équipe de Michael Milford (QUT) propose, pour la reconnaissance de lieux multi-capteurs, de n&#x27;interroger un second capteur que lorsque le score de correspondance du premier est faible, avec un seuil ajusté en ligne pour tenir un taux d&#x27;utilisation fixé. Résultat : 55 % du gain de la fusion en n&#x27;utilisant le second capteur que sur 25 % des requêtes, 81 % à 50 %. Intéressant pour l&#x27;énergie, la cadence et la discrétion.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.20730&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#rockchip-rk3668-curs-revus-echantillons-au-t1-2027&quot;&gt;Rockchip RK3668 : cœurs revus, échantillons au T1 2027&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le successeur attendu du RK3588 change de CPU : 6 Cortex-A725 + 2 Cortex-A520 au lieu des Cortex-A730/A530 annoncés en 2025, qui n&#x27;ont jamais vu le jour. Gravure 6 nm, échantillons d&#x27;ingénierie prévus au T1 2027 et premières cartes en prototype au S1 2027 ; le haut de gamme RK3688 ne viendrait pas avant fin 2027.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/17/rockchip-rk3668-switches-to-cortex-a725-and-cortex-a520-cores-engineering-samples-planned-for-q1-2027/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#une-sbc-industrielle-qualcomm-avec-quatre-can-fd-isoles&quot;&gt;Une SBC industrielle Qualcomm avec quatre CAN-FD isolés&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;La Forlinx OK8275AA-C reprend le Qualcomm Dragonwing QCS8275 (jusqu&#x27;à 40 TOPS, le même que l&#x27;Arduino VENTUNO Q) mais en version industrielle : 4 CAN-FD et 2 RS485 isolés, GbE + 2,5GbE, trois entrées caméra MIPI CSI, alimentation 24 V et plage -40 à +85 °C. Un profil taillé pour un ordinateur de bord de robot mobile.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/17/forlinx-ok8275aa-c-a-qualcomm-qcs8275-industrial-sbc-with-12gb-lpddr5-256gb-ufs-storage/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-17/#concept-du-jour-le-priority-flood&quot;&gt;💡 Concept du jour : le Priority-Flood&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;C&#x27;est l&#x27;algorithme qu&#x27;utilise limit_case_ros2. Il vient de l&#x27;hydrologie : on traite une carte d&#x27;altitude comme un relief et on la « remplit d&#x27;eau » depuis les bords, en traitant toujours en premier la case la plus basse de la frontière (via une file de priorité). Chaque cuvette fermée finit remplie jusqu&#x27;au niveau de son point de débordement, et la différence entre niveau d&#x27;eau et terrain révèle les creux. Appliqué à une image de profondeur inversée, cela fait ressortir les zones anormalement « lointaines » entourées de surfaces proches, signature typique du verre.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du lundi 16 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-16/"/>
@@ -621,32 +653,5 @@
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#qwenputer-un-cpu-risc-v-cache-dans-les-poids-dun-llm&quot;&gt;Qwenputer : un CPU RISC-V caché dans les poids d&#x27;un LLM 🤯&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Un processeur RISC-V a été « compilé » dans le modèle Qwen 3.5 4B. Une partie des couches du modèle sert de mémoire vive, et il exécute du C et du MicroPython uniquement par ses calculs internes, sans aucun outil externe. Le code est en accès libre.&lt;/p&gt;
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://divagr.com/blog/qwenputer&quot;&gt;divagr.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du mercredi 28 octobre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/10/2026-10-28/"/>
-<id>https://telemetrie.georger.ovh/2026/10/2026-10-28/</id>
-<published>2026-10-28T06:00:00Z</published>
-<updated>2026-10-28T06:00:00Z</updated>
-<category term="robotique"/>
-<category term="IA"/>
-<category term="matériel"/>
-<category term="embarqué"/>
-<category term="logiciel"/>
-<category term="sécurité"/>
-<category term="concept"/>
-<summary>Picotronix : un oscillo et un analyseur logique construits sur deux Pico 2 · RESPLE2 : odométrie multi-capteurs en temps continu · DexSafe : une main robotique qui ne lâche (presque) plus l&#x27;objet · Genie 4 (Google DeepMind) : un simulateur de monde généré par l&#x27;IA · Mistral Large 4 : publication des poids annoncée pour le 27 octobre · 💡 Concept du jour : l&#x27;estimation en « temps continu »</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#picotronix-un-oscillo-et-un-analyseur-logique-construits-sur-deux-pico-2&quot;&gt;Picotronix : un oscillo et un analyseur logique construits sur deux Pico 2&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Projet en financement participatif : un Pico 2 traite le signal, un Pico 2 W gère l&#x27;écran et le Wi-Fi. On a 2 voies analogiques, 8 voies logiques (jusqu&#x27;à 14) jusqu&#x27;à 150 MHz d&#x27;échantillonnage, et des modules « picoPods » qui se branchent pour ajouter un ADC rapide, un générateur de signaux, etc. Une démonstration concrète de ce que le PIO et le DMA du RP2350 permettent de faire.&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#resple2-odometrie-multi-capteurs-en-temps-continu&quot;&gt;RESPLE2 : odométrie multi-capteurs en temps continu&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;L&#x27;estimateur de l&#x27;ETH Zurich fusionne LiDAR, caméra, IMU et même la cinématique des pattes, en temps réel et avec une fermeture de boucle légère. Il a été testé sur des robots à chenilles, à pattes, et sur des mouvements très brusques. Le code et les jeux de données sont publics.&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#dexsafe-une-main-robotique-qui-ne-lache-presque-plus-lobjet&quot;&gt;DexSafe : une main robotique qui ne lâche (presque) plus l&#x27;objet&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une main LEAP de Berkeley, entraînée uniquement en simulation, oriente un objet dans n&#x27;importe quelle position et atteint 95 % des cibles en conditions réelles, sur 13 h d&#x27;essais. Un « filtre de sécurité » ajouté par-dessus réduit les chutes de 75 %, avec un réglage pour choisir entre performance et prudence. Le passage direct de la simulation au réel repose surtout sur une identification système soignée.&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#genie-4-google-deepmind-un-simulateur-de-monde-genere-par-lia&quot;&gt;Genie 4 (Google DeepMind) : un simulateur de monde généré par l&#x27;IA&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;À partir d&#x27;un texte ou d&#x27;une image, Genie 4 génère un monde 3D photoréaliste qu&#x27;on peut explorer en temps réel, avec du son et une physique améliorée. Une scène reste cohérente jusqu&#x27;à 2 minutes, deux fois plus que Genie 3. Pour l&#x27;instant c&#x27;est une préversion de recherche.&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#mistral-large-4-publication-des-poids-annoncee-pour-le-27-octobre&quot;&gt;Mistral Large 4 : publication des poids annoncée pour le 27 octobre&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Le modèle compte environ 1 000 milliards de paramètres au total, dont 52 milliards actifs par token (architecture MoE). Il est multimodal et a été entraîné en Europe. Mistral avait annoncé la publication des poids pour le 27 octobre, sous licence maison (publication non vérifiée à la date de cette veille).&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-28/#concept-du-jour-lestimation-en-temps-continu&quot;&gt;💡 Concept du jour : l&#x27;estimation en « temps continu »&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Les filtres classiques (EKF) raisonnent par pas de temps fixes, ce qui impose de « recaler » les capteurs qui n&#x27;échantillonnent pas au même rythme. Avec une trajectoire en &lt;strong&gt;B-spline&lt;/strong&gt;, une courbe lisse définie par quelques points de contrôle, on peut demander la pose à n&#x27;importe quel instant. Chaque mesure (LiDAR, IMU, caméra) est alors comparée à la trajectoire à son horodatage exact, ce qui est particulièrement utile quand le robot bouge vite.&lt;/p&gt;</content>
 </entry>
 </feed>

@@ -8,12 +8,14 @@ search:
 
 # recherche
 
-16 actus sur ce thème · [tous les thèmes](../tags.md)
+18 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Fauteuil roulant téléopéré : une architecture de sûreté bien documentée](../2026/11/2026-11-17.md#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee) <span class="carte-meta">17 nov.</span>
+- [N'allumer le deuxième capteur que quand le premier doute](../2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
 - [Une chargeuse de 5 tonnes en équilibre sur deux roues](../2026/11/2026-11-16.md#une-chargeuse-de-5-tonnes-en-equilibre-sur-deux-roues) <span class="carte-meta">16 nov.</span>
 - [InneR : rendre l'apprentissage par imitation moins fragile](../2026/11/2026-11-14.md#inner-rendre-lapprentissage-par-imitation-moins-fragile) <span class="carte-meta">14 nov.</span>
 - [Détecter un robot qui « tourne en rond » dans sa recherche d'information](../2026/11/2026-11-12.md#detecter-un-robot-qui-tourne-en-rond-dans-sa-recherche-dinformation) <span class="carte-meta">12 nov.</span>

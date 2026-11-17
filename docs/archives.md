@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-22 veilles et 138 actus, de la plus récente à la plus ancienne.
+23 veilles et 145 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Mardi 17 novembre 2026**](2026/11/2026-11-17.md) <span class="carte-meta">7 actus</span>  
+Verre et plastique transparent : la caméra de profondeur ment sans… · ROS 2 Kilted : fin de vie le 30 novembre · Fauteuil roulant téléopéré : une architecture de sûreté bien… · N'allumer le deuxième capteur que quand le premier doute · Rockchip RK3668 : cœurs revus, échantillons au T1 2027 · Une SBC industrielle Qualcomm avec quatre CAN-FD isolés
 
 [**Lundi 16 novembre 2026**](2026/11/2026-11-16.md) <span class="carte-meta">7 actus</span>  
 Un modèle de raisonnement entraîné en simulation pilote de vrais bras · Une chargeuse de 5 tonnes en équilibre sur deux roues · Le NPU d'une carte embarquée détourné pour le GNSS · nav2_dynamic_footprint : une empreinte Nav2 qui suit le bras · MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement · Une panne d'Outlook, 15 personnes intoxiquées au chlore

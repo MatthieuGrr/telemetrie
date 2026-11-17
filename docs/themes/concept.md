@@ -8,12 +8,13 @@ search:
 
 # concept
 
-20 actus sur ce thème · [tous les thèmes](../tags.md)
+21 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [💡 Concept du jour : le Priority-Flood](../2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
 - [💡 Concept du jour : l'« homme mort » (dead man's switch)](../2026/11/2026-11-16.md#concept-du-jour-l-homme-mort-dead-mans-switch) <span class="carte-meta">16 nov.</span>
 - [💡 Concept du jour : l'observateur de moment](../2026/11/2026-11-15.md#concept-du-jour-lobservateur-de-moment) <span class="carte-meta">15 nov.</span>
 - [💡 Concept du jour : la synchronisation matérielle capteurs](../2026/11/2026-11-14.md#concept-du-jour-la-synchronisation-materielle-capteurs) <span class="carte-meta">14 nov.</span>

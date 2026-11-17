@@ -8,12 +8,16 @@ search:
 
 # robotique
 
-63 actus sur ce thème · [tous les thèmes](../tags.md)
+67 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Verre et plastique transparent : la caméra de profondeur ment sans prévenir](../2026/11/2026-11-17.md#verre-et-plastique-transparent-la-camera-de-profondeur-ment-sans-prevenir) <span class="carte-meta">17 nov.</span>
+- [ROS 2 Kilted : fin de vie le 30 novembre](../2026/11/2026-11-17.md#ros-2-kilted-fin-de-vie-le-30-novembre) <span class="carte-meta">17 nov.</span>
+- [Fauteuil roulant téléopéré : une architecture de sûreté bien documentée](../2026/11/2026-11-17.md#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee) <span class="carte-meta">17 nov.</span>
+- [Une SBC industrielle Qualcomm avec quatre CAN-FD isolés](../2026/11/2026-11-17.md#une-sbc-industrielle-qualcomm-avec-quatre-can-fd-isoles) <span class="carte-meta">17 nov.</span>
 - [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](../2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>
 - [Une chargeuse de 5 tonnes en équilibre sur deux roues](../2026/11/2026-11-16.md#une-chargeuse-de-5-tonnes-en-equilibre-sur-deux-roues) <span class="carte-meta">16 nov.</span>
 - [nav2_dynamic_footprint : une empreinte Nav2 qui suit le bras](../2026/11/2026-11-16.md#nav2dynamicfootprint-une-empreinte-nav2-qui-suit-le-bras) <span class="carte-meta">16 nov.</span>
