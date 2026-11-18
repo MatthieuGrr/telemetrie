@@ -86,5 +86,6 @@ nav:
   - Accueil: index.md
   - Archives: archives.md
   - Thèmes: tags.md
+  - Sources: sources.md
   - Favoris: favoris.md
 # END NAV

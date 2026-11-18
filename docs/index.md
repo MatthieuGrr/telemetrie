@@ -142,5 +142,5 @@ Sur un Cortex-M7, la mémoire principale passe par un bus partagé et souvent pa
 [Les 24 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
-Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu.
+Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).
 </p>

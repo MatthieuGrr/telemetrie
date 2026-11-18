@@ -7,13 +7,14 @@ BASELINE = ("Le flux quotidien de Rosetta : chaque matin, une poignée d'actus e
             "électronique embarquée et tech, résumées en quelques lignes, "
             "avec le lien vers la source.")
 PIED = ("Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, "
-        "un assistant IA, à partir des sources citées sous chaque actu.")
+        "un assistant IA, à partir des sources citées sous chaque actu. "
+        "[Voir les sources suivies](sources.md).")
 
 # True : la publication est refusée si une actu n'a aucun lien source.
 SOURCE_OBLIGATOIRE = False
 
-NAV = [("Accueil", "index.md"), ("Archives", "archives.md"),
-       ("Thèmes", "tags.md"), ("Favoris", "favoris.md")]
+NAV = [("Accueil", "index.md"), ("Archives", "archives.md"), ("Thèmes", "tags.md"),
+       ("Sources", "sources.md"), ("Favoris", "favoris.md")]
 
 # Thèmes déduits par mots-clés (texte en minuscules). Chaque actu reçoit les
 # MAX_TAGS_ACTU thèmes les plus présents, sinon TAG_DEFAUT.
