@@ -8,12 +8,14 @@ search:
 
 # logiciel
 
-18 actus sur ce thème · [tous les thèmes](../tags.md)
+20 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](../2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
+- [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](../2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
 - [MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement](../2026/11/2026-11-16.md#mocap4ros2-20-une-seule-interface-pour-la-capture-de-mouvement) <span class="carte-meta">16 nov.</span>
 - [POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty](../2026/11/2026-11-15.md#posim-le-simulateur-marin-dave-passe-a-ros-2-lyrical-et-gazebo-jetty) <span class="carte-meta">15 nov.</span>
 - [ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds](../2026/11/2026-11-13.md#ros2ebpf-observer-tout-le-graphe-ros-2-sans-toucher-aux-nuds) <span class="carte-meta">13 nov.</span>

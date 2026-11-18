@@ -8,12 +8,13 @@ search:
 
 # concept
 
-21 actus sur ce thème · [tous les thèmes](../tags.md)
+22 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [💡 Concept du jour : la TCM (Tightly Coupled Memory)](../2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 - [💡 Concept du jour : le Priority-Flood](../2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
 - [💡 Concept du jour : l'« homme mort » (dead man's switch)](../2026/11/2026-11-16.md#concept-du-jour-l-homme-mort-dead-mans-switch) <span class="carte-meta">16 nov.</span>
 - [💡 Concept du jour : l'observateur de moment](../2026/11/2026-11-15.md#concept-du-jour-lobservateur-de-moment) <span class="carte-meta">15 nov.</span>

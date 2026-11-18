@@ -11,30 +11,30 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>67</small>](#robotique){ .tag } [embarqué <small>23</small>](#embarque){ .tag } [IA <small>36</small>](#ia){ .tag } [logiciel <small>18</small>](#logiciel){ .tag } [matériel <small>35</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>21</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>71</small>](#robotique){ .tag } [embarqué <small>25</small>](#embarque){ .tag } [IA <small>36</small>](#ia){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>35</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>22</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
+- [Sauvetage de la doc du ROS wiki vers des README](2026/11/2026-11-18.md#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme) <span class="carte-meta">18 nov.</span>
+- [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
+- [Genesis AI lève 500 M$ pour son robot généraliste Eno](2026/11/2026-11-18.md#genesis-ai-leve-500-m-pour-son-robot-generaliste-eno) <span class="carte-meta">18 nov.</span>
 - [Verre et plastique transparent : la caméra de profondeur ment sans prévenir](2026/11/2026-11-17.md#verre-et-plastique-transparent-la-camera-de-profondeur-ment-sans-prevenir) <span class="carte-meta">17 nov.</span>
 - [ROS 2 Kilted : fin de vie le 30 novembre](2026/11/2026-11-17.md#ros-2-kilted-fin-de-vie-le-30-novembre) <span class="carte-meta">17 nov.</span>
-- [Fauteuil roulant téléopéré : une architecture de sûreté bien documentée](2026/11/2026-11-17.md#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee) <span class="carte-meta">17 nov.</span>
-- [Une SBC industrielle Qualcomm avec quatre CAN-FD isolés](2026/11/2026-11-17.md#une-sbc-industrielle-qualcomm-avec-quatre-can-fd-isoles) <span class="carte-meta">17 nov.</span>
-- [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>
-- [Une chargeuse de 5 tonnes en équilibre sur deux roues](2026/11/2026-11-16.md#une-chargeuse-de-5-tonnes-en-equilibre-sur-deux-roues) <span class="carte-meta">16 nov.</span>
 
-[Les 67 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 71 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
+- [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
+- [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
 - [Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS](2026/11/2026-11-15.md#des-systemes-de-bureau-pour-microcontroleurs-sylphide-os-et-bmds) <span class="carte-meta">15 nov.</span>
 - [RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel](2026/11/2026-11-14.md#robobaton-neo-un-module-vio-de-155-g-synchronise-en-materiel) <span class="carte-meta">14 nov.</span>
 - [RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5](2026/11/2026-11-13.md#rtab-map-contre-orb-slam3-sur-raspberry-pi-5) <span class="carte-meta">13 nov.</span>
-- [LabWired : tester son firmware sans carte, en CI](2026/11/2026-11-12.md#labwired-tester-son-firmware-sans-carte-en-ci) <span class="carte-meta">12 nov.</span>
-- [WeAct Logic Analyzer V2 : 16 voies à 200 MHz pour ~10 $](2026/11/2026-11-12.md#weact-logic-analyzer-v2-16-voies-a-200-mhz-pour-10) <span class="carte-meta">12 nov.</span>
 
-[Les 23 actus « embarqué » →](themes/embarque.md){ .lien-suite }
+[Les 25 actus « embarqué » →](themes/embarque.md){ .lien-suite }
 
 ## IA { #ia }
 
@@ -49,14 +49,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## logiciel { #logiciel }
 
+- [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
+- [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
 - [MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement](2026/11/2026-11-16.md#mocap4ros2-20-une-seule-interface-pour-la-capture-de-mouvement) <span class="carte-meta">16 nov.</span>
 - [POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty](2026/11/2026-11-15.md#posim-le-simulateur-marin-dave-passe-a-ros-2-lyrical-et-gazebo-jetty) <span class="carte-meta">15 nov.</span>
 - [ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds](2026/11/2026-11-13.md#ros2ebpf-observer-tout-le-graphe-ros-2-sans-toucher-aux-nuds) <span class="carte-meta">13 nov.</span>
 - [spot_basic : une API Python simple pour Spot sous ROS 2](2026/11/2026-11-12.md#spotbasic-une-api-python-simple-pour-spot-sous-ros-2) <span class="carte-meta">12 nov.</span>
-- [MCAP (format des rosbag2) : écritures jusqu'à 8× plus rapides](2026/11/2026-11-11.md#mcap-format-des-rosbag2-ecritures-jusqua-8-plus-rapides) <span class="carte-meta">11 nov.</span>
-- [Renesas RZ/T2N : Linux + temps réel + EtherCAT sur une puce](2026/11/2026-11-11.md#renesas-rzt2n-linux-temps-reel-ethercat-sur-une-puce) <span class="carte-meta">11 nov.</span>
 
-[Les 18 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
+[Les 20 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
 
 ## matériel { #materiel }
 
@@ -104,14 +104,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : la TCM (Tightly Coupled Memory)](2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 - [💡 Concept du jour : le Priority-Flood](2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
 - [💡 Concept du jour : l'« homme mort » (dead man's switch)](2026/11/2026-11-16.md#concept-du-jour-l-homme-mort-dead-mans-switch) <span class="carte-meta">16 nov.</span>
 - [💡 Concept du jour : l'observateur de moment](2026/11/2026-11-15.md#concept-du-jour-lobservateur-de-moment) <span class="carte-meta">15 nov.</span>
 - [💡 Concept du jour : la synchronisation matérielle capteurs](2026/11/2026-11-14.md#concept-du-jour-la-synchronisation-materielle-capteurs) <span class="carte-meta">14 nov.</span>
 - [💡 Concept du jour : l'uprobe eBPF](2026/11/2026-11-13.md#concept-du-jour-luprobe-ebpf) <span class="carte-meta">13 nov.</span>
-- [💡 Concept du jour : le test SIL (Software-in-the-Loop)](2026/11/2026-11-12.md#concept-du-jour-le-test-sil-software-in-the-loop) <span class="carte-meta">12 nov.</span>
 
-[Les 21 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 22 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 

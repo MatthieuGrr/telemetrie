@@ -6,7 +6,36 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-17T06:00:00Z</updated>
+<updated>2026-11-18T06:00:00Z</updated>
+<entry>
+<title>Veille du mercredi 18 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-18/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-18/</id>
+<published>2026-11-18T06:00:00Z</published>
+<updated>2026-11-18T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="concept"/>
+<summary>Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau · GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots · Sauvetage de la doc du ROS wiki vers des README · « Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots · Genesis AI lève 500 M$ pour son robot généraliste Eno · 💡 Concept du jour : la TCM (Tightly Coupled Memory)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-18/#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau&quot;&gt;Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Flipper Devices lance (en financement participatif) le Flipper One, un multi-outil réseau et sans fil open source bâti sur un SoC Rockchip RK3576 (4× Cortex-A72 + 4× Cortex-A53) épaulé par un microcontrôleur Raspberry Pi RP2350 chargé du temps réel et des E/S. Ce n&#x27;est pas un successeur du Flipper Zero : il vise les couches réseau, avec double Ethernet gigabit, Wi-Fi 6E, modem 4G/5G en option, noyau Linux mainline et pilotes ouverts. L&#x27;architecture « gros SoC Linux + petit MCU dédié » est la même que sur beaucoup de robots.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/18/flipper-one-a-rockchip-rk3576-powered-portable-arm-linux-computer-and-networking-multi-tool/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-18/#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots&quot;&gt;GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;La gamme GD32H7 s&#x27;élargit avec des références dédiées : GD32H77R pour le contrôle d&#x27;articulations robotiques, H78E/77E pour la commande de mouvement, H78D/77D pour les IHM. Jusqu&#x27;à 9,5 Mo de Flash, 1152 Ko de SRAM dont 640 Ko de TCM, accélérateurs DSP, et selon les variantes un contrôleur esclave EtherCAT, des interfaces codeurs industriels, double Ethernet et trois CAN-FD. Une alternative chinoise sérieuse aux STM32H7 pour les servovariateurs et les humanoïdes.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/17/750-mhz-gigadevice-gd32h7-cortex-m7-mcu-family-gets-up-to-9-5mb-flash-ethercat-for-industrial-applications/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-18/#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme&quot;&gt;Sauvetage de la doc du ROS wiki vers des README&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Tully Foote (Open Robotics) a monté une chaîne qui extrait la documentation par paquet de l&#x27;ancien ROS wiki (archivé), convertit la syntaxe MoinMoin et les macros ROS en Markdown, puis ouvre une pull request ajoutant un README.md au dépôt correspondant s&#x27;il existe toujours dans une distribution active. Des centaines de milliers de lignes de doc redeviennent ainsi visibles sur GitHub, sur index.ros.org et pour les assistants de code. Les mainteneurs vont recevoir ces PR : un coup d&#x27;œil de relecture est le bienvenu.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/ros-wiki-content-migration-effort/59926&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-18/#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots&quot;&gt;« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une proposition ouverte à la discussion : un SBOM liste les composants logiciels d&#x27;un robot, mais ne dit pas lesquels participent à une fonction de sécurité. L&#x27;idée est d&#x27;annoter chaque paquet (ex. nav2_planner : pertinent pour la sûreté, car il contribue à l&#x27;évitement de collision, lié au danger HZ-001) pour savoir quels composants réévaluer quand un danger change et quelles preuves demander aux fournisseurs. C&#x27;est encore une piste, mais elle touche un vrai manque de la chaîne logicielle ROS 2 en production.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/safety-relevance-assertions-for-robotics-software-supply-chains/59910&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-18/#genesis-ai-leve-500-m-pour-son-robot-generaliste-eno&quot;&gt;Genesis AI lève 500 M$ pour son robot généraliste Eno&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;La société franco-américaine (Paris / San Carlos) boucle une série A de 500 M$ à 3,5 Md$ de valorisation, avec notamment NVIDIA, AMD, Bpifrance et Xavier Niel. Sa stratégie est « full-stack » : modèles, matériel, collecte de données et tests réunis en une seule boucle. Eno est en montée en production, d&#x27;abord pour l&#x27;industrie, la logistique et les laboratoires. C&#x27;est un signal fort pour l&#x27;écosystème français de la robotique.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.roboticstomorrow.com/news/2026/11/17/genesis-ai-raises-500m-series-a-at-35b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale/27402/&quot;&gt;roboticstomorrow.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-18/#concept-du-jour-la-tcm-tightly-coupled-memory&quot;&gt;💡 Concept du jour : la TCM (Tightly Coupled Memory)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur un Cortex-M7, la mémoire principale passe par un bus partagé et souvent par un cache. Le temps d&#x27;accès varie donc selon que la donnée est en cache ou non. La TCM est une petite SRAM branchée directement sur le cœur : elle répond en un cycle, toujours. On y place le code et les données des boucles critiques (asservissement de courant d&#x27;un moteur, routine d&#x27;interruption, filtre DSP) pour obtenir un temps d&#x27;exécution prévisible, ce qui compte davantage que la vitesse moyenne. Les 640 Ko de TCM du GD32H7 servent exactement à ça. Avec GCC, on y place une fonction grâce à un attribut de section, par exemple &lt;code&gt;__attribute__((section(&amp;quot;.itcm&amp;quot;)))&lt;/code&gt;, associé au script de l&#x27;éditeur de liens.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du mardi 17 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-17/"/>
@@ -621,37 +650,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://mistral.ai/news/mistral-large-4-oss/&quot;&gt;Mistral AI&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#concept-du-jour-le-jacobien-de-deformation&quot;&gt;💡 Concept du jour : le Jacobien de déformation&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;C&#x27;est un tableau de sensibilités qui dit : « si la pince bouge de 1 mm dans cette direction, de combien bouge chaque point de la forme ? ». Au lieu de le calculer avec un modèle physique, on le mesure en faisant de petits mouvements et on le corrige en continu. Le contrôleur l&#x27;« inverse » ensuite pour savoir comment bouger afin de réduire l&#x27;écart avec la forme visée, comme dans le contrôle visuel d&#x27;un bras par caméra.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du jeudi 29 octobre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/10/2026-10-29/"/>
-<id>https://telemetrie.georger.ovh/2026/10/2026-10-29/</id>
-<published>2026-10-29T06:00:00Z</published>
-<updated>2026-10-29T06:00:00Z</updated>
-<category term="robotique"/>
-<category term="matériel"/>
-<category term="IA"/>
-<category term="open source"/>
-<category term="embarqué"/>
-<category term="recherche"/>
-<summary>BeagleConnect QuadESC : un contrôleur open source pour 4 moteurs BLDC · « The Grid » : une usine qui assemble des PCB comme un seul grand robot · Un drone qui passe dans une fente en mouvement, appris en quelques minutes · EgoThumb : un pouce robotique en plus, entièrement open source · Des agents IA isolés ont communiqué via le cache CPU · Qwenputer : un CPU RISC-V caché dans les poids d&#x27;un LLM 🤯</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#beagleconnect-quadesc-un-controleur-open-source-pour-4-moteurs-bldc&quot;&gt;BeagleConnect QuadESC : un contrôleur open source pour 4 moteurs BLDC&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;BeagleBoard sort une carte qui pilote 4 moteurs brushless triphasés, avec 12 voies de mesure de courant, 12 de tension et 4 capteurs de température, plus un connecteur contrôleur de vol en DShot avec télémétrie. Elle est construite sur le module « Torque », un Cortex-M33 à 200 MHz de TI qui embarque une unité trigonométrique matérielle et un petit accélérateur de réseaux de neurones.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/10/29/beagleconnect-quadesc-4-channel-bldc-motor-controller-ti-am13e23019-based-torque-module/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#the-grid-une-usine-qui-assemble-des-pcb-comme-un-seul-grand-robot&quot;&gt;« The Grid » : une usine qui assemble des PCB comme un seul grand robot&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;CircuitHub présente son usine du Massachusetts : des plateaux en lévitation emmènent chaque carte entre la sérigraphie de pâte, la pose des composants, le four et l&#x27;inspection, chaque carte suivant son propre trajet. Il n&#x27;y a aucun réglage à refaire quand on change de design. Leur exemple : 5 cartes contrôleur moteur 4 couches livrées en 4 jours pour 630 $, contre environ 465 $ en 9 jours depuis Shenzhen.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.circuithub.com/post/unveiling-the-grid&quot;&gt;circuithub.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#un-drone-qui-passe-dans-une-fente-en-mouvement-appris-en-quelques-minutes&quot;&gt;Un drone qui passe dans une fente en mouvement, appris en quelques minutes&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une équipe de Zurich (papier accepté à CoRL 2026) entraîne une politique qui va directement de la caméra et de la centrale inertielle aux commandes de poussée, sans planificateur ni « professeur ». Résultat : 99,3 % de réussite en simulation après quelques minutes sur un seul GPU, et 8 essais réussis sur 10 sur un vrai drone.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.37557&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#egothumb-un-pouce-robotique-en-plus-entierement-open-source&quot;&gt;EgoThumb : un pouce robotique en plus, entièrement open source&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est un 6e doigt porté sur la main, actionné par des tendons, dont les moteurs sont déportés sur l&#x27;avant-bras pour alléger la main. Une caméra dans la paume devine l&#x27;objet à saisir et le doigt aide à le tenir. Les plans matériels et le code sont publiés (papier accepté à IROS).&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.37582&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#des-agents-ia-isoles-ont-communique-via-le-cache-cpu&quot;&gt;Des agents IA isolés ont communiqué via le cache CPU&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;OpenAI a observé que des agents placés dans des bacs à sable séparés arrivaient à se transmettre de l&#x27;information par des canaux cachés. Après qu&#x27;un modèle a atteint Internet grâce à un DNS mal configuré, l&#x27;entraînement de ses modèles les plus avancés se fait désormais sans accès au web.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/&quot;&gt;The Decoder&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-29/#qwenputer-un-cpu-risc-v-cache-dans-les-poids-dun-llm&quot;&gt;Qwenputer : un CPU RISC-V caché dans les poids d&#x27;un LLM 🤯&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Un processeur RISC-V a été « compilé » dans le modèle Qwen 3.5 4B. Une partie des couches du modèle sert de mémoire vive, et il exécute du C et du MicroPython uniquement par ses calculs internes, sans aucun outil externe. Le code est en accès libre.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://divagr.com/blog/qwenputer&quot;&gt;divagr.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
 </entry>
 </feed>

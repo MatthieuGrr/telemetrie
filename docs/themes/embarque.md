@@ -8,12 +8,14 @@ search:
 
 # embarqué
 
-23 actus sur ce thème · [tous les thèmes](../tags.md)
+25 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](../2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
+- [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](../2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](../2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
 - [Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS](../2026/11/2026-11-15.md#des-systemes-de-bureau-pour-microcontroleurs-sylphide-os-et-bmds) <span class="carte-meta">15 nov.</span>
 - [RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel](../2026/11/2026-11-14.md#robobaton-neo-un-module-vio-de-155-g-synchronise-en-materiel) <span class="carte-meta">14 nov.</span>

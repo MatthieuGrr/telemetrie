@@ -8,12 +8,16 @@ search:
 
 # robotique
 
-67 actus sur ce thème · [tous les thèmes](../tags.md)
+71 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](../2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
+- [Sauvetage de la doc du ROS wiki vers des README](../2026/11/2026-11-18.md#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme) <span class="carte-meta">18 nov.</span>
+- [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](../2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
+- [Genesis AI lève 500 M$ pour son robot généraliste Eno](../2026/11/2026-11-18.md#genesis-ai-leve-500-m-pour-son-robot-generaliste-eno) <span class="carte-meta">18 nov.</span>
 - [Verre et plastique transparent : la caméra de profondeur ment sans prévenir](../2026/11/2026-11-17.md#verre-et-plastique-transparent-la-camera-de-profondeur-ment-sans-prevenir) <span class="carte-meta">17 nov.</span>
 - [ROS 2 Kilted : fin de vie le 30 novembre](../2026/11/2026-11-17.md#ros-2-kilted-fin-de-vie-le-30-novembre) <span class="carte-meta">17 nov.</span>
 - [Fauteuil roulant téléopéré : une architecture de sûreté bien documentée](../2026/11/2026-11-17.md#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee) <span class="carte-meta">17 nov.</span>

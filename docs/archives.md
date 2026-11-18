@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-23 veilles et 145 actus, de la plus récente à la plus ancienne.
+24 veilles et 151 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Mercredi 18 novembre 2026**](2026/11/2026-11-18.md) <span class="carte-meta">6 actus</span>  
+Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau · GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré… · Sauvetage de la doc du ROS wiki vers des README · « Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots · Genesis AI lève 500 M$ pour son robot généraliste Eno
 
 [**Mardi 17 novembre 2026**](2026/11/2026-11-17.md) <span class="carte-meta">7 actus</span>  
 Verre et plastique transparent : la caméra de profondeur ment sans… · ROS 2 Kilted : fin de vie le 30 novembre · Fauteuil roulant téléopéré : une architecture de sûreté bien… · N'allumer le deuxième capteur que quand le premier doute · Rockchip RK3668 : cœurs revus, échantillons au T1 2027 · Une SBC industrielle Qualcomm avec quatre CAN-FD isolés
