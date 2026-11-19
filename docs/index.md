@@ -15,76 +15,47 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-18.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-19.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Mercredi 18 novembre 2026](2026/11/2026-11-18.md) { .jour }
+## [Jeudi 19 novembre 2026](2026/11/2026-11-19.md) { .jour }
 
-**6 actus** · 3 min de lecture
+**3 actus** · 3 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau { #flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau data-fav="2026/11/2026-11-18/#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau" }
+### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-19/#robotique-infra" }
 
-Flipper Devices lance (en financement participatif) le Flipper One, un multi-outil réseau et sans fil open source bâti sur un SoC Rockchip RK3576 (4× Cortex-A72 + 4× Cortex-A53) épaulé par un microcontrôleur Raspberry Pi RP2350 chargé du temps réel et des E/S. Ce n'est pas un successeur du Flipper Zero : il vise les couches réseau, avec double Ethernet gigabit, Wi-Fi 6E, modem 4G/5G en option, noyau Linux mainline et pilotes ouverts. L'architecture « gros SoC Linux + petit MCU dédié » est la même que sur beaucoup de robots.
+- **Corrélation de pannes pour ROS 2, à la manière de l'automobile** : retour d'expérience sur un démarrage Nav2 Jazzy où un lidar Ethernet ne se connecte jamais. Le log affiche 164 messages, et l'erreur lidar s'y perd au milieu de 120 messages du costmap, sans aucun lien entre eux. Les auteurs reprennent l'idée du Diagnostic Event Manager d'AUTOSAR (dépendances d'événements, « consecutive faults ») dans ros2_medkit : une règle YAML désigne la cause racine, liste les symptômes et une fenêtre temporelle. L'API ne renvoie alors plus qu'une panne, LIDAR_NOT_CONNECTED, avec 6 symptômes masqués mais conservés.
+- **ROS 2 sous macOS : le piège de la mémoire partagée Fast DDS** : banc de mesure de tous les RMW sur Apple Silicon. Sur macOS, le transport SHM par défaut de Fast DDS réveille les lecteurs sur un tic de scrutation d'environ 5,7 ms : un capteur à 2 kHz n'arrive qu'à 350-450 Hz, et la livraison s'effondre sous forte charge. Basculer sur Cyclone DDS suffit à retrouver les 2 kHz (~90 µs). Zenoh avec SHM excelle sur les gros messages, Cyclone + iceoryx sur la latence (10 µs p50). Bon rappel : le RMW par défaut n'est pas neutre.
+- **Planificateur × contrôleur sur voiture Ackermann, simulation contre réel** : trois contrôleurs géométriques (Regulated Pure Pursuit, Stanley, Vector Pursuit) combinés à deux planificateurs (Hybrid A*, NavFn), testés sur une QCar 1/10 et dans un Gazebo calqué sur le réel (60 essais). Le classement des contrôleurs en précision et en douceur de commande se transfère bien de la simulation au réel. L'étude montre surtout qu'on ne peut pas évaluer planificateur et contrôleur séparément.
+- **RoboDx : des agents IA qui réparent du logiciel de navigation** : un générateur de tâches où des fautes connues sont injectées dans le code de navigation d'un robot simulé. Un correctif n'est validé que si le robot roule correctement dans des scénarios cachés, puisqu'un patch peut passer tous les tests unitaires et quand même faire dévier le robot. Le cas le plus intéressant est celui des fautes « silencieuses », qui ne se manifestent qu'en présence d'une autre faute : réparer ce qui casse ne garantit pas d'avoir tout trouvé.
+- **Barrière de sécurité alimentée directement par le Doppler d'un radar** : pour éviter un obstacle mobile, il faut sa distance et sa vitesse d'approche. Plutôt que de dériver la vitesse à partir de mesures de distance successives (bruitées et en retard), les auteurs utilisent la vitesse radiale mesurée par un radar FMCW comme dérivée de la barrière. On obtient un filtre fermé sur la vitesse d'avance, avec une marge issue des bornes d'erreur du capteur. Sur 508 rencontres, l'approche ne compte que 2 intrusions dans la zone tampon.
 
-[CNX Software](https://www.cnx-software.com/2026/11/18/flipper-one-a-rockchip-rk3576-powered-portable-arm-linux-computer-and-networking-multi-tool/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/fault-correlation-for-ros-2-one-cause-many-faults-and-what-automotive-does-about-it/59959){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/ros-2-on-macos-measured-topic-rates-for-each-rmw-a-fast-dds-shared-memory-pitfall-and-tuned-presets/59951){ .src target="_blank" rel="noopener" } [arXiv](https://arxiv.org/abs/2611.24800){ .src target="_blank" rel="noopener" } [arXiv (2)](https://arxiv.org/abs/2611.23816){ .src target="_blank" rel="noopener" } [arXiv (3)](https://arxiv.org/abs/2611.23654){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots { #gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots data-fav="2026/11/2026-11-18/#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots" }
+### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-19/#embarque-tech" }
 
-La gamme GD32H7 s'élargit avec des références dédiées : GD32H77R pour le contrôle d'articulations robotiques, H78E/77E pour la commande de mouvement, H78D/77D pour les IHM. Jusqu'à 9,5 Mo de Flash, 1152 Ko de SRAM dont 640 Ko de TCM, accélérateurs DSP, et selon les variantes un contrôleur esclave EtherCAT, des interfaces codeurs industriels, double Ethernet et trois CAN-FD. Une alternative chinoise sérieuse aux STM32H7 pour les servovariateurs et les humanoïdes.
+- **Bluetooth 7.0 ratifié, avec le HDT** : la nouvelle couche physique BLE High Data Throughput monte à 7,5 Mb/s (modulation d'ordre supérieur, correction d'erreurs convolutive, débit adaptatif). La spécification apporte aussi la mise à jour des paramètres d'un flux isochrone sans le recréer (IPU), un nouveau schéma de dérivation des clés de session (EKS) et le chiffrement sans appairage (TAK). Les premiers MCU « Bluetooth 7-ready » existent déjà.
 
-[CNX Software](https://www.cnx-software.com/2026/11/17/750-mhz-gigadevice-gd32h7-cortex-m7-mcu-family-gets-up-to-9-5mb-flash-ethercat-for-industrial-applications/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [robotique](themes/robotique.md){ .tag }
-{ .actu-foot }
-
-</section>
-
-<section class="actu" markdown>
-
-### Sauvetage de la doc du ROS wiki vers des README { #sauvetage-de-la-doc-du-ros-wiki-vers-des-readme data-fav="2026/11/2026-11-18/#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme" }
-
-Tully Foote (Open Robotics) a monté une chaîne qui extrait la documentation par paquet de l'ancien ROS wiki (archivé), convertit la syntaxe MoinMoin et les macros ROS en Markdown, puis ouvre une pull request ajoutant un README.md au dépôt correspondant s'il existe toujours dans une distribution active. Des centaines de milliers de lignes de doc redeviennent ainsi visibles sur GitHub, sur index.ros.org et pour les assistants de code. Les mainteneurs vont recevoir ces PR : un coup d'œil de relecture est le bienvenu.
-
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/ros-wiki-content-migration-effort/59926){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag }
-{ .actu-foot }
-
-</section>
-
-<section class="actu" markdown>
-
-### « Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots { #safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots data-fav="2026/11/2026-11-18/#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots" }
-
-Une proposition ouverte à la discussion : un SBOM liste les composants logiciels d'un robot, mais ne dit pas lesquels participent à une fonction de sécurité. L'idée est d'annoter chaque paquet (ex. nav2_planner : pertinent pour la sûreté, car il contribue à l'évitement de collision, lié au danger HZ-001) pour savoir quels composants réévaluer quand un danger change et quelles preuves demander aux fournisseurs. C'est encore une piste, mais elle touche un vrai manque de la chaîne logicielle ROS 2 en production.
-
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/safety-relevance-assertions-for-robotics-software-supply-chains/59910){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
-{ .actu-foot }
-
-</section>
-
-<section class="actu" markdown>
-
-### Genesis AI lève 500 M$ pour son robot généraliste Eno { #genesis-ai-leve-500-m-pour-son-robot-generaliste-eno data-fav="2026/11/2026-11-18/#genesis-ai-leve-500-m-pour-son-robot-generaliste-eno" }
-
-La société franco-américaine (Paris / San Carlos) boucle une série A de 500 M$ à 3,5 Md$ de valorisation, avec notamment NVIDIA, AMD, Bpifrance et Xavier Niel. Sa stratégie est « full-stack » : modèles, matériel, collecte de données et tests réunis en une seule boucle. Eno est en montée en production, d'abord pour l'industrie, la logistique et les laboratoires. C'est un signal fort pour l'écosystème français de la robotique.
-
-[roboticstomorrow.com](https://www.roboticstomorrow.com/news/2026/11/17/genesis-ai-raises-500m-series-a-at-35b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale/27402/){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag }
+[CNX Software](https://www.cnx-software.com/2026/11/18/bluetooth-7-0-specification-ratified-with-hdt-high-data-throughput-support/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [matériel](themes/materiel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : la TCM (Tightly Coupled Memory) { #concept-du-jour-la-tcm-tightly-coupled-memory data-fav="2026/11/2026-11-18/#concept-du-jour-la-tcm-tightly-coupled-memory" }
+### 💡 Concept du jour : la fonction barrière de contrôle (CBF) { #concept-du-jour-la-fonction-barriere-de-controle-cbf data-fav="2026/11/2026-11-19/#concept-du-jour-la-fonction-barriere-de-controle-cbf" }
 
-Sur un Cortex-M7, la mémoire principale passe par un bus partagé et souvent par un cache. Le temps d'accès varie donc selon que la donnée est en cache ou non. La TCM est une petite SRAM branchée directement sur le cœur : elle répond en un cycle, toujours. On y place le code et les données des boucles critiques (asservissement de courant d'un moteur, routine d'interruption, filtre DSP) pour obtenir un temps d'exécution prévisible, ce qui compte davantage que la vitesse moyenne. Les 640 Ko de TCM du GD32H7 servent exactement à ça. Avec GCC, on y place une fonction grâce à un attribut de section, par exemple `__attribute__((section(".itcm")))`, associé au script de l'éditeur de liens.
+Une CBF est une fonction h(x) positive tant que le robot est en sécurité (par exemple distance à l'obstacle moins une marge). Plutôt que de planifier toute une trajectoire sûre, on impose à chaque pas de commande que h ne décroisse pas trop vite : dh/dt ≥ -α·h. Plus on approche de la limite, moins h a le droit de baisser. En pratique, un petit filtre (souvent un problème quadratique) corrige à chaque cycle la commande du planificateur juste ce qu'il faut pour respecter cette condition. C'est pour cela que mesurer directement dh/dt (le Doppler du radar ci-dessus) est intéressant : on ne l'estime plus, on le lit.
 
 [concept](themes/concept.md){ .tag }
 { .actu-foot }
@@ -94,6 +65,13 @@ Sur un Cortex-M7, la mémoire principale passe par un bus partagé et souvent pa
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Mercredi 18 novembre 2026**](2026/11/2026-11-18.md) <span class="carte-meta">6 actus · 3 min</span>
+
+    - Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau
+    - GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations…
+    - Sauvetage de la doc du ROS wiki vers des README
+    - *et 3 autres…*
 
 - [**Mardi 17 novembre 2026**](2026/11/2026-11-17.md) <span class="carte-meta">7 actus · 3 min</span>
 
@@ -130,16 +108,9 @@ Sur un Cortex-M7, la mémoire principale passe par un bus partagé et souvent pa
     - RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5
     - *et 3 autres…*
 
-- [**Jeudi 12 novembre 2026**](2026/11/2026-11-12.md) <span class="carte-meta">6 actus · 3 min</span>
-
-    - LabWired : tester son firmware sans carte, en CI
-    - WeAct Logic Analyzer V2 : 16 voies à 200 MHz pour ~10 $
-    - Détecter un robot qui « tourne en rond » dans sa recherche d'information
-    - *et 3 autres…*
-
 </div>
 
-[Les 24 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 25 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).

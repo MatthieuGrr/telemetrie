@@ -11,30 +11,30 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>71</small>](#robotique){ .tag } [embarqué <small>25</small>](#embarque){ .tag } [IA <small>36</small>](#ia){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>35</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>22</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>72</small>](#robotique){ .tag } [embarqué <small>26</small>](#embarque){ .tag } [IA <small>36</small>](#ia){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>37</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>23</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 - [Sauvetage de la doc du ROS wiki vers des README](2026/11/2026-11-18.md#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme) <span class="carte-meta">18 nov.</span>
 - [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
 - [Genesis AI lève 500 M$ pour son robot généraliste Eno](2026/11/2026-11-18.md#genesis-ai-leve-500-m-pour-son-robot-generaliste-eno) <span class="carte-meta">18 nov.</span>
 - [Verre et plastique transparent : la caméra de profondeur ment sans prévenir](2026/11/2026-11-17.md#verre-et-plastique-transparent-la-camera-de-profondeur-ment-sans-prevenir) <span class="carte-meta">17 nov.</span>
-- [ROS 2 Kilted : fin de vie le 30 novembre](2026/11/2026-11-17.md#ros-2-kilted-fin-de-vie-le-30-novembre) <span class="carte-meta">17 nov.</span>
 
-[Les 71 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 72 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
+- [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
 - [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
 - [Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS](2026/11/2026-11-15.md#des-systemes-de-bureau-pour-microcontroleurs-sylphide-os-et-bmds) <span class="carte-meta">15 nov.</span>
 - [RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel](2026/11/2026-11-14.md#robobaton-neo-un-module-vio-de-155-g-synchronise-en-materiel) <span class="carte-meta">14 nov.</span>
-- [RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5](2026/11/2026-11-13.md#rtab-map-contre-orb-slam3-sur-raspberry-pi-5) <span class="carte-meta">13 nov.</span>
 
-[Les 25 actus « embarqué » →](themes/embarque.md){ .lien-suite }
+[Les 26 actus « embarqué » →](themes/embarque.md){ .lien-suite }
 
 ## IA { #ia }
 
@@ -60,14 +60,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## matériel { #materiel }
 
+- [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
+- [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [N'allumer le deuxième capteur que quand le premier doute](2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
 - [Rockchip RK3668 : cœurs revus, échantillons au T1 2027](2026/11/2026-11-17.md#rockchip-rk3668-curs-revus-echantillons-au-t1-2027) <span class="carte-meta">17 nov.</span>
 - [FORGE : un humanoïde qui « sent » les forces sans capteur au poignet](2026/11/2026-11-15.md#forge-un-humanoide-qui-sent-les-forces-sans-capteur-au-poignet) <span class="carte-meta">15 nov.</span>
 - [Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS](2026/11/2026-11-15.md#des-systemes-de-bureau-pour-microcontroleurs-sylphide-os-et-bmds) <span class="carte-meta">15 nov.</span>
-- [Tektronix descend en gamme : oscilloscopes 1 Series dès 450 $](2026/11/2026-11-15.md#tektronix-descend-en-gamme-oscilloscopes-1-series-des-450) <span class="carte-meta">15 nov.</span>
-- [FlexiTac : la peau tactile open source à 2,5 $ la pièce](2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>
 
-[Les 35 actus « matériel » →](themes/materiel.md){ .lien-suite }
+[Les 37 actus « matériel » →](themes/materiel.md){ .lien-suite }
 
 ## open source { #open-source }
 
@@ -104,14 +104,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : la fonction barrière de contrôle (CBF)](2026/11/2026-11-19.md#concept-du-jour-la-fonction-barriere-de-controle-cbf) <span class="carte-meta">19 nov.</span>
 - [💡 Concept du jour : la TCM (Tightly Coupled Memory)](2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 - [💡 Concept du jour : le Priority-Flood](2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
 - [💡 Concept du jour : l'« homme mort » (dead man's switch)](2026/11/2026-11-16.md#concept-du-jour-l-homme-mort-dead-mans-switch) <span class="carte-meta">16 nov.</span>
 - [💡 Concept du jour : l'observateur de moment](2026/11/2026-11-15.md#concept-du-jour-lobservateur-de-moment) <span class="carte-meta">15 nov.</span>
 - [💡 Concept du jour : la synchronisation matérielle capteurs](2026/11/2026-11-14.md#concept-du-jour-la-synchronisation-materielle-capteurs) <span class="carte-meta">14 nov.</span>
-- [💡 Concept du jour : l'uprobe eBPF](2026/11/2026-11-13.md#concept-du-jour-luprobe-ebpf) <span class="carte-meta">13 nov.</span>
 
-[Les 22 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 23 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 

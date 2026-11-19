@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-24 veilles et 151 actus, de la plus récente à la plus ancienne.
+25 veilles et 154 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Jeudi 19 novembre 2026**](2026/11/2026-11-19.md) <span class="carte-meta">3 actus</span>  
+🤖 Robotique & infra · 🔌 Embarqué & tech
 
 [**Mercredi 18 novembre 2026**](2026/11/2026-11-18.md) <span class="carte-meta">6 actus</span>  
 Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau · GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré… · Sauvetage de la doc du ROS wiki vers des README · « Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots · Genesis AI lève 500 M$ pour son robot généraliste Eno

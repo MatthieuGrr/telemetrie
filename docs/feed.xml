@@ -6,7 +6,27 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-18T06:00:00Z</updated>
+<updated>2026-11-19T06:00:00Z</updated>
+<entry>
+<title>Veille du jeudi 19 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-19/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-19/</id>
+<published>2026-11-19T06:00:00Z</published>
+<updated>2026-11-19T06:00:00Z</updated>
+<category term="matériel"/>
+<category term="robotique"/>
+<category term="embarqué"/>
+<category term="concept"/>
+<summary>🤖 Robotique &amp; infra · 🔌 Embarqué &amp; tech · 💡 Concept du jour : la fonction barrière de contrôle (CBF)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-19/#robotique-infra&quot;&gt;🤖 Robotique &amp;amp; infra&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Corrélation de pannes pour ROS 2, à la manière de l&#x27;automobile&lt;/strong&gt; : retour d&#x27;expérience sur un démarrage Nav2 Jazzy où un lidar Ethernet ne se connecte jamais. Le log affiche 164 messages, et l&#x27;erreur lidar s&#x27;y perd au milieu de 120 messages du costmap, sans aucun lien entre eux. Les auteurs reprennent l&#x27;idée du Diagnostic Event Manager d&#x27;AUTOSAR (dépendances d&#x27;événements, « consecutive faults ») dans ros2_medkit : une règle YAML désigne la cause racine, liste les symptômes et une fenêtre temporelle. L&#x27;API ne renvoie alors plus qu&#x27;une panne, LIDAR_NOT_CONNECTED, avec 6 symptômes masqués mais conservés.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;ROS 2 sous macOS : le piège de la mémoire partagée Fast DDS&lt;/strong&gt; : banc de mesure de tous les RMW sur Apple Silicon. Sur macOS, le transport SHM par défaut de Fast DDS réveille les lecteurs sur un tic de scrutation d&#x27;environ 5,7 ms : un capteur à 2 kHz n&#x27;arrive qu&#x27;à 350-450 Hz, et la livraison s&#x27;effondre sous forte charge. Basculer sur Cyclone DDS suffit à retrouver les 2 kHz (~90 µs). Zenoh avec SHM excelle sur les gros messages, Cyclone + iceoryx sur la latence (10 µs p50). Bon rappel : le RMW par défaut n&#x27;est pas neutre.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Planificateur × contrôleur sur voiture Ackermann, simulation contre réel&lt;/strong&gt; : trois contrôleurs géométriques (Regulated Pure Pursuit, Stanley, Vector Pursuit) combinés à deux planificateurs (Hybrid A*, NavFn), testés sur une QCar 1/10 et dans un Gazebo calqué sur le réel (60 essais). Le classement des contrôleurs en précision et en douceur de commande se transfère bien de la simulation au réel. L&#x27;étude montre surtout qu&#x27;on ne peut pas évaluer planificateur et contrôleur séparément.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;RoboDx : des agents IA qui réparent du logiciel de navigation&lt;/strong&gt; : un générateur de tâches où des fautes connues sont injectées dans le code de navigation d&#x27;un robot simulé. Un correctif n&#x27;est validé que si le robot roule correctement dans des scénarios cachés, puisqu&#x27;un patch peut passer tous les tests unitaires et quand même faire dévier le robot. Le cas le plus intéressant est celui des fautes « silencieuses », qui ne se manifestent qu&#x27;en présence d&#x27;une autre faute : réparer ce qui casse ne garantit pas d&#x27;avoir tout trouvé.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Barrière de sécurité alimentée directement par le Doppler d&#x27;un radar&lt;/strong&gt; : pour éviter un obstacle mobile, il faut sa distance et sa vitesse d&#x27;approche. Plutôt que de dériver la vitesse à partir de mesures de distance successives (bruitées et en retard), les auteurs utilisent la vitesse radiale mesurée par un radar FMCW comme dérivée de la barrière. On obtient un filtre fermé sur la vitesse d&#x27;avance, avec une marge issue des bornes d&#x27;erreur du capteur. Sur 508 rencontres, l&#x27;approche ne compte que 2 intrusions dans la zone tampon.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://discourse.openrobotics.org/t/fault-correlation-for-ros-2-one-cause-many-faults-and-what-automotive-does-about-it/59959&quot;&gt;Open Robotics Discourse&lt;/a&gt;, &lt;a href=&quot;https://discourse.openrobotics.org/t/ros-2-on-macos-measured-topic-rates-for-each-rmw-a-fast-dds-shared-memory-pitfall-and-tuned-presets/59951&quot;&gt;Open Robotics Discourse (2)&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/2611.24800&quot;&gt;arXiv&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/2611.23816&quot;&gt;arXiv (2)&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/2611.23654&quot;&gt;arXiv (3)&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-19/#embarque-tech&quot;&gt;🔌 Embarqué &amp;amp; tech&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Bluetooth 7.0 ratifié, avec le HDT&lt;/strong&gt; : la nouvelle couche physique BLE High Data Throughput monte à 7,5 Mb/s (modulation d&#x27;ordre supérieur, correction d&#x27;erreurs convolutive, débit adaptatif). La spécification apporte aussi la mise à jour des paramètres d&#x27;un flux isochrone sans le recréer (IPU), un nouveau schéma de dérivation des clés de session (EKS) et le chiffrement sans appairage (TAK). Les premiers MCU « Bluetooth 7-ready » existent déjà.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/18/bluetooth-7-0-specification-ratified-with-hdt-high-data-throughput-support/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-19/#concept-du-jour-la-fonction-barriere-de-controle-cbf&quot;&gt;💡 Concept du jour : la fonction barrière de contrôle (CBF)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une CBF est une fonction h(x) positive tant que le robot est en sécurité (par exemple distance à l&#x27;obstacle moins une marge). Plutôt que de planifier toute une trajectoire sûre, on impose à chaque pas de commande que h ne décroisse pas trop vite : dh/dt ≥ -α·h. Plus on approche de la limite, moins h a le droit de baisser. En pratique, un petit filtre (souvent un problème quadratique) corrige à chaque cycle la commande du planificateur juste ce qu&#x27;il faut pour respecter cette condition. C&#x27;est pour cela que mesurer directement dh/dt (le Doppler du radar ci-dessus) est intéressant : on ne l&#x27;estime plus, on le lit.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du mercredi 18 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-18/"/>
@@ -618,37 +638,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/dbreunig/nesformer&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-31/#concept-du-jour-la-contrainte-en-probabilite-chance-constraint&quot;&gt;💡 Concept du jour : la contrainte en probabilité (« chance constraint »)&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Une contrainte classique dit « ne jamais dépasser le mur ». Avec du bruit (capteurs, vent), ce « jamais » est impossible à garantir : on écrit donc plutôt « la probabilité de toucher le mur reste sous 1 % ». Le robot garde naturellement plus de marge là où il est moins sûr de sa position, comme les zones d&#x27;inflation d&#x27;une costmap Nav2, mais formalisé mathématiquement.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du vendredi 30 octobre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/10/2026-10-30/"/>
-<id>https://telemetrie.georger.ovh/2026/10/2026-10-30/</id>
-<published>2026-10-30T06:00:00Z</published>
-<updated>2026-10-30T06:00:00Z</updated>
-<category term="robotique"/>
-<category term="IA"/>
-<category term="embarqué"/>
-<category term="matériel"/>
-<category term="open source"/>
-<category term="recherche"/>
-<category term="concept"/>
-<summary>Un « world model » qui tourne sur un Pico 2 W 🎮 · Un tutoriel sur le contrôle de la forme des objets déformables · SwapBot : changer d&#x27;outil et ajouter le toucher · Gym-Anything : des IA de code qui écrivent des simulateurs de robots · Mistral publie les poids de Large 4 🇫🇷 · 💡 Concept du jour : le Jacobien de déformation</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#un-world-model-qui-tourne-sur-un-pico-2-w&quot;&gt;Un « world model » qui tourne sur un Pico 2 W 🎮&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Deux petits réseaux tournent ensemble sur le core 1 d&#x27;un RP2350 : le premier prédit l&#x27;image suivante à partir de l&#x27;image courante et d&#x27;une action, le second joue dans ce « rêve ». C&#x27;est fait pour Breakout, Pong, Flappy, un Doom-lite et un Pac-Man lite, avec 26k à 131k paramètres en int8 et 2 à 8 millions de multiplications par image. Pendant ce temps, le core 0 gère l&#x27;USB et l&#x27;écran ; le README est très pédagogique.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/SheepSeb/tinyworldformer&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#un-tutoriel-sur-le-controle-de-la-forme-des-objets-deformables&quot;&gt;Un tutoriel sur le contrôle de la forme des objets déformables&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Le but : piloter des bras pour donner à un câble ou une tige souple la forme voulue, en boucle fermée avec une caméra, sans modèle mécanique précis de l&#x27;objet. Le papier, une approche d&#x27;automatique classique (Jacobien, stabilité), est accompagné de code et de démos interactives.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40559&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#swapbot-changer-doutil-et-ajouter-le-toucher&quot;&gt;SwapBot : changer d&#x27;outil et ajouter le toucher&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Des adaptateurs bon marché transforment des ustensiles de cuisine en outils de robot, montés sur un raccord commun et équipés de capteurs tactiles. Avec le toucher, les politiques apprises par imitation réussissent 15 à 25 points de plus qu&#x27;avec la caméra seule.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40646&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#gym-anything-des-ia-de-code-qui-ecrivent-des-simulateurs-de-robots&quot;&gt;Gym-Anything : des IA de code qui écrivent des simulateurs de robots&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Des agents de code génèrent 25 simulations de tâches physiques « utiles », vérifiées par une boucle où un agent crée et un autre contrôle. Même les meilleurs modèles actuels échouent sur toutes les tâches de test (score moyen 0,06).&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40565&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#mistral-publie-les-poids-de-large-4&quot;&gt;Mistral publie les poids de Large 4 🇫🇷&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est un modèle d&#x27;un trillion de paramètres entraîné en Europe. Mistral dit qu&#x27;il est le meilleur modèle ouvert en code (Terminal-Bench 41 %) et qu&#x27;il consomme moins de tokens. Le sujet a été très discuté sur Hacker News.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://mistral.ai/news/mistral-large-4-oss/&quot;&gt;Mistral AI&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/10/2026-10-30/#concept-du-jour-le-jacobien-de-deformation&quot;&gt;💡 Concept du jour : le Jacobien de déformation&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est un tableau de sensibilités qui dit : « si la pince bouge de 1 mm dans cette direction, de combien bouge chaque point de la forme ? ». Au lieu de le calculer avec un modèle physique, on le mesure en faisant de petits mouvements et on le corrige en continu. Le contrôleur l&#x27;« inverse » ensuite pour savoir comment bouger afin de réduire l&#x27;écart avec la forme visée, comme dans le contrôle visuel d&#x27;un bras par caméra.&lt;/p&gt;</content>
 </entry>
 </feed>

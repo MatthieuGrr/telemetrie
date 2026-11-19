@@ -8,12 +8,14 @@ search:
 
 # matériel
 
-35 actus sur ce thème · [tous les thèmes](../tags.md)
+37 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🤖 Robotique & infra](../2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
+- [🔌 Embarqué & tech](../2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [N'allumer le deuxième capteur que quand le premier doute](../2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
 - [Rockchip RK3668 : cœurs revus, échantillons au T1 2027](../2026/11/2026-11-17.md#rockchip-rk3668-curs-revus-echantillons-au-t1-2027) <span class="carte-meta">17 nov.</span>
 - [FORGE : un humanoïde qui « sent » les forces sans capteur au poignet](../2026/11/2026-11-15.md#forge-un-humanoide-qui-sent-les-forces-sans-capteur-au-poignet) <span class="carte-meta">15 nov.</span>

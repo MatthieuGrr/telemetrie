@@ -8,12 +8,13 @@ search:
 
 # robotique
 
-71 actus sur ce thème · [tous les thèmes](../tags.md)
+72 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🤖 Robotique & infra](../2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](../2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 - [Sauvetage de la doc du ROS wiki vers des README](../2026/11/2026-11-18.md#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme) <span class="carte-meta">18 nov.</span>
 - [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](../2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
