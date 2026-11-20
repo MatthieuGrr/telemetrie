@@ -15,49 +15,49 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-19.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-20.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Jeudi 19 novembre 2026](2026/11/2026-11-19.md) { .jour }
+## [Vendredi 20 novembre 2026](2026/11/2026-11-20.md) { .jour }
 
 **3 actus** · 3 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-19/#robotique-infra" }
+### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-20/#robotique-infra" }
 
-- **Corrélation de pannes pour ROS 2, à la manière de l'automobile** : retour d'expérience sur un démarrage Nav2 Jazzy où un lidar Ethernet ne se connecte jamais. Le log affiche 164 messages, et l'erreur lidar s'y perd au milieu de 120 messages du costmap, sans aucun lien entre eux. Les auteurs reprennent l'idée du Diagnostic Event Manager d'AUTOSAR (dépendances d'événements, « consecutive faults ») dans ros2_medkit : une règle YAML désigne la cause racine, liste les symptômes et une fenêtre temporelle. L'API ne renvoie alors plus qu'une panne, LIDAR_NOT_CONNECTED, avec 6 symptômes masqués mais conservés.
-- **ROS 2 sous macOS : le piège de la mémoire partagée Fast DDS** : banc de mesure de tous les RMW sur Apple Silicon. Sur macOS, le transport SHM par défaut de Fast DDS réveille les lecteurs sur un tic de scrutation d'environ 5,7 ms : un capteur à 2 kHz n'arrive qu'à 350-450 Hz, et la livraison s'effondre sous forte charge. Basculer sur Cyclone DDS suffit à retrouver les 2 kHz (~90 µs). Zenoh avec SHM excelle sur les gros messages, Cyclone + iceoryx sur la latence (10 µs p50). Bon rappel : le RMW par défaut n'est pas neutre.
-- **Planificateur × contrôleur sur voiture Ackermann, simulation contre réel** : trois contrôleurs géométriques (Regulated Pure Pursuit, Stanley, Vector Pursuit) combinés à deux planificateurs (Hybrid A*, NavFn), testés sur une QCar 1/10 et dans un Gazebo calqué sur le réel (60 essais). Le classement des contrôleurs en précision et en douceur de commande se transfère bien de la simulation au réel. L'étude montre surtout qu'on ne peut pas évaluer planificateur et contrôleur séparément.
-- **RoboDx : des agents IA qui réparent du logiciel de navigation** : un générateur de tâches où des fautes connues sont injectées dans le code de navigation d'un robot simulé. Un correctif n'est validé que si le robot roule correctement dans des scénarios cachés, puisqu'un patch peut passer tous les tests unitaires et quand même faire dévier le robot. Le cas le plus intéressant est celui des fautes « silencieuses », qui ne se manifestent qu'en présence d'une autre faute : réparer ce qui casse ne garantit pas d'avoir tout trouvé.
-- **Barrière de sécurité alimentée directement par le Doppler d'un radar** : pour éviter un obstacle mobile, il faut sa distance et sa vitesse d'approche. Plutôt que de dériver la vitesse à partir de mesures de distance successives (bruitées et en retard), les auteurs utilisent la vitesse radiale mesurée par un radar FMCW comme dérivée de la barrière. On obtient un filtre fermé sur la vitesse d'avance, avec une marge issue des bornes d'erreur du capteur. Sur 508 rencontres, l'approche ne compte que 2 intrusions dans la zone tampon.
+- **simport : faire tourner les vrais pilotes ROS 2 face à la simulation** : en simulation, on remplace ou on contourne souvent les pilotes matériels, si bien que le code qui parle réellement aux capteurs n'est jamais testé. simport place les capteurs et moteurs simulés derrière des interfaces émulées (série, UDP, TCP, SocketCAN, CAN-FD) qui parlent le vrai protocole de chaque appareil : trames, sommes de contrôle, compteurs et réponses aux commandes sont décrits en YAML. Le pilote ROS 2 tourne donc sans modification, en simulation comme sur le robot. Exemples fournis : RPLIDAR A1, BNO055, GPS NMEA, Ouster OS1-64, Dynamixel XM430 et moteurs Damiao.
+- **ros2serial : l'esprit de rosserial revient pour ROS 2** : première alpha publique d'une bibliothèque qui met un Arduino (jusqu'à un Uno) sur le graphe ROS 2 par simple liaison série USB, pour les cas où micro-ROS est surdimensionné. La carte exécute un petit cœur en C ; côté PC, un nœud r2s_bridge par port série la présente comme un nœud ordinaire. Publishers, subscriptions, services dans les deux sens, actions servies par la carte, paramètres modifiables avec ros2 param set, logs vers /rosout et horloge synchronisée. L'exemple bouton + LED tient en 11,8 Ko de flash et 1,2 Ko de RAM sur un Uno.
+- **Les planificateurs « de manuel » battent parfois les planificateurs appris** : les auteurs implémentent seize planificateurs classiques (ligne de référence, A*, hybrid A* ou RRT* pour le chemin ; lattice de Frenet, optimisation non linéaire, recherche s-t ou Dynamic Window pour la trajectoire) et les comparent aux modèles de conduite de bout en bout sur nuScenes, nuPlan et HUGSIM. Sur HUGSIM, en ne remplaçant que le planificateur d'UniAD et en lisant sa perception figée, neuf sur seize font mieux que le planificateur appris. Le meilleur combine un chemin hybrid A* et une optimisation non linéaire de la trajectoire.
+- **Succès fantômes et échecs silencieux dans les benchmarks de manipulation** : dans les benchmarks simulés, un script écrit à la main décide si chaque épisode est réussi. Or il n'a été validé que sur une démonstration experte : une politique qui s'arrête à mi-chemin peut être comptée comme réussie, et une autre qui accomplit la tâche autrement peut être rejetée. SimAudit fait analyser par un LLM la consigne et le code du vérificateur, recrée les cas litigieux en simulation et vérifie visuellement. Résultat : 61 défauts distincts trouvés dans RoboTwin 2.0, RoboCasa365 et RoboDojo. Les scores publiés sont donc à lire avec prudence.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/fault-correlation-for-ros-2-one-cause-many-faults-and-what-automotive-does-about-it/59959){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/ros-2-on-macos-measured-topic-rates-for-each-rmw-a-fast-dds-shared-memory-pitfall-and-tuned-presets/59951){ .src target="_blank" rel="noopener" } [arXiv](https://arxiv.org/abs/2611.24800){ .src target="_blank" rel="noopener" } [arXiv (2)](https://arxiv.org/abs/2611.23816){ .src target="_blank" rel="noopener" } [arXiv (3)](https://arxiv.org/abs/2611.23654){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/simport-run-your-real-ros-2-hardware-drivers-against-simulation/60010){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/ros2serial-rosserial-style-communication-for-microcontrollers-on-ros-2-first-public-alpha/59990){ .src target="_blank" rel="noopener" } [arXiv](https://arxiv.org/abs/2611.25138){ .src target="_blank" rel="noopener" } [arXiv (2)](https://arxiv.org/abs/2611.25179){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-19/#embarque-tech" }
+### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-20/#embarque-tech" }
 
-- **Bluetooth 7.0 ratifié, avec le HDT** : la nouvelle couche physique BLE High Data Throughput monte à 7,5 Mb/s (modulation d'ordre supérieur, correction d'erreurs convolutive, débit adaptatif). La spécification apporte aussi la mise à jour des paramètres d'un flux isochrone sans le recréer (IPU), un nouveau schéma de dérivation des clés de session (EKS) et le chiffrement sans appairage (TAK). Les premiers MCU « Bluetooth 7-ready » existent déjà.
+- **JARVIS : un agent qui conçoit, fabrique et teste des cartes électroniques** : un agent IA pilote un bras robot, une imprimante de PCB (encre argent conductrice et pâte à braser) et une machine pick-and-place, tous du matériel de bureau non modifié. Avant de consommer du matériau, il répète les gestes et vérifie le circuit dans un jumeau numérique construit à partir d'un scan 3D de l'atelier. Il teste ensuite la carte avec un simulateur temps réel OPAL-RT et un oscilloscope, diagnostique les écarts et produit une révision du schéma dans KiCad. La boucle conception → fabrication → mesure → correction est entièrement fermée, pour de l'électronique de puissance.
+- **Un module TPM 2.0 open hardware en I2C pour Raspberry Pi** : ANAVI propose une carte TPM 2.0 basée sur l'Infineon Optiga SLB 9673, qui se branche en I2C plutôt qu'en SPI comme la version précédente, ce qui libère le bus SPI. Un TPM stocke des clés qu'on ne peut pas extraire, mesure la chaîne de démarrage et peut chiffrer le disque : c'est la brique de base pour qu'un appareil déployé sur le terrain prouve son identité ou protège ses secrets.
 
-[CNX Software](https://www.cnx-software.com/2026/11/18/bluetooth-7-0-specification-ratified-with-hdt-high-data-throughput-support/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[arXiv](https://arxiv.org/abs/2611.26503){ .src target="_blank" rel="noopener" } [CNX Software](https://www.cnx-software.com/2026/11/19/raspberry-pi-sbcs-get-an-open-source-hardware-i2c-tpm-2-0-security-module/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [robotique](themes/robotique.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : la fonction barrière de contrôle (CBF) { #concept-du-jour-la-fonction-barriere-de-controle-cbf data-fav="2026/11/2026-11-19/#concept-du-jour-la-fonction-barriere-de-controle-cbf" }
+### 💡 Concept du jour : la condition de complémentarité { #concept-du-jour-la-condition-de-complementarite data-fav="2026/11/2026-11-20/#concept-du-jour-la-condition-de-complementarite" }
 
-Une CBF est une fonction h(x) positive tant que le robot est en sécurité (par exemple distance à l'obstacle moins une marge). Plutôt que de planifier toute une trajectoire sûre, on impose à chaque pas de commande que h ne décroisse pas trop vite : dh/dt ≥ -α·h. Plus on approche de la limite, moins h a le droit de baisser. En pratique, un petit filtre (souvent un problème quadratique) corrige à chaque cycle la commande du planificateur juste ce qu'il faut pour respecter cette condition. C'est pour cela que mesurer directement dh/dt (le Doppler du radar ci-dessus) est intéressant : on ne l'estime plus, on le lit.
+Au contact, deux grandeurs s'excluent : la distance entre deux corps (≥ 0) et la force normale qui les pousse l'un contre l'autre (≥ 0). Soit ils sont séparés et la force est nulle, soit ils se touchent et la force peut être positive, jamais les deux à la fois : leur produit vaut toujours zéro. C'est la condition de complémentarité. On écrit la même chose pour le frottement (adhérence ou glissement). Le simulateur n'a donc pas besoin de savoir à l'avance si un pied colle, glisse ou décolle : il résout le problème et le mode de contact en découle. Beaucoup de simulateurs (MuJoCo, Bullet, ODE…) reposent sur des variantes de cette formulation, souvent relâchées pour être rapides, ce qui peut créer des artefacts. Un tutoriel arXiv publié cette semaine en reprend toutes les dérivations pour la robotique.
 
-[concept](themes/concept.md){ .tag }
+[arXiv](https://arxiv.org/abs/2611.26600){ .src target="_blank" rel="noopener" } [concept](themes/concept.md){ .tag }
 { .actu-foot }
 
 </section>
@@ -65,6 +65,11 @@ Une CBF est une fonction h(x) positive tant que le robot est en sécurité (par 
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Jeudi 19 novembre 2026**](2026/11/2026-11-19.md) <span class="carte-meta">3 actus · 3 min</span>
+
+    - 🤖 Robotique & infra
+    - 🔌 Embarqué & tech
 
 - [**Mercredi 18 novembre 2026**](2026/11/2026-11-18.md) <span class="carte-meta">6 actus · 3 min</span>
 
@@ -101,16 +106,9 @@ Une CBF est une fonction h(x) positive tant que le robot est en sécurité (par 
     - Berkeley : des agents IA qui programment des cellules robotisées
     - *et 3 autres…*
 
-- [**Vendredi 13 novembre 2026**](2026/11/2026-11-13.md) <span class="carte-meta">6 actus · 3 min</span>
-
-    - ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds
-    - PLEM : des servovariateurs EtherCAT sous ros2_control sur Jetson
-    - RTAB-Map contre ORB-SLAM3 sur Raspberry Pi 5
-    - *et 3 autres…*
-
 </div>
 
-[Les 25 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 26 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).

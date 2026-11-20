@@ -8,12 +8,13 @@ search:
 
 # concept
 
-23 actus sur ce thème · [tous les thèmes](../tags.md)
+24 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [💡 Concept du jour : la condition de complémentarité](../2026/11/2026-11-20.md#concept-du-jour-la-condition-de-complementarite) <span class="carte-meta">20 nov.</span>
 - [💡 Concept du jour : la fonction barrière de contrôle (CBF)](../2026/11/2026-11-19.md#concept-du-jour-la-fonction-barriere-de-controle-cbf) <span class="carte-meta">19 nov.</span>
 - [💡 Concept du jour : la TCM (Tightly Coupled Memory)](../2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 - [💡 Concept du jour : le Priority-Flood](../2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>

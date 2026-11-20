@@ -8,12 +8,13 @@ search:
 
 # matériel
 
-37 actus sur ce thème · [tous les thèmes](../tags.md)
+38 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🤖 Robotique & infra](../2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [N'allumer le deuxième capteur que quand le premier doute](../2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
