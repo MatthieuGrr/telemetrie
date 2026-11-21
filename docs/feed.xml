@@ -6,7 +6,28 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-20T06:00:00Z</updated>
+<updated>2026-11-21T06:00:00Z</updated>
+<entry>
+<title>Veille du samedi 21 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-21/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-21/</id>
+<published>2026-11-21T06:00:00Z</published>
+<updated>2026-11-21T06:00:00Z</updated>
+<category term="embarqué"/>
+<category term="robotique"/>
+<category term="IA"/>
+<category term="concept"/>
+<summary>🤖 Robotique &amp; infra · 🔌 Embarqué &amp; tech · 💡 Concept du jour : la localité de cache</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-21/#robotique-infra&quot;&gt;🤖 Robotique &amp;amp; infra&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Des horodatages frais peuvent cacher un capteur figé&lt;/strong&gt; : un retour d&#x27;expérience montre un piège classique de supervision. Un récepteur ne vérifiait que l&#x27;horodatage des messages : tant que le flux arrivait avec des timestamps qui avancent, il le jugeait sain, même si la perception renvoyait sans arrêt la même observation. La correction consiste à vérifier aussi un numéro de séquence d&#x27;observation : s&#x27;il se répète ou recule, le flux passe en défaut, les roues sont mises à zéro et la reprise exige plusieurs observations qui progressent réellement, puis un réarmement explicite. Testé en simulation Webots seulement, avec des entrées synthétiques, mais la leçon est générale : « le message arrive » ne veut pas dire « la donnée est vivante ».&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Cloudini 1.5.0 : la compression de nuages de points gagne 50 % de vitesse&lt;/strong&gt; : Cloudini, la bibliothèque de Davide Faconti (auteur de PlotJuggler et BehaviorTree.CPP), compresse les nuages de points pour alléger les rosbags et la bande passante réseau. Elle privilégie la vitesse tout en gardant de bons taux de compression, et s&#x27;intègre à PCL et ROS 2 (Humble à Rolling). La version 1.5.0 est annoncée environ 50 % plus rapide que la précédente, à compression égale.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;LidarView de Kitware se branche sur ROS 2&lt;/strong&gt; : LidarView, logiciel open source de visualisation LiDAR basé sur ParaView, embarque déjà des pilotes de capteurs et des filtres (SLAM, détection d&#x27;objets, segmentation, ajustement de formes). La version 5.3 ajoute la lecture des flux ROS 2 via Fast DDS et des fichiers MCAP, avec nuages de points, images et signaux comme l&#x27;odométrie, l&#x27;IMU ou le GNSS. C&#x27;est une alternative à RViz/Foxglove pour analyser des enregistrements LiDAR avec de vrais outils de traitement.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;ROS 2 Jazzy natif sur Mac Apple Silicon, désormais autonome&lt;/strong&gt; : une formule Homebrew fournit environ 1 870 paquets ROS 2 Jazzy compilés nativement (sans VM ni Docker), avec Gazebo Harmonic, Nav2, MoveIt 2 et ros2_control. Nouveauté : les 215 bibliothèques dont elle dépend sont embarquées dans le paquet, donc une mise à jour de Homebrew ne peut plus la casser. L&#x27;édition de liens avec suppression des dépendances inutiles (dead-strip) fait passer un serveur Nav2 d&#x27;environ 190 à 6 bibliothèques liées, et le lancement TurtleBot 4 + Nav2 de 2-3 minutes à 78 secondes.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://discourse.openrobotics.org/t/when-fresh-timestamps-hide-frozen-sensor-data-and-how-i-fixed-it/60039&quot;&gt;Open Robotics Discourse&lt;/a&gt;, &lt;a href=&quot;https://github.com/facontidavide/cloudini&quot;&gt;GitHub&lt;/a&gt;, &lt;a href=&quot;https://www.kitware.com/lidarview-5-3-now-connected-to-ros2/&quot;&gt;kitware.com&lt;/a&gt;, &lt;a href=&quot;https://discourse.openrobotics.org/t/ros-2-jazzy-for-macos-apple-silicon-release-26-11-20-9-self-contained-gazebo-included-nav2-up-in-78-s/60043&quot;&gt;Open Robotics Discourse (2)&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-21/#embarque-tech&quot;&gt;🔌 Embarqué &amp;amp; tech&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Hypothèse de Riemann généralisée : deux preuves annoncées le même jour, l&#x27;une produite par IA&lt;/strong&gt; : Levent Alpöge affirme avoir fait démontrer l&#x27;hypothèse de Riemann généralisée par des modèles d&#x27;Anthropic, avec une preuve formalisée en Lean de 17,4 millions de lignes. Le même jour, le mathématicien Ravi Vakil a publié en urgence un brouillon de preuve entièrement humaine d&#x27;Alessandro Masullo, relue depuis des mois par Brian Conrad ; quelques heures plus tard, plusieurs personnes y signalaient déjà des problèmes, repérés avec l&#x27;aide de modèles d&#x27;IA. Rien n&#x27;est encore validé par la communauté, mais la vérification par l&#x27;IA et la preuve formelle changent déjà la façon dont on contrôle un résultat.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Valkey remplace sa skiplist par un arbre B+&lt;/strong&gt; : les ensembles triés de Valkey (le fork open source de Redis) reposaient sur une skiplist, où chaque élément occupe un nœud alloué séparément et relié par des pointeurs, soit environ 37 octets de surcoût par élément. La nouvelle structure, fbtree, est un arbre B+ à fort degré qui range de nombreuses entrées dans des nœuds contigus, avec recherche SIMD et feuilles chaînées. Sur 5 millions d&#x27;éléments, le surcoût mémoire par élément baisse de 36 à 43 %. Le billet explique bien pourquoi les accès mémoire dépendants coûtent si cher.&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://scottaaronson.blog/?p=10344&quot;&gt;scottaaronson.blog&lt;/a&gt;, &lt;a href=&quot;https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/&quot;&gt;math216.wordpress.com&lt;/a&gt;, &lt;a href=&quot;https://valkey.io/blog/from-skiplist-to-b+tree/&quot;&gt;valkey.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-21/#concept-du-jour-la-localite-de-cache&quot;&gt;💡 Concept du jour : la localité de cache&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un processeur lit la mémoire par lignes de cache (souvent 64 octets) et garde les données récentes dans de petites mémoires rapides (L1, L2, L3). Un accès en L1 prend de l&#x27;ordre d&#x27;une nanoseconde, un accès en RAM environ cent fois plus. Si les données sont rangées côte à côte (un tableau), une seule lecture en ramène plusieurs et le préchargeur matériel devine la suite. Si elles sont dispersées et reliées par des pointeurs (liste chaînée, skiplist), chaque saut peut provoquer un défaut de cache, et comme l&#x27;adresse suivante dépend de la donnée lue, le processeur ne peut que l&#x27;attendre. C&#x27;est pour cela que l&#x27;arbre B+ de Valkey, aux nœuds contigus, bat la skiplist, et que sur microcontrôleur avec cache (Cortex-M7, ESP32-S3) un tableau bien organisé est souvent plus rapide qu&#x27;une structure théoriquement plus élégante.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://valkey.io/blog/from-skiplist-to-b+tree/&quot;&gt;valkey.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du vendredi 20 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-20/"/>
@@ -599,33 +620,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2610.41981v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-02/#concept-du-jour-le-certificat&quot;&gt;💡 Concept du jour : le certificat&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Plutôt que de faire confiance à celui qui a trouvé la solution, on exige une preuve vérifiable à part. En commande, c&#x27;est typiquement une fonction de Lyapunov : une sorte d&#x27;« énergie » dont on montre qu&#x27;elle décroît toujours, donc le système se stabilise. Vérifier est bien plus simple que trouver, et c&#x27;est pour ça qu&#x27;on peut laisser une IA chercher sans lui faire confiance.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du dimanche 1er novembre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/11/2026-11-01/"/>
-<id>https://telemetrie.georger.ovh/2026/11/2026-11-01/</id>
-<published>2026-11-01T06:00:00Z</published>
-<updated>2026-11-01T06:00:00Z</updated>
-<category term="logiciel"/>
-<category term="robotique"/>
-<category term="matériel"/>
-<category term="sécurité"/>
-<category term="recherche"/>
-<category term="concept"/>
-<summary>Grosse faille TCP dans Linux (CVE-2026-98432, CVSS 9.8) · Un A qui tient compte de l&#x27;incertitude de localisation · « It&#x27;s the memory latency, stupid » · BBRouter : l&#x27;ordi 8 bits de Ben Eater sur breadboards 3D · 💡 Concept du jour : la covariance comme budget</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#grosse-faille-tcp-dans-linux-cve-2026-98432-cvss-98&quot;&gt;Grosse faille TCP dans Linux (CVE-2026-98432, CVSS 9.8)&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est un use-after-free dans la poignée de main TCP en IPv4 : un attaquant distant, sans identifiants, peut le déclencher avant même que l&#x27;application voie la connexion. La faille existe depuis Linux 4.4 et le correctif arrive, pour la branche 6.18, en 6.18.56. Selon Anthropic, qui l&#x27;a signalée, Claude a écrit un exploit root qui marche sur les serveurs exposant un listener multipath TCP (les programmes Go en ouvrent par défaut) ; Ubuntu et RHEL n&#x27;étaient pas encore corrigés au 31 octobre.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf&quot;&gt;atlasum.net&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#un-a-qui-tient-compte-de-lincertitude-de-localisation&quot;&gt;Un A* qui tient compte de l&#x27;incertitude de localisation&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Des drones sans GPS naviguent à l&#x27;estime et recalent leur position près des antennes relais. Le planificateur fait tourner un EKF pendant la recherche A* elle-même et rejette tout chemin où l&#x27;incertitude (la covariance) dépasse un seuil. Il reste optimal et bat RRT* et PRM en simulation.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2610.40429&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#its-the-memory-latency-stupid&quot;&gt;« It&#x27;s the memory latency, stupid »&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;L&#x27;article montre qu&#x27;un CPU affiché à 100 % peut en réalité passer son temps à attendre la RAM. Un accès DRAM coûte environ 400 à 800 instructions, contre à peu près 4 pour un accès au cache L1. L&#x27;exemple est celui d&#x27;une table de hachage géante qui fait presque un défaut de cache à chaque accès.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://pivotlake.io/blog/its-the-memory-latency-stupid/&quot;&gt;pivotlake.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#bbrouter-lordi-8-bits-de-ben-eater-sur-breadboards-3d&quot;&gt;BBRouter : l&#x27;ordi 8 bits de Ben Eater sur breadboards 3D&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est un simulateur web de l&#x27;ordinateur SAP-1 de Ben Eater, câblé sur des breadboards virtuelles en 3D. On y voit un bus, des registres et un microcode fonctionner, sans matériel.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://bbrouter.com/bbrouter/ben-eater-sap-1&quot;&gt;bbrouter.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-01/#concept-du-jour-la-covariance-comme-budget&quot;&gt;💡 Concept du jour : la covariance comme budget&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Dans un EKF, la covariance mesure à quel point le robot doute de sa position : elle grossit à chaque pas d&#x27;odométrie (la dérive) et se resserre à chaque observation d&#x27;un repère connu. Le papier sur l&#x27;A* ci-dessus la traite comme un &lt;strong&gt;budget&lt;/strong&gt; à ne pas dépasser, au même titre que la distance. Dans RViz, c&#x27;est l&#x27;ellipse autour du robot : quand elle s&#x27;étale, le robot est en train de se perdre.&lt;/p&gt;</content>
 </entry>
 </feed>

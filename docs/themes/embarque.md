@@ -8,12 +8,14 @@ search:
 
 # embarqué
 
-27 actus sur ce thème · [tous les thèmes](../tags.md)
+29 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🤖 Robotique & infra](../2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
+- [🔌 Embarqué & tech](../2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](../2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>

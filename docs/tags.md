@@ -11,41 +11,41 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>74</small>](#robotique){ .tag } [embarqué <small>27</small>](#embarque){ .tag } [IA <small>36</small>](#ia){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>38</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>24</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>75</small>](#robotique){ .tag } [embarqué <small>29</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>38</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>25</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [🤖 Robotique & infra](2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 - [Sauvetage de la doc du ROS wiki vers des README](2026/11/2026-11-18.md#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme) <span class="carte-meta">18 nov.</span>
-- [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
 
-[Les 74 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 75 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
+- [🤖 Robotique & infra](2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
+- [🔌 Embarqué & tech](2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
 - [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
-- [Le NPU d'une carte embarquée détourné pour le GNSS](2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
-- [Des systèmes de bureau pour microcontrôleurs : Sylphide OS et BMDS](2026/11/2026-11-15.md#des-systemes-de-bureau-pour-microcontroleurs-sylphide-os-et-bmds) <span class="carte-meta">15 nov.</span>
 
-[Les 27 actus « embarqué » →](themes/embarque.md){ .lien-suite }
+[Les 29 actus « embarqué » →](themes/embarque.md){ .lien-suite }
 
 ## IA { #ia }
 
+- [🔌 Embarqué & tech](2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
 - [Serve Robotics ouvre sa flotte de livraison à une API publique](2026/11/2026-11-15.md#serve-robotics-ouvre-sa-flotte-de-livraison-a-une-api-publique) <span class="carte-meta">15 nov.</span>
 - [Tektronix descend en gamme : oscilloscopes 1 Series dès 450 $](2026/11/2026-11-15.md#tektronix-descend-en-gamme-oscilloscopes-1-series-des-450) <span class="carte-meta">15 nov.</span>
 - [Berkeley : des agents IA qui programment des cellules robotisées](2026/11/2026-11-14.md#berkeley-des-agents-ia-qui-programment-des-cellules-robotisees) <span class="carte-meta">14 nov.</span>
-- [InneR : rendre l'apprentissage par imitation moins fragile](2026/11/2026-11-14.md#inner-rendre-lapprentissage-par-imitation-moins-fragile) <span class="carte-meta">14 nov.</span>
 
-[Les 36 actus « IA » →](themes/ia.md){ .lien-suite }
+[Les 37 actus « IA » →](themes/ia.md){ .lien-suite }
 
 ## logiciel { #logiciel }
 
@@ -104,14 +104,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : la localité de cache](2026/11/2026-11-21.md#concept-du-jour-la-localite-de-cache) <span class="carte-meta">21 nov.</span>
 - [💡 Concept du jour : la condition de complémentarité](2026/11/2026-11-20.md#concept-du-jour-la-condition-de-complementarite) <span class="carte-meta">20 nov.</span>
 - [💡 Concept du jour : la fonction barrière de contrôle (CBF)](2026/11/2026-11-19.md#concept-du-jour-la-fonction-barriere-de-controle-cbf) <span class="carte-meta">19 nov.</span>
 - [💡 Concept du jour : la TCM (Tightly Coupled Memory)](2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 - [💡 Concept du jour : le Priority-Flood](2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
 - [💡 Concept du jour : l'« homme mort » (dead man's switch)](2026/11/2026-11-16.md#concept-du-jour-l-homme-mort-dead-mans-switch) <span class="carte-meta">16 nov.</span>
-- [💡 Concept du jour : l'observateur de moment](2026/11/2026-11-15.md#concept-du-jour-lobservateur-de-moment) <span class="carte-meta">15 nov.</span>
 
-[Les 24 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 25 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 

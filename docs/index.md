@@ -15,49 +15,49 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-20.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-21.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Vendredi 20 novembre 2026](2026/11/2026-11-20.md) { .jour }
+## [Samedi 21 novembre 2026](2026/11/2026-11-21.md) { .jour }
 
 **3 actus** · 3 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-20/#robotique-infra" }
+### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-21/#robotique-infra" }
 
-- **simport : faire tourner les vrais pilotes ROS 2 face à la simulation** : en simulation, on remplace ou on contourne souvent les pilotes matériels, si bien que le code qui parle réellement aux capteurs n'est jamais testé. simport place les capteurs et moteurs simulés derrière des interfaces émulées (série, UDP, TCP, SocketCAN, CAN-FD) qui parlent le vrai protocole de chaque appareil : trames, sommes de contrôle, compteurs et réponses aux commandes sont décrits en YAML. Le pilote ROS 2 tourne donc sans modification, en simulation comme sur le robot. Exemples fournis : RPLIDAR A1, BNO055, GPS NMEA, Ouster OS1-64, Dynamixel XM430 et moteurs Damiao.
-- **ros2serial : l'esprit de rosserial revient pour ROS 2** : première alpha publique d'une bibliothèque qui met un Arduino (jusqu'à un Uno) sur le graphe ROS 2 par simple liaison série USB, pour les cas où micro-ROS est surdimensionné. La carte exécute un petit cœur en C ; côté PC, un nœud r2s_bridge par port série la présente comme un nœud ordinaire. Publishers, subscriptions, services dans les deux sens, actions servies par la carte, paramètres modifiables avec ros2 param set, logs vers /rosout et horloge synchronisée. L'exemple bouton + LED tient en 11,8 Ko de flash et 1,2 Ko de RAM sur un Uno.
-- **Les planificateurs « de manuel » battent parfois les planificateurs appris** : les auteurs implémentent seize planificateurs classiques (ligne de référence, A*, hybrid A* ou RRT* pour le chemin ; lattice de Frenet, optimisation non linéaire, recherche s-t ou Dynamic Window pour la trajectoire) et les comparent aux modèles de conduite de bout en bout sur nuScenes, nuPlan et HUGSIM. Sur HUGSIM, en ne remplaçant que le planificateur d'UniAD et en lisant sa perception figée, neuf sur seize font mieux que le planificateur appris. Le meilleur combine un chemin hybrid A* et une optimisation non linéaire de la trajectoire.
-- **Succès fantômes et échecs silencieux dans les benchmarks de manipulation** : dans les benchmarks simulés, un script écrit à la main décide si chaque épisode est réussi. Or il n'a été validé que sur une démonstration experte : une politique qui s'arrête à mi-chemin peut être comptée comme réussie, et une autre qui accomplit la tâche autrement peut être rejetée. SimAudit fait analyser par un LLM la consigne et le code du vérificateur, recrée les cas litigieux en simulation et vérifie visuellement. Résultat : 61 défauts distincts trouvés dans RoboTwin 2.0, RoboCasa365 et RoboDojo. Les scores publiés sont donc à lire avec prudence.
+- **Des horodatages frais peuvent cacher un capteur figé** : un retour d'expérience montre un piège classique de supervision. Un récepteur ne vérifiait que l'horodatage des messages : tant que le flux arrivait avec des timestamps qui avancent, il le jugeait sain, même si la perception renvoyait sans arrêt la même observation. La correction consiste à vérifier aussi un numéro de séquence d'observation : s'il se répète ou recule, le flux passe en défaut, les roues sont mises à zéro et la reprise exige plusieurs observations qui progressent réellement, puis un réarmement explicite. Testé en simulation Webots seulement, avec des entrées synthétiques, mais la leçon est générale : « le message arrive » ne veut pas dire « la donnée est vivante ».
+- **Cloudini 1.5.0 : la compression de nuages de points gagne 50 % de vitesse** : Cloudini, la bibliothèque de Davide Faconti (auteur de PlotJuggler et BehaviorTree.CPP), compresse les nuages de points pour alléger les rosbags et la bande passante réseau. Elle privilégie la vitesse tout en gardant de bons taux de compression, et s'intègre à PCL et ROS 2 (Humble à Rolling). La version 1.5.0 est annoncée environ 50 % plus rapide que la précédente, à compression égale.
+- **LidarView de Kitware se branche sur ROS 2** : LidarView, logiciel open source de visualisation LiDAR basé sur ParaView, embarque déjà des pilotes de capteurs et des filtres (SLAM, détection d'objets, segmentation, ajustement de formes). La version 5.3 ajoute la lecture des flux ROS 2 via Fast DDS et des fichiers MCAP, avec nuages de points, images et signaux comme l'odométrie, l'IMU ou le GNSS. C'est une alternative à RViz/Foxglove pour analyser des enregistrements LiDAR avec de vrais outils de traitement.
+- **ROS 2 Jazzy natif sur Mac Apple Silicon, désormais autonome** : une formule Homebrew fournit environ 1 870 paquets ROS 2 Jazzy compilés nativement (sans VM ni Docker), avec Gazebo Harmonic, Nav2, MoveIt 2 et ros2_control. Nouveauté : les 215 bibliothèques dont elle dépend sont embarquées dans le paquet, donc une mise à jour de Homebrew ne peut plus la casser. L'édition de liens avec suppression des dépendances inutiles (dead-strip) fait passer un serveur Nav2 d'environ 190 à 6 bibliothèques liées, et le lancement TurtleBot 4 + Nav2 de 2-3 minutes à 78 secondes.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/simport-run-your-real-ros-2-hardware-drivers-against-simulation/60010){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/ros2serial-rosserial-style-communication-for-microcontrollers-on-ros-2-first-public-alpha/59990){ .src target="_blank" rel="noopener" } [arXiv](https://arxiv.org/abs/2611.25138){ .src target="_blank" rel="noopener" } [arXiv (2)](https://arxiv.org/abs/2611.25179){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/when-fresh-timestamps-hide-frozen-sensor-data-and-how-i-fixed-it/60039){ .src target="_blank" rel="noopener" } [GitHub](https://github.com/facontidavide/cloudini){ .src target="_blank" rel="noopener" } [kitware.com](https://www.kitware.com/lidarview-5-3-now-connected-to-ros2/){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/ros-2-jazzy-for-macos-apple-silicon-release-26-11-20-9-self-contained-gazebo-included-nav2-up-in-78-s/60043){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [embarqué](themes/embarque.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-20/#embarque-tech" }
+### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-21/#embarque-tech" }
 
-- **JARVIS : un agent qui conçoit, fabrique et teste des cartes électroniques** : un agent IA pilote un bras robot, une imprimante de PCB (encre argent conductrice et pâte à braser) et une machine pick-and-place, tous du matériel de bureau non modifié. Avant de consommer du matériau, il répète les gestes et vérifie le circuit dans un jumeau numérique construit à partir d'un scan 3D de l'atelier. Il teste ensuite la carte avec un simulateur temps réel OPAL-RT et un oscilloscope, diagnostique les écarts et produit une révision du schéma dans KiCad. La boucle conception → fabrication → mesure → correction est entièrement fermée, pour de l'électronique de puissance.
-- **Un module TPM 2.0 open hardware en I2C pour Raspberry Pi** : ANAVI propose une carte TPM 2.0 basée sur l'Infineon Optiga SLB 9673, qui se branche en I2C plutôt qu'en SPI comme la version précédente, ce qui libère le bus SPI. Un TPM stocke des clés qu'on ne peut pas extraire, mesure la chaîne de démarrage et peut chiffrer le disque : c'est la brique de base pour qu'un appareil déployé sur le terrain prouve son identité ou protège ses secrets.
+- **Hypothèse de Riemann généralisée : deux preuves annoncées le même jour, l'une produite par IA** : Levent Alpöge affirme avoir fait démontrer l'hypothèse de Riemann généralisée par des modèles d'Anthropic, avec une preuve formalisée en Lean de 17,4 millions de lignes. Le même jour, le mathématicien Ravi Vakil a publié en urgence un brouillon de preuve entièrement humaine d'Alessandro Masullo, relue depuis des mois par Brian Conrad ; quelques heures plus tard, plusieurs personnes y signalaient déjà des problèmes, repérés avec l'aide de modèles d'IA. Rien n'est encore validé par la communauté, mais la vérification par l'IA et la preuve formelle changent déjà la façon dont on contrôle un résultat.
+- **Valkey remplace sa skiplist par un arbre B+** : les ensembles triés de Valkey (le fork open source de Redis) reposaient sur une skiplist, où chaque élément occupe un nœud alloué séparément et relié par des pointeurs, soit environ 37 octets de surcoût par élément. La nouvelle structure, fbtree, est un arbre B+ à fort degré qui range de nombreuses entrées dans des nœuds contigus, avec recherche SIMD et feuilles chaînées. Sur 5 millions d'éléments, le surcoût mémoire par élément baisse de 36 à 43 %. Le billet explique bien pourquoi les accès mémoire dépendants coûtent si cher.
 
-[arXiv](https://arxiv.org/abs/2611.26503){ .src target="_blank" rel="noopener" } [CNX Software](https://www.cnx-software.com/2026/11/19/raspberry-pi-sbcs-get-an-open-source-hardware-i2c-tpm-2-0-security-module/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [robotique](themes/robotique.md){ .tag }
+[scottaaronson.blog](https://scottaaronson.blog/?p=10344){ .src target="_blank" rel="noopener" } [math216.wordpress.com](https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/){ .src target="_blank" rel="noopener" } [valkey.io](https://valkey.io/blog/from-skiplist-to-b+tree/){ .src target="_blank" rel="noopener" } [IA](themes/ia.md){ .tag } [embarqué](themes/embarque.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : la condition de complémentarité { #concept-du-jour-la-condition-de-complementarite data-fav="2026/11/2026-11-20/#concept-du-jour-la-condition-de-complementarite" }
+### 💡 Concept du jour : la localité de cache { #concept-du-jour-la-localite-de-cache data-fav="2026/11/2026-11-21/#concept-du-jour-la-localite-de-cache" }
 
-Au contact, deux grandeurs s'excluent : la distance entre deux corps (≥ 0) et la force normale qui les pousse l'un contre l'autre (≥ 0). Soit ils sont séparés et la force est nulle, soit ils se touchent et la force peut être positive, jamais les deux à la fois : leur produit vaut toujours zéro. C'est la condition de complémentarité. On écrit la même chose pour le frottement (adhérence ou glissement). Le simulateur n'a donc pas besoin de savoir à l'avance si un pied colle, glisse ou décolle : il résout le problème et le mode de contact en découle. Beaucoup de simulateurs (MuJoCo, Bullet, ODE…) reposent sur des variantes de cette formulation, souvent relâchées pour être rapides, ce qui peut créer des artefacts. Un tutoriel arXiv publié cette semaine en reprend toutes les dérivations pour la robotique.
+Un processeur lit la mémoire par lignes de cache (souvent 64 octets) et garde les données récentes dans de petites mémoires rapides (L1, L2, L3). Un accès en L1 prend de l'ordre d'une nanoseconde, un accès en RAM environ cent fois plus. Si les données sont rangées côte à côte (un tableau), une seule lecture en ramène plusieurs et le préchargeur matériel devine la suite. Si elles sont dispersées et reliées par des pointeurs (liste chaînée, skiplist), chaque saut peut provoquer un défaut de cache, et comme l'adresse suivante dépend de la donnée lue, le processeur ne peut que l'attendre. C'est pour cela que l'arbre B+ de Valkey, aux nœuds contigus, bat la skiplist, et que sur microcontrôleur avec cache (Cortex-M7, ESP32-S3) un tableau bien organisé est souvent plus rapide qu'une structure théoriquement plus élégante.
 
-[arXiv](https://arxiv.org/abs/2611.26600){ .src target="_blank" rel="noopener" } [concept](themes/concept.md){ .tag }
+[valkey.io](https://valkey.io/blog/from-skiplist-to-b+tree/){ .src target="_blank" rel="noopener" } [concept](themes/concept.md){ .tag }
 { .actu-foot }
 
 </section>
@@ -65,6 +65,11 @@ Au contact, deux grandeurs s'excluent : la distance entre deux corps (≥ 0) et 
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Vendredi 20 novembre 2026**](2026/11/2026-11-20.md) <span class="carte-meta">3 actus · 3 min</span>
+
+    - 🤖 Robotique & infra
+    - 🔌 Embarqué & tech
 
 - [**Jeudi 19 novembre 2026**](2026/11/2026-11-19.md) <span class="carte-meta">3 actus · 3 min</span>
 
@@ -99,16 +104,9 @@ Au contact, deux grandeurs s'excluent : la distance entre deux corps (≥ 0) et 
     - POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty
     - *et 4 autres…*
 
-- [**Samedi 14 novembre 2026**](2026/11/2026-11-14.md) <span class="carte-meta">6 actus · 2 min</span>
-
-    - RoboBaton Neo : un module VIO de 15,5 g synchronisé en matériel
-    - FlexiTac : la peau tactile open source à 2,5 $ la pièce
-    - Berkeley : des agents IA qui programment des cellules robotisées
-    - *et 3 autres…*
-
 </div>
 
-[Les 26 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 27 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).

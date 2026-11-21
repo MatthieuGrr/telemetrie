@@ -8,12 +8,13 @@ search:
 
 # robotique
 
-74 actus sur ce thème · [tous les thèmes](../tags.md)
+75 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🤖 Robotique & infra](../2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>

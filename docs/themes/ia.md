@@ -8,12 +8,13 @@ search:
 
 # IA
 
-36 actus sur ce thème · [tous les thèmes](../tags.md)
+37 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🔌 Embarqué & tech](../2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](../2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](../2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
 - [Serve Robotics ouvre sa flotte de livraison à une API publique](../2026/11/2026-11-15.md#serve-robotics-ouvre-sa-flotte-de-livraison-a-une-api-publique) <span class="carte-meta">15 nov.</span>
