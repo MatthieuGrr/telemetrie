@@ -15,49 +15,48 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-21.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-22.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Samedi 21 novembre 2026](2026/11/2026-11-21.md) { .jour }
+## [Dimanche 22 novembre 2026](2026/11/2026-11-22.md) { .jour }
 
-**3 actus** · 3 min de lecture
+**3 actus** · 2 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-21/#robotique-infra" }
+### 🤖 Robotique & infra { #robotique-infra data-fav="2026/11/2026-11-22/#robotique-infra" }
 
-- **Des horodatages frais peuvent cacher un capteur figé** : un retour d'expérience montre un piège classique de supervision. Un récepteur ne vérifiait que l'horodatage des messages : tant que le flux arrivait avec des timestamps qui avancent, il le jugeait sain, même si la perception renvoyait sans arrêt la même observation. La correction consiste à vérifier aussi un numéro de séquence d'observation : s'il se répète ou recule, le flux passe en défaut, les roues sont mises à zéro et la reprise exige plusieurs observations qui progressent réellement, puis un réarmement explicite. Testé en simulation Webots seulement, avec des entrées synthétiques, mais la leçon est générale : « le message arrive » ne veut pas dire « la donnée est vivante ».
-- **Cloudini 1.5.0 : la compression de nuages de points gagne 50 % de vitesse** : Cloudini, la bibliothèque de Davide Faconti (auteur de PlotJuggler et BehaviorTree.CPP), compresse les nuages de points pour alléger les rosbags et la bande passante réseau. Elle privilégie la vitesse tout en gardant de bons taux de compression, et s'intègre à PCL et ROS 2 (Humble à Rolling). La version 1.5.0 est annoncée environ 50 % plus rapide que la précédente, à compression égale.
-- **LidarView de Kitware se branche sur ROS 2** : LidarView, logiciel open source de visualisation LiDAR basé sur ParaView, embarque déjà des pilotes de capteurs et des filtres (SLAM, détection d'objets, segmentation, ajustement de formes). La version 5.3 ajoute la lecture des flux ROS 2 via Fast DDS et des fichiers MCAP, avec nuages de points, images et signaux comme l'odométrie, l'IMU ou le GNSS. C'est une alternative à RViz/Foxglove pour analyser des enregistrements LiDAR avec de vrais outils de traitement.
-- **ROS 2 Jazzy natif sur Mac Apple Silicon, désormais autonome** : une formule Homebrew fournit environ 1 870 paquets ROS 2 Jazzy compilés nativement (sans VM ni Docker), avec Gazebo Harmonic, Nav2, MoveIt 2 et ros2_control. Nouveauté : les 215 bibliothèques dont elle dépend sont embarquées dans le paquet, donc une mise à jour de Homebrew ne peut plus la casser. L'édition de liens avec suppression des dépendances inutiles (dead-strip) fait passer un serveur Nav2 d'environ 190 à 6 bibliothèques liées, et le lancement TurtleBot 4 + Nav2 de 2-3 minutes à 78 secondes.
+- **Sim-to-real : 24 mm de décalage de caméra font chuter une politique de 74 % à 50 %** : une étude pré-enregistrée sur le bras open source SO-101 a testé tel quel le modèle GR00T N1.6 publié avec le cours NVIDIA « sim-to-real ». En simulation, placer la caméra à la pose mesurée sur le vrai robot (24,2 mm et 1° d'écart avec la pose simulée) fait passer le succès de 148/200 à 99/200. Sur le robot réel : 6/20, trop peu d'essais pour conclure. L'auteur publie un kit de vérification : calibration ChArUco (erreur de reprojection ≤ 0,3 px), mesure de la pose caméra dans le repère de la simulation avec un gabarit répétable à 0,5 mm près, et superposition en direct des arêtes de la scène simulée sur l'image réelle.
+- **Réinitialiser un message ROS 2 sans réallouer** : dans un contrôleur temps réel, on hésite entre créer un message neuf à chaque cycle (allocations sur le tas, à proscrire) et réutiliser le même (risque de garder des champs périmés du cycle précédent). Une proposition sur le Discourse ROS suggère que le générateur de code C++ produise une méthode clear() qui vide récursivement les listes en gardant leur mémoire, et remet les autres champs à leur valeur par défaut. Un bon rappel du compromis derrière realtime_publisher.
+- **VIO monoculaire à 0,6 W, 3e du classement ETH FPV** : les séquences ETH FPV (drone de course à 100 km/h, près de 7 g, 20 rad/s) sont un calvaire pour l'odométrie visuelle : flou de bougé, grands déplacements entre images. Le module RoboBatonNeo, avec une seule caméra et une IMU, sans stéréo ni caméra événementielle, atteint 0,628 % d'erreur de translation relative en tournant sur une carte embarquée de 0,6 W, là où le premier est à 0,375 %.
+- **Mobile ROS : une appli Android open source pour piloter un robot ROS 2** : connexion via rosbridge, DDS direct ou Zenoh (foxglove_bridge en cours), téléopération avec retour caméra et bouton STOP permanent, cartographie et envoi d'objectifs Nav2 d'un tap, explorateur de topics et services. Passée sous licence Apache-2.0 ; l'auteur rappelle qu'elle n'est pas certifiée et qu'il faut garder un arrêt côté robot (timeout sur cmd_vel ou chien de garde).
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/when-fresh-timestamps-hide-frozen-sensor-data-and-how-i-fixed-it/60039){ .src target="_blank" rel="noopener" } [GitHub](https://github.com/facontidavide/cloudini){ .src target="_blank" rel="noopener" } [kitware.com](https://www.kitware.com/lidarview-5-3-now-connected-to-ros2/){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/ros-2-jazzy-for-macos-apple-silicon-release-26-11-20-9-self-contained-gazebo-included-nav2-up-in-78-s/60043){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [embarqué](themes/embarque.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/so-101-sim-to-real-measuring-how-the-real-camera-pose-affects-a-sim-trained-policy-open-study-and-camera-check-kit/59957){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (2)](https://discourse.openrobotics.org/t/resetting-clearing-a-message-without-reallocating/60031){ .src target="_blank" rel="noopener" } [Open Robotics Discourse (3)](https://discourse.openrobotics.org/t/sub-1w-monocular-vio-on-the-eth-fpv-dataset-reaching-3-on-the-leaderboard-at-100-km-h/59997){ .src target="_blank" rel="noopener" } [GitHub](https://github.com/hoyadong1/mobile-ros){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [open source](themes/open-source.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-21/#embarque-tech" }
+### 🔌 Embarqué & tech { #embarque-tech data-fav="2026/11/2026-11-22/#embarque-tech" }
 
-- **Hypothèse de Riemann généralisée : deux preuves annoncées le même jour, l'une produite par IA** : Levent Alpöge affirme avoir fait démontrer l'hypothèse de Riemann généralisée par des modèles d'Anthropic, avec une preuve formalisée en Lean de 17,4 millions de lignes. Le même jour, le mathématicien Ravi Vakil a publié en urgence un brouillon de preuve entièrement humaine d'Alessandro Masullo, relue depuis des mois par Brian Conrad ; quelques heures plus tard, plusieurs personnes y signalaient déjà des problèmes, repérés avec l'aide de modèles d'IA. Rien n'est encore validé par la communauté, mais la vérification par l'IA et la preuve formelle changent déjà la façon dont on contrôle un résultat.
-- **Valkey remplace sa skiplist par un arbre B+** : les ensembles triés de Valkey (le fork open source de Redis) reposaient sur une skiplist, où chaque élément occupe un nœud alloué séparément et relié par des pointeurs, soit environ 37 octets de surcoût par élément. La nouvelle structure, fbtree, est un arbre B+ à fort degré qui range de nombreuses entrées dans des nœuds contigus, avec recherche SIMD et feuilles chaînées. Sur 5 millions d'éléments, le surcoût mémoire par élément baisse de 36 à 43 %. Le billet explique bien pourquoi les accès mémoire dépendants coûtent si cher.
+- **Un HAT Raspberry Pi 4-en-1 : SDR, LoRa, GNSS et RTC** : HackerGadgets combine sur une seule carte un récepteur RTL-SDR (RTL2832U + R860), un module LoRa, un GNSS GPS/BeiDou/GLONASS et une horloge temps réel PCF85063A. Pratique pour une passerelle radio ou un nœud de terrain qui doit horodater correctement sans réseau.
 
-[scottaaronson.blog](https://scottaaronson.blog/?p=10344){ .src target="_blank" rel="noopener" } [math216.wordpress.com](https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/){ .src target="_blank" rel="noopener" } [valkey.io](https://valkey.io/blog/from-skiplist-to-b+tree/){ .src target="_blank" rel="noopener" } [IA](themes/ia.md){ .tag } [embarqué](themes/embarque.md){ .tag }
+[CNX Software](https://www.cnx-software.com/2026/11/22/4-in-1-raspberry-pi-hat-combines-rtl-sdr-lora-gps-and-rtc/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [spatial](themes/spatial.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : la localité de cache { #concept-du-jour-la-localite-de-cache data-fav="2026/11/2026-11-21/#concept-du-jour-la-localite-de-cache" }
+### 💡 Concept du jour : taille et capacité d'un conteneur { #concept-du-jour-taille-et-capacite-dun-conteneur data-fav="2026/11/2026-11-22/#concept-du-jour-taille-et-capacite-dun-conteneur" }
 
-Un processeur lit la mémoire par lignes de cache (souvent 64 octets) et garde les données récentes dans de petites mémoires rapides (L1, L2, L3). Un accès en L1 prend de l'ordre d'une nanoseconde, un accès en RAM environ cent fois plus. Si les données sont rangées côte à côte (un tableau), une seule lecture en ramène plusieurs et le préchargeur matériel devine la suite. Si elles sont dispersées et reliées par des pointeurs (liste chaînée, skiplist), chaque saut peut provoquer un défaut de cache, et comme l'adresse suivante dépend de la donnée lue, le processeur ne peut que l'attendre. C'est pour cela que l'arbre B+ de Valkey, aux nœuds contigus, bat la skiplist, et que sur microcontrôleur avec cache (Cortex-M7, ESP32-S3) un tableau bien organisé est souvent plus rapide qu'une structure théoriquement plus élégante.
+Un std::vector a deux grandeurs : sa taille (le nombre d'éléments présents) et sa capacité (la mémoire déjà réservée). clear() remet la taille à zéro mais garde la capacité : les push_back suivants réutilisent la même mémoire sans appeler l'allocateur, tant qu'on ne dépasse pas la capacité. En temps réel, on fait donc un reserve() au démarrage, puis on ne fait plus que des clear() dans la boucle : aucune allocation, donc pas de latence imprévisible. C'est exactement ce que viserait un clear() généré pour les messages ROS 2.
 
-[valkey.io](https://valkey.io/blog/from-skiplist-to-b+tree/){ .src target="_blank" rel="noopener" } [concept](themes/concept.md){ .tag }
+[concept](themes/concept.md){ .tag }
 { .actu-foot }
 
 </section>
@@ -65,6 +64,11 @@ Un processeur lit la mémoire par lignes de cache (souvent 64 octets) et garde l
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Samedi 21 novembre 2026**](2026/11/2026-11-21.md) <span class="carte-meta">3 actus · 3 min</span>
+
+    - 🤖 Robotique & infra
+    - 🔌 Embarqué & tech
 
 - [**Vendredi 20 novembre 2026**](2026/11/2026-11-20.md) <span class="carte-meta">3 actus · 3 min</span>
 
@@ -97,16 +101,9 @@ Un processeur lit la mémoire par lignes de cache (souvent 64 octets) et garde l
     - Le NPU d'une carte embarquée détourné pour le GNSS
     - *et 4 autres…*
 
-- [**Dimanche 15 novembre 2026**](2026/11/2026-11-15.md) <span class="carte-meta">7 actus · 3 min</span>
-
-    - FORGE : un humanoïde qui « sent » les forces sans capteur au poignet
-    - Serve Robotics ouvre sa flotte de livraison à une API publique
-    - POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty
-    - *et 4 autres…*
-
 </div>
 
-[Les 27 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 28 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).

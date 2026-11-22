@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-27 veilles et 160 actus, de la plus récente à la plus ancienne.
+28 veilles et 163 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Dimanche 22 novembre 2026**](2026/11/2026-11-22.md) <span class="carte-meta">3 actus</span>  
+🤖 Robotique & infra · 🔌 Embarqué & tech
 
 [**Samedi 21 novembre 2026**](2026/11/2026-11-21.md) <span class="carte-meta">3 actus</span>  
 🤖 Robotique & infra · 🔌 Embarqué & tech

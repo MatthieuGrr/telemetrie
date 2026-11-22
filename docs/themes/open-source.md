@@ -8,12 +8,13 @@ search:
 
 # open source
 
-11 actus sur ce thème · [tous les thèmes](../tags.md)
+12 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🤖 Robotique & infra](../2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [FlexiTac : la peau tactile open source à 2,5 $ la pièce](../2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>
 - [StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages](../2026/11/2026-11-10.md#strataslam-un-slam-ros-2-qui-gere-plusieurs-etages) <span class="carte-meta">10 nov.</span>
 - [MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source](../2026/11/2026-11-09.md#mabel-un-robot-mobile-a-deux-bras-56-ddl-entierement-open-source) <span class="carte-meta">9 nov.</span>

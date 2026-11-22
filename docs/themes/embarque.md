@@ -8,12 +8,13 @@ search:
 
 # embarqué
 
-29 actus sur ce thème · [tous les thèmes](../tags.md)
+30 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [🔌 Embarqué & tech](../2026/11/2026-11-22.md#embarque-tech) <span class="carte-meta">22 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>

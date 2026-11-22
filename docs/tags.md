@@ -11,30 +11,30 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>75</small>](#robotique){ .tag } [embarqué <small>29</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>38</small>](#materiel){ .tag } [open source <small>11</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>25</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>76</small>](#robotique){ .tag } [embarqué <small>30</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [spatial <small>1</small>](#spatial){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>38</small>](#materiel){ .tag } [open source <small>12</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>26</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [🤖 Robotique & infra](2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
-- [Sauvetage de la doc du ROS wiki vers des README](2026/11/2026-11-18.md#sauvetage-de-la-doc-du-ros-wiki-vers-des-readme) <span class="carte-meta">18 nov.</span>
 
-[Les 75 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 76 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
+- [🔌 Embarqué & tech](2026/11/2026-11-22.md#embarque-tech) <span class="carte-meta">22 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
-- [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 
-[Les 29 actus « embarqué » →](themes/embarque.md){ .lien-suite }
+[Les 30 actus « embarqué » →](themes/embarque.md){ .lien-suite }
 
 ## IA { #ia }
 
@@ -46,6 +46,12 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 - [Berkeley : des agents IA qui programment des cellules robotisées](2026/11/2026-11-14.md#berkeley-des-agents-ia-qui-programment-des-cellules-robotisees) <span class="carte-meta">14 nov.</span>
 
 [Les 37 actus « IA » →](themes/ia.md){ .lien-suite }
+
+## spatial { #spatial }
+
+- [🔌 Embarqué & tech](2026/11/2026-11-22.md#embarque-tech) <span class="carte-meta">22 nov.</span>
+
+[Les 1 actus « spatial » →](themes/spatial.md){ .lien-suite }
 
 ## logiciel { #logiciel }
 
@@ -71,14 +77,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## open source { #open-source }
 
+- [🤖 Robotique & infra](2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [FlexiTac : la peau tactile open source à 2,5 $ la pièce](2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>
 - [StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages](2026/11/2026-11-10.md#strataslam-un-slam-ros-2-qui-gere-plusieurs-etages) <span class="carte-meta">10 nov.</span>
 - [MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source](2026/11/2026-11-09.md#mabel-un-robot-mobile-a-deux-bras-56-ddl-entierement-open-source) <span class="carte-meta">9 nov.</span>
 - [Thinking Machines sort Inkling 2 Small](2026/11/2026-11-06.md#thinking-machines-sort-inkling-2-small) <span class="carte-meta">6 nov.</span>
 - [Un exosquelette de genou open source, entraîné en simulation seulement](2026/11/2026-11-02.md#un-exosquelette-de-genou-open-source-entraine-en-simulation-seulement) <span class="carte-meta">2 nov.</span>
-- [Pour le fun : un processeur de NES dans les poids d'un LLM](2026/10/2026-10-31.md#pour-le-fun-un-processeur-de-nes-dans-les-poids-dun-llm) <span class="carte-meta">31 oct.</span>
 
-[Les 11 actus « open source » →](themes/open-source.md){ .lien-suite }
+[Les 12 actus « open source » →](themes/open-source.md){ .lien-suite }
 
 ## sécurité { #securite }
 
@@ -104,14 +110,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : taille et capacité d'un conteneur](2026/11/2026-11-22.md#concept-du-jour-taille-et-capacite-dun-conteneur) <span class="carte-meta">22 nov.</span>
 - [💡 Concept du jour : la localité de cache](2026/11/2026-11-21.md#concept-du-jour-la-localite-de-cache) <span class="carte-meta">21 nov.</span>
 - [💡 Concept du jour : la condition de complémentarité](2026/11/2026-11-20.md#concept-du-jour-la-condition-de-complementarite) <span class="carte-meta">20 nov.</span>
 - [💡 Concept du jour : la fonction barrière de contrôle (CBF)](2026/11/2026-11-19.md#concept-du-jour-la-fonction-barriere-de-controle-cbf) <span class="carte-meta">19 nov.</span>
 - [💡 Concept du jour : la TCM (Tightly Coupled Memory)](2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 - [💡 Concept du jour : le Priority-Flood](2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
-- [💡 Concept du jour : l'« homme mort » (dead man's switch)](2026/11/2026-11-16.md#concept-du-jour-l-homme-mort-dead-mans-switch) <span class="carte-meta">16 nov.</span>
 
-[Les 25 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 26 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 
