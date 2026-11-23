@@ -8,12 +8,13 @@ search:
 
 # concept
 
-26 actus sur ce thème · [tous les thèmes](../tags.md)
+27 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [💡 Concept du jour : le LET (Logical Execution Time)](../2026/11/2026-11-23.md#concept-du-jour-le-let-logical-execution-time) <span class="carte-meta">23 nov.</span>
 - [💡 Concept du jour : taille et capacité d'un conteneur](../2026/11/2026-11-22.md#concept-du-jour-taille-et-capacite-dun-conteneur) <span class="carte-meta">22 nov.</span>
 - [💡 Concept du jour : la localité de cache](../2026/11/2026-11-21.md#concept-du-jour-la-localite-de-cache) <span class="carte-meta">21 nov.</span>
 - [💡 Concept du jour : la condition de complémentarité](../2026/11/2026-11-20.md#concept-du-jour-la-condition-de-complementarite) <span class="carte-meta">20 nov.</span>

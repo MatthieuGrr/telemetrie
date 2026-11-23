@@ -6,7 +6,41 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-22T06:00:00Z</updated>
+<updated>2026-11-23T06:00:00Z</updated>
+<entry>
+<title>Veille du lundi 23 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-23/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-23/</id>
+<published>2026-11-23T06:00:00Z</published>
+<updated>2026-11-23T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="recherche"/>
+<category term="embarqué"/>
+<category term="matériel"/>
+<category term="concept"/>
+<summary>Rendre une application ROS 2 déterministe, et la simuler plus vite · OpenRing : zéro interblocage pour des AGV sur voies à sens unique · Un LLM embarqué qui réfléchit pendant que le robot roule · Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère · Valider un LiDAR simulé avec seulement des boîtes 3D · AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués » · 💡 Concept du jour : le LET (Logical Execution Time)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite&quot;&gt;Rendre une application ROS 2 déterministe, et la simuler plus vite&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Avec le publish/subscribe asynchrone de ROS 2, le comportement d&#x27;une application peut changer d&#x27;une exécution à l&#x27;autre selon l&#x27;ordonnancement et la machine : les bugs deviennent difficiles à reproduire et les tests peu fiables. Les auteurs imposent à chaque composant de lire ses entrées et d&#x27;écrire ses sorties à des instants fixés à l&#x27;avance, ce qui rend l&#x27;application déterministe. Comme les dépendances entre activations sont alors connues avant l&#x27;exécution, un simulateur peut les lancer en parallèle, hors ordre, sans modifier ni l&#x27;application ni ROS 2. Le papier est évalué sur des cas industriels.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.26676&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique&quot;&gt;OpenRing : zéro interblocage pour des AGV sur voies à sens unique&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur un sol d&#x27;entrepôt à sens unique, un véhicule en retard ou un planificateur qui plante peut refermer un « anneau » de segments pleins, et plus rien ne bouge. OpenRing laisse le planificateur proposer les routes, mais une garde locale ne valide que les mouvements qui ne peuvent pas refermer d&#x27;anneau. Résultat : trois planificateurs se bloquent dans 80 essais sur 126 sans la garde, aucun avec, pour un débit équivalent ou meilleur. Le papier chiffre aussi le prix de cette garantie en débit maximal par segment.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.27127&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule&quot;&gt;Un LLM embarqué qui réfléchit pendant que le robot roule&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur un robot, un modèle de langage peut raisonner presque une minute pendant que les piétons continuent de bouger. Les « staleness deadlines » fixent, à partir de prédictions de trajectoires calibrées, jusqu&#x27;à quand le robot peut suivre son plan actuel avant de devoir freiner. Tout nouveau plan doit repasser le même contrôle de dégagement avant d&#x27;être adopté. Sur 81 000 missions simulées, le raisonnement complet divise par vingt les mauvaises décisions, et attendre jusqu&#x27;à l&#x27;échéance réduit les arrivées tardives de 64 %.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.26858&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#instant-livo-odometrie-lidar-inertielle-visuelle-legere&quot;&gt;Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce système de fusion LiDAR + IMU + caméra fortement couplé s&#x27;appuie sur une carte voxel compacte indexée par hachage et sur une carte visuelle limitée à une seule image de référence. Sur 32 jeux de données, il tourne environ 2 fois plus vite que les méthodes de référence sur x86 comme sur ARM, avec une mémoire de pointe divisée par 13 à 20 et une précision comparable.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.27633&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#valider-un-lidar-simule-avec-seulement-des-boites-3d&quot;&gt;Valider un LiDAR simulé avec seulement des boîtes 3D&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Une méthode simple pour savoir si le LiDAR simulé (ici sous CARLA) ressemble au vrai : comparer la densité de points sur les objets annotés en fonction de la distance. Reprendre naïvement la fiche technique du capteur donne des écarts systématiques en champ proche. Modéliser les angles verticaux non uniformes des faisceaux corrige l&#x27;essentiel. C&#x27;est un contrôle rapide, utile avant d&#x27;entraîner ou de tester une perception en simulation.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.27379&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#amd-epyc-embedded-9006-256-curs-zen-6c-embarques&quot;&gt;AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués »&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#x27;« embarqué » ne se limite pas aux microcontrôleurs : cette gamme vise les bancs de test de semi-conducteurs, les pare-feu et le stockage. Elle offre jusqu&#x27;à 256 cœurs, 1 Go de cache L3, du PCIe Gen 6, du CXL 3.1, pour 400 à 600 W. Comme toujours dans l&#x27;embarqué, l&#x27;argument clé est la disponibilité garantie sur sept ans.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/23/amd-epyc-embedded-9006-series-embedded-processors-offer-up-to-256-zen-6c-cores-pcie-gen-6-and-cxl-3-1/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-23/#concept-du-jour-le-let-logical-execution-time&quot;&gt;💡 Concept du jour : le LET (Logical Execution Time)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Principe venu de l&#x27;automobile et de l&#x27;avionique temps réel : une tâche lit ses entrées au &lt;strong&gt;début&lt;/strong&gt; de sa période et ne publie ses sorties qu&#x27;à la &lt;strong&gt;fin&lt;/strong&gt;, quel que soit le moment réel où son calcul se termine à l&#x27;intérieur de cette fenêtre. On sépare ainsi « quand on calcule » de « quand on communique ». Si le calcul finit plus tôt ou plus tard selon la charge CPU, les autres tâches voient exactement les mêmes données aux mêmes instants. En échange d&#x27;un peu de latence, le système devient reproductible et analysable. C&#x27;est l&#x27;idée du papier ROS 2 déterministe ci-dessus.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.26676&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du dimanche 22 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-22/"/>
@@ -575,39 +609,5 @@
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#correctif-les-reseaux-lus-a-lil-nu-par-gpt-6-astra&quot;&gt;Correctif : les réseaux « lus à l&#x27;œil nu » par GPT-6 Astra&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Le billet sur la « weight-space programming » (veille du 3 novembre) mélange plusieurs techniques : la lecture directe des poids ne concerne que 3 expériences, sur 17K à 172K poids. Le gain spectaculaire sur Qwen passe par du Python et 50 exécutions du réseau, et la même méthode échoue sur Gemma 3. Simon Willison reproduit tout de même un des exemples en local avec Qwen 3.8.&lt;/p&gt;
 &lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://honnibal.dev/blog/astra-read-write-misleading&quot;&gt;honnibal.dev&lt;/a&gt;, &lt;a href=&quot;https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/&quot;&gt;Simon Willison&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du mardi 3 novembre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/11/2026-11-03/"/>
-<id>https://telemetrie.georger.ovh/2026/11/2026-11-03/</id>
-<published>2026-11-03T06:00:00Z</published>
-<updated>2026-11-03T06:00:00Z</updated>
-<category term="robotique"/>
-<category term="logiciel"/>
-<category term="recherche"/>
-<category term="embarqué"/>
-<category term="IA"/>
-<category term="sécurité"/>
-<category term="concept"/>
-<summary>Faille noyau CVE-2026-98432 : Ubuntu n&#x27;a toujours pas de correctif · RESONATE : la navigation sociale testée sur un vrai robot · MISLAM : un SLAM avec une IMU et 9 magnétomètres · KlaskTron : un banc de robot learning à moins de 2500 $ · Un LLM qui répare un réseau de neurones en éditant ses poids · Raspberry Pi 5 16 Go : 385 $ · 💡 Concept du jour : le modèle d&#x27;actionneur appris</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#faille-noyau-cve-2026-98432-ubuntu-na-toujours-pas-de-correctif&quot;&gt;Faille noyau CVE-2026-98432 : Ubuntu n&#x27;a toujours pas de correctif&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Ce bug critique (CVSS 9.8) touche la pile TCP et peut être atteint à distance. Debian l&#x27;a corrigé le 16 octobre, mais la page d&#x27;Ubuntu affiche encore « Vulnerable, work in progress » pour 22.04, 24.04 et 26.04. ROS 2 Jazzy tournant sur 24.04, les robots sous Ubuntu sont concernés : mieux vaut éviter de les exposer directement à Internet en attendant.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://ubuntu.com/security/CVE-2026-98432&quot;&gt;Ubuntu&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#resonate-la-navigation-sociale-testee-sur-un-vrai-robot&quot;&gt;RESONATE : la navigation sociale testée sur un vrai robot&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Ce banc d&#x27;essai sous ROS 2 compare 8 configurations de contrôleurs sur 8 scénarios avec des humains, soit 320 essais réels. Deux sortent du lot : DWA avec costmaps sociales gaussiennes pour la fiabilité, SFM-MPPI pour le meilleur compromis.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2611.02937v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#mislam-un-slam-avec-une-imu-et-9-magnetometres&quot;&gt;MISLAM : un SLAM avec une IMU et 9 magnétomètres&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Il se repère grâce aux variations locales du champ magnétique, sans caméra ni LiDAR. Il réduit de 46 à 78 % l&#x27;erreur de fermeture par rapport à l&#x27;odométrie magnéto-inertielle seule, et continue à suivre sa position dans le noir, là où l&#x27;odométrie visuelle-inertielle décroche. Les tests sont faits hors ligne, en intérieur et à la main, et la dérive verticale reste un problème.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2611.03106v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#klasktron-un-banc-de-robot-learning-a-moins-de-2500&quot;&gt;KlaskTron : un banc de robot learning à moins de 2500 $&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Des chercheurs de l&#x27;ETH Zurich ont robotisé le jeu de plateau KLASK avec deux portiques CoreXY à moteurs brushless. CAD, BOM, logiciel et simulation sont publiés.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;http://arxiv.org/abs/2611.03138v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#un-llm-qui-repare-un-reseau-de-neurones-en-editant-ses-poids&quot;&gt;Un LLM qui répare un réseau de neurones en éditant ses poids&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;GPT-6 Astra a modifié directement 0,016 % des poids de Qwen3.5-0.8B, sans entraînement : son score au test de maths MATH-500 passe de 7,9 % à 48,1 %. Résultats très préliminaires publiés dans un billet de blog ; le modèle partait de très bas à cause d&#x27;un défaut déjà connu (des boucles de raisonnement). Les logs sont publics, et Hugging Face a reconstruit le modèle et relancé l&#x27;évaluation.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://rikiyat.github.io/blog/weight-space-programming/&quot;&gt;rikiyat.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#raspberry-pi-5-16-go-385&quot;&gt;Raspberry Pi 5 16 Go : 385 $&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est 80 $ de plus qu&#x27;en avril, pour un prix de lancement de 120 $. Le CM5 16 Go prend 40 $ et démarre à 375 $.&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-03/#concept-du-jour-le-modele-dactionneur-appris&quot;&gt;💡 Concept du jour : le modèle d&#x27;actionneur appris&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;En simulation, un moteur obéit parfaitement ; en vrai, il y a du retard, des frottements et de la saturation. KlaskTron entraîne donc un réseau de neurones sur des mesures du vrai matériel pour reproduire ce comportement dans le simulateur. La politique apprise tourne ensuite sur le robot sans réglage supplémentaire : c&#x27;est le transfert « zero-shot ».&lt;/p&gt;</content>
 </entry>
 </feed>

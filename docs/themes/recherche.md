@@ -8,12 +8,15 @@ search:
 
 # recherche
 
-18 actus sur ce thème · [tous les thèmes](../tags.md)
+21 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Rendre une application ROS 2 déterministe, et la simuler plus vite](../2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
+- [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](../2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>
+- [Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère](../2026/11/2026-11-23.md#instant-livo-odometrie-lidar-inertielle-visuelle-legere) <span class="carte-meta">23 nov.</span>
 - [Fauteuil roulant téléopéré : une architecture de sûreté bien documentée](../2026/11/2026-11-17.md#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee) <span class="carte-meta">17 nov.</span>
 - [N'allumer le deuxième capteur que quand le premier doute](../2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
 - [Une chargeuse de 5 tonnes en équilibre sur deux roues](../2026/11/2026-11-16.md#une-chargeuse-de-5-tonnes-en-equilibre-sur-deux-roues) <span class="carte-meta">16 nov.</span>

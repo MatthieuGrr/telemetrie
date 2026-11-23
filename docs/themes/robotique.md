@@ -8,12 +8,17 @@ search:
 
 # robotique
 
-76 actus sur ce thème · [tous les thèmes](../tags.md)
+81 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Rendre une application ROS 2 déterministe, et la simuler plus vite](../2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
+- [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](../2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>
+- [Un LLM embarqué qui réfléchit pendant que le robot roule](../2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>
+- [Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère](../2026/11/2026-11-23.md#instant-livo-odometrie-lidar-inertielle-visuelle-legere) <span class="carte-meta">23 nov.</span>
+- [Valider un LiDAR simulé avec seulement des boîtes 3D](../2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>

@@ -8,12 +8,13 @@ search:
 
 # matériel
 
-38 actus sur ce thème · [tous les thèmes](../tags.md)
+39 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Valider un LiDAR simulé avec seulement des boîtes 3D](../2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>

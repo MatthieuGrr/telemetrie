@@ -11,30 +11,30 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>76</small>](#robotique){ .tag } [embarqué <small>30</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [spatial <small>1</small>](#spatial){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>38</small>](#materiel){ .tag } [open source <small>12</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>18</small>](#recherche){ .tag } [concept <small>26</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>81</small>](#robotique){ .tag } [embarqué <small>32</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [spatial <small>1</small>](#spatial){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>39</small>](#materiel){ .tag } [open source <small>12</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>21</small>](#recherche){ .tag } [concept <small>27</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [Rendre une application ROS 2 déterministe, et la simuler plus vite](2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
+- [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>
+- [Un LLM embarqué qui réfléchit pendant que le robot roule](2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>
+- [Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère](2026/11/2026-11-23.md#instant-livo-odometrie-lidar-inertielle-visuelle-legere) <span class="carte-meta">23 nov.</span>
+- [Valider un LiDAR simulé avec seulement des boîtes 3D](2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
-- [🤖 Robotique & infra](2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
-- [🤖 Robotique & infra](2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
-- [🔌 Embarqué & tech](2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
-- [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
-- [GigaDevice GD32H7 : Cortex-M7 à 750 MHz avec EtherCAT intégré, ciblant les articulations de robots](2026/11/2026-11-18.md#gigadevice-gd32h7-cortex-m7-a-750-mhz-avec-ethercat-integre-ciblant-les-articulations-de-robots) <span class="carte-meta">18 nov.</span>
 
-[Les 76 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 81 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
+- [Un LLM embarqué qui réfléchit pendant que le robot roule](2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>
+- [AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués »](2026/11/2026-11-23.md#amd-epyc-embedded-9006-256-curs-zen-6c-embarques) <span class="carte-meta">23 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-22.md#embarque-tech) <span class="carte-meta">22 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-21.md#robotique-infra) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-20.md#embarque-tech) <span class="carte-meta">20 nov.</span>
-- [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
-- [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
 
-[Les 30 actus « embarqué » →](themes/embarque.md){ .lien-suite }
+[Les 32 actus « embarqué » →](themes/embarque.md){ .lien-suite }
 
 ## IA { #ia }
 
@@ -66,14 +66,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## matériel { #materiel }
 
+- [Valider un LiDAR simulé avec seulement des boîtes 3D](2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
 - [N'allumer le deuxième capteur que quand le premier doute](2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
 - [Rockchip RK3668 : cœurs revus, échantillons au T1 2027](2026/11/2026-11-17.md#rockchip-rk3668-curs-revus-echantillons-au-t1-2027) <span class="carte-meta">17 nov.</span>
-- [FORGE : un humanoïde qui « sent » les forces sans capteur au poignet](2026/11/2026-11-15.md#forge-un-humanoide-qui-sent-les-forces-sans-capteur-au-poignet) <span class="carte-meta">15 nov.</span>
 
-[Les 38 actus « matériel » →](themes/materiel.md){ .lien-suite }
+[Les 39 actus « matériel » →](themes/materiel.md){ .lien-suite }
 
 ## open source { #open-source }
 
@@ -99,25 +99,25 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## recherche { #recherche }
 
+- [Rendre une application ROS 2 déterministe, et la simuler plus vite](2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
+- [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>
+- [Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère](2026/11/2026-11-23.md#instant-livo-odometrie-lidar-inertielle-visuelle-legere) <span class="carte-meta">23 nov.</span>
 - [Fauteuil roulant téléopéré : une architecture de sûreté bien documentée](2026/11/2026-11-17.md#fauteuil-roulant-teleopere-une-architecture-de-surete-bien-documentee) <span class="carte-meta">17 nov.</span>
 - [N'allumer le deuxième capteur que quand le premier doute](2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
 - [Une chargeuse de 5 tonnes en équilibre sur deux roues](2026/11/2026-11-16.md#une-chargeuse-de-5-tonnes-en-equilibre-sur-deux-roues) <span class="carte-meta">16 nov.</span>
-- [InneR : rendre l'apprentissage par imitation moins fragile](2026/11/2026-11-14.md#inner-rendre-lapprentissage-par-imitation-moins-fragile) <span class="carte-meta">14 nov.</span>
-- [Détecter un robot qui « tourne en rond » dans sa recherche d'information](2026/11/2026-11-12.md#detecter-un-robot-qui-tourne-en-rond-dans-sa-recherche-dinformation) <span class="carte-meta">12 nov.</span>
-- [ArmedAgent : quand un agent de code pilote un bras](2026/11/2026-11-10.md#armedagent-quand-un-agent-de-code-pilote-un-bras) <span class="carte-meta">10 nov.</span>
 
-[Les 18 actus « recherche » →](themes/recherche.md){ .lien-suite }
+[Les 21 actus « recherche » →](themes/recherche.md){ .lien-suite }
 
 ## concept { #concept }
 
+- [💡 Concept du jour : le LET (Logical Execution Time)](2026/11/2026-11-23.md#concept-du-jour-le-let-logical-execution-time) <span class="carte-meta">23 nov.</span>
 - [💡 Concept du jour : taille et capacité d'un conteneur](2026/11/2026-11-22.md#concept-du-jour-taille-et-capacite-dun-conteneur) <span class="carte-meta">22 nov.</span>
 - [💡 Concept du jour : la localité de cache](2026/11/2026-11-21.md#concept-du-jour-la-localite-de-cache) <span class="carte-meta">21 nov.</span>
 - [💡 Concept du jour : la condition de complémentarité](2026/11/2026-11-20.md#concept-du-jour-la-condition-de-complementarite) <span class="carte-meta">20 nov.</span>
 - [💡 Concept du jour : la fonction barrière de contrôle (CBF)](2026/11/2026-11-19.md#concept-du-jour-la-fonction-barriere-de-controle-cbf) <span class="carte-meta">19 nov.</span>
 - [💡 Concept du jour : la TCM (Tightly Coupled Memory)](2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
-- [💡 Concept du jour : le Priority-Flood](2026/11/2026-11-17.md#concept-du-jour-le-priority-flood) <span class="carte-meta">17 nov.</span>
 
-[Les 26 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 27 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 

@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-28 veilles et 163 actus, de la plus récente à la plus ancienne.
+29 veilles et 170 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Lundi 23 novembre 2026**](2026/11/2026-11-23.md) <span class="carte-meta">7 actus</span>  
+Rendre une application ROS 2 déterministe, et la simuler plus vite · OpenRing : zéro interblocage pour des AGV sur voies à sens unique · Un LLM embarqué qui réfléchit pendant que le robot roule · Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère · Valider un LiDAR simulé avec seulement des boîtes 3D · AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués »
 
 [**Dimanche 22 novembre 2026**](2026/11/2026-11-22.md) <span class="carte-meta">3 actus</span>  
 🤖 Robotique & infra · 🔌 Embarqué & tech
