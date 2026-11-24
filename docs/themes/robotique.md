@@ -8,12 +8,16 @@ search:
 
 # robotique
 
-81 actus sur ce thème · [tous les thèmes](../tags.md)
+85 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur](../2026/11/2026-11-24.md#mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur) <span class="carte-meta">24 nov.</span>
+- [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](../2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>
+- [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](../2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>
+- [rqt_execution_flow : voir les actions et services en train de s'exécuter](../2026/11/2026-11-24.md#rqtexecutionflow-voir-les-actions-et-services-en-train-de-sexecuter) <span class="carte-meta">24 nov.</span>
 - [Rendre une application ROS 2 déterministe, et la simuler plus vite](../2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
 - [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](../2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>
 - [Un LLM embarqué qui réfléchit pendant que le robot roule](../2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>

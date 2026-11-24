@@ -8,12 +8,14 @@ search:
 
 # logiciel
 
-20 actus sur ce thème · [tous les thèmes](../tags.md)
+22 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](../2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
+- [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](../2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](../2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
 - [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](../2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
 - [MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement](../2026/11/2026-11-16.md#mocap4ros2-20-une-seule-interface-pour-la-capture-de-mouvement) <span class="carte-meta">16 nov.</span>

@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-29 veilles et 170 actus, de la plus récente à la plus ancienne.
+30 veilles et 177 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Mardi 24 novembre 2026**](2026/11/2026-11-24.md) <span class="carte-meta">7 actus</span>  
+MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur · Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur · OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut… · rqt_execution_flow : voir les actions et services en train de… · NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule… · Ladybird, le navigateur au moteur écrit de zéro, passe en alpha
 
 [**Lundi 23 novembre 2026**](2026/11/2026-11-23.md) <span class="carte-meta">7 actus</span>  
 Rendre une application ROS 2 déterministe, et la simuler plus vite · OpenRing : zéro interblocage pour des AGV sur voies à sens unique · Un LLM embarqué qui réfléchit pendant que le robot roule · Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère · Valider un LiDAR simulé avec seulement des boîtes 3D · AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués »

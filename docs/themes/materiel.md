@@ -8,12 +8,15 @@ search:
 
 # matériel
 
-39 actus sur ce thème · [tous les thèmes](../tags.md)
+42 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](../2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>
+- [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](../2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
+- [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](../2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
 - [Valider un LiDAR simulé avec seulement des boîtes 3D](../2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>

@@ -15,89 +15,89 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-23.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-24.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Lundi 23 novembre 2026](2026/11/2026-11-23.md) { .jour }
+## [Mardi 24 novembre 2026](2026/11/2026-11-24.md) { .jour }
 
 **7 actus** · 3 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### Rendre une application ROS 2 déterministe, et la simuler plus vite { #rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite data-fav="2026/11/2026-11-23/#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite" }
+### MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur { #mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur data-fav="2026/11/2026-11-24/#mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur" }
 
-Avec le publish/subscribe asynchrone de ROS 2, le comportement d'une application peut changer d'une exécution à l'autre selon l'ordonnancement et la machine : les bugs deviennent difficiles à reproduire et les tests peu fiables. Les auteurs imposent à chaque composant de lire ses entrées et d'écrire ses sorties à des instants fixés à l'avance, ce qui rend l'application déterministe. Comme les dépendances entre activations sont alors connues avant l'exécution, un simulateur peut les lancer en parallèle, hors ordre, sans modifier ni l'application ni ROS 2. Le papier est évalué sur des cas industriels.
+L'équipe de MOLA, un framework open source d'odométrie et de SLAM LiDAR pour ROS 2, ouvre un service web gratuit. On envoie un bag ROS 2 (.mcap ou .db3, ROS 1 accepté) et l'application détecte d'elle-même les topics LiDAR, IMU, GNSS et odométrie ainsi que le repère du véhicule. Elle lance un SLAM LiDAR-inertiel avec fermetures de boucle et rend la carte en LAS/PLY. Le service tourne avec les mêmes paquets que ceux installés par apt. Il sert surtout à vérifier qu'un enregistrement est exploitable avant de le traiter pour de bon, et propose aussi un calibrage caméra et LiDAR-caméra.
 
-[arXiv](https://arxiv.org/abs/2611.26676){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [recherche](themes/recherche.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/mola-cloud-free-online-lidar-slam-from-ros-bags-plus-camera-and-lidar-camera-calibration/60188){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [spatial](themes/spatial.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### OpenRing : zéro interblocage pour des AGV sur voies à sens unique { #openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique data-fav="2026/11/2026-11-23/#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique" }
+### Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur { #enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur data-fav="2026/11/2026-11-24/#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur" }
 
-Sur un sol d'entrepôt à sens unique, un véhicule en retard ou un planificateur qui plante peut refermer un « anneau » de segments pleins, et plus rien ne bouge. OpenRing laisse le planificateur proposer les routes, mais une garde locale ne valide que les mouvements qui ne peuvent pas refermer d'anneau. Résultat : trois planificateurs se bloquent dans 80 essais sur 126 sans la garde, aucun avec, pour un débit équivalent ou meilleur. Le papier chiffre aussi le prix de cette garantie en débit maximal par segment.
+Lyrical introduit les backends rosidl::Buffer, qui laissent les messages en mémoire GPU. Le hic : `ros2 bag record` n'accepte que le backend CPU, donc dès qu'un enregistreur s'abonne, chaque éditeur doit copier ses buffers vers le CPU et les sérialiser dans publish(). Un prototype déplace ce travail dans le thread de l'enregistreur. Sur une image 1080p à 30 Hz (RTX 3060), publish() descend de 4,6-6 ms à 0,14 ms, avec des données enregistrées identiques. L'auteur attend des retours avant de proposer l'intégration.
 
-[arXiv](https://arxiv.org/abs/2611.27127){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [recherche](themes/recherche.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/recording-rosidl-buffer-cuda-topics-in-rosbag2-prototype-and-feedback-wanted/60157){ .src target="_blank" rel="noopener" } [matériel](themes/materiel.md){ .tag } [robotique](themes/robotique.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Un LLM embarqué qui réfléchit pendant que le robot roule { #un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule data-fav="2026/11/2026-11-23/#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule" }
+### OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer { #opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer data-fav="2026/11/2026-11-24/#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer" }
 
-Sur un robot, un modèle de langage peut raisonner presque une minute pendant que les piétons continuent de bouger. Les « staleness deadlines » fixent, à partir de prédictions de trajectoires calibrées, jusqu'à quand le robot peut suivre son plan actuel avant de devoir freiner. Tout nouveau plan doit repasser le même contrôle de dégagement avant d'être adopté. Sur 81 000 missions simulées, le raisonnement complet divise par vingt les mauvaises décisions, et attendre jusqu'à l'échéance réduit les arrivées tardives de 64 %.
+Ce banc open source regroupe PX4 v1.17, ROS 2 Jazzy et Gazebo Harmonic dans une seule image Docker. Il ne se contente pas de « regarder voler » le drone : chaque vol est comparé à la vérité terrain de Gazebo (alignement d'Umeyama, RMSE). Des seuils écrits dans un fichier YAML font échouer la régression, par exemple 0,39 m pour l'EKF2 en GPS seul. On y trouve aussi des mondes de stress (peu de texture, vent, vitesse) et un VIO OpenVINS qui tourne en parallèle, sans piloter le drone. C'est un bon exemple de test de non-régression d'estimateurs.
 
-[arXiv](https://arxiv.org/abs/2611.26858){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [embarqué](themes/embarque.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/opendronelab-a-containerised-px4-v1-17-ros-2-jazzy-gazebo-harmonic-lab-with-scored-vio-ekf-regression/60162){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [open source](themes/open-source.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère { #instant-livo-odometrie-lidar-inertielle-visuelle-legere data-fav="2026/11/2026-11-23/#instant-livo-odometrie-lidar-inertielle-visuelle-legere" }
+### rqt_execution_flow : voir les actions et services en train de s'exécuter { #rqtexecutionflow-voir-les-actions-et-services-en-train-de-sexecuter data-fav="2026/11/2026-11-24/#rqtexecutionflow-voir-les-actions-et-services-en-train-de-sexecuter" }
 
-Ce système de fusion LiDAR + IMU + caméra fortement couplé s'appuie sur une carte voxel compacte indexée par hachage et sur une carte visuelle limitée à une seule image de référence. Sur 32 jeux de données, il tourne environ 2 fois plus vite que les méthodes de référence sur x86 comme sur ARM, avec une mémoire de pointe divisée par 13 à 20 et une précision comparable.
+rqt_graph montre comment les nœuds sont câblés, mais pas quel goal est en cours, lequel attend, ni pourquoi un autre a été annulé. Ce plugin rqt pour Jazzy affiche en direct l'arbre des appels (actions et services imbriqués), avec statuts, durées et percentiles. Il sait enregistrer puis rejouer une exécution au ralenti. Il signale aussi les noms de nœuds en double, une cause classique de goals « bloqués ». Il fonctionne en lecture seule, et les services demandent d'activer l'introspection.
 
-[arXiv](https://arxiv.org/abs/2611.27633){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [recherche](themes/recherche.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/new-package-rqt-execution-flow-see-your-actions-and-service-calls-live-jazzy/60168){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Valider un LiDAR simulé avec seulement des boîtes 3D { #valider-un-lidar-simule-avec-seulement-des-boites-3d data-fav="2026/11/2026-11-23/#valider-un-lidar-simule-avec-seulement-des-boites-3d" }
+### NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce { #nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce data-fav="2026/11/2026-11-24/#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce" }
 
-Une méthode simple pour savoir si le LiDAR simulé (ici sous CARLA) ressemble au vrai : comparer la densité de points sur les objets annotés en fonction de la distance. Reprendre naïvement la fiche technique du capteur donne des écarts systématiques en champ proche. Modéliser les angles verticaux non uniformes des faisceaux corrige l'essentiel. C'est un contrôle rapide, utile avant d'entraîner ou de tester une perception en simulation.
+Le SoM Forlinx FET-MX952x-C réunit quatre Cortex-A55 pour Linux, un Cortex-M7 à 800 MHz pour le temps réel et un Cortex-M33 dédié à la sûreté, qui vise l'ASIL B / SIL 2. S'y ajoutent un NPU de 2 eTOPS, deux Ethernet gigabit TSN, trois CAN FD et un ISP caméra, sur 68 × 50 mm et de -40 à +85 °C. Le M7 peut tenir une boucle de commande moteur pendant que Linux fait la perception.
 
-[arXiv](https://arxiv.org/abs/2611.27379){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[CNX Software](https://www.cnx-software.com/2026/11/24/forlinx-fet-mx952x-c-som-features-nxp-i-mx-952-soc-with-2-tops-npu-three-can-fd-interfaces/){ .src target="_blank" rel="noopener" } [matériel](themes/materiel.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués » { #amd-epyc-embedded-9006-256-curs-zen-6c-embarques data-fav="2026/11/2026-11-23/#amd-epyc-embedded-9006-256-curs-zen-6c-embarques" }
+### Ladybird, le navigateur au moteur écrit de zéro, passe en alpha { #ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha data-fav="2026/11/2026-11-24/#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha" }
 
-L'« embarqué » ne se limite pas aux microcontrôleurs : cette gamme vise les bancs de test de semi-conducteurs, les pare-feu et le stockage. Elle offre jusqu'à 256 cœurs, 1 Go de cache L3, du PCIe Gen 6, du CXL 3.1, pour 400 à 600 W. Comme toujours dans l'embarqué, l'argument clé est la disponibilité garantie sur sept ans.
+Ladybird n'est pas un fork de Chromium ou de WebKit : son moteur web est entièrement neuf. Des binaires sont désormais disponibles pour macOS et Linux sur un canal alpha à mises à jour automatiques. Il gère WebDriver pour les tests automatisés et le protocole des DevTools de Firefox. L'équipe prévient que certains sites ne marcheront pas et ne promet encore rien côté sécurité.
 
-[CNX Software](https://www.cnx-software.com/2026/11/23/amd-epyc-embedded-9006-series-embedded-processors-offer-up-to-256-zen-6c-cores-pcie-gen-6-and-cxl-3-1/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag }
+[ladybird.org](https://ladybird.org/posts/alpha/){ .src target="_blank" rel="noopener" } [matériel](themes/materiel.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : le LET (Logical Execution Time) { #concept-du-jour-le-let-logical-execution-time data-fav="2026/11/2026-11-23/#concept-du-jour-le-let-logical-execution-time" }
+### 💡 Concept du jour : l'alignement d'Umeyama (et ATE vs RPE) { #concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe data-fav="2026/11/2026-11-24/#concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe" }
 
-Principe venu de l'automobile et de l'avionique temps réel : une tâche lit ses entrées au **début** de sa période et ne publie ses sorties qu'à la **fin**, quel que soit le moment réel où son calcul se termine à l'intérieur de cette fenêtre. On sépare ainsi « quand on calcule » de « quand on communique ». Si le calcul finit plus tôt ou plus tard selon la charge CPU, les autres tâches voient exactement les mêmes données aux mêmes instants. En échange d'un peu de latence, le système devient reproductible et analysable. C'est l'idée du papier ROS 2 déterministe ci-dessus.
+Pour noter une trajectoire estimée, on ne peut pas la comparer telle quelle à la vérité terrain : les deux ne partent pas du même repère. La méthode d'Umeyama calcule la rotation et la translation (et éventuellement l'échelle) qui superposent au mieux les deux trajectoires au sens des moindres carrés. On mesure ensuite l'erreur résiduelle. Après cet alignement, on obtient l'ATE, l'erreur de trajectoire absolue : un seul chiffre global, mais qui pénalise fortement une dérive ancienne. La RPE (erreur de pose relative) compare plutôt les déplacements sur des fenêtres courtes : elle mesure la dérive locale, indépendamment de l'endroit où elle s'est produite. L'outil evo calcule les deux.
 
-[arXiv](https://arxiv.org/abs/2611.26676){ .src target="_blank" rel="noopener" } [concept](themes/concept.md){ .tag }
+[concept](themes/concept.md){ .tag }
 { .actu-foot }
 
 </section>
@@ -105,6 +105,13 @@ Principe venu de l'automobile et de l'avionique temps réel : une tâche lit ses
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Lundi 23 novembre 2026**](2026/11/2026-11-23.md) <span class="carte-meta">7 actus · 3 min</span>
+
+    - Rendre une application ROS 2 déterministe, et la simuler plus vite
+    - OpenRing : zéro interblocage pour des AGV sur voies à sens unique
+    - Un LLM embarqué qui réfléchit pendant que le robot roule
+    - *et 4 autres…*
 
 - [**Dimanche 22 novembre 2026**](2026/11/2026-11-22.md) <span class="carte-meta">3 actus · 2 min</span>
 
@@ -133,16 +140,9 @@ Principe venu de l'automobile et de l'avionique temps réel : une tâche lit ses
     - Sauvetage de la doc du ROS wiki vers des README
     - *et 3 autres…*
 
-- [**Mardi 17 novembre 2026**](2026/11/2026-11-17.md) <span class="carte-meta">7 actus · 3 min</span>
-
-    - Verre et plastique transparent : la caméra de profondeur ment sans prévenir
-    - ROS 2 Kilted : fin de vie le 30 novembre
-    - Fauteuil roulant téléopéré : une architecture de sûreté bien documentée
-    - *et 4 autres…*
-
 </div>
 
-[Les 29 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 30 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).

@@ -8,12 +8,13 @@ search:
 
 # open source
 
-12 actus sur ce thème · [tous les thèmes](../tags.md)
+13 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](../2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [FlexiTac : la peau tactile open source à 2,5 $ la pièce](../2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>
 - [StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages](../2026/11/2026-11-10.md#strataslam-un-slam-ros-2-qui-gere-plusieurs-etages) <span class="carte-meta">10 nov.</span>

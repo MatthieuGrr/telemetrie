@@ -6,7 +6,41 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-23T06:00:00Z</updated>
+<updated>2026-11-24T06:00:00Z</updated>
+<entry>
+<title>Veille du mardi 24 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-24/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-24/</id>
+<published>2026-11-24T06:00:00Z</published>
+<updated>2026-11-24T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="logiciel"/>
+<category term="spatial"/>
+<category term="open source"/>
+<category term="concept"/>
+<summary>MOLA cloud : une carte LiDAR à partir d&#x27;un rosbag, dans le navigateur · Enregistrer des images CUDA dans rosbag2 sans pénaliser l&#x27;éditeur · OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer · rqt_execution_flow : voir les actions et services en train de s&#x27;exécuter · NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce · Ladybird, le navigateur au moteur écrit de zéro, passe en alpha · 💡 Concept du jour : l&#x27;alignement d&#x27;Umeyama (et ATE vs RPE)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur&quot;&gt;MOLA cloud : une carte LiDAR à partir d&#x27;un rosbag, dans le navigateur&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#x27;équipe de MOLA, un framework open source d&#x27;odométrie et de SLAM LiDAR pour ROS 2, ouvre un service web gratuit. On envoie un bag ROS 2 (.mcap ou .db3, ROS 1 accepté) et l&#x27;application détecte d&#x27;elle-même les topics LiDAR, IMU, GNSS et odométrie ainsi que le repère du véhicule. Elle lance un SLAM LiDAR-inertiel avec fermetures de boucle et rend la carte en LAS/PLY. Le service tourne avec les mêmes paquets que ceux installés par apt. Il sert surtout à vérifier qu&#x27;un enregistrement est exploitable avant de le traiter pour de bon, et propose aussi un calibrage caméra et LiDAR-caméra.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/mola-cloud-free-online-lidar-slam-from-ros-bags-plus-camera-and-lidar-camera-calibration/60188&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur&quot;&gt;Enregistrer des images CUDA dans rosbag2 sans pénaliser l&#x27;éditeur&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Lyrical introduit les backends rosidl::Buffer, qui laissent les messages en mémoire GPU. Le hic : &lt;code&gt;ros2 bag record&lt;/code&gt; n&#x27;accepte que le backend CPU, donc dès qu&#x27;un enregistreur s&#x27;abonne, chaque éditeur doit copier ses buffers vers le CPU et les sérialiser dans publish(). Un prototype déplace ce travail dans le thread de l&#x27;enregistreur. Sur une image 1080p à 30 Hz (RTX 3060), publish() descend de 4,6-6 ms à 0,14 ms, avec des données enregistrées identiques. L&#x27;auteur attend des retours avant de proposer l&#x27;intégration.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/recording-rosidl-buffer-cuda-topics-in-rosbag2-prototype-and-feedback-wanted/60157&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer&quot;&gt;OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ce banc open source regroupe PX4 v1.17, ROS 2 Jazzy et Gazebo Harmonic dans une seule image Docker. Il ne se contente pas de « regarder voler » le drone : chaque vol est comparé à la vérité terrain de Gazebo (alignement d&#x27;Umeyama, RMSE). Des seuils écrits dans un fichier YAML font échouer la régression, par exemple 0,39 m pour l&#x27;EKF2 en GPS seul. On y trouve aussi des mondes de stress (peu de texture, vent, vitesse) et un VIO OpenVINS qui tourne en parallèle, sans piloter le drone. C&#x27;est un bon exemple de test de non-régression d&#x27;estimateurs.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/opendronelab-a-containerised-px4-v1-17-ros-2-jazzy-gazebo-harmonic-lab-with-scored-vio-ekf-regression/60162&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#rqtexecutionflow-voir-les-actions-et-services-en-train-de-sexecuter&quot;&gt;rqt_execution_flow : voir les actions et services en train de s&#x27;exécuter&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;rqt_graph montre comment les nœuds sont câblés, mais pas quel goal est en cours, lequel attend, ni pourquoi un autre a été annulé. Ce plugin rqt pour Jazzy affiche en direct l&#x27;arbre des appels (actions et services imbriqués), avec statuts, durées et percentiles. Il sait enregistrer puis rejouer une exécution au ralenti. Il signale aussi les noms de nœuds en double, une cause classique de goals « bloqués ». Il fonctionne en lecture seule, et les services demandent d&#x27;activer l&#x27;introspection.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/new-package-rqt-execution-flow-see-your-actions-and-service-calls-live-jazzy/60168&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce&quot;&gt;NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le SoM Forlinx FET-MX952x-C réunit quatre Cortex-A55 pour Linux, un Cortex-M7 à 800 MHz pour le temps réel et un Cortex-M33 dédié à la sûreté, qui vise l&#x27;ASIL B / SIL 2. S&#x27;y ajoutent un NPU de 2 eTOPS, deux Ethernet gigabit TSN, trois CAN FD et un ISP caméra, sur 68 × 50 mm et de -40 à +85 °C. Le M7 peut tenir une boucle de commande moteur pendant que Linux fait la perception.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/24/forlinx-fet-mx952x-c-som-features-nxp-i-mx-952-soc-with-2-tops-npu-three-can-fd-interfaces/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha&quot;&gt;Ladybird, le navigateur au moteur écrit de zéro, passe en alpha&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Ladybird n&#x27;est pas un fork de Chromium ou de WebKit : son moteur web est entièrement neuf. Des binaires sont désormais disponibles pour macOS et Linux sur un canal alpha à mises à jour automatiques. Il gère WebDriver pour les tests automatisés et le protocole des DevTools de Firefox. L&#x27;équipe prévient que certains sites ne marcheront pas et ne promet encore rien côté sécurité.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://ladybird.org/posts/alpha/&quot;&gt;ladybird.org&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-24/#concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe&quot;&gt;💡 Concept du jour : l&#x27;alignement d&#x27;Umeyama (et ATE vs RPE)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour noter une trajectoire estimée, on ne peut pas la comparer telle quelle à la vérité terrain : les deux ne partent pas du même repère. La méthode d&#x27;Umeyama calcule la rotation et la translation (et éventuellement l&#x27;échelle) qui superposent au mieux les deux trajectoires au sens des moindres carrés. On mesure ensuite l&#x27;erreur résiduelle. Après cet alignement, on obtient l&#x27;ATE, l&#x27;erreur de trajectoire absolue : un seul chiffre global, mais qui pénalise fortement une dérive ancienne. La RPE (erreur de pose relative) compare plutôt les déplacements sur des fenêtres courtes : elle mesure la dérive locale, indépendamment de l&#x27;endroit où elle s&#x27;est produite. L&#x27;outil evo calcule les deux.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du lundi 23 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-23/"/>
@@ -579,35 +613,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/03/nordic-semi-nrf71-wireless-chips-to-deliver-20-times-lower-standby-power-for-battery-operated-wifi-devices/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-05/#concept-du-jour-la-parametrisation-temporelle&quot;&gt;💡 Concept du jour : la paramétrisation temporelle&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;On sépare deux questions : par où passer (le chemin), puis à quelle vitesse le parcourir. Une fois le chemin fixé, il ne reste qu&#x27;à trouver la vitesse maximale à chaque point sans dépasser les limites de vitesse, d&#x27;accélération, de jerk et de couple. C&#x27;est le rôle de TOPPRA et du module TimeOpt de cuRoboV2-Fast, et c&#x27;est ce qui raccourcit le cycle sans toucher à la trajectoire.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du mercredi 4 novembre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/11/2026-11-04/"/>
-<id>https://telemetrie.georger.ovh/2026/11/2026-11-04/</id>
-<published>2026-11-04T06:00:00Z</published>
-<updated>2026-11-04T06:00:00Z</updated>
-<category term="robotique"/>
-<category term="IA"/>
-<category term="logiciel"/>
-<category term="matériel"/>
-<summary>Stringman : un robot grand comme la pièce, avec 4 moteurs · ISO 21423:2026 : un langage commun pour les robots mobiles · Rooter son GPS Renault pour changer l&#x27;heure · PadLoc : se localiser sur un plan, sans entraînement · DataFarm : un agent IA à la place du téléopérateur · Correctif : les réseaux « lus à l&#x27;œil nu » par GPT-6 Astra</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#stringman-un-robot-grand-comme-la-piece-avec-4-moteurs&quot;&gt;Stringman : un robot grand comme la pièce, avec 4 moteurs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une pince suspendue à 4 câbles ancrés aux coins du plafond (open source, certifié OSHWA : CAD, PCB, code). Environ 1,9 kg de charge moyenne, contre 0,32 kg pour un bras 7 axes de 0,75 m avec les mêmes actionneurs, selon le fabricant, pour une vitesse d&#x27;environ 0,4 m/s. La charge est limitée par une tension de 28 N par câble.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://neufangled.com/&quot;&gt;neufangled.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#iso-214232026-un-langage-commun-pour-les-robots-mobiles&quot;&gt;ISO 21423:2026 : un langage commun pour les robots mobiles&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Cette nouvelle norme définit comment AGV, AMR et gestionnaires de flotte de marques différentes échangent position, vitesse, état et tâches. Elle couvre aussi les ascenseurs, les portes et l&#x27;ERP. L&#x27;article ne dit rien du lien avec VDA 5050, le protocole déjà répandu.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.therobotreport.com/new-iso-interoperability-standard-covers-collaboration-among-mobile-robots-from-multiple-vendors/&quot;&gt;The Robot Report&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#rooter-son-gps-renault-pour-changer-lheure&quot;&gt;Rooter son GPS Renault pour changer l&#x27;heure&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Sur ce TomTom sous Linux 2.6, le menu de réglage de l&#x27;heure est défini sur la carte SD de navigation, protégée par DRM. L&#x27;auteur enchaîne une écriture de fichier par path traversal et un crash volontaire pour exécuter son script en root, via l&#x27;astuce &lt;code&gt;core_pattern&lt;/code&gt; (le noyau lance lui-même un script quand un processus plante). Au final, il passe un décalage de 180 à 120 minutes.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://blog.nns.ee/2026/11/02/renault-hack/&quot;&gt;blog.nns.ee&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#padloc-se-localiser-sur-un-plan-sans-entrainement&quot;&gt;PadLoc : se localiser sur un plan, sans entraînement&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Ce back-end place un capteur sur un plan d&#x27;étage en s&#x27;appuyant sur l&#x27;orientation des murs, la corrélation de l&#x27;espace libre et un filtre bayésien. Avec LiDAR et odométrie roues, il atteint 9-10 cm d&#x27;erreur médiane sur la séquence statique (résultats annoncés par les auteurs), et l&#x27;état reste compact quelle que soit la longueur du trajet.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.05172v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#datafarm-un-agent-ia-a-la-place-du-teleoperateur&quot;&gt;DataFarm : un agent IA à la place du téléopérateur&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Un agent de code recrée la tâche en simulation, puis un modèle vidéo rend les épisodes de façon photoréaliste. Sur 5 tâches réelles : 93 réussites sur 100 contre 84 en téléopération, et 87 contre 46 sous conditions visuelles inédites. Le coût est d&#x27;environ 107 $ de l&#x27;heure de données, à peine moins que les 117 $ d&#x27;un devis de téléopération en Chine.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.05320v1&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-04/#correctif-les-reseaux-lus-a-lil-nu-par-gpt-6-astra&quot;&gt;Correctif : les réseaux « lus à l&#x27;œil nu » par GPT-6 Astra&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Le billet sur la « weight-space programming » (veille du 3 novembre) mélange plusieurs techniques : la lecture directe des poids ne concerne que 3 expériences, sur 17K à 172K poids. Le gain spectaculaire sur Qwen passe par du Python et 50 exécutions du réseau, et la même méthode échoue sur Gemma 3. Simon Willison reproduit tout de même un des exemples en local avec Qwen 3.8.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://honnibal.dev/blog/astra-read-write-misleading&quot;&gt;honnibal.dev&lt;/a&gt;, &lt;a href=&quot;https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/&quot;&gt;Simon Willison&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
 </entry>
 </feed>

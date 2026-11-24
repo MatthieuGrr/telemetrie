@@ -11,19 +11,19 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>81</small>](#robotique){ .tag } [embarqué <small>32</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [spatial <small>1</small>](#spatial){ .tag } [logiciel <small>20</small>](#logiciel){ .tag } [matériel <small>39</small>](#materiel){ .tag } [open source <small>12</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>21</small>](#recherche){ .tag } [concept <small>27</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>85</small>](#robotique){ .tag } [embarqué <small>32</small>](#embarque){ .tag } [IA <small>37</small>](#ia){ .tag } [spatial <small>2</small>](#spatial){ .tag } [logiciel <small>22</small>](#logiciel){ .tag } [matériel <small>42</small>](#materiel){ .tag } [open source <small>13</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>21</small>](#recherche){ .tag } [concept <small>28</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur](2026/11/2026-11-24.md#mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur) <span class="carte-meta">24 nov.</span>
+- [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>
+- [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>
+- [rqt_execution_flow : voir les actions et services en train de s'exécuter](2026/11/2026-11-24.md#rqtexecutionflow-voir-les-actions-et-services-en-train-de-sexecuter) <span class="carte-meta">24 nov.</span>
 - [Rendre une application ROS 2 déterministe, et la simuler plus vite](2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
 - [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>
-- [Un LLM embarqué qui réfléchit pendant que le robot roule](2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>
-- [Instant-LIVO : odométrie LiDAR-inertielle-visuelle légère](2026/11/2026-11-23.md#instant-livo-odometrie-lidar-inertielle-visuelle-legere) <span class="carte-meta">23 nov.</span>
-- [Valider un LiDAR simulé avec seulement des boîtes 3D](2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
-- [🤖 Robotique & infra](2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 
-[Les 81 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 85 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
@@ -49,42 +49,43 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## spatial { #spatial }
 
+- [MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur](2026/11/2026-11-24.md#mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur) <span class="carte-meta">24 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-22.md#embarque-tech) <span class="carte-meta">22 nov.</span>
 
-[Les 1 actus « spatial » →](themes/spatial.md){ .lien-suite }
+[Les 2 actus « spatial » →](themes/spatial.md){ .lien-suite }
 
 ## logiciel { #logiciel }
 
+- [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
+- [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
 - [« Safety Relevance Assertions » : ajouter la sûreté au SBOM des robots](2026/11/2026-11-18.md#safety-relevance-assertions-ajouter-la-surete-au-sbom-des-robots) <span class="carte-meta">18 nov.</span>
 - [MOCAP4ROS2 2.0 : une seule interface pour la capture de mouvement](2026/11/2026-11-16.md#mocap4ros2-20-une-seule-interface-pour-la-capture-de-mouvement) <span class="carte-meta">16 nov.</span>
 - [POSIM : le simulateur marin DAVE passe à ROS 2 Lyrical et Gazebo Jetty](2026/11/2026-11-15.md#posim-le-simulateur-marin-dave-passe-a-ros-2-lyrical-et-gazebo-jetty) <span class="carte-meta">15 nov.</span>
-- [ros2ebpf : observer tout le graphe ROS 2 sans toucher aux nœuds](2026/11/2026-11-13.md#ros2ebpf-observer-tout-le-graphe-ros-2-sans-toucher-aux-nuds) <span class="carte-meta">13 nov.</span>
-- [spot_basic : une API Python simple pour Spot sous ROS 2](2026/11/2026-11-12.md#spotbasic-une-api-python-simple-pour-spot-sous-ros-2) <span class="carte-meta">12 nov.</span>
 
-[Les 20 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
+[Les 22 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
 
 ## matériel { #materiel }
 
+- [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>
+- [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
+- [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
 - [Valider un LiDAR simulé avec seulement des boîtes 3D](2026/11/2026-11-23.md#valider-un-lidar-simule-avec-seulement-des-boites-3d) <span class="carte-meta">23 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-20.md#robotique-infra) <span class="carte-meta">20 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-19.md#robotique-infra) <span class="carte-meta">19 nov.</span>
-- [🔌 Embarqué & tech](2026/11/2026-11-19.md#embarque-tech) <span class="carte-meta">19 nov.</span>
-- [N'allumer le deuxième capteur que quand le premier doute](2026/11/2026-11-17.md#nallumer-le-deuxieme-capteur-que-quand-le-premier-doute) <span class="carte-meta">17 nov.</span>
-- [Rockchip RK3668 : cœurs revus, échantillons au T1 2027](2026/11/2026-11-17.md#rockchip-rk3668-curs-revus-echantillons-au-t1-2027) <span class="carte-meta">17 nov.</span>
 
-[Les 39 actus « matériel » →](themes/materiel.md){ .lien-suite }
+[Les 42 actus « matériel » →](themes/materiel.md){ .lien-suite }
 
 ## open source { #open-source }
 
+- [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [FlexiTac : la peau tactile open source à 2,5 $ la pièce](2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>
 - [StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages](2026/11/2026-11-10.md#strataslam-un-slam-ros-2-qui-gere-plusieurs-etages) <span class="carte-meta">10 nov.</span>
 - [MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source](2026/11/2026-11-09.md#mabel-un-robot-mobile-a-deux-bras-56-ddl-entierement-open-source) <span class="carte-meta">9 nov.</span>
 - [Thinking Machines sort Inkling 2 Small](2026/11/2026-11-06.md#thinking-machines-sort-inkling-2-small) <span class="carte-meta">6 nov.</span>
-- [Un exosquelette de genou open source, entraîné en simulation seulement](2026/11/2026-11-02.md#un-exosquelette-de-genou-open-source-entraine-en-simulation-seulement) <span class="carte-meta">2 nov.</span>
 
-[Les 12 actus « open source » →](themes/open-source.md){ .lien-suite }
+[Les 13 actus « open source » →](themes/open-source.md){ .lien-suite }
 
 ## sécurité { #securite }
 
@@ -110,14 +111,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : l'alignement d'Umeyama (et ATE vs RPE)](2026/11/2026-11-24.md#concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe) <span class="carte-meta">24 nov.</span>
 - [💡 Concept du jour : le LET (Logical Execution Time)](2026/11/2026-11-23.md#concept-du-jour-le-let-logical-execution-time) <span class="carte-meta">23 nov.</span>
 - [💡 Concept du jour : taille et capacité d'un conteneur](2026/11/2026-11-22.md#concept-du-jour-taille-et-capacite-dun-conteneur) <span class="carte-meta">22 nov.</span>
 - [💡 Concept du jour : la localité de cache](2026/11/2026-11-21.md#concept-du-jour-la-localite-de-cache) <span class="carte-meta">21 nov.</span>
 - [💡 Concept du jour : la condition de complémentarité](2026/11/2026-11-20.md#concept-du-jour-la-condition-de-complementarite) <span class="carte-meta">20 nov.</span>
 - [💡 Concept du jour : la fonction barrière de contrôle (CBF)](2026/11/2026-11-19.md#concept-du-jour-la-fonction-barriere-de-controle-cbf) <span class="carte-meta">19 nov.</span>
-- [💡 Concept du jour : la TCM (Tightly Coupled Memory)](2026/11/2026-11-18.md#concept-du-jour-la-tcm-tightly-coupled-memory) <span class="carte-meta">18 nov.</span>
 
-[Les 27 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 28 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 
