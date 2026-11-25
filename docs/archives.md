@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-30 veilles et 177 actus, de la plus récente à la plus ancienne.
+31 veilles et 184 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Mercredi 25 novembre 2026**](2026/11/2026-11-25.md) <span class="carte-meta">7 actus</span>  
+ROS 2 Kilted : dernière synchronisation le 30 novembre · pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2 · Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L · Un miroir suffit à faire échouer les politiques de manipulation · ST VL53LB : un ToF de 4 × 1,8 mm qui porte à 8 m · Piccola CNC : une fraiseuse open hardware à deux RP2350
 
 [**Mardi 24 novembre 2026**](2026/11/2026-11-24.md) <span class="carte-meta">7 actus</span>  
 MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur · Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur · OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut… · rqt_execution_flow : voir les actions et services en train de… · NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule… · Ladybird, le navigateur au moteur écrit de zéro, passe en alpha

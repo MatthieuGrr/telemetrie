@@ -8,12 +8,13 @@ search:
 
 # IA
 
-37 actus sur ce thème · [tous les thèmes](../tags.md)
+38 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Un miroir suffit à faire échouer les politiques de manipulation](../2026/11/2026-11-25.md#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation) <span class="carte-meta">25 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](../2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](../2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>

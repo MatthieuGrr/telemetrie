@@ -8,12 +8,13 @@ search:
 
 # logiciel
 
-22 actus sur ce thème · [tous les thèmes](../tags.md)
+23 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](../2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
 - [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](../2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
 - [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](../2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
 - [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](../2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>

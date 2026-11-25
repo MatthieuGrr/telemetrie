@@ -8,12 +8,15 @@ search:
 
 # robotique
 
-85 actus sur ce thème · [tous les thèmes](../tags.md)
+88 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [ROS 2 Kilted : dernière synchronisation le 30 novembre](../2026/11/2026-11-25.md#ros-2-kilted-derniere-synchronisation-le-30-novembre) <span class="carte-meta">25 nov.</span>
+- [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](../2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
+- [Un miroir suffit à faire échouer les politiques de manipulation](../2026/11/2026-11-25.md#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation) <span class="carte-meta">25 nov.</span>
 - [MOLA cloud : une carte LiDAR à partir d'un rosbag, dans le navigateur](../2026/11/2026-11-24.md#mola-cloud-une-carte-lidar-a-partir-dun-rosbag-dans-le-navigateur) <span class="carte-meta">24 nov.</span>
 - [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](../2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>
 - [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](../2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>

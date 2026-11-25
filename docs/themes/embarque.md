@@ -8,12 +8,14 @@ search:
 
 # embarqué
 
-32 actus sur ce thème · [tous les thèmes](../tags.md)
+34 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L](../2026/11/2026-11-25.md#une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l) <span class="carte-meta">25 nov.</span>
+- [Piccola CNC : une fraiseuse open hardware à deux RP2350](../2026/11/2026-11-25.md#piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350) <span class="carte-meta">25 nov.</span>
 - [Un LLM embarqué qui réfléchit pendant que le robot roule](../2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>
 - [AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués »](../2026/11/2026-11-23.md#amd-epyc-embedded-9006-256-curs-zen-6c-embarques) <span class="carte-meta">23 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-22.md#embarque-tech) <span class="carte-meta">22 nov.</span>
