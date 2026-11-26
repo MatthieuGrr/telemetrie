@@ -8,12 +8,13 @@ search:
 
 # IA
 
-38 actus sur ce thème · [tous les thèmes](../tags.md)
+39 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique](../2026/11/2026-11-26.md#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique) <span class="carte-meta">26 nov.</span>
 - [Un miroir suffit à faire échouer les politiques de manipulation](../2026/11/2026-11-25.md#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation) <span class="carte-meta">25 nov.</span>
 - [🔌 Embarqué & tech](../2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](../2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>

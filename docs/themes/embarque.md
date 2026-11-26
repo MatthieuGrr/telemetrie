@@ -8,12 +8,14 @@ search:
 
 # embarqué
 
-34 actus sur ce thème · [tous les thèmes](../tags.md)
+36 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [μMPC : une MPC non linéaire en 23 µs grâce à Koopman](../2026/11/2026-11-26.md#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman) <span class="carte-meta">26 nov.</span>
+- [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](../2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
 - [Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L](../2026/11/2026-11-25.md#une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l) <span class="carte-meta">25 nov.</span>
 - [Piccola CNC : une fraiseuse open hardware à deux RP2350](../2026/11/2026-11-25.md#piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350) <span class="carte-meta">25 nov.</span>
 - [Un LLM embarqué qui réfléchit pendant que le robot roule](../2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>

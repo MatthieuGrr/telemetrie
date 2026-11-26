@@ -8,12 +8,15 @@ search:
 
 # matériel
 
-44 actus sur ce thème · [tous les thèmes](../tags.md)
+47 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [μMPC : une MPC non linéaire en 23 µs grâce à Koopman](../2026/11/2026-11-26.md#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman) <span class="carte-meta">26 nov.</span>
+- [xFORM : compresser exactement les facteurs d'une odométrie LiDAR](../2026/11/2026-11-26.md#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar) <span class="carte-meta">26 nov.</span>
+- [Caméras de profondeur et imitation : les trous coûtent plus que le bruit](../2026/11/2026-11-26.md#cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit) <span class="carte-meta">26 nov.</span>
 - [ST VL53LB : un ToF de 4 × 1,8 mm qui porte à 8 m](../2026/11/2026-11-25.md#st-vl53lb-un-tof-de-4-18-mm-qui-porte-a-8-m) <span class="carte-meta">25 nov.</span>
 - [Piccola CNC : une fraiseuse open hardware à deux RP2350](../2026/11/2026-11-25.md#piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350) <span class="carte-meta">25 nov.</span>
 - [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](../2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>

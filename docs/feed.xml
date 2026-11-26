@@ -6,7 +6,42 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-25T06:00:00Z</updated>
+<updated>2026-11-26T06:00:00Z</updated>
+<entry>
+<title>Veille du jeudi 26 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-26/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-26/</id>
+<published>2026-11-26T06:00:00Z</published>
+<updated>2026-11-26T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="IA"/>
+<category term="recherche"/>
+<category term="concept"/>
+<summary>Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique · PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent · μMPC : une MPC non linéaire en 23 µs grâce à Koopman · xFORM : compresser exactement les facteurs d&#x27;une odométrie LiDAR · Caméras de profondeur et imitation : les trous coûtent plus que le bruit · Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W · 💡 Concept du jour : l&#x27;opérateur de Koopman</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique&quot;&gt;Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;DeepMind annonce la version 2.5 de son modèle VLA. Il réussit 30 à 100 % plus de tâches que la 2.0 et va 20 à 30 % plus vite. Le humanoïde Apollo 2 d&#x27;Apptronik a préparé des kits de pièces dans des usines Mercedes-Benz avec 96 % de réussite. Pour un poste répétitif, c&#x27;est encore loin de l&#x27;humain, et l&#x27;équipe juge les 4 % restants difficiles à gagner. Le modèle tourne encore sur des serveurs cloud, donc avec de la latence. DeepMind publie aussi ASIMOV-Jailbreak : 1 500 consignes pensées pour pousser un robot à faire quelque chose de dangereux.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/&quot;&gt;arstechnica.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent&quot;&gt;PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Grosse version de l&#x27;outil de tracé de séries temporelles très utilisé avec ROS. Il tourne maintenant dans le navigateur (C++ avec rendu GPU), et des exemples sur de vraies données de robots s&#x27;ouvrent en un clic. Il gagne un serveur MCP pour être piloté par un agent de code, un langage de script Lua/Python pour transformer les données, une vue dédiée aux messages /rosout et un éditeur de marqueurs pour annoter les anomalies.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/plotjuggler-4-2-this-is-the-release-i-dreamed-to-share-with-you-folks/60263&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman&quot;&gt;μMPC : une MPC non linéaire en 23 µs grâce à Koopman&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les auteurs apprennent une dynamique linéarisée au sens de Koopman, puis précalculent hors ligne la relation entre les commandes sur l&#x27;horizon et les sorties. En ligne, il ne reste qu&#x27;un QP sur les seules commandes, résolu par produits matrice-vecteur, sans refactorisation quand l&#x27;objectif ou les contraintes changent. Une résolution prend 23 µs sur un CPU de bureau et 24 ms sur le microcontrôleur à 168 MHz d&#x27;un Crazyflie.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.34597&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar&quot;&gt;xFORM : compresser exactement les facteurs d&#x27;une odométrie LiDAR&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Dans une odométrie LiDAR à fenêtre glissante, une paire de scans peut produire des centaines de milliers d&#x27;appariements de points. xFORM les remplace par 34 résidus scalaires qui donnent exactement le même système de Gauss-Newton : même solution, beaucoup moins de calcul. Deux variantes existent, l&#x27;une parallélisée sur CPU, l&#x27;autre qui déporte appariement et compression sur GPU.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.34053&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit&quot;&gt;Caméras de profondeur et imitation : les trous coûtent plus que le bruit&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;L&#x27;étude part d&#x27;un modèle de capteur calibré sur une vraie caméra stéréo de poignet. Une profondeur complète ajoute environ 10 points de réussite aux politiques d&#x27;imitation, et ce gain résiste même à 20 fois le bruit réel. En revanche, des trous sur un sixième de l&#x27;image suffisent à l&#x27;annuler. Une politique entraînée sur une profondeur propre peut même faire pire qu&#x27;en RGB seul quand les trous n&#x27;apparaissent qu&#x27;au déploiement. Conclusion : jugez une caméra sur sa couverture plutôt que sur son bruit.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.33352&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w&quot;&gt;Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un composant de 7 à 9,4 Ko de RAM donne à chaque carte une adresse HTTPS pour sa propre interface web. Il passe par une seule connexion sortante chiffrée avec le protocole Noise plutôt que TLS, et fonctionne donc derrière un CGNAT ou en 4G. Le service collecte les logs, les métriques (tas, pile libre par tâche) et les backtraces de panic, qui survivent au redémarrage. Il déploie les mises à jour par groupe de cartes : il s&#x27;arrête au premier échec, et le bootloader revient alors au firmware précédent. Il croise aussi le SBOM de chaque build avec les CVE pour le Cyber Resilience Act. Le firmware est open source, le serveur fermé, gratuit jusqu&#x27;à 3 appareils.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/25/pinscope-a-web-based-remote-access-and-vulnerability-tracking-solution-for-esp32-zephyr-pico-2-w-and-linux-sbcs/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-26/#concept-du-jour-loperateur-de-koopman&quot;&gt;💡 Concept du jour : l&#x27;opérateur de Koopman&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un système non linéaire, comme un drone ou un bras, est difficile à commander de façon optimale en temps réel. L&#x27;idée de Koopman : au lieu de suivre l&#x27;état lui-même, on suit un grand nombre de fonctions de cet état (les « observables »). Dans ce nouvel espace « relevé », l&#x27;évolution devient linéaire. En pratique, on approche ces fonctions par apprentissage ou par une base choisie (méthode EDMD). On récupère alors tous les outils linéaires : MPC sous forme de QP convexe, calculs précompilés, solveurs rapides. Le prix à payer : l&#x27;approximation n&#x27;est bonne que là où les données couvrent l&#x27;espace d&#x27;état. μMPC, ci-dessus, s&#x27;appuie sur cette idée.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du mercredi 25 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-25/"/>
@@ -577,42 +612,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://kevinboone.me/efitest_index.html&quot;&gt;kevinboone.me&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#concept-du-jour-le-cordic&quot;&gt;💡 Concept du jour : le CORDIC&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;C&#x27;est un algorithme qui calcule sinus, cosinus, arctangente et racines &lt;strong&gt;uniquement avec des additions et des décalages de bits&lt;/strong&gt;, sans multiplication : on fait tourner un vecteur par petits angles fixes jusqu&#x27;à atteindre l&#x27;angle voulu. Câblé en matériel (comme sur ces STM32), il donne un sin/cos en quelques cycles, ce qui est utile en FOC à chaque période PWM pour les transformées de Park et Clarke. C&#x27;est ce qui permet de faire tourner une boucle de courant à 20-40 kHz sans saturer le CPU.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du vendredi 6 novembre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/11/2026-11-06/"/>
-<id>https://telemetrie.georger.ovh/2026/11/2026-11-06/</id>
-<published>2026-11-06T06:00:00Z</published>
-<updated>2026-11-06T06:00:00Z</updated>
-<category term="matériel"/>
-<category term="robotique"/>
-<category term="embarqué"/>
-<category term="IA"/>
-<category term="logiciel"/>
-<category term="open source"/>
-<category term="sécurité"/>
-<category term="concept"/>
-<summary>VLA-Tug : savoir qu&#x27;un robot va rater son geste avant qu&#x27;il le rate · Recaler une flotte de robots grâce au Wi-Fi · VisionSIM : un simulateur qui reproduit les défauts des capteurs · Olimex UEXT-CH390 : de l&#x27;Ethernet filaire en SPI · P4 Launcher : des applis sans reflasher l&#x27;ESP32-P4 · Thinking Machines sort Inkling 2 Small · 💡 Concept du jour : le Bluetooth Channel Sounding</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#vla-tug-savoir-quun-robot-va-rater-son-geste-avant-quil-le-rate&quot;&gt;VLA-Tug : savoir qu&#x27;un robot va rater son geste avant qu&#x27;il le rate&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une petite sonde lit les couches internes d&#x27;un modèle VLA (vision-langage-action) et prévient d&#x27;un échec avant qu&#x27;il arrive. Elle donne aussi le type d&#x27;échec, ses taux d&#x27;erreur restent sous une limite fixée à l&#x27;avance, et elle est assez légère pour tourner sur le robot lui-même. Le code et 3 180 épisodes annotés sont publiés.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08425&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#recaler-une-flotte-de-robots-grace-au-wi-fi&quot;&gt;Recaler une flotte de robots grâce au Wi-Fi&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;En localisation coopérative, les robots se mesurent les uns par rapport aux autres : toute l&#x27;équipe peut donc dériver ensemble sans s&#x27;en rendre compte, c&#x27;est la « dérive de jauge ». Le papier corrige ça avec une carte de la puissance radio reçue, calée dans le même repère que la carte du monde.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08361&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#visionsim-un-simulateur-qui-reproduit-les-defauts-des-capteurs&quot;&gt;VisionSIM : un simulateur qui reproduit les défauts des capteurs&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Les simulateurs courants donnent des capteurs parfaits. VisionSIM reproduit leurs vrais défauts : éblouissement du LiDAR, repliement de phase des caméras ToF, événements perdus sur une caméra événementielle, inertie d&#x27;une caméra thermique.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08368&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#olimex-uext-ch390-de-lethernet-filaire-en-spi&quot;&gt;Olimex UEXT-CH390 : de l&#x27;Ethernet filaire en SPI&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Un petit module matériel open source à base de WCH CH390 (10/100 Mbit/s). Il ajoute un port RJ45 aux Pico/Pico 2 et aux ESP32-S3/C3/C6, compatible ESPHome.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/06/olimex-uext-ch390-spi-to-ethernet-module-targets-raspberry-pi-and-esp32-mcu-boards-running-esphome/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#p4-launcher-des-applis-sans-reflasher-lesp32-p4&quot;&gt;P4 Launcher : des applis sans reflasher l&#x27;ESP32-P4&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Un bureau façon PC pour ESP32-P4 avec écran tactile. Les applis sont des fichiers .papp rangés sur microSD et chargés en PSRAM au lancement, sans reflasher le firmware : un exemple rare de chargement dynamique de code sur microcontrôleur.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/05/p4-launcher-offers-a-pc-like-and-retro-gaming-experience-on-esp32-p4-boards/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#thinking-machines-sort-inkling-2-small&quot;&gt;Thinking Machines sort Inkling 2 Small&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Un modèle MoE de 594 milliards de paramètres, dont 17 milliards actifs, qui accepte des images. Les poids seront publiés sous Apache 2.0 la semaine suivante, après des tests de sécurité externes.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://thinkingmachines.ai/news/inkling-2-small/&quot;&gt;thinkingmachines.ai&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-06/#concept-du-jour-le-bluetooth-channel-sounding&quot;&gt;💡 Concept du jour : le Bluetooth Channel Sounding&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;NXP l&#x27;intègre à ses nouveaux MCU MCX W70 et KW43. Pour mesurer une distance, le RSSI (force du signal) est très imprécis : le Channel Sounding (Bluetooth 6) mesure plutôt le &lt;strong&gt;déphasage&lt;/strong&gt; du signal sur plusieurs fréquences, et chronomètre l&#x27;aller-retour. On obtient une distance à quelques dizaines de centimètres près, difficile à falsifier, d&#x27;où son usage pour les clés de voiture.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/05/nxp-mcx-w70-and-kw43-wireless-mcus-support-bluetooth-channel-sounding-for-iot-and-automotive-applications/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;</content>
 </entry>
 </feed>

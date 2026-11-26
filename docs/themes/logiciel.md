@@ -8,12 +8,14 @@ search:
 
 # logiciel
 
-23 actus sur ce thème · [tous les thèmes](../tags.md)
+25 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](../2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
+- [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](../2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
 - [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](../2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
 - [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](../2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
 - [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](../2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>

@@ -8,12 +8,13 @@ search:
 
 # recherche
 
-22 actus sur ce thème · [tous les thèmes](../tags.md)
+23 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Caméras de profondeur et imitation : les trous coûtent plus que le bruit](../2026/11/2026-11-26.md#cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit) <span class="carte-meta">26 nov.</span>
 - [Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L](../2026/11/2026-11-25.md#une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l) <span class="carte-meta">25 nov.</span>
 - [Rendre une application ROS 2 déterministe, et la simuler plus vite](../2026/11/2026-11-23.md#rendre-une-application-ros-2-deterministe-et-la-simuler-plus-vite) <span class="carte-meta">23 nov.</span>
 - [OpenRing : zéro interblocage pour des AGV sur voies à sens unique](../2026/11/2026-11-23.md#openring-zero-interblocage-pour-des-agv-sur-voies-a-sens-unique) <span class="carte-meta">23 nov.</span>

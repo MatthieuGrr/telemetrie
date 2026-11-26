@@ -8,12 +8,15 @@ search:
 
 # robotique
 
-88 actus sur ce thème · [tous les thèmes](../tags.md)
+91 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique](../2026/11/2026-11-26.md#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique) <span class="carte-meta">26 nov.</span>
+- [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](../2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
+- [xFORM : compresser exactement les facteurs d'une odométrie LiDAR](../2026/11/2026-11-26.md#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar) <span class="carte-meta">26 nov.</span>
 - [ROS 2 Kilted : dernière synchronisation le 30 novembre](../2026/11/2026-11-25.md#ros-2-kilted-derniere-synchronisation-le-30-novembre) <span class="carte-meta">25 nov.</span>
 - [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](../2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
 - [Un miroir suffit à faire échouer les politiques de manipulation](../2026/11/2026-11-25.md#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation) <span class="carte-meta">25 nov.</span>

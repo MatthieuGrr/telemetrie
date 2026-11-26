@@ -15,87 +15,87 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-25.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-26.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Mercredi 25 novembre 2026](2026/11/2026-11-25.md) { .jour }
+## [Jeudi 26 novembre 2026](2026/11/2026-11-26.md) { .jour }
 
 **7 actus** · 3 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### ROS 2 Kilted : dernière synchronisation le 30 novembre { #ros-2-kilted-derniere-synchronisation-le-30-novembre data-fav="2026/11/2026-11-25/#ros-2-kilted-derniere-synchronisation-le-30-novembre" }
+### Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique { #gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique data-fav="2026/11/2026-11-26/#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique" }
 
-Open Robotics annonce la dernière synchro des paquets Kilted vers les dépôts apt et dnf. La distribution arrive en fin de vie après une fenêtre de support de 18 mois, avec plus de 1 800 paquets publiés. Les PR rosdistro seront gelées à partir du 27 novembre. Ensuite, plus aucun correctif : il faut passer à Lyrical Luth, ou rester sur une LTS comme Jazzy.
+DeepMind annonce la version 2.5 de son modèle VLA. Il réussit 30 à 100 % plus de tâches que la 2.0 et va 20 à 30 % plus vite. Le humanoïde Apollo 2 d'Apptronik a préparé des kits de pièces dans des usines Mercedes-Benz avec 96 % de réussite. Pour un poste répétitif, c'est encore loin de l'humain, et l'équipe juge les 4 % restants difficiles à gagner. Le modèle tourne encore sur des serveurs cloud, donc avec de la latence. DeepMind publie aussi ASIMOV-Jailbreak : 1 500 consignes pensées pour pousser un robot à faire quelque chose de dangereux.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/preparing-for-final-kilted-sync-and-patch-release-2026-11-30/60246){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag }
+[arstechnica.com](https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [IA](themes/ia.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2 { #pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2 data-fav="2026/11/2026-11-25/#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2" }
+### PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent { #plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent data-fav="2026/11/2026-11-26/#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent" }
 
-Cet outil en Python pur (Apache-2.0) lit des fichiers .mcap, .db3 et .bag de ROS 1 sans désérialiser les messages. Il donne pour chaque topic la fréquence moyenne, la période médiane et P95, la gigue, les trous et les horodatages qui reculent. On sait ainsi en quelques secondes si /scan a perdu des trames ou si /odom a eu un pic de gigue. Il sert aussi de serveur MCP en lecture seule, pour qu'un agent de code fasse ce tri sans saturer son contexte.
+Grosse version de l'outil de tracé de séries temporelles très utilisé avec ROS. Il tourne maintenant dans le navigateur (C++ avec rendu GPU), et des exemples sur de vraies données de robots s'ouvrent en un clic. Il gagne un serveur MCP pour être piloté par un agent de code, un langage de script Lua/Python pour transformer les données, une vue dédiée aux messages /rosout et un éditeur de marqueurs pour annoter les anomalies.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/pnc-diag-mcp-zero-deserialization-offline-timing-inspector-mcp-server-for-mcap-db3-bag-no-ros-2-install-needed/60231){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
+[Open Robotics Discourse](https://discourse.openrobotics.org/t/plotjuggler-4-2-this-is-the-release-i-dreamed-to-share-with-you-folks/60263){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L { #une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l data-fav="2026/11/2026-11-25/#une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l" }
+### μMPC : une MPC non linéaire en 23 µs grâce à Koopman { #mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman data-fav="2026/11/2026-11-26/#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman" }
 
-Le Hailo-8L calcule toutes ses couches en entiers, attention comprise. Une fois quantifié, Depth Anything V2 perd des pans entiers de la scène. Les auteurs ont trouvé pourquoi : 91 % des poids du softmax tombent sous un seul pas int8, alors qu'ils portent 17 à 33 % de l'attention. Leur solution est de distiller le modèle dans un U-Net ResNet-34 sans attention (24,5 M de paramètres). Il tourne à 27,1 i/s, et sa version int8 colle à la version flottante. Sur route réelle, il est aussi précis que le modèle fourni par le fabricant, en plus rapide.
+Les auteurs apprennent une dynamique linéarisée au sens de Koopman, puis précalculent hors ligne la relation entre les commandes sur l'horizon et les sorties. En ligne, il ne reste qu'un QP sur les seules commandes, résolu par produits matrice-vecteur, sans refactorisation quand l'objectif ou les contraintes changent. Une résolution prend 23 µs sur un CPU de bureau et 24 ms sur le microcontrôleur à 168 MHz d'un Crazyflie.
 
-[arXiv](https://arxiv.org/abs/2611.32718){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [recherche](themes/recherche.md){ .tag }
+[arXiv](https://arxiv.org/abs/2611.34597){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [matériel](themes/materiel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Un miroir suffit à faire échouer les politiques de manipulation { #un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation data-fav="2026/11/2026-11-25/#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation" }
+### xFORM : compresser exactement les facteurs d'une odométrie LiDAR { #xform-compresser-exactement-les-facteurs-dune-odometrie-lidar data-fav="2026/11/2026-11-26/#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar" }
 
-Ce benchmark ajoute un ou deux miroirs à des tâches de manipulation connues, sans rien changer d'autre. Les cinq politiques testées (VLA, world-action models, agents) perdent toutes en réussite, de 11 à 57 points en moyenne, et jusqu'à 62 points avec une table miroir. Des panneaux non réfléchissants de même géométrie servent de témoin. Ils montrent que 50 à 88 % des échecs liés au miroir surviennent sans aucun contact : c'est bien la perception qui est trompée.
+Dans une odométrie LiDAR à fenêtre glissante, une paire de scans peut produire des centaines de milliers d'appariements de points. xFORM les remplace par 34 résidus scalaires qui donnent exactement le même système de Gauss-Newton : même solution, beaucoup moins de calcul. Deux variantes existent, l'une parallélisée sur CPU, l'autre qui déporte appariement et compression sur GPU.
 
-[arXiv](https://arxiv.org/abs/2611.33010){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [IA](themes/ia.md){ .tag }
+[arXiv](https://arxiv.org/abs/2611.34053){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### ST VL53LB : un ToF de 4 × 1,8 mm qui porte à 8 m { #st-vl53lb-un-tof-de-4-18-mm-qui-porte-a-8-m data-fav="2026/11/2026-11-25/#st-vl53lb-un-tof-de-4-18-mm-qui-porte-a-8-m" }
+### Caméras de profondeur et imitation : les trous coûtent plus que le bruit { #cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit data-fav="2026/11/2026-11-26/#cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit" }
 
-C'est le plus petit capteur temps de vol de la gamme FlightSense, 30 % plus petit que le VL53L3. En dToF à histogramme, il mesure de 5 mm à plus de 8 m avec détection de plusieurs objets. Il peut aussi sortir l'histogramme brut. En plein soleil (100 klux), la portée tombe à 1,1 m. Il se pilote en I²C ou en I3C.
+L'étude part d'un modèle de capteur calibré sur une vraie caméra stéréo de poignet. Une profondeur complète ajoute environ 10 points de réussite aux politiques d'imitation, et ce gain résiste même à 20 fois le bruit réel. En revanche, des trous sur un sixième de l'image suffisent à l'annuler. Une politique entraînée sur une profondeur propre peut même faire pire qu'en RGB seul quand les trous n'apparaissent qu'au déploiement. Conclusion : jugez une caméra sur sa couverture plutôt que sur son bruit.
 
-[CNX Software](https://www.cnx-software.com/2026/11/24/st-vl53lb-is-the-smallest-flightsense-tof-ranging-sensor-at-just-4-0-x-1-8-x-1-0-mm/){ .src target="_blank" rel="noopener" } [matériel](themes/materiel.md){ .tag }
+[arXiv](https://arxiv.org/abs/2611.33352){ .src target="_blank" rel="noopener" } [matériel](themes/materiel.md){ .tag } [recherche](themes/recherche.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Piccola CNC : une fraiseuse open hardware à deux RP2350 { #piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350 data-fav="2026/11/2026-11-25/#piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350" }
+### Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W { #pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w data-fav="2026/11/2026-11-26/#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w" }
 
-Cette petite CNC allemande (150 × 150 × 70 mm, vis à billes) vise surtout le prototypage de PCB. Son contrôleur sépare deux rôles. Un RP2350 fait tourner grblHAL pour le mouvement temps réel. Un second exécute un firmware « superviseur » chargé des capteurs, de la sécurité et de la gestion de la machine. On y trouve aussi la cartographie de hauteur du PCB par palpage conducteur, une API JSON, le Wi-Fi et une CAO/FAO intégrée.
+Un composant de 7 à 9,4 Ko de RAM donne à chaque carte une adresse HTTPS pour sa propre interface web. Il passe par une seule connexion sortante chiffrée avec le protocole Noise plutôt que TLS, et fonctionne donc derrière un CGNAT ou en 4G. Le service collecte les logs, les métriques (tas, pile libre par tâche) et les backtraces de panic, qui survivent au redémarrage. Il déploie les mises à jour par groupe de cartes : il s'arrête au premier échec, et le bootloader revient alors au firmware précédent. Il croise aussi le SBOM de chaque build avec les CVE pour le Cyber Resilience Act. Le firmware est open source, le serveur fermé, gratuit jusqu'à 3 appareils.
 
-[CNX Software](https://www.cnx-software.com/2026/11/23/piccola-cnc-open-source-desktop-milling-machine-with-pcb-auto-leveling-and-integrated-cam/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[CNX Software](https://www.cnx-software.com/2026/11/25/pinscope-a-web-based-remote-access-and-vulnerability-tracking-solution-for-esp32-zephyr-pico-2-w-and-linux-sbcs/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : la distillation de connaissances { #concept-du-jour-la-distillation-de-connaissances data-fav="2026/11/2026-11-25/#concept-du-jour-la-distillation-de-connaissances" }
+### 💡 Concept du jour : l'opérateur de Koopman { #concept-du-jour-loperateur-de-koopman data-fav="2026/11/2026-11-26/#concept-du-jour-loperateur-de-koopman" }
 
-On entraîne un petit modèle, l'« élève », à reproduire les sorties d'un gros modèle, le « professeur », plutôt que les étiquettes d'origine. Ces sorties sont plus riches qu'une étiquette : une carte de profondeur dense ou une distribution de probabilités. L'élève apprend donc beaucoup avec peu de données annotées. L'intérêt pour l'embarqué : l'architecture de l'élève est libre. On peut la choisir adaptée à la puce visée (convolutions, pas d'attention), là où la quantification doit composer avec l'architecture d'origine. C'est exactement ce que fait le papier Hailo ci-dessus.
+Un système non linéaire, comme un drone ou un bras, est difficile à commander de façon optimale en temps réel. L'idée de Koopman : au lieu de suivre l'état lui-même, on suit un grand nombre de fonctions de cet état (les « observables »). Dans ce nouvel espace « relevé », l'évolution devient linéaire. En pratique, on approche ces fonctions par apprentissage ou par une base choisie (méthode EDMD). On récupère alors tous les outils linéaires : MPC sous forme de QP convexe, calculs précompilés, solveurs rapides. Le prix à payer : l'approximation n'est bonne que là où les données couvrent l'espace d'état. μMPC, ci-dessus, s'appuie sur cette idée.
 
 [concept](themes/concept.md){ .tag }
 { .actu-foot }
@@ -105,6 +105,13 @@ On entraîne un petit modèle, l'« élève », à reproduire les sorties d'un g
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Mercredi 25 novembre 2026**](2026/11/2026-11-25.md) <span class="carte-meta">7 actus · 3 min</span>
+
+    - ROS 2 Kilted : dernière synchronisation le 30 novembre
+    - pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2
+    - Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L
+    - *et 4 autres…*
 
 - [**Mardi 24 novembre 2026**](2026/11/2026-11-24.md) <span class="carte-meta">7 actus · 3 min</span>
 
@@ -135,14 +142,9 @@ On entraîne un petit modèle, l'« élève », à reproduire les sorties d'un g
     - 🤖 Robotique & infra
     - 🔌 Embarqué & tech
 
-- [**Jeudi 19 novembre 2026**](2026/11/2026-11-19.md) <span class="carte-meta">3 actus · 3 min</span>
-
-    - 🤖 Robotique & infra
-    - 🔌 Embarqué & tech
-
 </div>
 
-[Les 31 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 32 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).
