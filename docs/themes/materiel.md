@@ -8,12 +8,15 @@ search:
 
 # matériel
 
-47 actus sur ce thème · [tous les thèmes](../tags.md)
+50 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui](../2026/11/2026-11-27.md#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui) <span class="carte-meta">27 nov.</span>
+- [Pixi 0.85 : plateformes repensées, pixi-build-ros progresse](../2026/11/2026-11-27.md#pixi-085-plateformes-repensees-pixi-build-ros-progresse) <span class="carte-meta">27 nov.</span>
+- [Caméras IA STM32N6 en Wi-Fi HaLow](../2026/11/2026-11-27.md#cameras-ia-stm32n6-en-wi-fi-halow) <span class="carte-meta">27 nov.</span>
 - [μMPC : une MPC non linéaire en 23 µs grâce à Koopman](../2026/11/2026-11-26.md#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman) <span class="carte-meta">26 nov.</span>
 - [xFORM : compresser exactement les facteurs d'une odométrie LiDAR](../2026/11/2026-11-26.md#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar) <span class="carte-meta">26 nov.</span>
 - [Caméras de profondeur et imitation : les trous coûtent plus que le bruit](../2026/11/2026-11-26.md#cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit) <span class="carte-meta">26 nov.</span>

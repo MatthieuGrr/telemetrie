@@ -8,12 +8,13 @@ search:
 
 # logiciel
 
-25 actus sur ce thème · [tous les thèmes](../tags.md)
+26 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Pixi 0.85 : plateformes repensées, pixi-build-ros progresse](../2026/11/2026-11-27.md#pixi-085-plateformes-repensees-pixi-build-ros-progresse) <span class="carte-meta">27 nov.</span>
 - [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](../2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
 - [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](../2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
 - [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](../2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>

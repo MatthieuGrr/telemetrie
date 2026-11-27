@@ -8,12 +8,13 @@ search:
 
 # embarqué
 
-36 actus sur ce thème · [tous les thèmes](../tags.md)
+37 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Caméras IA STM32N6 en Wi-Fi HaLow](../2026/11/2026-11-27.md#cameras-ia-stm32n6-en-wi-fi-halow) <span class="carte-meta">27 nov.</span>
 - [μMPC : une MPC non linéaire en 23 µs grâce à Koopman](../2026/11/2026-11-26.md#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman) <span class="carte-meta">26 nov.</span>
 - [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](../2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
 - [Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L](../2026/11/2026-11-25.md#une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l) <span class="carte-meta">25 nov.</span>

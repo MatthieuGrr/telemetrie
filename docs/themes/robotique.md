@@ -8,12 +8,16 @@ search:
 
 # robotique
 
-91 actus sur ce thème · [tous les thèmes](../tags.md)
+95 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui](../2026/11/2026-11-27.md#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui) <span class="carte-meta">27 nov.</span>
+- [Liaison instable : pourquoi les nuages de points résistent au streaming](../2026/11/2026-11-27.md#liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming) <span class="carte-meta">27 nov.</span>
+- [Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI](../2026/11/2026-11-27.md#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi) <span class="carte-meta">27 nov.</span>
+- [Xpeng IRON : production en janvier, magasins avant la maison](../2026/11/2026-11-27.md#xpeng-iron-production-en-janvier-magasins-avant-la-maison) <span class="carte-meta">27 nov.</span>
 - [Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique](../2026/11/2026-11-26.md#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique) <span class="carte-meta">26 nov.</span>
 - [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](../2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
 - [xFORM : compresser exactement les facteurs d'une odométrie LiDAR](../2026/11/2026-11-26.md#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar) <span class="carte-meta">26 nov.</span>

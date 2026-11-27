@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-32 veilles et 191 actus, de la plus récente à la plus ancienne.
+33 veilles et 198 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Vendredi 27 novembre 2026**](2026/11/2026-11-27.md) <span class="carte-meta">7 actus</span>  
+robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à… · Liaison instable : pourquoi les nuages de points résistent au… · Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI · Pixi 0.85 : plateformes repensées, pixi-build-ros progresse · Caméras IA STM32N6 en Wi-Fi HaLow · Xpeng IRON : production en janvier, magasins avant la maison
 
 [**Jeudi 26 novembre 2026**](2026/11/2026-11-26.md) <span class="carte-meta">7 actus</span>  
 Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de «… · PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un… · μMPC : une MPC non linéaire en 23 µs grâce à Koopman · xFORM : compresser exactement les facteurs d'une odométrie LiDAR · Caméras de profondeur et imitation : les trous coûtent plus que le… · Pinscope : logs, crashs et OTA avec retour arrière pour ESP32…

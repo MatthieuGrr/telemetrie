@@ -8,12 +8,13 @@ search:
 
 # concept
 
-30 actus sur ce thème · [tous les thèmes](../tags.md)
+31 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [💡 Concept du jour : le tampon de gigue (jitter buffer)](../2026/11/2026-11-27.md#concept-du-jour-le-tampon-de-gigue-jitter-buffer) <span class="carte-meta">27 nov.</span>
 - [💡 Concept du jour : l'opérateur de Koopman](../2026/11/2026-11-26.md#concept-du-jour-loperateur-de-koopman) <span class="carte-meta">26 nov.</span>
 - [💡 Concept du jour : la distillation de connaissances](../2026/11/2026-11-25.md#concept-du-jour-la-distillation-de-connaissances) <span class="carte-meta">25 nov.</span>
 - [💡 Concept du jour : l'alignement d'Umeyama (et ATE vs RPE)](../2026/11/2026-11-24.md#concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe) <span class="carte-meta">24 nov.</span>

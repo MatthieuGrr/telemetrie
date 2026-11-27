@@ -6,7 +6,41 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-26T06:00:00Z</updated>
+<updated>2026-11-27T06:00:00Z</updated>
+<entry>
+<title>Veille du vendredi 27 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-27/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-27/</id>
+<published>2026-11-27T06:00:00Z</published>
+<updated>2026-11-27T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="matériel"/>
+<category term="embarqué"/>
+<category term="logiciel"/>
+<category term="sécurité"/>
+<category term="concept"/>
+<summary>robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l&#x27;appui · Liaison instable : pourquoi les nuages de points résistent au streaming · Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI · Pixi 0.85 : plateformes repensées, pixi-build-ros progresse · Caméras IA STM32N6 en Wi-Fi HaLow · Xpeng IRON : production en janvier, magasins avant la maison · 💡 Concept du jour : le tampon de gigue (jitter buffer)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui&quot;&gt;robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l&#x27;appui&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Passerelle ROS 2 Humble + paquets Flutter (BSD-3) pour la vidéo basse latence (WebRTC/WHEP), la télémétrie et une téléop protégée par un « homme mort ». Le post chiffre les pièges : MJPEG via web_video_server consomme ~5,6 Mbit/s par spectateur et ajoute ~229 ms, et ré-encode pour chaque client (29,5 → 18 i/s avec 4 spectateurs). Sur Android, l&#x27;économie d&#x27;énergie Wi-Fi regroupe les paquets UDP et gonfle le tampon de gigue à 85-150 ms : un WifiLock « low latency » le ramène à 10-20 ms. Il signale aussi que rosbridge n&#x27;a pas d&#x27;authentification et n&#x27;annule pas un objectif Nav2 quand le téléphone décroche.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/robot-stream-low-latency-webrtc-video-nav2-teleop-for-ros-2-in-flutter-deadman-protected-open-source/60233&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming&quot;&gt;Liaison instable : pourquoi les nuages de points résistent au streaming&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Discussion utile sur la téléop 3D en cellulaire. Idée clé : WebRTC estime en continu bande passante et RTT puis baisse le débit de l&#x27;encodeur vidéo, mais les nuages de points n&#x27;ont pas de compression inter-images aussi efficace que H.264/AV1, et on ne sait pas toujours quelle partie des données compte pour le récepteur. Le sous-échantillonnage dynamique est une piste, pas une solution générique.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/how-do-you-handle-laggy-links-for-3d-teleop-monitoring-in-ros-2/60248&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi&quot;&gt;Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Projet ouvert (Jazzy, Gazebo Harmonic) qui traite la rampe comme un problème de contrôle et de sécurité à part : biais de tangage de l&#x27;IMU qui corrompt l&#x27;odométrie, centre de gravité qui bouge avec la charge, glissement des roues. Au menu : machine à états (approche, montée, transition, descente, sortie, arrêt), classifieur de pente LiDAR, deux critics MPPI maison et une couche de sécurité où un seul signal (marge de basculement, glissement, blocage) peut opposer son veto.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/ramp-autonomy-a-ros-2-gazebo-stack-for-ramp-ascent-and-descent-on-a-loaded-amr/60220&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#pixi-085-plateformes-repensees-pixi-build-ros-progresse&quot;&gt;Pixi 0.85 : plateformes repensées, pixi-build-ros progresse&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Les plateformes d&#x27;un workspace se déclarent désormais avec une clé subdir, ce qui permet de définir par exemple « linux-cuda » et « linux-cpu » sur la même architecture. Côté ROS, pixi-build-ros gagne les cibles bibliothèque, les licences package.xml converties en SPDX et le nommage des paquets façon RoboStack. Attention : les lockfiles d&#x27;anciennes versions peuvent nécessiter un nouveau pixi lock.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/prefix-dev/pixi/releases/tag/v0.85.0&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#cameras-ia-stm32n6-en-wi-fi-halow&quot;&gt;Caméras IA STM32N6 en Wi-Fi HaLow&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;CamThink ajoute le Wi-Fi HaLow (802.11ah, sub-GHz, longue portée) à ses caméras NE301/NE302 basées sur le STM32N6 (Cortex-M55 à 800 MHz, NPU de 600 GOPS, encodeur H.264 matériel). La NE301 passe en IP67 avec antenne externe, sur batterie. Un bon exemple de vision embarquée sur microcontrôleur, loin d&#x27;un Linux embarqué (article sponsorisé).&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/26/camthink-neoeyes-ne301-ne302-edge-ai-cameras-get-wi-fi-halow-connectivity-for-indoor-and-outdoor-deployments/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#xpeng-iron-production-en-janvier-magasins-avant-la-maison&quot;&gt;Xpeng IRON : production en janvier, magasins avant la maison&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le constructeur automobile chinois a présenté la nouvelle version de son humanoïde IRON : production en série en janvier, premiers essais comme vendeur dans ses concessions au premier trimestre, ventes au deuxième. Le domestique viendrait « un à deux ans » après les déploiements commerciaux, dans un contexte où les investisseurs restent sceptiques.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html&quot;&gt;cnbc.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-27/#concept-du-jour-le-tampon-de-gigue-jitter-buffer&quot;&gt;💡 Concept du jour : le tampon de gigue (jitter buffer)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Sur un réseau, les paquets n&#x27;arrivent pas à intervalles réguliers : certains ont du retard, d&#x27;autres arrivent groupés. Le récepteur les garde donc un court instant dans un tampon avant de les afficher, pour lisser cette « gigue ». Plus la gigue observée est forte, plus le tampon grandit, donc plus la latence augmente. D&#x27;où le piège de robot_stream : en regroupant les paquets, l&#x27;économie d&#x27;énergie Wi-Fi fait croire à une forte gigue et le flux prend 100 ms de retard sans aucune perte.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du jeudi 26 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-26/"/>
@@ -584,33 +618,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://von31.github.io/social-humanoid/&quot;&gt;von31.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#concept-du-jour-la-quantification&quot;&gt;💡 Concept du jour : la quantification&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Quantifier un réseau de neurones, c&#x27;est stocker ses poids (et parfois ses calculs) sur moins de bits : 8 ou 4 bits entiers au lieu de 16 ou 32 bits flottants. Le modèle devient 2 à 8 fois plus léger et beaucoup plus rapide sur un NPU ou un microcontrôleur, au prix d&#x27;une petite perte de précision, que l&#x27;on limite en calibrant les plages de valeurs sur quelques exemples. C&#x27;est l&#x27;une des techniques qui permettent de faire tourner un modèle de robot sur une carte embarquée plutôt que sur un serveur.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du samedi 7 novembre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/11/2026-11-07/"/>
-<id>https://telemetrie.georger.ovh/2026/11/2026-11-07/</id>
-<published>2026-11-07T06:00:00Z</published>
-<updated>2026-11-07T06:00:00Z</updated>
-<category term="embarqué"/>
-<category term="matériel"/>
-<category term="robotique"/>
-<category term="IA"/>
-<category term="logiciel"/>
-<category term="concept"/>
-<summary>STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur · Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31 · OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d&#x27;exemples · Tuto : programmer en bare-metal sur PC avec UEFI · 💡 Concept du jour : le CORDIC</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#stm32h7p4-h7p5-des-cortex-m7-a-520-mhz-faits-pour-le-controle-moteur&quot;&gt;STM32H7P4 / H7P5 : des Cortex-M7 à 520 MHz faits pour le contrôle moteur&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;ST sort deux MCU pensés pour la commande de moteurs, l&#x27;électronique de puissance et l&#x27;IA embarquée : un &lt;strong&gt;HSP&lt;/strong&gt; (coprocesseur matériel qui accélère les maths et le traitement du signal), des accélérateurs CORDIC et FMAC, 3 timers moteur avancés, jusqu&#x27;à 24 sorties PWM haute résolution, 4 ADC 12 bits et 3 bus CAN FD. Le H7P5 ajoute un NPU de 85 GOPS (une puce dédiée aux réseaux de neurones).&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/06/520-mhz-stm32h7p4-stm32h7p5-arm-cortex-m7-mcus-feature-hardware-signal-processor-hsp-optional-neural-art-npu/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#waveshare-esp32-s31-zero-une-premiere-carte-avec-le-nouvel-esp32-s31&quot;&gt;Waveshare ESP32-S31-Zero : une première carte avec le nouvel ESP32-S31&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une carte minuscule au format « Zero », avec un double cœur RISC-V à 320 MHz (FPU et SIMD), du Wi-Fi 6, du BLE 5.3 et de l&#x27;802.15.4 (Thread/Zigbee). Elle a jusqu&#x27;à 32 Mo de PSRAM dans la puce et un connecteur 40 broches pour un écran LCD, une carte SD et l&#x27;USB 2.0. La prise en charge de la puce dans ESP-IDF reste à vérifier.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.cnx-software.com/2026/11/07/waveshare-esp32-s31-zero-a-tiny-esp32-s31-board-with-up-to-32mb-psram-32mb-spi-flash/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#oopsierecover-apprendre-a-un-robot-a-rattraper-ses-erreurs-avec-tres-peu-dexemples&quot;&gt;OopsieRecover : apprendre à un robot à rattraper ses erreurs avec très peu d&#x27;exemples&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Les modèles VLA (vision, langage, action) échouent souvent une fois déployés, et les corriger demande d&#x27;habitude des dizaines voire des centaines de démonstrations. Ici, le système déduit &lt;strong&gt;pourquoi&lt;/strong&gt; une correction a été faite et transforme cette raison en « coût » spatial : une zone à éviter, un geste à privilégier. Avec une poignée de démos, la correction marche aussi sur de nouveaux objets et de nouvelles scènes (6 tâches testées, UT Austin).&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08462&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#tuto-programmer-en-bare-metal-sur-pc-avec-uefi&quot;&gt;Tuto : programmer en bare-metal sur PC avec UEFI&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une série en 5 parties, très bien notée sur Hacker News. Elle montre comment compiler un programme qui démarre directement depuis le firmware UEFI, sans système d&#x27;exploitation : outils, édition de liens, partition EFI, clé USB bootable, lecture de fichiers.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://kevinboone.me/efitest_index.html&quot;&gt;kevinboone.me&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-07/#concept-du-jour-le-cordic&quot;&gt;💡 Concept du jour : le CORDIC&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;C&#x27;est un algorithme qui calcule sinus, cosinus, arctangente et racines &lt;strong&gt;uniquement avec des additions et des décalages de bits&lt;/strong&gt;, sans multiplication : on fait tourner un vecteur par petits angles fixes jusqu&#x27;à atteindre l&#x27;angle voulu. Câblé en matériel (comme sur ces STM32), il donne un sin/cos en quelques cycles, ce qui est utile en FOC à chaque période PWM pour les transformées de Park et Clarke. C&#x27;est ce qui permet de faire tourner une boucle de courant à 20-40 kHz sans saturer le CPU.&lt;/p&gt;</content>
 </entry>
 </feed>

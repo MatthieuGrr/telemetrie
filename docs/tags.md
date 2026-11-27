@@ -11,30 +11,30 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>91</small>](#robotique){ .tag } [embarqué <small>36</small>](#embarque){ .tag } [IA <small>39</small>](#ia){ .tag } [spatial <small>2</small>](#spatial){ .tag } [logiciel <small>25</small>](#logiciel){ .tag } [matériel <small>47</small>](#materiel){ .tag } [open source <small>13</small>](#open-source){ .tag } [sécurité <small>12</small>](#securite){ .tag } [recherche <small>23</small>](#recherche){ .tag } [concept <small>30</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>95</small>](#robotique){ .tag } [embarqué <small>37</small>](#embarque){ .tag } [IA <small>39</small>](#ia){ .tag } [spatial <small>2</small>](#spatial){ .tag } [logiciel <small>26</small>](#logiciel){ .tag } [matériel <small>50</small>](#materiel){ .tag } [open source <small>13</small>](#open-source){ .tag } [sécurité <small>13</small>](#securite){ .tag } [recherche <small>23</small>](#recherche){ .tag } [concept <small>31</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui](2026/11/2026-11-27.md#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui) <span class="carte-meta">27 nov.</span>
+- [Liaison instable : pourquoi les nuages de points résistent au streaming](2026/11/2026-11-27.md#liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming) <span class="carte-meta">27 nov.</span>
+- [Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI](2026/11/2026-11-27.md#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi) <span class="carte-meta">27 nov.</span>
+- [Xpeng IRON : production en janvier, magasins avant la maison](2026/11/2026-11-27.md#xpeng-iron-production-en-janvier-magasins-avant-la-maison) <span class="carte-meta">27 nov.</span>
 - [Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique](2026/11/2026-11-26.md#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique) <span class="carte-meta">26 nov.</span>
 - [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
-- [xFORM : compresser exactement les facteurs d'une odométrie LiDAR](2026/11/2026-11-26.md#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar) <span class="carte-meta">26 nov.</span>
-- [ROS 2 Kilted : dernière synchronisation le 30 novembre](2026/11/2026-11-25.md#ros-2-kilted-derniere-synchronisation-le-30-novembre) <span class="carte-meta">25 nov.</span>
-- [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
-- [Un miroir suffit à faire échouer les politiques de manipulation](2026/11/2026-11-25.md#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation) <span class="carte-meta">25 nov.</span>
 
-[Les 91 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 95 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
+- [Caméras IA STM32N6 en Wi-Fi HaLow](2026/11/2026-11-27.md#cameras-ia-stm32n6-en-wi-fi-halow) <span class="carte-meta">27 nov.</span>
 - [μMPC : une MPC non linéaire en 23 µs grâce à Koopman](2026/11/2026-11-26.md#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman) <span class="carte-meta">26 nov.</span>
 - [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
 - [Une profondeur monoculaire à 27 i/s sur Raspberry Pi 5 + Hailo-8L](2026/11/2026-11-25.md#une-profondeur-monoculaire-a-27-is-sur-raspberry-pi-5-hailo-8l) <span class="carte-meta">25 nov.</span>
 - [Piccola CNC : une fraiseuse open hardware à deux RP2350](2026/11/2026-11-25.md#piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350) <span class="carte-meta">25 nov.</span>
 - [Un LLM embarqué qui réfléchit pendant que le robot roule](2026/11/2026-11-23.md#un-llm-embarque-qui-reflechit-pendant-que-le-robot-roule) <span class="carte-meta">23 nov.</span>
-- [AMD EPYC Embedded 9006 : 256 cœurs Zen 6c « embarqués »](2026/11/2026-11-23.md#amd-epyc-embedded-9006-256-curs-zen-6c-embarques) <span class="carte-meta">23 nov.</span>
 
-[Les 36 actus « embarqué » →](themes/embarque.md){ .lien-suite }
+[Les 37 actus « embarqué » →](themes/embarque.md){ .lien-suite }
 
 ## IA { #ia }
 
@@ -56,25 +56,25 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## logiciel { #logiciel }
 
+- [Pixi 0.85 : plateformes repensées, pixi-build-ros progresse](2026/11/2026-11-27.md#pixi-085-plateformes-repensees-pixi-build-ros-progresse) <span class="carte-meta">27 nov.</span>
 - [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
 - [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
 - [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
 - [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
 - [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
-- [Flipper One : un Linux ARM de poche, avec un RP2350 pour le bas niveau](2026/11/2026-11-18.md#flipper-one-un-linux-arm-de-poche-avec-un-rp2350-pour-le-bas-niveau) <span class="carte-meta">18 nov.</span>
 
-[Les 25 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
+[Les 26 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
 
 ## matériel { #materiel }
 
+- [robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui](2026/11/2026-11-27.md#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui) <span class="carte-meta">27 nov.</span>
+- [Pixi 0.85 : plateformes repensées, pixi-build-ros progresse](2026/11/2026-11-27.md#pixi-085-plateformes-repensees-pixi-build-ros-progresse) <span class="carte-meta">27 nov.</span>
+- [Caméras IA STM32N6 en Wi-Fi HaLow](2026/11/2026-11-27.md#cameras-ia-stm32n6-en-wi-fi-halow) <span class="carte-meta">27 nov.</span>
 - [μMPC : une MPC non linéaire en 23 µs grâce à Koopman](2026/11/2026-11-26.md#mpc-une-mpc-non-lineaire-en-23-s-grace-a-koopman) <span class="carte-meta">26 nov.</span>
 - [xFORM : compresser exactement les facteurs d'une odométrie LiDAR](2026/11/2026-11-26.md#xform-compresser-exactement-les-facteurs-dune-odometrie-lidar) <span class="carte-meta">26 nov.</span>
 - [Caméras de profondeur et imitation : les trous coûtent plus que le bruit](2026/11/2026-11-26.md#cameras-de-profondeur-et-imitation-les-trous-coutent-plus-que-le-bruit) <span class="carte-meta">26 nov.</span>
-- [ST VL53LB : un ToF de 4 × 1,8 mm qui porte à 8 m](2026/11/2026-11-25.md#st-vl53lb-un-tof-de-4-18-mm-qui-porte-a-8-m) <span class="carte-meta">25 nov.</span>
-- [Piccola CNC : une fraiseuse open hardware à deux RP2350](2026/11/2026-11-25.md#piccola-cnc-une-fraiseuse-open-hardware-a-deux-rp2350) <span class="carte-meta">25 nov.</span>
-- [Enregistrer des images CUDA dans rosbag2 sans pénaliser l'éditeur](2026/11/2026-11-24.md#enregistrer-des-images-cuda-dans-rosbag2-sans-penaliser-lediteur) <span class="carte-meta">24 nov.</span>
 
-[Les 47 actus « matériel » →](themes/materiel.md){ .lien-suite }
+[Les 50 actus « matériel » →](themes/materiel.md){ .lien-suite }
 
 ## open source { #open-source }
 
@@ -89,14 +89,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## sécurité { #securite }
 
+- [Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI](2026/11/2026-11-27.md#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi) <span class="carte-meta">27 nov.</span>
 - [Une panne d'Outlook, 15 personnes intoxiquées au chlore](2026/11/2026-11-16.md#une-panne-doutlook-15-personnes-intoxiquees-au-chlore) <span class="carte-meta">16 nov.</span>
 - [Applications « vibe-codées » : des données sensibles accessibles sans connexion](2026/11/2026-11-15.md#applications-vibe-codees-des-donnees-sensibles-accessibles-sans-connexion) <span class="carte-meta">15 nov.</span>
 - [Retour d'expérience : la fausse alerte incendie qui a failli noyer un datacenter](2026/11/2026-11-12.md#retour-dexperience-la-fausse-alerte-incendie-qui-a-failli-noyer-un-datacenter) <span class="carte-meta">12 nov.</span>
 - [Thinking Machines sort Inkling 2 Small](2026/11/2026-11-06.md#thinking-machines-sort-inkling-2-small) <span class="carte-meta">6 nov.</span>
 - [Mbed TLS pourrait perdre ses mainteneurs](2026/11/2026-11-05.md#mbed-tls-pourrait-perdre-ses-mainteneurs) <span class="carte-meta">5 nov.</span>
-- [Failles Linux : 948 exploits générés par IA](2026/11/2026-11-05.md#failles-linux-948-exploits-generes-par-ia) <span class="carte-meta">5 nov.</span>
 
-[Les 12 actus « sécurité » →](themes/securite.md){ .lien-suite }
+[Les 13 actus « sécurité » →](themes/securite.md){ .lien-suite }
 
 ## recherche { #recherche }
 
@@ -111,14 +111,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : le tampon de gigue (jitter buffer)](2026/11/2026-11-27.md#concept-du-jour-le-tampon-de-gigue-jitter-buffer) <span class="carte-meta">27 nov.</span>
 - [💡 Concept du jour : l'opérateur de Koopman](2026/11/2026-11-26.md#concept-du-jour-loperateur-de-koopman) <span class="carte-meta">26 nov.</span>
 - [💡 Concept du jour : la distillation de connaissances](2026/11/2026-11-25.md#concept-du-jour-la-distillation-de-connaissances) <span class="carte-meta">25 nov.</span>
 - [💡 Concept du jour : l'alignement d'Umeyama (et ATE vs RPE)](2026/11/2026-11-24.md#concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe) <span class="carte-meta">24 nov.</span>
 - [💡 Concept du jour : le LET (Logical Execution Time)](2026/11/2026-11-23.md#concept-du-jour-le-let-logical-execution-time) <span class="carte-meta">23 nov.</span>
 - [💡 Concept du jour : taille et capacité d'un conteneur](2026/11/2026-11-22.md#concept-du-jour-taille-et-capacite-dun-conteneur) <span class="carte-meta">22 nov.</span>
-- [💡 Concept du jour : la localité de cache](2026/11/2026-11-21.md#concept-du-jour-la-localite-de-cache) <span class="carte-meta">21 nov.</span>
 
-[Les 30 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 31 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 
