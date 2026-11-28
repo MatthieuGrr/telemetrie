@@ -8,12 +8,15 @@ search:
 
 # logiciel
 
-26 actus sur ce thème · [tous les thèmes](../tags.md)
+29 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d'autoroute fermées](../2026/11/2026-11-28.md#waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees) <span class="carte-meta">28 nov.</span>
+- [usb-rea : générer un driver Linux pour un gadget USB qui n'a qu'un logiciel Windows](../2026/11/2026-11-28.md#usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows) <span class="carte-meta">28 nov.</span>
+- [Anthropic réécrit son API Messages de Python en Rust : le dur, c'était la vérification](../2026/11/2026-11-28.md#anthropic-reecrit-son-api-messages-de-python-en-rust-le-dur-cetait-la-verification) <span class="carte-meta">28 nov.</span>
 - [Pixi 0.85 : plateformes repensées, pixi-build-ros progresse](../2026/11/2026-11-27.md#pixi-085-plateformes-repensees-pixi-build-ros-progresse) <span class="carte-meta">27 nov.</span>
 - [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](../2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
 - [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](../2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>

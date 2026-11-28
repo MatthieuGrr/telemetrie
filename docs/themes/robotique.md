@@ -8,12 +8,15 @@ search:
 
 # robotique
 
-95 actus sur ce thème · [tous les thèmes](../tags.md)
+98 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [DWARL : un contrôleur local Nav2 appris par renforcement](../2026/11/2026-11-28.md#dwarl-un-controleur-local-nav2-appris-par-renforcement) <span class="carte-meta">28 nov.</span>
+- [Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d'autoroute fermées](../2026/11/2026-11-28.md#waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees) <span class="carte-meta">28 nov.</span>
+- [Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source](../2026/11/2026-11-28.md#tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source) <span class="carte-meta">28 nov.</span>
 - [robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui](../2026/11/2026-11-27.md#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui) <span class="carte-meta">27 nov.</span>
 - [Liaison instable : pourquoi les nuages de points résistent au streaming](../2026/11/2026-11-27.md#liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming) <span class="carte-meta">27 nov.</span>
 - [Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI](../2026/11/2026-11-27.md#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi) <span class="carte-meta">27 nov.</span>

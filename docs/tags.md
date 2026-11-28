@@ -11,19 +11,19 @@ search:
 Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de chacun.
 { .veille-meta }
 
-[robotique <small>95</small>](#robotique){ .tag } [embarqué <small>37</small>](#embarque){ .tag } [IA <small>39</small>](#ia){ .tag } [spatial <small>2</small>](#spatial){ .tag } [logiciel <small>26</small>](#logiciel){ .tag } [matériel <small>50</small>](#materiel){ .tag } [open source <small>13</small>](#open-source){ .tag } [sécurité <small>13</small>](#securite){ .tag } [recherche <small>23</small>](#recherche){ .tag } [concept <small>31</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
+[robotique <small>98</small>](#robotique){ .tag } [embarqué <small>37</small>](#embarque){ .tag } [IA <small>40</small>](#ia){ .tag } [spatial <small>2</small>](#spatial){ .tag } [logiciel <small>29</small>](#logiciel){ .tag } [matériel <small>50</small>](#materiel){ .tag } [open source <small>16</small>](#open-source){ .tag } [sécurité <small>13</small>](#securite){ .tag } [recherche <small>23</small>](#recherche){ .tag } [concept <small>32</small>](#concept){ .tag } [tech <small>1</small>](#tech){ .tag }
 { .veille-tags }
 
 ## robotique { #robotique }
 
+- [DWARL : un contrôleur local Nav2 appris par renforcement](2026/11/2026-11-28.md#dwarl-un-controleur-local-nav2-appris-par-renforcement) <span class="carte-meta">28 nov.</span>
+- [Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d'autoroute fermées](2026/11/2026-11-28.md#waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees) <span class="carte-meta">28 nov.</span>
+- [Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source](2026/11/2026-11-28.md#tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source) <span class="carte-meta">28 nov.</span>
 - [robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui](2026/11/2026-11-27.md#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui) <span class="carte-meta">27 nov.</span>
 - [Liaison instable : pourquoi les nuages de points résistent au streaming](2026/11/2026-11-27.md#liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming) <span class="carte-meta">27 nov.</span>
 - [Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI](2026/11/2026-11-27.md#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi) <span class="carte-meta">27 nov.</span>
-- [Xpeng IRON : production en janvier, magasins avant la maison](2026/11/2026-11-27.md#xpeng-iron-production-en-janvier-magasins-avant-la-maison) <span class="carte-meta">27 nov.</span>
-- [Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique](2026/11/2026-11-26.md#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique) <span class="carte-meta">26 nov.</span>
-- [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
 
-[Les 95 actus « robotique » →](themes/robotique.md){ .lien-suite }
+[Les 98 actus « robotique » →](themes/robotique.md){ .lien-suite }
 
 ## embarqué { #embarque }
 
@@ -38,14 +38,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## IA { #ia }
 
+- [Anthropic réécrit son API Messages de Python en Rust : le dur, c'était la vérification](2026/11/2026-11-28.md#anthropic-reecrit-son-api-messages-de-python-en-rust-le-dur-cetait-la-verification) <span class="carte-meta">28 nov.</span>
 - [Gemini Robotics 2.5 : 96 % de réussite en usine, et un banc de « jailbreak » physique](2026/11/2026-11-26.md#gemini-robotics-25-96-de-reussite-en-usine-et-un-banc-de-jailbreak-physique) <span class="carte-meta">26 nov.</span>
 - [Un miroir suffit à faire échouer les politiques de manipulation](2026/11/2026-11-25.md#un-miroir-suffit-a-faire-echouer-les-politiques-de-manipulation) <span class="carte-meta">25 nov.</span>
 - [🔌 Embarqué & tech](2026/11/2026-11-21.md#embarque-tech) <span class="carte-meta">21 nov.</span>
 - [Un modèle de raisonnement entraîné en simulation pilote de vrais bras](2026/11/2026-11-16.md#un-modele-de-raisonnement-entraine-en-simulation-pilote-de-vrais-bras) <span class="carte-meta">16 nov.</span>
 - [Le NPU d'une carte embarquée détourné pour le GNSS](2026/11/2026-11-16.md#le-npu-dune-carte-embarquee-detourne-pour-le-gnss) <span class="carte-meta">16 nov.</span>
-- [Serve Robotics ouvre sa flotte de livraison à une API publique](2026/11/2026-11-15.md#serve-robotics-ouvre-sa-flotte-de-livraison-a-une-api-publique) <span class="carte-meta">15 nov.</span>
 
-[Les 39 actus « IA » →](themes/ia.md){ .lien-suite }
+[Les 40 actus « IA » →](themes/ia.md){ .lien-suite }
 
 ## spatial { #spatial }
 
@@ -56,14 +56,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## logiciel { #logiciel }
 
+- [Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d'autoroute fermées](2026/11/2026-11-28.md#waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees) <span class="carte-meta">28 nov.</span>
+- [usb-rea : générer un driver Linux pour un gadget USB qui n'a qu'un logiciel Windows](2026/11/2026-11-28.md#usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows) <span class="carte-meta">28 nov.</span>
+- [Anthropic réécrit son API Messages de Python en Rust : le dur, c'était la vérification](2026/11/2026-11-28.md#anthropic-reecrit-son-api-messages-de-python-en-rust-le-dur-cetait-la-verification) <span class="carte-meta">28 nov.</span>
 - [Pixi 0.85 : plateformes repensées, pixi-build-ros progresse](2026/11/2026-11-27.md#pixi-085-plateformes-repensees-pixi-build-ros-progresse) <span class="carte-meta">27 nov.</span>
 - [PlotJuggler 4.2 : dans le navigateur, scriptable, pilotable par un agent](2026/11/2026-11-26.md#plotjuggler-42-dans-le-navigateur-scriptable-pilotable-par-un-agent) <span class="carte-meta">26 nov.</span>
 - [Pinscope : logs, crashs et OTA avec retour arrière pour ESP32, Zephyr et Pico 2 W](2026/11/2026-11-26.md#pinscope-logs-crashs-et-ota-avec-retour-arriere-pour-esp32-zephyr-et-pico-2-w) <span class="carte-meta">26 nov.</span>
-- [pnc-diag-mcp : auditer le timing d'un rosbag sans installer ROS 2](2026/11/2026-11-25.md#pnc-diag-mcp-auditer-le-timing-dun-rosbag-sans-installer-ros-2) <span class="carte-meta">25 nov.</span>
-- [NXP i.MX 952 en module : Linux, temps réel et sûreté sur une seule puce](2026/11/2026-11-24.md#nxp-imx-952-en-module-linux-temps-reel-et-surete-sur-une-seule-puce) <span class="carte-meta">24 nov.</span>
-- [Ladybird, le navigateur au moteur écrit de zéro, passe en alpha](2026/11/2026-11-24.md#ladybird-le-navigateur-au-moteur-ecrit-de-zero-passe-en-alpha) <span class="carte-meta">24 nov.</span>
 
-[Les 26 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
+[Les 29 actus « logiciel » →](themes/logiciel.md){ .lien-suite }
 
 ## matériel { #materiel }
 
@@ -78,14 +78,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## open source { #open-source }
 
+- [DWARL : un contrôleur local Nav2 appris par renforcement](2026/11/2026-11-28.md#dwarl-un-controleur-local-nav2-appris-par-renforcement) <span class="carte-meta">28 nov.</span>
+- [Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source](2026/11/2026-11-28.md#tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source) <span class="carte-meta">28 nov.</span>
+- [usb-rea : générer un driver Linux pour un gadget USB qui n'a qu'un logiciel Windows](2026/11/2026-11-28.md#usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows) <span class="carte-meta">28 nov.</span>
 - [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>
 - [🤖 Robotique & infra](2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [FlexiTac : la peau tactile open source à 2,5 $ la pièce](2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>
-- [StrataSLAM : un SLAM ROS 2 qui gère plusieurs étages](2026/11/2026-11-10.md#strataslam-un-slam-ros-2-qui-gere-plusieurs-etages) <span class="carte-meta">10 nov.</span>
-- [MABEL : un robot mobile à deux bras, 56 DDL, entièrement open source](2026/11/2026-11-09.md#mabel-un-robot-mobile-a-deux-bras-56-ddl-entierement-open-source) <span class="carte-meta">9 nov.</span>
-- [Thinking Machines sort Inkling 2 Small](2026/11/2026-11-06.md#thinking-machines-sort-inkling-2-small) <span class="carte-meta">6 nov.</span>
 
-[Les 13 actus « open source » →](themes/open-source.md){ .lien-suite }
+[Les 16 actus « open source » →](themes/open-source.md){ .lien-suite }
 
 ## sécurité { #securite }
 
@@ -111,14 +111,14 @@ Chaque actu est rangée dans un ou deux thèmes. Voici les plus récentes de cha
 
 ## concept { #concept }
 
+- [💡 Concept du jour : le « shadowing » (trafic miroir)](2026/11/2026-11-28.md#concept-du-jour-le-shadowing-trafic-miroir) <span class="carte-meta">28 nov.</span>
 - [💡 Concept du jour : le tampon de gigue (jitter buffer)](2026/11/2026-11-27.md#concept-du-jour-le-tampon-de-gigue-jitter-buffer) <span class="carte-meta">27 nov.</span>
 - [💡 Concept du jour : l'opérateur de Koopman](2026/11/2026-11-26.md#concept-du-jour-loperateur-de-koopman) <span class="carte-meta">26 nov.</span>
 - [💡 Concept du jour : la distillation de connaissances](2026/11/2026-11-25.md#concept-du-jour-la-distillation-de-connaissances) <span class="carte-meta">25 nov.</span>
 - [💡 Concept du jour : l'alignement d'Umeyama (et ATE vs RPE)](2026/11/2026-11-24.md#concept-du-jour-lalignement-dumeyama-et-ate-vs-rpe) <span class="carte-meta">24 nov.</span>
 - [💡 Concept du jour : le LET (Logical Execution Time)](2026/11/2026-11-23.md#concept-du-jour-le-let-logical-execution-time) <span class="carte-meta">23 nov.</span>
-- [💡 Concept du jour : taille et capacité d'un conteneur](2026/11/2026-11-22.md#concept-du-jour-taille-et-capacite-dun-conteneur) <span class="carte-meta">22 nov.</span>
 
-[Les 31 actus « concept » →](themes/concept.md){ .lien-suite }
+[Les 32 actus « concept » →](themes/concept.md){ .lien-suite }
 
 ## tech { #tech }
 

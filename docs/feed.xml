@@ -6,7 +6,37 @@
 <link rel="self" href="https://telemetrie.georger.ovh/feed.xml"/>
 <id>https://telemetrie.georger.ovh/</id>
 <author><name>Télémétrie</name></author>
-<updated>2026-11-27T06:00:00Z</updated>
+<updated>2026-11-28T06:00:00Z</updated>
+<entry>
+<title>Veille du samedi 28 novembre 2026</title>
+<link href="https://telemetrie.georger.ovh/2026/11/2026-11-28/"/>
+<id>https://telemetrie.georger.ovh/2026/11/2026-11-28/</id>
+<published>2026-11-28T06:00:00Z</published>
+<updated>2026-11-28T06:00:00Z</updated>
+<category term="robotique"/>
+<category term="logiciel"/>
+<category term="open source"/>
+<category term="IA"/>
+<category term="concept"/>
+<summary>DWARL : un contrôleur local Nav2 appris par renforcement · Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d&#x27;autoroute fermées · Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source · usb-rea : générer un driver Linux pour un gadget USB qui n&#x27;a qu&#x27;un logiciel Windows · Anthropic réécrit son API Messages de Python en Rust : le dur, c&#x27;était la vérification · 💡 Concept du jour : le « shadowing » (trafic miroir)</summary>
+<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-28/#dwarl-un-controleur-local-nav2-appris-par-renforcement&quot;&gt;DWARL : un contrôleur local Nav2 appris par renforcement&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Nobleo publie en open source DWARL, présenté à ROSCon Belgium. Au lieu d&#x27;optimiser une trajectoire à chaque cycle (DWB, MPPI), un réseau entraîné par PPO prédit directement la commande à partir des capteurs, ce qui coûte très peu de calcul en ligne. L&#x27;apprentissage converge en ~20 min (~150 itérations sur la démo TurtleBot) puis le réseau s&#x27;utilise comme plugin contrôleur Nav2. Le projet tourne avec Pixi ou Docker, et son « gym » d&#x27;entraînement peut aussi servir à régler les paramètres d&#x27;un contrôleur classique. Les auteurs reconnaissent une conduite encore un peu ondulante, due aux fonctions de récompense.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://github.com/nobleo/dwarl&quot;&gt;GitHub&lt;/a&gt;, &lt;a href=&quot;https://discourse.openrobotics.org/t/introducing-dwarl-a-fast-reinforcement-learning-based-local-controller-for-nav2/60319&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-28/#waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees&quot;&gt;Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d&#x27;autoroute fermées&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Le nouveau rappel déposé auprès de la NHTSA fait suite à 11 incidents depuis le 1er octobre, dont trois survenus après un premier durcissement des restrictions d&#x27;exploitation. La Californie a suspendu la conduite sans chauffeur de Waymo sur autoroute jusqu&#x27;à vérification du correctif. Pour une flotte autonome, un « rappel » est en pratique une mise à jour logicielle. Cette affaire montre qu&#x27;un correctif doit être validé en conditions réelles avant que le régulateur ne lève la suspension.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.reuters.com/legal/litigation/waymo-says-recall-prompted-by-11-new-incidents-robotaxis-entering-closed-freeway-2026-11-24/&quot;&gt;reuters.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-28/#tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source&quot;&gt;Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Application Android/iOS conçue à partir d&#x27;un sondage auprès de plus de 160 roboticiens : 30 widgets (joysticks, carte 2D avec objectifs Nav2, caméra, courbes, curseurs d&#x27;articulations) pour topics, services et actions. Elle se connecte via rosbridge ou foxglove_bridge, donc rien à installer sur le robot (Humble, Jazzy, Kilted). La partie la plus réutilisable est la bibliothèque TypeScript ros-mobile-bridge (Apache 2.0), qui cache les deux protocoles derrière une seule API. Zenoh est prévu.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://github.com/AuriLabsTech/ros-mobile-bridge&quot;&gt;GitHub&lt;/a&gt;, &lt;a href=&quot;https://discourse.openrobotics.org/t/tinca-a-phone-control-panel-for-ros-2-robots-built-from-160-survey-answers-plus-its-open-source-bridge-library/60300&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-28/#usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows&quot;&gt;usb-rea : générer un driver Linux pour un gadget USB qui n&#x27;a qu&#x27;un logiciel Windows&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Outil MIT : on capture le trafic USB (USBPcap ou usbmon) pendant qu&#x27;on utilise l&#x27;appli constructeur, et on annote chaque action (« mode turbo », « rpm 1180 »). usb-rea en déduit la structure des commandes (constantes, compteurs, champs de valeur, CRC), puis écrit un rapport de protocole, un driver pyusb et même un dissecteur Wireshark en Lua. Testé sur un watercooler NZXT : il retrouve octet pour octet la commande ventilateur déjà connue de liquidctl.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Sources : &lt;a href=&quot;https://github.com/emirmrkaljevic/usb-rea&quot;&gt;GitHub&lt;/a&gt;, &lt;a href=&quot;https://www.cnx-software.com/2026/11/27/usb-rea-generates-a-linux-driver-for-your-windows-only-usb-gadget/&quot;&gt;CNX Software&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-28/#anthropic-reecrit-son-api-messages-de-python-en-rust-le-dur-cetait-la-verification&quot;&gt;Anthropic réécrit son API Messages de Python en Rust : le dur, c&#x27;était la vérification&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Claude a écrit le cœur du nouveau chemin de requête en une semaine environ. Il a ensuite fallu des mois pour prouver la parité avec l&#x27;API en production. L&#x27;audit des ~700 tests d&#x27;intégration portés a révélé plus de 100 assertions affaiblies. L&#x27;équipe a donc comparé l&#x27;ancienne et la nouvelle version sur le trafic réel, puis envoyé des agents corriger chaque divergence. Résultat : ~70 % de CPU en moins par requête et ~20 % de latence médiane en moins avant le premier token, sans coupure de service. Ce retour d&#x27;expérience vaut pour toute migration d&#x27;un système vivant.&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://www.anthropic.com/research/migrating-api-to-rust&quot;&gt;anthropic.com&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-28/#concept-du-jour-le-shadowing-trafic-miroir&quot;&gt;💡 Concept du jour : le « shadowing » (trafic miroir)&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;On duplique les vraies requêtes de production vers la nouvelle version, qui calcule sa réponse sans jamais la renvoyer à l&#x27;utilisateur. On compare ensuite les deux sorties et on enquête sur chaque écart. Cela couvre les cas que les tests n&#x27;imaginent pas, sans faire courir de risque aux utilisateurs. La difficulté est de séparer les vrais bugs des différences légitimes (horodatages, aléatoire, sorties non déterministes) et de ne pas déclencher deux fois les effets de bord (facturation, écritures). En robotique, c&#x27;est l&#x27;équivalent d&#x27;un nouveau planificateur qui tourne en parallèle sur le robot, ses commandes étant enregistrées mais jamais envoyées aux moteurs.&lt;/p&gt;</content>
+</entry>
 <entry>
 <title>Veille du vendredi 27 novembre 2026</title>
 <link href="https://telemetrie.georger.ovh/2026/11/2026-11-27/"/>
@@ -586,37 +616,5 @@
 &lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://discourse.openrobotics.org/t/early-end-of-support-of-gazebo-harmonic-fortress-on-macos/59605&quot;&gt;Open Robotics Discourse&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
 &lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-09/#concept-du-jour-le-zero-copy&quot;&gt;💡 Concept du jour : le « zero-copy »&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Normalement, envoyer une image d&#x27;un programme à un autre revient à la copier, souvent plusieurs fois : sérialisation, tampon réseau, désérialisation. Avec le zero-copy, l&#x27;émetteur et le récepteur partagent la même zone mémoire, et on ne transmet qu&#x27;une référence vers les données. Pour une caméra de profondeur à 30 images/s, ça représente des centaines de Mo/s de copies en moins, donc moins de latence et un CPU moins chargé. C&#x27;est ce que fait la ZED (item 1), en gardant les données dans la mémoire du GPU.&lt;/p&gt;</content>
-</entry>
-<entry>
-<title>Veille du dimanche 8 novembre 2026</title>
-<link href="https://telemetrie.georger.ovh/2026/11/2026-11-08/"/>
-<id>https://telemetrie.georger.ovh/2026/11/2026-11-08/</id>
-<published>2026-11-08T06:00:00Z</published>
-<updated>2026-11-08T06:00:00Z</updated>
-<category term="IA"/>
-<category term="robotique"/>
-<category term="recherche"/>
-<category term="embarqué"/>
-<category term="logiciel"/>
-<category term="matériel"/>
-<category term="concept"/>
-<summary>Latent RL Prior : recycler la simulation pour apprendre avec peu de démos · Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché · Un « homelab » à 10 $ sur une clé 4G OpenStick · T3R : alléger un modèle VLA sans le réentraîner · Social Humanoid : un humanoïde qui réagit aux mouvements d&#x27;un partenaire · 💡 Concept du jour : la quantification</summary>
-<content type="html">&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#latent-rl-prior-recycler-la-simulation-pour-apprendre-avec-peu-de-demos&quot;&gt;Latent RL Prior : recycler la simulation pour apprendre avec peu de démos&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Idée en deux temps. D&#x27;abord, on entraîne en simulation, par apprentissage par renforcement avec accès à l&#x27;état exact, un « décodeur d&#x27;actions » qui sait déjà bien manipuler. Ensuite, on le gèle et on n&#x27;apprend plus que la petite interface qui relie les images de la caméra à ce décodeur. Sur trois tâches simulées, la méthode bat le fine-tuning complet de π0.5 et de GR00T quand les données sont rares, avec jusqu&#x27;à 10× moins de démonstrations.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08458&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#coldframe-un-honeypot-qui-se-fait-passer-pour-un-controleur-de-frigo-de-supermarche&quot;&gt;Coldframe : un honeypot qui se fait passer pour un contrôleur de frigo de supermarché&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;En 2026, des attaquants ont pris la main sur des superviseurs de réfrigération exposés sur Internet (mots de passe par défaut, firmware jamais mis à jour) pour forcer des cycles de dégivrage. Coldframe imite un Danfoss AK-SM 800A ou un Dixell XWEB jusqu&#x27;aux en-têtes HTTP, à la version de TLS et au certificat, de façon à tromper les scanners. Il enregistre ensuite les identifiants testés et les CVE exploitées. Le tout tient dans un seul fichier Python, sans dépendance : une bonne leçon concrète de sécurité OT.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://github.com/hedgerow-dev/coldframe&quot;&gt;GitHub&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#un-homelab-a-10-sur-une-cle-4g-openstick&quot;&gt;Un « homelab » à 10 $ sur une clé 4G OpenStick&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Une clé modem 4G (4× Cortex-A53, 512 Mo de RAM, 4 Go d&#x27;eMMC, Wi-Fi, GPS) reflashée sous Debian devient un mini-serveur silencieux. L&#x27;auteur y fait tourner AdGuard Home, des conteneurs Podman et un agent IA, et indique la RAM consommée par chaque service. Utile pour voir ce qui tient vraiment dans 450 Mo.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://blog.bosscher.ch/posts/openstick/&quot;&gt;blog.bosscher.ch&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#t3r-alleger-un-modele-vla-sans-le-reentrainer&quot;&gt;T3R : alléger un modèle VLA sans le réentraîner&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Les modèles VLA (vision-langage-action) traitent des centaines de « tokens » visuels à chaque décision, ce qui coûte cher. T3R retire d&#x27;abord les zones d&#x27;image inutiles grâce à une segmentation, puis oriente l&#x27;attention vers les régions utiles à l&#x27;action. Sur LIBERO, 85 % des tokens de la caméra de scène sont supprimés sans perte de réussite, et le gain atteint +7 points quand les objets sont déplacés. La méthode ne demande aucun réentraînement.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://arxiv.org/abs/2611.08413&quot;&gt;arXiv&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#social-humanoid-un-humanoide-qui-reagit-aux-mouvements-dun-partenaire&quot;&gt;Social Humanoid : un humanoïde qui réagit aux mouvements d&#x27;un partenaire&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Ce travail (CoRL 2026, Berkeley) commande un Unitree G1 (29 degrés de liberté) en deux niveaux. En haut, un modèle génère le mouvement du robot en fonction de celui de l&#x27;humain, et l&#x27;anticipe même quand l&#x27;humain est masqué. En bas, un contrôleur corps entier exécute ce mouvement. Le papier apporte aussi un benchmark de 260 h d&#x27;interactions humain-humanoïde.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Source : &lt;a href=&quot;https://von31.github.io/social-humanoid/&quot;&gt;von31.github.io&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-&lt;h2&gt;&lt;a href=&quot;https://telemetrie.georger.ovh/2026/11/2026-11-08/#concept-du-jour-la-quantification&quot;&gt;💡 Concept du jour : la quantification&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Quantifier un réseau de neurones, c&#x27;est stocker ses poids (et parfois ses calculs) sur moins de bits : 8 ou 4 bits entiers au lieu de 16 ou 32 bits flottants. Le modèle devient 2 à 8 fois plus léger et beaucoup plus rapide sur un NPU ou un microcontrôleur, au prix d&#x27;une petite perte de précision, que l&#x27;on limite en calibrant les plages de valeurs sur quelques exemples. C&#x27;est l&#x27;une des techniques qui permettent de faire tourner un modèle de robot sur une carte embarquée plutôt que sur un serveur.&lt;/p&gt;</content>
 </entry>
 </feed>

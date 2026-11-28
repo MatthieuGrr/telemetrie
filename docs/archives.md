@@ -6,12 +6,15 @@ hide:
 
 # Archives
 
-33 veilles et 198 actus, de la plus récente à la plus ancienne.
+34 veilles et 204 actus, de la plus récente à la plus ancienne.
 { .veille-meta }
 
 ## Novembre 2026
 
 <div class="archives" markdown>
+
+[**Samedi 28 novembre 2026**](2026/11/2026-11-28.md) <span class="carte-meta">6 actus</span>  
+DWARL : un contrôleur local Nav2 appris par renforcement · Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies… · Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en… · usb-rea : générer un driver Linux pour un gadget USB qui n'a qu'un… · Anthropic réécrit son API Messages de Python en Rust : le dur…
 
 [**Vendredi 27 novembre 2026**](2026/11/2026-11-27.md) <span class="carte-meta">7 actus</span>  
 robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à… · Liaison instable : pourquoi les nuages de points résistent au… · Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI · Pixi 0.85 : plateformes repensées, pixi-build-ros progresse · Caméras IA STM32N6 en Wi-Fi HaLow · Xpeng IRON : production en janvier, magasins avant la maison

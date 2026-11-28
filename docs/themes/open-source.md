@@ -8,12 +8,15 @@ search:
 
 # open source
 
-13 actus sur ce thème · [tous les thèmes](../tags.md)
+16 actus sur ce thème · [tous les thèmes](../tags.md)
 { .veille-meta }
 
 
 ## Novembre 2026
 
+- [DWARL : un contrôleur local Nav2 appris par renforcement](../2026/11/2026-11-28.md#dwarl-un-controleur-local-nav2-appris-par-renforcement) <span class="carte-meta">28 nov.</span>
+- [Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source](../2026/11/2026-11-28.md#tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source) <span class="carte-meta">28 nov.</span>
+- [usb-rea : générer un driver Linux pour un gadget USB qui n'a qu'un logiciel Windows](../2026/11/2026-11-28.md#usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows) <span class="carte-meta">28 nov.</span>
 - [OpenDroneLab : chaque vol simulé reçoit une note, et la CI peut échouer](../2026/11/2026-11-24.md#opendronelab-chaque-vol-simule-recoit-une-note-et-la-ci-peut-echouer) <span class="carte-meta">24 nov.</span>
 - [🤖 Robotique & infra](../2026/11/2026-11-22.md#robotique-infra) <span class="carte-meta">22 nov.</span>
 - [FlexiTac : la peau tactile open source à 2,5 $ la pièce](../2026/11/2026-11-14.md#flexitac-la-peau-tactile-open-source-a-25-la-piece) <span class="carte-meta">14 nov.</span>

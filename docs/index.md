@@ -15,87 +15,76 @@ search:
 Le flux quotidien de Rosetta : chaque matin, une poignée d'actus en robotique, électronique embarquée et tech, résumées en quelques lignes, avec le lien vers la source.
 { .hero-baseline }
 
-[Lire la veille du jour](2026/11/2026-11-27.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
+[Lire la veille du jour](2026/11/2026-11-28.md){ .md-button .md-button--primary } [Archives](archives.md){ .md-button } [Thèmes](tags.md){ .md-button } [Flux RSS](feed.xml){ .md-button }
 { .hero-actions }
 
 </div>
 
-## [Vendredi 27 novembre 2026](2026/11/2026-11-27.md) { .jour }
+## [Samedi 28 novembre 2026](2026/11/2026-11-28.md) { .jour }
 
-**7 actus** · 3 min de lecture
+**6 actus** · 3 min de lecture
 { .veille-meta }
 
 <section class="actu" markdown>
 
-### robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui { #robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui data-fav="2026/11/2026-11-27/#robotstream-video-webrtc-et-teleop-nav2-en-flutter-mesures-a-lappui" }
+### DWARL : un contrôleur local Nav2 appris par renforcement { #dwarl-un-controleur-local-nav2-appris-par-renforcement data-fav="2026/11/2026-11-28/#dwarl-un-controleur-local-nav2-appris-par-renforcement" }
 
-Passerelle ROS 2 Humble + paquets Flutter (BSD-3) pour la vidéo basse latence (WebRTC/WHEP), la télémétrie et une téléop protégée par un « homme mort ». Le post chiffre les pièges : MJPEG via web_video_server consomme ~5,6 Mbit/s par spectateur et ajoute ~229 ms, et ré-encode pour chaque client (29,5 → 18 i/s avec 4 spectateurs). Sur Android, l'économie d'énergie Wi-Fi regroupe les paquets UDP et gonfle le tampon de gigue à 85-150 ms : un WifiLock « low latency » le ramène à 10-20 ms. Il signale aussi que rosbridge n'a pas d'authentification et n'annule pas un objectif Nav2 quand le téléphone décroche.
+Nobleo publie en open source DWARL, présenté à ROSCon Belgium. Au lieu d'optimiser une trajectoire à chaque cycle (DWB, MPPI), un réseau entraîné par PPO prédit directement la commande à partir des capteurs, ce qui coûte très peu de calcul en ligne. L'apprentissage converge en ~20 min (~150 itérations sur la démo TurtleBot) puis le réseau s'utilise comme plugin contrôleur Nav2. Le projet tourne avec Pixi ou Docker, et son « gym » d'entraînement peut aussi servir à régler les paramètres d'un contrôleur classique. Les auteurs reconnaissent une conduite encore un peu ondulante, due aux fonctions de récompense.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/robot-stream-low-latency-webrtc-video-nav2-teleop-for-ros-2-in-flutter-deadman-protected-open-source/60233){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[GitHub](https://github.com/nobleo/dwarl){ .src target="_blank" rel="noopener" } [Open Robotics Discourse](https://discourse.openrobotics.org/t/introducing-dwarl-a-fast-reinforcement-learning-based-local-controller-for-nav2/60319){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [open source](themes/open-source.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Liaison instable : pourquoi les nuages de points résistent au streaming { #liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming data-fav="2026/11/2026-11-27/#liaison-instable-pourquoi-les-nuages-de-points-resistent-au-streaming" }
+### Waymo rappelle ~4 500 robotaxis après 11 entrées sur des voies d'autoroute fermées { #waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees data-fav="2026/11/2026-11-28/#waymo-rappelle-4-500-robotaxis-apres-11-entrees-sur-des-voies-dautoroute-fermees" }
 
-Discussion utile sur la téléop 3D en cellulaire. Idée clé : WebRTC estime en continu bande passante et RTT puis baisse le débit de l'encodeur vidéo, mais les nuages de points n'ont pas de compression inter-images aussi efficace que H.264/AV1, et on ne sait pas toujours quelle partie des données compte pour le récepteur. Le sous-échantillonnage dynamique est une piste, pas une solution générique.
+Le nouveau rappel déposé auprès de la NHTSA fait suite à 11 incidents depuis le 1er octobre, dont trois survenus après un premier durcissement des restrictions d'exploitation. La Californie a suspendu la conduite sans chauffeur de Waymo sur autoroute jusqu'à vérification du correctif. Pour une flotte autonome, un « rappel » est en pratique une mise à jour logicielle. Cette affaire montre qu'un correctif doit être validé en conditions réelles avant que le régulateur ne lève la suspension.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/how-do-you-handle-laggy-links-for-3d-teleop-monitoring-in-ros-2/60248){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag }
+[reuters.com](https://www.reuters.com/legal/litigation/waymo-says-recall-prompted-by-11-new-incidents-robotaxis-entering-closed-freeway-2026-11-24/){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI { #ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi data-fav="2026/11/2026-11-27/#ramp-autonomy-un-amr-charge-sur-une-rampe-avec-nav2-mppi" }
+### Tinca : un tableau de bord mobile pour ROS 2, et sa couche réseau en open source { #tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source data-fav="2026/11/2026-11-28/#tinca-un-tableau-de-bord-mobile-pour-ros-2-et-sa-couche-reseau-en-open-source" }
 
-Projet ouvert (Jazzy, Gazebo Harmonic) qui traite la rampe comme un problème de contrôle et de sécurité à part : biais de tangage de l'IMU qui corrompt l'odométrie, centre de gravité qui bouge avec la charge, glissement des roues. Au menu : machine à états (approche, montée, transition, descente, sortie, arrêt), classifieur de pente LiDAR, deux critics MPPI maison et une couche de sécurité où un seul signal (marge de basculement, glissement, blocage) peut opposer son veto.
+Application Android/iOS conçue à partir d'un sondage auprès de plus de 160 roboticiens : 30 widgets (joysticks, carte 2D avec objectifs Nav2, caméra, courbes, curseurs d'articulations) pour topics, services et actions. Elle se connecte via rosbridge ou foxglove_bridge, donc rien à installer sur le robot (Humble, Jazzy, Kilted). La partie la plus réutilisable est la bibliothèque TypeScript ros-mobile-bridge (Apache 2.0), qui cache les deux protocoles derrière une seule API. Zenoh est prévu.
 
-[Open Robotics Discourse](https://discourse.openrobotics.org/t/ramp-autonomy-a-ros-2-gazebo-stack-for-ramp-ascent-and-descent-on-a-loaded-amr/60220){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [sécurité](themes/securite.md){ .tag }
+[GitHub](https://github.com/AuriLabsTech/ros-mobile-bridge){ .src target="_blank" rel="noopener" } [Open Robotics Discourse](https://discourse.openrobotics.org/t/tinca-a-phone-control-panel-for-ros-2-robots-built-from-160-survey-answers-plus-its-open-source-bridge-library/60300){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag } [open source](themes/open-source.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Pixi 0.85 : plateformes repensées, pixi-build-ros progresse { #pixi-085-plateformes-repensees-pixi-build-ros-progresse data-fav="2026/11/2026-11-27/#pixi-085-plateformes-repensees-pixi-build-ros-progresse" }
+### usb-rea : générer un driver Linux pour un gadget USB qui n'a qu'un logiciel Windows { #usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows data-fav="2026/11/2026-11-28/#usb-rea-generer-un-driver-linux-pour-un-gadget-usb-qui-na-quun-logiciel-windows" }
 
-Les plateformes d'un workspace se déclarent désormais avec une clé subdir, ce qui permet de définir par exemple « linux-cuda » et « linux-cpu » sur la même architecture. Côté ROS, pixi-build-ros gagne les cibles bibliothèque, les licences package.xml converties en SPDX et le nommage des paquets façon RoboStack. Attention : les lockfiles d'anciennes versions peuvent nécessiter un nouveau pixi lock.
+Outil MIT : on capture le trafic USB (USBPcap ou usbmon) pendant qu'on utilise l'appli constructeur, et on annote chaque action (« mode turbo », « rpm 1180 »). usb-rea en déduit la structure des commandes (constantes, compteurs, champs de valeur, CRC), puis écrit un rapport de protocole, un driver pyusb et même un dissecteur Wireshark en Lua. Testé sur un watercooler NZXT : il retrouve octet pour octet la commande ventilateur déjà connue de liquidctl.
 
-[GitHub](https://github.com/prefix-dev/pixi/releases/tag/v0.85.0){ .src target="_blank" rel="noopener" } [logiciel](themes/logiciel.md){ .tag } [matériel](themes/materiel.md){ .tag }
+[GitHub](https://github.com/emirmrkaljevic/usb-rea){ .src target="_blank" rel="noopener" } [CNX Software](https://www.cnx-software.com/2026/11/27/usb-rea-generates-a-linux-driver-for-your-windows-only-usb-gadget/){ .src target="_blank" rel="noopener" } [logiciel](themes/logiciel.md){ .tag } [open source](themes/open-source.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu" markdown>
 
-### Caméras IA STM32N6 en Wi-Fi HaLow { #cameras-ia-stm32n6-en-wi-fi-halow data-fav="2026/11/2026-11-27/#cameras-ia-stm32n6-en-wi-fi-halow" }
+### Anthropic réécrit son API Messages de Python en Rust : le dur, c'était la vérification { #anthropic-reecrit-son-api-messages-de-python-en-rust-le-dur-cetait-la-verification data-fav="2026/11/2026-11-28/#anthropic-reecrit-son-api-messages-de-python-en-rust-le-dur-cetait-la-verification" }
 
-CamThink ajoute le Wi-Fi HaLow (802.11ah, sub-GHz, longue portée) à ses caméras NE301/NE302 basées sur le STM32N6 (Cortex-M55 à 800 MHz, NPU de 600 GOPS, encodeur H.264 matériel). La NE301 passe en IP67 avec antenne externe, sur batterie. Un bon exemple de vision embarquée sur microcontrôleur, loin d'un Linux embarqué (article sponsorisé).
+Claude a écrit le cœur du nouveau chemin de requête en une semaine environ. Il a ensuite fallu des mois pour prouver la parité avec l'API en production. L'audit des ~700 tests d'intégration portés a révélé plus de 100 assertions affaiblies. L'équipe a donc comparé l'ancienne et la nouvelle version sur le trafic réel, puis envoyé des agents corriger chaque divergence. Résultat : ~70 % de CPU en moins par requête et ~20 % de latence médiane en moins avant le premier token, sans coupure de service. Ce retour d'expérience vaut pour toute migration d'un système vivant.
 
-[CNX Software](https://www.cnx-software.com/2026/11/26/camthink-neoeyes-ne301-ne302-edge-ai-cameras-get-wi-fi-halow-connectivity-for-indoor-and-outdoor-deployments/){ .src target="_blank" rel="noopener" } [embarqué](themes/embarque.md){ .tag } [matériel](themes/materiel.md){ .tag }
-{ .actu-foot }
-
-</section>
-
-<section class="actu" markdown>
-
-### Xpeng IRON : production en janvier, magasins avant la maison { #xpeng-iron-production-en-janvier-magasins-avant-la-maison data-fav="2026/11/2026-11-27/#xpeng-iron-production-en-janvier-magasins-avant-la-maison" }
-
-Le constructeur automobile chinois a présenté la nouvelle version de son humanoïde IRON : production en série en janvier, premiers essais comme vendeur dans ses concessions au premier trimestre, ventes au deuxième. Le domestique viendrait « un à deux ans » après les déploiements commerciaux, dans un contexte où les investisseurs restent sceptiques.
-
-[cnbc.com](https://www.cnbc.com/2026/11/26/china-ev-xpeng-humanoid-robots-household-chores.html){ .src target="_blank" rel="noopener" } [robotique](themes/robotique.md){ .tag }
+[anthropic.com](https://www.anthropic.com/research/migrating-api-to-rust){ .src target="_blank" rel="noopener" } [IA](themes/ia.md){ .tag } [logiciel](themes/logiciel.md){ .tag }
 { .actu-foot }
 
 </section>
 
 <section class="actu actu--concept" markdown>
 
-### 💡 Concept du jour : le tampon de gigue (jitter buffer) { #concept-du-jour-le-tampon-de-gigue-jitter-buffer data-fav="2026/11/2026-11-27/#concept-du-jour-le-tampon-de-gigue-jitter-buffer" }
+### 💡 Concept du jour : le « shadowing » (trafic miroir) { #concept-du-jour-le-shadowing-trafic-miroir data-fav="2026/11/2026-11-28/#concept-du-jour-le-shadowing-trafic-miroir" }
 
-Sur un réseau, les paquets n'arrivent pas à intervalles réguliers : certains ont du retard, d'autres arrivent groupés. Le récepteur les garde donc un court instant dans un tampon avant de les afficher, pour lisser cette « gigue ». Plus la gigue observée est forte, plus le tampon grandit, donc plus la latence augmente. D'où le piège de robot_stream : en regroupant les paquets, l'économie d'énergie Wi-Fi fait croire à une forte gigue et le flux prend 100 ms de retard sans aucune perte.
+On duplique les vraies requêtes de production vers la nouvelle version, qui calcule sa réponse sans jamais la renvoyer à l'utilisateur. On compare ensuite les deux sorties et on enquête sur chaque écart. Cela couvre les cas que les tests n'imaginent pas, sans faire courir de risque aux utilisateurs. La difficulté est de séparer les vrais bugs des différences légitimes (horodatages, aléatoire, sorties non déterministes) et de ne pas déclencher deux fois les effets de bord (facturation, écritures). En robotique, c'est l'équivalent d'un nouveau planificateur qui tourne en parallèle sur le robot, ses commandes étant enregistrées mais jamais envoyées aux moteurs.
 
 [concept](themes/concept.md){ .tag }
 { .actu-foot }
@@ -105,6 +94,13 @@ Sur un réseau, les paquets n'arrivent pas à intervalles réguliers : certains 
 ## Veilles précédentes
 
 <div class="cartes" markdown>
+
+- [**Vendredi 27 novembre 2026**](2026/11/2026-11-27.md) <span class="carte-meta">7 actus · 3 min</span>
+
+    - robot_stream : vidéo WebRTC et téléop Nav2 en Flutter, mesures à l'appui
+    - Liaison instable : pourquoi les nuages de points résistent au streaming
+    - Ramp Autonomy : un AMR chargé sur une rampe avec Nav2 MPPI
+    - *et 4 autres…*
 
 - [**Jeudi 26 novembre 2026**](2026/11/2026-11-26.md) <span class="carte-meta">7 actus · 3 min</span>
 
@@ -139,14 +135,9 @@ Sur un réseau, les paquets n'arrivent pas à intervalles réguliers : certains 
     - 🤖 Robotique & infra
     - 🔌 Embarqué & tech
 
-- [**Samedi 21 novembre 2026**](2026/11/2026-11-21.md) <span class="carte-meta">3 actus · 3 min</span>
-
-    - 🤖 Robotique & infra
-    - 🔌 Embarqué & tech
-
 </div>
 
-[Les 33 veilles dans les archives →](archives.md){ .lien-suite }
+[Les 34 veilles dans les archives →](archives.md){ .lien-suite }
 
 <p class="a-propos" markdown>
 Télémétrie est une veille automatisée : les résumés sont rédigés par Rosetta, un assistant IA, à partir des sources citées sous chaque actu. [Voir les sources suivies](sources.md).
